@@ -916,3 +916,126 @@ pre code {
   margin-left: 4px;
   vertical-align: middle;
 }
+
+/* ============================================================
+   Tell-Show-Do Framework Styles
+   ============================================================ */
+
+.tsd-banner {
+  display: flex;
+  gap: 0;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin: 1.5rem 0;
+}
+
+.tsd-step {
+  flex: 1;
+  padding: 1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.tsd-step-tell {
+  background: #eff6ff;
+  border-right: 1px solid var(--color-border);
+}
+
+.tsd-step-show {
+  background: #fdf4ff;
+  border-right: 1px solid var(--color-border);
+}
+
+.tsd-step-do {
+  background: #f0fdf4;
+}
+
+.tsd-step-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.tsd-step-tell .tsd-step-label { color: #1e40af; }
+.tsd-step-show .tsd-step-label { color: #7e22ce; }
+.tsd-step-do .tsd-step-label { color: #166534; }
+
+.tsd-step-heading {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.tsd-step-desc {
+  font-size: 0.82rem;
+  color: var(--color-text-muted);
+  line-height: 1.4;
+}
+
+.callout-do {
+  background: #f0fdf4;
+  border-left: 4px solid #22c55e;
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: 1rem 1.25rem;
+  margin: 1.5rem 0;
+}
+
+.callout-do .callout-label {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #166534;
+  margin-bottom: 0.4rem;
+}
+
+.callout-do p, .callout-do ul {
+  font-size: 0.9rem;
+  color: #14532d;
+}
+
+.callout-do ul {
+  padding-left: 1.25rem;
+  margin-top: 0.5rem;
+}
+
+.callout-do ul li {
+  margin-bottom: 0.3rem;
+}
+
+.callout-show {
+  background: #fdf4ff;
+  border-left: 4px solid #a855f7;
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: 1rem 1.25rem;
+  margin: 1.5rem 0;
+}
+
+.callout-show .callout-label {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #7e22ce;
+  margin-bottom: 0.4rem;
+}
+
+.callout-show p {
+  font-size: 0.9rem;
+  color: #581c87;
+}
+
+@media (max-width: 600px) {
+  .tsd-banner {
+    flex-direction: column;
+  }
+  .tsd-step-tell, .tsd-step-show {
+    border-right: none;
+    border-bottom: 1px solid var(--color-border);
+  }
+}
