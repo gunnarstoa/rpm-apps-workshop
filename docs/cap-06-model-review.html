@@ -28,6 +28,7 @@
       <li><a class="nav-link" href="./04-configurator-exercise.html">Lab: Configurator</a></li>
       <li><a class="nav-link" href="./05-post-gen-steps.html">Post-Generation Steps</a></li>
       <li><a class="nav-link" href="./tq-06-model-review.html">Model Review</a></li>
+      <li><a class="nav-link" href="./tq-07-comodeler-lab.html">Lab: CoModeler</a></li>
       <li><a class="nav-link" href="./07-spoke-app-walkthrough.html">Application Review</a></li>
       <li><a class="nav-link" href="./06-ado-integration.html">Data Integration &amp; ADO</a></li>
       <li><a class="nav-link" href="./08-extensions.html">Common Extensions</a></li>
@@ -38,6 +39,7 @@
       <li><a class="nav-link" href="./seg-04-lab.html">Lab: Configurator</a></li>
       <li><a class="nav-link" href="./seg-05-post-gen.html">Post-Generation Steps</a></li>
       <li><a class="nav-link" href="./seg-06-model-review.html">Model Review</a></li>
+      <li><a class="nav-link" href="./seg-07-comodeler-lab.html">Lab: CoModeler</a></li>
       <li><a class="nav-link" href="./13-segmentation-walkthrough.html">Application Review</a></li>
       <li><a class="nav-link" href="./seg-08-extensions.html">Common Extensions</a></li>
       <li class="nav-section-title">Capacity Planning</li>
@@ -96,52 +98,7 @@
         </table>
       </div>
 
-      <div class="mini-lab">
-        <div class="mini-lab-header">
-          <div class="mini-lab-number">A</div>
-          <div class="mini-lab-title">CoModeler Lab A — Document the Hiring Plan Module</div>
-          <div class="mini-lab-duration">⏱ 15 min</div>
-        </div>
-        <div class="mini-lab-body">
-          <div class="mini-lab-objective">
-            <strong>Objective</strong>
-            Generate a line item dictionary for the HC Hiring Plan module to understand the inputs and outputs of the bottoms-up hiring plan.
-          </div>
-          <ol class="mini-lab-steps">
-            <li><span class="mini-lab-step-num">1</span> Open the <strong>Capacity demo app</strong> in your partner workspace.</li>
-            <li><span class="mini-lab-step-num">2</span> Navigate to the <strong>HC Hiring Plan</strong> module.</li>
-            <li><span class="mini-lab-step-num">3</span> Open CoModeler and prompt: <em>"Generate a line item dictionary for this module. Include name, formula summary, data type, and what downstream modules depend on each line item."</em></li>
-            <li><span class="mini-lab-step-num">4</span> Identify which line item represents planned new hires by month and which line item represents cumulative headcount.</li>
-          </ol>
-        </div>
-        <div class="mini-lab-completion">
-          <div class="mini-lab-completion-label">✅ Done when you can answer</div>
-          <p style="font-size:0.88rem;color:#14532d;margin:0;">Which module reads from HC Hiring Plan to calculate projected revenue? What is the key formula that connects a hire date to a revenue contribution?</p>
-        </div>
-      </div>
-
-      <div class="mini-lab">
-        <div class="mini-lab-header">
-          <div class="mini-lab-number">C</div>
-          <div class="mini-lab-title">CoModeler Lab C — Explain the Ramp-to-Revenue Logic</div>
-          <div class="mini-lab-duration">⏱ 15 min</div>
-        </div>
-        <div class="mini-lab-body">
-          <div class="mini-lab-objective">
-            <strong>Objective</strong>
-            Use CoModeler to understand exactly how the ramp profile converts a hire date into a monthly revenue contribution.
-          </div>
-          <ol class="mini-lab-steps">
-            <li><span class="mini-lab-step-num">1</span> Launch CoModeler in the Capacity app.</li>
-            <li><span class="mini-lab-step-num">2</span> Ask: <em>"If I hire a Commercial AE on March 15th, and the ramp profile is 0% month 1, 30% month 2, 70% month 3, 100% month 4+, what is the projected revenue contribution for April, May, June, and July? Walk me through the exact calculation."</em></li>
-            <li><span class="mini-lab-step-num">3</span> Follow up: <em>"How does the hire-date-to-ramp rule work — what is the cutoff rule for whether ramp starts in the hire month or the next month?"</em></li>
-          </ol>
-        </div>
-        <div class="mini-lab-completion">
-          <div class="mini-lab-completion-label">✅ Done when you can answer</div>
-          <p style="font-size:0.88rem;color:#14532d;margin:0;">A hire on the 20th of March — does ramp start in March or April? What is the revenue impact of this decision over a 12-month planning horizon for a $1M quota AE?</p>
-        </div>
-      </div>
+      
     </div>
   </main>
 

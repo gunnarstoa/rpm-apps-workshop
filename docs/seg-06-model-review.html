@@ -28,6 +28,7 @@
       <li><a class="nav-link" href="./04-configurator-exercise.html">Lab: Configurator</a></li>
       <li><a class="nav-link" href="./05-post-gen-steps.html">Post-Generation Steps</a></li>
       <li><a class="nav-link" href="./tq-06-model-review.html">Model Review</a></li>
+      <li><a class="nav-link" href="./tq-07-comodeler-lab.html">Lab: CoModeler</a></li>
       <li><a class="nav-link" href="./07-spoke-app-walkthrough.html">Application Review</a></li>
       <li><a class="nav-link" href="./06-ado-integration.html">Data Integration &amp; ADO</a></li>
       <li><a class="nav-link" href="./08-extensions.html">Common Extensions</a></li>
@@ -47,6 +48,7 @@
       <li><a class="nav-link" href="./cap-04-lab.html">Lab: Configurator</a></li>
       <li><a class="nav-link" href="./cap-05-post-gen.html">Post-Generation Steps</a></li>
       <li><a class="nav-link" href="./cap-06-model-review.html">Model Review</a></li>
+      <li><a class="nav-link" href="./cap-07-comodeler-lab.html">Lab: CoModeler</a></li>
       <li><a class="nav-link" href="./14-capacity-walkthrough.html">Application Review</a></li>
       <li><a class="nav-link" href="./cap-08-extensions.html">Common Extensions</a></li>
       <li class="nav-section-title">Reference</li>
@@ -95,52 +97,7 @@
         </table>
       </div>
 
-      <div class="mini-lab">
-        <div class="mini-lab-header">
-          <div class="mini-lab-number">A</div>
-          <div class="mini-lab-title">CoModeler Lab A — Document the Account Scoring Module</div>
-          <div class="mini-lab-duration">⏱ 15 min</div>
-        </div>
-        <div class="mini-lab-body">
-          <div class="mini-lab-objective">
-            <strong>Objective</strong>
-            Generate a line item dictionary for the SG Account Scoring module to understand how each scoring metric contributes to the final account score.
-          </div>
-          <ol class="mini-lab-steps">
-            <li><span class="mini-lab-step-num">1</span> Open the <strong>Segmentation demo app</strong> in your partner workspace.</li>
-            <li><span class="mini-lab-step-num">2</span> Navigate to the <strong>SG Account Scoring</strong> module.</li>
-            <li><span class="mini-lab-step-num">3</span> Open CoModeler and prompt: <em>"Generate a line item dictionary for this module. Include name, formula summary, and how each line item contributes to the final score."</em></li>
-            <li><span class="mini-lab-step-num">4</span> Identify which line item holds the final weighted score and which holds the segment assignment derived from that score.</li>
-          </ol>
-        </div>
-        <div class="mini-lab-completion">
-          <div class="mini-lab-completion-label">✅ Done when you can answer</div>
-          <p style="font-size:0.88rem;color:#14532d;margin:0;">How does the app decide whether rule-based or score-based takes precedence when both apply to the same account?</p>
-        </div>
-      </div>
-
-      <div class="mini-lab">
-        <div class="mini-lab-header">
-          <div class="mini-lab-number">C</div>
-          <div class="mini-lab-title">CoModeler Lab C — Explain the Score-to-Segment Mapping</div>
-          <div class="mini-lab-duration">⏱ 15 min</div>
-        </div>
-        <div class="mini-lab-body">
-          <div class="mini-lab-objective">
-            <strong>Objective</strong>
-            Use CoModeler to understand the exact logic that converts a numeric score (0–10) into a segment assignment.
-          </div>
-          <ol class="mini-lab-steps">
-            <li><span class="mini-lab-step-num">1</span> Launch CoModeler in the Segmentation app.</li>
-            <li><span class="mini-lab-step-num">2</span> Ask: <em>"How does the app map a numeric score to a segment? Walk me through the formula logic that converts a score of 7.2 to the 'Named' segment."</em></li>
-            <li><span class="mini-lab-step-num">3</span> Follow up: <em>"If I want to change the threshold so that accounts scoring above 8 are Strategic instead of 7, which line item or admin setting do I change?"</em></li>
-          </ol>
-        </div>
-        <div class="mini-lab-completion">
-          <div class="mini-lab-completion-label">✅ Done when you can answer</div>
-          <p style="font-size:0.88rem;color:#14532d;margin:0;">Where in the Segmentation app does an admin change the score thresholds without requiring a re-generation?</p>
-        </div>
-      </div>
+      
     </div>
   </main>
 
