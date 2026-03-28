@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Capacity Common Extensions — RPM Apps Lab Guide</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div class="mobile-header">
+    <button id="hamburger">☰</button>
+    <span>RPM Apps Lab Guide</span>
+  </div>
+
+  <nav class="sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-title">RPM Apps Lab Guide</div>
+    </div>
+    <ul class="nav-list">
+      <li class="nav-section-title">Getting Started</li>
+      <li><a class="nav-link" href="./00-overview.html">Workshop Overview</a></li>
+      <li><a class="nav-link" href="./01-spm-overview.html">SPM/RPM Overview</a></li>
+      <li><a class="nav-link" href="./02-anaplan-way.html">Anaplan Way for Apps</a></li>
+      <li class="nav-section-title">Territory &amp; Quota</li>
+      <li><a class="nav-link" href="./tq-01-overview.html">Functional Overview</a></li>
+      <li><a class="nav-link" href="./tq-02-sample-data.html">Sample Data</a></li>
+      <li><a class="nav-link" href="./03-configurator-walkthrough.html">Configurator Review</a></li>
+      <li><a class="nav-link" href="./04-configurator-exercise.html">Lab: Configurator</a></li>
+      <li><a class="nav-link" href="./05-post-gen-steps.html">Post-Generation Steps</a></li>
+      <li><a class="nav-link" href="./tq-06-model-review.html">Model Review</a></li>
+      <li><a class="nav-link" href="./07-spoke-app-walkthrough.html">Application Review</a></li>
+      <li><a class="nav-link" href="./06-ado-integration.html">Data Integration &amp; ADO</a></li>
+      <li><a class="nav-link" href="./08-extensions.html">Common Extensions</a></li>
+      <li class="nav-section-title">Account Segmentation</li>
+      <li><a class="nav-link" href="./seg-01-overview.html">Functional Overview</a></li>
+      <li><a class="nav-link" href="./seg-02-sample-data.html">Sample Data</a></li>
+      <li><a class="nav-link" href="./10-segmentation-configurator.html">Configurator Review</a></li>
+      <li><a class="nav-link" href="./seg-04-lab.html">Lab: Configurator</a></li>
+      <li><a class="nav-link" href="./seg-05-post-gen.html">Post-Generation Steps</a></li>
+      <li><a class="nav-link" href="./seg-06-model-review.html">Model Review</a></li>
+      <li><a class="nav-link" href="./13-segmentation-walkthrough.html">Application Review</a></li>
+      <li><a class="nav-link" href="./seg-08-extensions.html">Common Extensions</a></li>
+      <li class="nav-section-title">Capacity Planning</li>
+      <li><a class="nav-link" href="./cap-01-overview.html">Functional Overview</a></li>
+      <li><a class="nav-link" href="./cap-02-sample-data.html">Sample Data</a></li>
+      <li><a class="nav-link" href="./11-capacity-configurator.html">Configurator Review</a></li>
+      <li><a class="nav-link" href="./cap-04-lab.html">Lab: Configurator</a></li>
+      <li><a class="nav-link" href="./cap-05-post-gen.html">Post-Generation Steps</a></li>
+      <li><a class="nav-link" href="./cap-06-model-review.html">Model Review</a></li>
+      <li><a class="nav-link" href="./14-capacity-walkthrough.html">Application Review</a></li>
+      <li><a class="nav-link active" href="./cap-08-extensions.html">Common Extensions</a></li>
+      <li class="nav-section-title">Reference</li>
+      <li><a class="nav-link" href="./15-whats-coming.html">What's Coming</a></li>
+      <li><a class="nav-link" href="./16-qanda.html">Q&amp;A from Sessions</a></li>
+      <li><a class="nav-link" href="./17-resources.html">Resources &amp; Downloads</a></li>
+      <li><a class="nav-link" href="./18-facilitator.html">Facilitator Guide</a></li>
+    </ul>
+    <div class="lang-switcher">
+      <span class="lang-switcher-label">🌐 Language</span>
+      <select id="lang-select" class="lang-select">
+        <option value="en">🇺🇸 English</option>
+        <option value="ja">🇯🇵 日本語</option>
+        <option value="es">🇪🇸 Español</option>
+        <option value="fr">🇫🇷 Français</option>
+        <option value="de">🇩🇪 Deutsch</option>
+        <option value="pt">🇧🇷 Português</option>
+        <option value="ko">🇰🇷 한국어</option>
+        <option value="zh">🇨🇳 中文</option>
+      </select>
+    </div>
+  </nav>
+
+  <main class="main-content">
+    <div class="content-header">
+      <h1>Capacity Planning Common Extensions</h1>
+      <p class="subtitle">Typical customizations and how to scope them</p>
+      <div class="badge-row">
+        <span class="content-badge">Capacity Module</span>
+        <span class="content-badge">Reference</span>
+      </div>
+    </div>
+    <div class="content-body">
+      <p>Capacity has fewer extensions than T&amp;Q but the ones that come up tend to add meaningful complexity. Most are driven by Finance wanting more granular cost modeling or Sales wanting more flexible scenario management.</p>
+
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Extension</th><th>Size</th><th>Notes</th></tr></thead>
+          <tbody>
+            <tr><td>Custom Ramp Profiles</td><td>S</td><td>The base app provides 3 ramp profiles. Adding more requires a new profile in the admin setup and corresponding formula updates. Common when different geos (APAC vs. EMEA) have materially different ramp times.</td></tr>
+            <tr><td>Revenue Target by Product Line</td><td>M</td><td>When Finance provides separate targets for different product lines. Requires adding product dimension to the revenue target and coverage modules — significant dimensionality addition.</td></tr>
+            <tr><td>OWP Integration</td><td>M–L</td><td>Connecting Anaplan Workforce Planning data (approved positions, cost data) to the Capacity hiring plan. High value for customers with mature headcount planning processes, but requires both products to be live.</td></tr>
+            <tr><td>Custom Cost Modeling</td><td>M</td><td>Adding fully-loaded cost per hire (base + benefits + equipment + recruiting cost) to the financial liability analysis. Common for CFOs who want full cost-of-hire visibility, not just quota capacity.</td></tr>
+            <tr><td>Additional Scenario Management</td><td>S</td><td>The configurator sets the number of scenarios at generation time. Adding scenarios post-gen requires extending the scenario list and replicating scenario logic across modules. Small effort but needs careful testing.</td></tr>
+            <tr><td>Segmentation Auto-Sync</td><td>S</td><td>Automating the segment-count feed from Segmentation to Capacity coverage ratios. Currently manual export/import. An ADO pipeline makes this seamless — small setup effort once ADO is configured.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout-tip">
+        <span class="callout-label">💡 Positioning Tip</span>
+        <p>The most powerful Capacity demo moment is showing a VP of Sales Finance the "holy grail" page: "Hire 2 AEs in January, 3 in April — here's exactly when you close the revenue gap." Lead with that. Everything else is detail.</p>
+      </div>
+    </div>
+  </main>
+
+  <script src="../js/nav.js"></script>
+</body>
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>T&Q Sample Data Structures — RPM Apps Lab Guide</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div class="mobile-header">
+    <button id="hamburger">☰</button>
+    <span>RPM Apps Lab Guide</span>
+  </div>
+
+  <nav class="sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-title">RPM Apps Lab Guide</div>
+    </div>
+    <ul class="nav-list">
+      <li class="nav-section-title">Getting Started</li>
+      <li><a class="nav-link" href="./00-overview.html">Workshop Overview</a></li>
+      <li><a class="nav-link" href="./01-spm-overview.html">SPM/RPM Overview</a></li>
+      <li><a class="nav-link" href="./02-anaplan-way.html">Anaplan Way for Apps</a></li>
+      <li class="nav-section-title">Territory &amp; Quota</li>
+      <li><a class="nav-link" href="./tq-01-overview.html">Functional Overview</a></li>
+      <li><a class="nav-link active" href="./tq-02-sample-data.html">Sample Data</a></li>
+      <li><a class="nav-link" href="./03-configurator-walkthrough.html">Configurator Review</a></li>
+      <li><a class="nav-link" href="./04-configurator-exercise.html">Lab: Configurator</a></li>
+      <li><a class="nav-link" href="./05-post-gen-steps.html">Post-Generation Steps</a></li>
+      <li><a class="nav-link" href="./tq-06-model-review.html">Model Review</a></li>
+      <li><a class="nav-link" href="./07-spoke-app-walkthrough.html">Application Review</a></li>
+      <li><a class="nav-link" href="./06-ado-integration.html">Data Integration &amp; ADO</a></li>
+      <li><a class="nav-link" href="./08-extensions.html">Common Extensions</a></li>
+      <li class="nav-section-title">Account Segmentation</li>
+      <li><a class="nav-link" href="./seg-01-overview.html">Functional Overview</a></li>
+      <li><a class="nav-link" href="./seg-02-sample-data.html">Sample Data</a></li>
+      <li><a class="nav-link" href="./10-segmentation-configurator.html">Configurator Review</a></li>
+      <li><a class="nav-link" href="./seg-04-lab.html">Lab: Configurator</a></li>
+      <li><a class="nav-link" href="./seg-05-post-gen.html">Post-Generation Steps</a></li>
+      <li><a class="nav-link" href="./seg-06-model-review.html">Model Review</a></li>
+      <li><a class="nav-link" href="./13-segmentation-walkthrough.html">Application Review</a></li>
+      <li><a class="nav-link" href="./seg-08-extensions.html">Common Extensions</a></li>
+      <li class="nav-section-title">Capacity Planning</li>
+      <li><a class="nav-link" href="./cap-01-overview.html">Functional Overview</a></li>
+      <li><a class="nav-link" href="./cap-02-sample-data.html">Sample Data</a></li>
+      <li><a class="nav-link" href="./11-capacity-configurator.html">Configurator Review</a></li>
+      <li><a class="nav-link" href="./cap-04-lab.html">Lab: Configurator</a></li>
+      <li><a class="nav-link" href="./cap-05-post-gen.html">Post-Generation Steps</a></li>
+      <li><a class="nav-link" href="./cap-06-model-review.html">Model Review</a></li>
+      <li><a class="nav-link" href="./14-capacity-walkthrough.html">Application Review</a></li>
+      <li><a class="nav-link" href="./cap-08-extensions.html">Common Extensions</a></li>
+      <li class="nav-section-title">Reference</li>
+      <li><a class="nav-link" href="./15-whats-coming.html">What's Coming</a></li>
+      <li><a class="nav-link" href="./16-qanda.html">Q&amp;A from Sessions</a></li>
+      <li><a class="nav-link" href="./17-resources.html">Resources &amp; Downloads</a></li>
+      <li><a class="nav-link" href="./18-facilitator.html">Facilitator Guide</a></li>
+    </ul>
+    <div class="lang-switcher">
+      <span class="lang-switcher-label">🌐 Language</span>
+      <select id="lang-select" class="lang-select">
+        <option value="en">🇺🇸 English</option>
+        <option value="ja">🇯🇵 日本語</option>
+        <option value="es">🇪🇸 Español</option>
+        <option value="fr">🇫🇷 Français</option>
+        <option value="de">🇩🇪 Deutsch</option>
+        <option value="pt">🇧🇷 Português</option>
+        <option value="ko">🇰🇷 한국어</option>
+        <option value="zh">🇨🇳 中文</option>
+      </select>
+    </div>
+  </nav>
+
+  <main class="main-content">
+    <div class="content-header">
+      <h1>T&amp;Q Sample Data Structures</h1>
+      <p class="subtitle">Required data objects, field schemas, and the CloudWorks exercise dataset</p>
+      <div class="badge-row">
+        <span class="content-badge">T&amp;Q Module</span>
+        <span class="content-badge">Reference</span>
+      </div>
+    </div>
+    <div class="content-body">
+      <p>T&amp;Q requires five core data objects. Understanding their structure before configuration sessions prevents the most common data-related delays. The <strong>Data Prep Workbook</strong> (available in Resources) contains templates for each object.</p>
+
+      <h2>Required Data Objects</h2>
+
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Object</th><th>Purpose</th><th>Source</th><th>Critical Fields</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Account</strong></td><td>The universe of accounts to be assigned to territories</td><td>CRM (Salesforce)</td><td>Account ID, Account Name, Account Parent, Territory, Segment, Industry, Employee Count, Lat/Long</td></tr>
+            <tr><td><strong>Territory</strong></td><td>The hierarchy of territories (all tiers)</td><td>Manual / Sales Ops</td><td>Territory ID, Territory Name, Territory Parent, Tier level</td></tr>
+            <tr><td><strong>Employee</strong></td><td>Sales reps and managers with role and assignment data</td><td>HR / CRM</td><td>User ID, User Name, Sales Role, Job Family, Hire Date, Source Territory, Manager, Is Active?</td></tr>
+            <tr><td><strong>Opportunity / Order</strong></td><td>Historical actuals for allocation and reporting</td><td>CRM / ERP</td><td>Account ID, Amount, Planning Measure, Service Date, Territory</td></tr>
+            <tr><td><strong>Finance Targets</strong></td><td>Top-down targets from Finance</td><td>Finance / FP&amp;A</td><td>Territory/Region, Planning Measure, Period, Amount</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Account File Schema</h2>
+      <p>The most complex data object. Key fields used in the T&amp;Q configurator exercise:</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Field</th><th>Type</th><th>Required</th><th>Used For</th></tr></thead>
+          <tbody>
+            <tr><td>Account ID</td><td>Text (unique)</td><td>✅ Required</td><td>Primary key — links accounts to actuals, assignments</td></tr>
+            <tr><td>Account Name</td><td>Text</td><td>✅ Required</td><td>Display name throughout the app</td></tr>
+            <tr><td>Account Parent</td><td>Text (Account ID)</td><td>Recommended</td><td>Global Ultimate Parent hierarchy for named accounts</td></tr>
+            <tr><td>Territory</td><td>Text (Territory ID)</td><td>Recommended</td><td>Pre-existing assignment import</td></tr>
+            <tr><td>Industry</td><td>List</td><td>If using Rule Engine</td><td>Rule Engine attribute, segmentation</td></tr>
+            <tr><td>No. of Employees</td><td>Number</td><td>If using Rule Engine</td><td>Rule Engine attribute (use banded version)</td></tr>
+            <tr><td>Account Segment</td><td>List</td><td>If using Segmentation</td><td>Segment attribute from Segmentation app output</td></tr>
+            <tr><td>Ship to Latitude</td><td>Decimal</td><td>If using Geo Mapping</td><td>Map card and lasso assignment</td></tr>
+            <tr><td>Ship to Longitude</td><td>Decimal</td><td>If using Geo Mapping</td><td>Map card and lasso assignment</td></tr>
+            <tr><td>ARR Spend</td><td>Currency</td><td>Recommended</td><td>Potential Spend — primary allocation method</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Territory File Schema</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Field</th><th>Type</th><th>Notes</th></tr></thead>
+          <tbody>
+            <tr><td>Territory ID</td><td>Text (unique)</td><td>Primary key. Use a stable code (e.g. "S01") not a display name</td></tr>
+            <tr><td>Territory Name</td><td>Text</td><td>Display name (e.g. "Northeast")</td></tr>
+            <tr><td>Territory Parent</td><td>Text (Territory ID)</td><td>ID of the parent territory — defines the hierarchy rollup</td></tr>
+            <tr><td>Territory Manager</td><td>Text (User ID)</td><td>Optional — the manager responsible for this territory</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout-warning">
+        <span class="callout-label">⚠ V2 vs V3 Territory Format</span>
+        <p><strong>V2:</strong> One flat file with all tiers as columns. <strong>V3 (ADO):</strong> One separate source view per hierarchy tier. If you're configuring V3, you need a separate file per tier — not one combined flat file.</p>
+      </div>
+
+      <h2>Employee File Schema</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Field</th><th>Type</th><th>Notes</th></tr></thead>
+          <tbody>
+            <tr><td>User ID</td><td>Text (unique)</td><td>Primary key — must match the Anaplan user ID</td></tr>
+            <tr><td>User Name</td><td>Text</td><td>Display name</td></tr>
+            <tr><td>Sales Role</td><td>List</td><td>Must match the Sales Role list configured in the configurator</td></tr>
+            <tr><td>Job Family</td><td>List</td><td>Role grouping for quota composition</td></tr>
+            <tr><td>Source Territory</td><td>Text (Territory ID)</td><td>The territory this rep is assigned to at import time</td></tr>
+            <tr><td>Hire Date</td><td>Date</td><td>Used for ramp calculation — must be accurate</td></tr>
+            <tr><td>Is Active?</td><td>Boolean</td><td>Inactive reps are excluded from quota calculations</td></tr>
+            <tr><td>Manager</td><td>Text (User ID)</td><td>Manager's User ID — used for approval routing</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>CloudWorks Exercise Dataset</h2>
+      <p>The following files are provided in your lab workspace. These are the actual files used in the T&amp;Q configurator exercise.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>File</th><th>Rows</th><th>Key Fields</th></tr></thead>
+          <tbody>
+            <tr><td><code>Configurator Exercise Account_Flat File.csv</code></td><td>~4,200</td><td>Account Name, Account ID, Industry, No. of Employees, Annual Revenue, Account Segment, Territory, Ship to Latitude/Longitude, ARR Spend</td></tr>
+            <tr><td><code>Configurator Exercise Territory_Flat File.csv</code></td><td>~220</td><td>Territory Name, Territory ID, Territory Parent, Territory Manager</td></tr>
+            <tr><td><code>Configurator Exercise Employee File.xlsx</code></td><td>~205</td><td>User ID, User Name, User Title, Sales Role, Job Family, Hire Date, Source Territory, Manager, Is Active?</td></tr>
+            <tr><td><code>Configurator Exercise Opportunity line File.csv</code></td><td>~18,000</td><td>Opportunity Line ID, Account, Amount, Planning Measure, Service Date</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout-tip">
+        <span class="callout-label">💡 Session Zero Tip</span>
+        <p>Share the T&amp;Q Data Prep Workbook with the customer as early as possible — ideally before the SOW is signed. The workbook defines exactly what format each file needs to be in. Customers who complete it before kickoff move 2–3× faster through configuration sessions.</p>
+      </div>
+    </div>
+  </main>
+
+  <script src="../js/nav.js"></script>
+</body>
+</html>

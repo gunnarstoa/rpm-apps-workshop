@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Segmentation Model Review — RPM Apps Lab Guide</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div class="mobile-header">
+    <button id="hamburger">☰</button>
+    <span>RPM Apps Lab Guide</span>
+  </div>
+
+  <nav class="sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-title">RPM Apps Lab Guide</div>
+    </div>
+    <ul class="nav-list">
+      <li class="nav-section-title">Getting Started</li>
+      <li><a class="nav-link" href="./00-overview.html">Workshop Overview</a></li>
+      <li><a class="nav-link" href="./01-spm-overview.html">SPM/RPM Overview</a></li>
+      <li><a class="nav-link" href="./02-anaplan-way.html">Anaplan Way for Apps</a></li>
+      <li class="nav-section-title">Territory &amp; Quota</li>
+      <li><a class="nav-link" href="./tq-01-overview.html">Functional Overview</a></li>
+      <li><a class="nav-link" href="./tq-02-sample-data.html">Sample Data</a></li>
+      <li><a class="nav-link" href="./03-configurator-walkthrough.html">Configurator Review</a></li>
+      <li><a class="nav-link" href="./04-configurator-exercise.html">Lab: Configurator</a></li>
+      <li><a class="nav-link" href="./05-post-gen-steps.html">Post-Generation Steps</a></li>
+      <li><a class="nav-link" href="./tq-06-model-review.html">Model Review</a></li>
+      <li><a class="nav-link" href="./07-spoke-app-walkthrough.html">Application Review</a></li>
+      <li><a class="nav-link" href="./06-ado-integration.html">Data Integration &amp; ADO</a></li>
+      <li><a class="nav-link" href="./08-extensions.html">Common Extensions</a></li>
+      <li class="nav-section-title">Account Segmentation</li>
+      <li><a class="nav-link" href="./seg-01-overview.html">Functional Overview</a></li>
+      <li><a class="nav-link" href="./seg-02-sample-data.html">Sample Data</a></li>
+      <li><a class="nav-link" href="./10-segmentation-configurator.html">Configurator Review</a></li>
+      <li><a class="nav-link" href="./seg-04-lab.html">Lab: Configurator</a></li>
+      <li><a class="nav-link" href="./seg-05-post-gen.html">Post-Generation Steps</a></li>
+      <li><a class="nav-link active" href="./seg-06-model-review.html">Model Review</a></li>
+      <li><a class="nav-link" href="./13-segmentation-walkthrough.html">Application Review</a></li>
+      <li><a class="nav-link" href="./seg-08-extensions.html">Common Extensions</a></li>
+      <li class="nav-section-title">Capacity Planning</li>
+      <li><a class="nav-link" href="./cap-01-overview.html">Functional Overview</a></li>
+      <li><a class="nav-link" href="./cap-02-sample-data.html">Sample Data</a></li>
+      <li><a class="nav-link" href="./11-capacity-configurator.html">Configurator Review</a></li>
+      <li><a class="nav-link" href="./cap-04-lab.html">Lab: Configurator</a></li>
+      <li><a class="nav-link" href="./cap-05-post-gen.html">Post-Generation Steps</a></li>
+      <li><a class="nav-link" href="./cap-06-model-review.html">Model Review</a></li>
+      <li><a class="nav-link" href="./14-capacity-walkthrough.html">Application Review</a></li>
+      <li><a class="nav-link" href="./cap-08-extensions.html">Common Extensions</a></li>
+      <li class="nav-section-title">Reference</li>
+      <li><a class="nav-link" href="./15-whats-coming.html">What's Coming</a></li>
+      <li><a class="nav-link" href="./16-qanda.html">Q&amp;A from Sessions</a></li>
+      <li><a class="nav-link" href="./17-resources.html">Resources &amp; Downloads</a></li>
+      <li><a class="nav-link" href="./18-facilitator.html">Facilitator Guide</a></li>
+    </ul>
+    <div class="lang-switcher">
+      <span class="lang-switcher-label">🌐 Language</span>
+      <select id="lang-select" class="lang-select">
+        <option value="en">🇺🇸 English</option>
+        <option value="ja">🇯🇵 日本語</option>
+        <option value="es">🇪🇸 Español</option>
+        <option value="fr">🇫🇷 Français</option>
+        <option value="de">🇩🇪 Deutsch</option>
+        <option value="pt">🇧🇷 Português</option>
+        <option value="ko">🇰🇷 한국어</option>
+        <option value="zh">🇨🇳 中文</option>
+      </select>
+    </div>
+  </nav>
+
+  <main class="main-content">
+    <div class="content-header">
+      <h1>Segmentation Model Review</h1>
+      <p class="subtitle">Understanding the generated Segmentation model using CoModeler</p>
+      <div class="badge-row">
+        <span class="content-badge">Segmentation Module</span>
+        <span class="content-badge">30 min</span>
+      </div>
+    </div>
+    <div class="content-body">
+      <p>The Segmentation app is smaller than T&amp;Q but contains some nuanced scoring logic that benefits from CoModeler exploration. Focus on the scoring and segment assignment modules.</p>
+
+      <h2>Key Segmentation Modules</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Module</th><th>Purpose</th></tr></thead>
+          <tbody>
+            <tr><td>SG Account Scoring</td><td>Calculates the numeric score for each account based on weighted metrics</td></tr>
+            <tr><td>SG Segmentation Rules</td><td>Rule-based segment assignment — explicit conditions per segment</td></tr>
+            <tr><td>SG Final Segment</td><td>Combines rule-based and score-based to produce the final segment output</td></tr>
+            <tr><td>SG Wallet Size</td><td>Calculates addressable spend per account using the configured method</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="mini-lab">
+        <div class="mini-lab-header">
+          <div class="mini-lab-number">A</div>
+          <div class="mini-lab-title">CoModeler Lab A — Document the Account Scoring Module</div>
+          <div class="mini-lab-duration">⏱ 15 min</div>
+        </div>
+        <div class="mini-lab-body">
+          <div class="mini-lab-objective">
+            <strong>Objective</strong>
+            Generate a line item dictionary for the SG Account Scoring module to understand how each scoring metric contributes to the final account score.
+          </div>
+          <ol class="mini-lab-steps">
+            <li><span class="mini-lab-step-num">1</span> Open the <strong>Segmentation demo app</strong> in your partner workspace.</li>
+            <li><span class="mini-lab-step-num">2</span> Navigate to the <strong>SG Account Scoring</strong> module.</li>
+            <li><span class="mini-lab-step-num">3</span> Open CoModeler and prompt: <em>"Generate a line item dictionary for this module. Include name, formula summary, and how each line item contributes to the final score."</em></li>
+            <li><span class="mini-lab-step-num">4</span> Identify which line item holds the final weighted score and which holds the segment assignment derived from that score.</li>
+          </ol>
+        </div>
+        <div class="mini-lab-completion">
+          <div class="mini-lab-completion-label">✅ Done when you can answer</div>
+          <p style="font-size:0.88rem;color:#14532d;margin:0;">How does the app decide whether rule-based or score-based takes precedence when both apply to the same account?</p>
+        </div>
+      </div>
+
+      <div class="mini-lab">
+        <div class="mini-lab-header">
+          <div class="mini-lab-number">C</div>
+          <div class="mini-lab-title">CoModeler Lab C — Explain the Score-to-Segment Mapping</div>
+          <div class="mini-lab-duration">⏱ 15 min</div>
+        </div>
+        <div class="mini-lab-body">
+          <div class="mini-lab-objective">
+            <strong>Objective</strong>
+            Use CoModeler to understand the exact logic that converts a numeric score (0–10) into a segment assignment.
+          </div>
+          <ol class="mini-lab-steps">
+            <li><span class="mini-lab-step-num">1</span> Launch CoModeler in the Segmentation app.</li>
+            <li><span class="mini-lab-step-num">2</span> Ask: <em>"How does the app map a numeric score to a segment? Walk me through the formula logic that converts a score of 7.2 to the 'Named' segment."</em></li>
+            <li><span class="mini-lab-step-num">3</span> Follow up: <em>"If I want to change the threshold so that accounts scoring above 8 are Strategic instead of 7, which line item or admin setting do I change?"</em></li>
+          </ol>
+        </div>
+        <div class="mini-lab-completion">
+          <div class="mini-lab-completion-label">✅ Done when you can answer</div>
+          <p style="font-size:0.88rem;color:#14532d;margin:0;">Where in the Segmentation app does an admin change the score thresholds without requiring a re-generation?</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="../js/nav.js"></script>
+</body>
+</html>

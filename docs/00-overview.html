@@ -12,32 +12,45 @@
     <span>RPM Apps Lab Guide</span>
   </div>
 
-  <nav class="sidebar">
+    <nav class="sidebar">
     <div class="sidebar-header">
       <div class="sidebar-title">RPM Apps Lab Guide</div>
-      <div class="sidebar-subtitle">RPM Apps Lab Guide</div>
     </div>
     <ul class="nav-list">
       <li class="nav-section-title">Getting Started</li>
-      <li><a class="nav-link" href="./00-overview.html">Workshop Overview</a></li>
-      <li class="nav-section-title">Territory &amp; Quota (T&amp;Q)</li>
+      <li><a class="nav-link active" href="./00-overview.html">Workshop Overview</a></li>
       <li><a class="nav-link" href="./01-spm-overview.html">SPM/RPM Overview</a></li>
       <li><a class="nav-link" href="./02-anaplan-way.html">Anaplan Way for Apps</a></li>
-      <li><a class="nav-link" href="./03-configurator-walkthrough.html">Configurator Walkthrough</a></li>
-      <li><a class="nav-link" href="./04-configurator-exercise.html">Lab: Configurator Exercise</a></li>
+      <li class="nav-section-title">Territory &amp; Quota</li>
+      <li><a class="nav-link" href="./tq-01-overview.html">Functional Overview</a></li>
+      <li><a class="nav-link" href="./tq-02-sample-data.html">Sample Data</a></li>
+      <li><a class="nav-link" href="./03-configurator-walkthrough.html">Configurator Review</a></li>
+      <li><a class="nav-link" href="./04-configurator-exercise.html">Lab: Configurator</a></li>
       <li><a class="nav-link" href="./05-post-gen-steps.html">Post-Generation Steps</a></li>
+      <li><a class="nav-link" href="./tq-06-model-review.html">Model Review</a></li>
+      <li><a class="nav-link" href="./07-spoke-app-walkthrough.html">Application Review</a></li>
       <li><a class="nav-link" href="./06-ado-integration.html">Data Integration &amp; ADO</a></li>
-      <li><a class="nav-link" href="./07-spoke-app-walkthrough.html">Spoke App Walkthrough</a></li>
       <li><a class="nav-link" href="./08-extensions.html">Common Extensions</a></li>
-      <li class="nav-section-title">Segmentation &amp; Capacity</li>
-      <li><a class="nav-link" href="./09-day2-overview.html">Seg &amp; Capacity Overview</a></li>
-      <li><a class="nav-link" href="./10-segmentation-configurator.html">Segmentation Configurator</a></li>
-      <li><a class="nav-link" href="./11-capacity-configurator.html">Capacity Configurator</a></li>
-      <li><a class="nav-link" href="./12-seg-cap-exercise.html">Lab: Seg &amp; Cap Exercise</a></li>
-      <li><a class="nav-link" href="./13-segmentation-walkthrough.html">Segmentation App Walkthrough</a></li>
-      <li><a class="nav-link" href="./14-capacity-walkthrough.html">Capacity App Walkthrough</a></li>
-      <li><a class="nav-link" href="./15-whats-coming.html">What's Coming</a></li>
+      <li class="nav-section-title">Account Segmentation</li>
+      <li><a class="nav-link" href="./seg-01-overview.html">Functional Overview</a></li>
+      <li><a class="nav-link" href="./seg-02-sample-data.html">Sample Data</a></li>
+      <li><a class="nav-link" href="./10-segmentation-configurator.html">Configurator Review</a></li>
+      <li><a class="nav-link" href="./seg-04-lab.html">Lab: Configurator</a></li>
+      <li><a class="nav-link" href="./seg-05-post-gen.html">Post-Generation Steps</a></li>
+      <li><a class="nav-link" href="./seg-06-model-review.html">Model Review</a></li>
+      <li><a class="nav-link" href="./13-segmentation-walkthrough.html">Application Review</a></li>
+      <li><a class="nav-link" href="./seg-08-extensions.html">Common Extensions</a></li>
+      <li class="nav-section-title">Capacity Planning</li>
+      <li><a class="nav-link" href="./cap-01-overview.html">Functional Overview</a></li>
+      <li><a class="nav-link" href="./cap-02-sample-data.html">Sample Data</a></li>
+      <li><a class="nav-link" href="./11-capacity-configurator.html">Configurator Review</a></li>
+      <li><a class="nav-link" href="./cap-04-lab.html">Lab: Configurator</a></li>
+      <li><a class="nav-link" href="./cap-05-post-gen.html">Post-Generation Steps</a></li>
+      <li><a class="nav-link" href="./cap-06-model-review.html">Model Review</a></li>
+      <li><a class="nav-link" href="./14-capacity-walkthrough.html">Application Review</a></li>
+      <li><a class="nav-link" href="./cap-08-extensions.html">Common Extensions</a></li>
       <li class="nav-section-title">Reference</li>
+      <li><a class="nav-link" href="./15-whats-coming.html">What's Coming</a></li>
       <li><a class="nav-link" href="./16-qanda.html">Q&amp;A from Sessions</a></li>
       <li><a class="nav-link" href="./17-resources.html">Resources &amp; Downloads</a></li>
       <li><a class="nav-link" href="./18-facilitator.html">Facilitator Guide</a></li>
@@ -209,6 +222,36 @@
         <p>Keep this lab guide open in a browser tab throughout the day. Each section corresponds to a workshop segment and includes the key details, callouts, and reference tables you'll need. You don't need to memorize everything — learn where to find it.</p>
       </div>
 
+      <h2>How the Apps Work Together</h2>
+      <p>The three RPM apps — Territory &amp; Quota, Account Segmentation, and Capacity Planning — are designed to work together as a suite. Each module in this workshop covers one app, but understanding how data flows between them is essential before you start.</p>
+      <div class="callout-note">
+        <span class="callout-label">⚠ These connections are not automatic</span>
+        <p>Data flows between apps require a manual export/import step today. Native app-to-app connections are on the roadmap. Plan for this in your project timelines.</p>
+      </div>
+      <div class="two-col">
+        <div class="card">
+          <h3>Segmentation → T&amp;Q</h3>
+          <p>Account segments drive territory carving and Rule Engine logic. Export segments from Segmentation, import as an account attribute in T&amp;Q.</p>
+        </div>
+        <div class="card">
+          <h3>Segmentation → Capacity</h3>
+          <p>Account mix changes drive headcount needs. Segment counts feed directly into Capacity coverage ratios.</p>
+        </div>
+      </div>
+      <div class="two-col">
+        <div class="card">
+          <h3>Capacity → T&amp;Q</h3>
+          <p>TPH (territories per headcount) output from Capacity informs how many territories to design in T&amp;Q.</p>
+        </div>
+        <div class="card">
+          <h3>Recommended Sequence</h3>
+          <ol style="padding-left:1.2rem;font-size:0.9rem;">
+            <li>Segmentation → finalize account segments</li>
+            <li>Capacity → determine headcount by role/geo</li>
+            <li>T&amp;Q → design territories informed by both</li>
+          </ol>
+        </div>
+      </div>
     </div>
   </main>
 

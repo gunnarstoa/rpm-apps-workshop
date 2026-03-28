@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Segmentation Sample Data Structures — RPM Apps Lab Guide</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div class="mobile-header">
+    <button id="hamburger">☰</button>
+    <span>RPM Apps Lab Guide</span>
+  </div>
+
+  <nav class="sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-title">RPM Apps Lab Guide</div>
+    </div>
+    <ul class="nav-list">
+      <li class="nav-section-title">Getting Started</li>
+      <li><a class="nav-link" href="./00-overview.html">Workshop Overview</a></li>
+      <li><a class="nav-link" href="./01-spm-overview.html">SPM/RPM Overview</a></li>
+      <li><a class="nav-link" href="./02-anaplan-way.html">Anaplan Way for Apps</a></li>
+      <li class="nav-section-title">Territory &amp; Quota</li>
+      <li><a class="nav-link" href="./tq-01-overview.html">Functional Overview</a></li>
+      <li><a class="nav-link" href="./tq-02-sample-data.html">Sample Data</a></li>
+      <li><a class="nav-link" href="./03-configurator-walkthrough.html">Configurator Review</a></li>
+      <li><a class="nav-link" href="./04-configurator-exercise.html">Lab: Configurator</a></li>
+      <li><a class="nav-link" href="./05-post-gen-steps.html">Post-Generation Steps</a></li>
+      <li><a class="nav-link" href="./tq-06-model-review.html">Model Review</a></li>
+      <li><a class="nav-link" href="./07-spoke-app-walkthrough.html">Application Review</a></li>
+      <li><a class="nav-link" href="./06-ado-integration.html">Data Integration &amp; ADO</a></li>
+      <li><a class="nav-link" href="./08-extensions.html">Common Extensions</a></li>
+      <li class="nav-section-title">Account Segmentation</li>
+      <li><a class="nav-link" href="./seg-01-overview.html">Functional Overview</a></li>
+      <li><a class="nav-link active" href="./seg-02-sample-data.html">Sample Data</a></li>
+      <li><a class="nav-link" href="./10-segmentation-configurator.html">Configurator Review</a></li>
+      <li><a class="nav-link" href="./seg-04-lab.html">Lab: Configurator</a></li>
+      <li><a class="nav-link" href="./seg-05-post-gen.html">Post-Generation Steps</a></li>
+      <li><a class="nav-link" href="./seg-06-model-review.html">Model Review</a></li>
+      <li><a class="nav-link" href="./13-segmentation-walkthrough.html">Application Review</a></li>
+      <li><a class="nav-link" href="./seg-08-extensions.html">Common Extensions</a></li>
+      <li class="nav-section-title">Capacity Planning</li>
+      <li><a class="nav-link" href="./cap-01-overview.html">Functional Overview</a></li>
+      <li><a class="nav-link" href="./cap-02-sample-data.html">Sample Data</a></li>
+      <li><a class="nav-link" href="./11-capacity-configurator.html">Configurator Review</a></li>
+      <li><a class="nav-link" href="./cap-04-lab.html">Lab: Configurator</a></li>
+      <li><a class="nav-link" href="./cap-05-post-gen.html">Post-Generation Steps</a></li>
+      <li><a class="nav-link" href="./cap-06-model-review.html">Model Review</a></li>
+      <li><a class="nav-link" href="./14-capacity-walkthrough.html">Application Review</a></li>
+      <li><a class="nav-link" href="./cap-08-extensions.html">Common Extensions</a></li>
+      <li class="nav-section-title">Reference</li>
+      <li><a class="nav-link" href="./15-whats-coming.html">What's Coming</a></li>
+      <li><a class="nav-link" href="./16-qanda.html">Q&amp;A from Sessions</a></li>
+      <li><a class="nav-link" href="./17-resources.html">Resources &amp; Downloads</a></li>
+      <li><a class="nav-link" href="./18-facilitator.html">Facilitator Guide</a></li>
+    </ul>
+    <div class="lang-switcher">
+      <span class="lang-switcher-label">🌐 Language</span>
+      <select id="lang-select" class="lang-select">
+        <option value="en">🇺🇸 English</option>
+        <option value="ja">🇯🇵 日本語</option>
+        <option value="es">🇪🇸 Español</option>
+        <option value="fr">🇫🇷 Français</option>
+        <option value="de">🇩🇪 Deutsch</option>
+        <option value="pt">🇧🇷 Português</option>
+        <option value="ko">🇰🇷 한국어</option>
+        <option value="zh">🇨🇳 中文</option>
+      </select>
+    </div>
+  </nav>
+
+  <main class="main-content">
+    <div class="content-header">
+      <h1>Segmentation Sample Data Structures</h1>
+      <p class="subtitle">Required data objects and the CloudWorks exercise dataset</p>
+      <div class="badge-row">
+        <span class="content-badge">Segmentation Module</span>
+        <span class="content-badge">Reference</span>
+      </div>
+    </div>
+    <div class="content-body">
+      <p>Segmentation shares its core data objects with T&amp;Q — accounts, employees, opportunities, and territories. The key differences are the <strong>firmographic attributes</strong> required for scoring and the <strong>banded format</strong> needed for rule dimensions.</p>
+
+      <h2>Required Data Objects</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Object</th><th>Purpose</th><th>Key Difference from T&amp;Q</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Account</strong></td><td>Universe of accounts to be segmented</td><td>Requires firmographic data: Industry (list), Employee Band (list), Revenue Band (list), Annual Revenue (number)</td></tr>
+            <tr><td><strong>Employee</strong></td><td>Sales reps — used for historical performance context</td><td>Same as T&amp;Q</td></tr>
+            <tr><td><strong>Opportunity</strong></td><td>Historical performance data per account</td><td>Same as T&amp;Q</td></tr>
+            <tr><td><strong>Territory</strong></td><td>Hierarchy for GTM planning sandbox</td><td>Same as T&amp;Q</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Critical: List-Formatted Attributes</h2>
+      <div class="callout-important">
+        <span class="callout-label">🚫 Raw Numbers Don't Work as Rule Dimensions</span>
+        <p>The Segmentation rule engine only accepts <strong>list-formatted attributes</strong> as rule dimensions. Raw numeric fields (like Employee Count = 1,547) cannot be used directly. You must provide a <strong>banded version</strong> — a list attribute that maps the number to a band (e.g. Employee Band = "1,000–5,000"). Confirm this is in your account data before the configurator session.</p>
+      </div>
+
+      <h2>Firmographic Fields for CloudWorks</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Field</th><th>Format</th><th>Used For</th><th>Example Values</th></tr></thead>
+          <tbody>
+            <tr><td>Industry</td><td>List</td><td>Rule dimension, scoring metric</td><td>Technology, Financial Services, Healthcare, Manufacturing</td></tr>
+            <tr><td>No. of Employees (raw)</td><td>Number</td><td>Source for banding</td><td>1547, 23000, 450</td></tr>
+            <tr><td>Employee Band</td><td>List</td><td>Rule dimension</td><td>0–250, 250–1K, 1K–5K, 5K–25K, 25K+</td></tr>
+            <tr><td>Annual Revenue (raw)</td><td>Currency</td><td>Source for banding, wallet size</td><td>$2.4M, $180M</td></tr>
+            <tr><td>Revenue Band</td><td>List</td><td>Rule dimension</td><td>&lt;$10M, $10M–$100M, $100M–$1B, $1B+</td></tr>
+            <tr><td>Account Segment</td><td>List</td><td>Output field — written by the app</td><td>Strategic, Named, Commercial, SMB</td></tr>
+            <tr><td>ARR Spend</td><td>Currency</td><td>Wallet size input</td><td>Current ARR from Salesforce</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout-tip">
+        <span class="callout-label">💡 Data Prep Tip</span>
+        <p>If the customer's CRM only has raw employee count, you'll need to create the employee band as a derived field during data transformation. Build this into your Session Zero data assessment — ask: "Do you have a segment tier or size band already in your CRM, or will we need to derive it?"</p>
+      </div>
+    </div>
+  </main>
+
+  <script src="../js/nav.js"></script>
+</body>
+</html>
