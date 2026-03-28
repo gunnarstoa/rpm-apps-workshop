@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Go-to-Market Capacity Planning App: End-to-End Walkthrough — RPM Apps Lab Guide</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div class="mobile-header">
+    <button id="hamburger">☰</button>
+    <span>RPM Apps Lab Guide</span>
+  </div>
+
+  <nav class="sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-title">RPM Apps Workshop</div>
+      <div class="sidebar-subtitle">T&amp;Q Lab Guide — Day 1</div>
+    </div>
+    <ul class="nav-list">
+      <li class="nav-section-title">Getting Started</li>
+      <li><a class="nav-link" href="./00-overview.html">Workshop Overview</a></li>
+      <li class="nav-section-title">Day 1 — T&amp;Q</li>
+      <li><a class="nav-link" href="./01-spm-overview.html">SPM/RPM Overview</a></li>
+      <li><a class="nav-link" href="./02-anaplan-way.html">Anaplan Way for Apps</a></li>
+      <li><a class="nav-link" href="./03-configurator-walkthrough.html">Configurator Walkthrough</a></li>
+      <li><a class="nav-link" href="./04-configurator-exercise.html">Lab: Configurator Exercise</a></li>
+      <li><a class="nav-link" href="./05-post-gen-steps.html">Post-Generation Steps</a></li>
+      <li><a class="nav-link" href="./06-ado-integration.html">Data Integration &amp; ADO</a></li>
+      <li><a class="nav-link" href="./07-spoke-app-walkthrough.html">Spoke App Walkthrough</a></li>
+      <li><a class="nav-link" href="./08-extensions.html">Common Extensions</a></li>
+      <li class="nav-section-title">Day 2 — Seg &amp; Capacity</li>
+      <li><a class="nav-link" href="./09-day2-overview.html">Day 2 Overview</a></li>
+      <li><a class="nav-link" href="./10-segmentation-configurator.html">Segmentation Configurator</a></li>
+      <li><a class="nav-link" href="./11-capacity-configurator.html">Capacity Configurator</a></li>
+      <li><a class="nav-link" href="./12-seg-cap-exercise.html">Lab: Seg &amp; Cap Exercise</a></li>
+      <li><a class="nav-link" href="./13-segmentation-walkthrough.html">Segmentation App Walkthrough</a></li>
+      <li><a class="nav-link active" href="./14-capacity-walkthrough.html">Capacity App Walkthrough</a></li>
+      <li><a class="nav-link" href="./15-whats-coming.html">What's Coming</a></li>
+      <li class="nav-section-title">Reference</li>
+      <li><a class="nav-link" href="./16-qanda.html">Q&amp;A from Sessions</a></li>
+      <li><a class="nav-link" href="./17-resources.html">Resources &amp; Downloads</a></li>
+    </ul>
+    <div class="lang-switcher">
+      <span class="lang-switcher-label">🌐 Language</span>
+      <select id="lang-select" class="lang-select">
+        <option value="en">🇺🇸 English</option>
+        <option value="ja">🇯🇵 日本語</option>
+        <option value="es">🇪🇸 Español</option>
+        <option value="fr">🇫🇷 Français</option>
+        <option value="de">🇩🇪 Deutsch</option>
+        <option value="pt">🇧🇷 Português</option>
+        <option value="ko">🇰🇷 한국어</option>
+        <option value="zh">🇨🇳 中文</option>
+      </select>
+    </div>
+  </nav>
+
+  <main class="main-content">
+    <div class="content-header">
+      <h1>Go-to-Market Capacity Planning App: End-to-End Walkthrough</h1>
+      <p class="subtitle">Understanding the generated Capacity UX application</p>
+    </div>
+    <div class="content-body">
+
+      <p>The Capacity app answers one question: <strong>how many people do I need to hire, when, and where, to hit my revenue target?</strong> It combines tops-down guardrail setting (finance-driven) with bottoms-up tactical hiring planning (field-driven). The core output is a month-by-month hiring plan by role and geography.</p>
+
+      <h2>App Overview</h2>
+      <ul>
+        <li>Access the <strong>Capacity UX Demo App</strong> in your partner workspace</li>
+        <li>The app is highly scenario-driven — multiple scenarios appear on almost every page</li>
+        <li><strong>Always check workflow status (top right)</strong> before making changes — locked scenarios can't be edited</li>
+      </ul>
+      <figure class="screenshot">
+        <img src="../img/day2/14-cap-ramp-profile.png" alt="Capacity app ramp profile setup" style="width:100%;border-radius:6px;border:1px solid #e2e8f0;">
+        <figcaption style="font-size:0.8rem;color:#6b7280;margin-top:0.4rem;text-align:center;">Capacity app — ramp profile by sales role, the foundation of all productivity calculations</figcaption>
+      </figure>
+
+      <hr>
+
+      <h2>1. Data &amp; Role Setup</h2>
+
+      <h3>Ramp Profile by Sales Role</h3>
+      <p>For each sales role, define the monthly productivity ramp — what percentage of full productivity the rep operates at in each month of tenure.</p>
+      <ul>
+        <li>Example AE ramp: Month 1 = 0%, Month 2 = 20%, Month 3 = 50%, Month 4 = 75%, Month 5+ = 100%</li>
+        <li>FTE = active headcount × revenue profile for that month (based on hire date)</li>
+        <li><strong>Hire date rule:</strong> hired in the first half of the month → ramp starts that month. Hired in the second half → ramp starts next month.</li>
+        <li>This drives <em>all</em> productivity calculations downstream — get this right first</li>
+      </ul>
+
+      <h3>Historical Performance by Role</h3>
+      <ul>
+        <li>Shows historical win rates, average deal size, and velocity by role and configured dimensions</li>
+        <li>Non-direct seller roles (overlay, CS) may have blank tables — they're not attached to opportunities directly</li>
+        <li>Use to baseline productivity assumptions: "average AE closed $X last year → inform next year's productivity model"</li>
+      </ul>
+      <figure class="screenshot">
+        <img src="../img/day2/14-cap-historical-perf.png" alt="Historical performance by sales role" style="width:100%;border-radius:6px;border:1px solid #e2e8f0;">
+        <figcaption style="font-size:0.8rem;color:#6b7280;margin-top:0.4rem;text-align:center;">Historical performance by role — baselining productivity assumptions for next year</figcaption>
+      </figure>
+
+      <hr>
+
+      <h2>2. Coverage &amp; Ratios</h2>
+      <p>Define which roles cover which account segments, and at what ratio.</p>
+      <ul>
+        <li><strong>Account-based coverage (direct sellers):</strong> 1 AE per N accounts</li>
+        <li><strong>Derived coverage (overlay/support):</strong> 1 generalist per N AEs, 1 manager per N AEs</li>
+        <li><strong>Segment mapping:</strong> shows account counts in each segment — this is the critical connection point to the Segmentation app</li>
+      </ul>
+      <figure class="screenshot">
+        <img src="../img/day2/14-cap-coverage-ratios.png" alt="Coverage ratios and segment mapping" style="width:100%;border-radius:6px;border:1px solid #e2e8f0;">
+        <figcaption style="font-size:0.8rem;color:#6b7280;margin-top:0.4rem;text-align:center;">Coverage ratios — role-to-segment mapping showing the direct connection to Segmentation outputs</figcaption>
+      </figure>
+      <div class="callout-tip">
+        <strong>This is the Segmentation → Capacity connection point.</strong> If your segmentation exercise moved 500 accounts from Commercial to SMB, that change shows up in this segment mapping table and directly affects how many SMB AEs the coverage ratio says you need. Show customers this link explicitly.
+      </div>
+
+      <hr>
+
+      <h2>3. Tops-Down Planning (NTE Setting)</h2>
+
+      <p><strong>Concept:</strong> Finance provides a revenue target + budget. Working from the top of the geo hierarchy, you allocate headcount guidance downward — creating Not-to-Exceed (NTE) numbers that constrain the bottoms-up plan at every level below.</p>
+
+      <h3>Process (multi-step, top to bottom)</h3>
+      <ol>
+        <li><strong>At the geo level (all Americas):</strong> Plan Core vs. Support headcount by Job Family Group</li>
+        <li><strong>Within Core:</strong> Break down by Job Family (AEs, Managers, Pre-Sales, Overlay, CS)</li>
+        <li><strong>Last level:</strong> Break down to Sales Role level (Strategic AE, Commercial AE, etc.)</li>
+      </ol>
+      <p>At each step: suggested headcount is shown (calculated from coverage ratios + productivity assumptions), plan headcount is entered, and the system flags if you're significantly over or under the suggestion.</p>
+      <p><strong>Workflow:</strong> submit/lock each level when done — this creates the NTE for the level below. Once locked, the level below cannot exceed it without a workflow change request.</p>
+      <figure class="screenshot">
+        <img src="../img/day2/14-cap-topdown-hiring.png" alt="Tops-down headcount planning" style="width:100%;border-radius:6px;border:1px solid #e2e8f0;">
+        <figcaption style="font-size:0.8rem;color:#6b7280;margin-top:0.4rem;text-align:center;">Tops-down planning — NTE setting with suggested vs. planned headcount by role and scenario</figcaption>
+      </figure>
+      <div class="callout-note">
+        <strong>The simplest approach is to copy the suggested headcount numbers.</strong> That's not always realistic — there's always budget pressure and gives-and-takes — but it's the baseline. In demos, start by copying suggestions to show the workflow, then adjust to demonstrate the constraint mechanism.
+      </div>
+      <p><strong>NTE visual:</strong> Bar chart showing planned vs. suggested headcount across scenarios. Green = within NTE, red = over.</p>
+
+      <hr>
+
+      <h2>4. Bottoms-Up Planning (Tactical Hiring)</h2>
+
+      <p><strong>Concept:</strong> Planners at the territory or geo level enter their actual hiring plan month-by-month, constrained by the NTE from tops-down. The model answers: if you hire these people on these dates, with this ramp, will you hit your revenue target?</p>
+
+      <h3>The Holy Grail Page</h3>
+      <ul>
+        <li>Shows: current headcount, NTE ceiling, and planned hires by month</li>
+        <li>Visual: rolling revenue target line vs. projected revenue contribution from planned headcount (factoring in ramp + productivity)</li>
+        <li>Goal: close the gap between your current team's projected output and the revenue target by hiring the right people at the right time</li>
+        <li><strong>Timing matters:</strong> hire someone in January vs. April = months of ramp difference = material revenue impact on the year</li>
+      </ul>
+      <figure class="screenshot">
+        <img src="../img/day2/14-cap-bottoms-up.png" alt="Bottoms-up hiring plan — the holy grail page" style="width:100%;border-radius:6px;border:1px solid #e2e8f0;">
+        <figcaption style="font-size:0.8rem;color:#6b7280;margin-top:0.4rem;text-align:center;">Bottoms-up planning — hire X people on Y dates, see exactly when you close the gap to revenue target</figcaption>
+      </figure>
+      <div class="callout-important">
+        <strong>This is the output page.</strong> Everything else in the model builds toward this. When you're demoing the Capacity app to customers, lead with this page or build to it quickly. "Hire 2 AEs in January, 3 in April, and here's exactly when you'll close the gap to target." That's the story.
+      </div>
+
+      <hr>
+
+      <h2>5. Snapshots &amp; In-Year Comparison</h2>
+      <ul>
+        <li><strong>AOP snapshot:</strong> Take a snapshot of the annual operating plan when it's finalized — locks the baseline</li>
+        <li><strong>In-year comparison:</strong> As the year progresses, compare actual hiring vs. AOP snapshot</li>
+        <li>Example: "I planned to hire 3 people in Q1. I actually hired 5. Here's the revenue impact of that over-hiring."</li>
+        <li>Useful for quarterly business reviews with leadership — shows plan vs. actuals in headcount and revenue</li>
+      </ul>
+      <figure class="screenshot">
+        <img src="../img/day2/14-cap-snapshot.png" alt="AOP snapshot and in-year comparison" style="width:100%;border-radius:6px;border:1px solid #e2e8f0;">
+        <figcaption style="font-size:0.8rem;color:#6b7280;margin-top:0.4rem;text-align:center;">Snapshot &amp; in-year comparison — plan vs. actual hiring and revenue impact</figcaption>
+      </figure>
+
+      <hr>
+
+      <h2>6. Non-Direct &amp; Derived Roles</h2>
+      <ul>
+        <li>After planning direct sellers, derived roles (managers, generalists, overlay) are calculated automatically based on configured ratios</li>
+        <li>You can still override timing and specific numbers for non-direct roles if needed</li>
+        <li><strong>Scenario comparison:</strong> Run side-by-side views of different hiring scenarios — e.g., conservative vs. aggressive AE hiring, compare the revenue trajectory difference</li>
+      </ul>
+
+      <hr>
+
+      <h2>7. Cost Analysis &amp; Reporting</h2>
+      <ul>
+        <li>Cost assumptions (salary, benefits, draw) feed into cost modeling</li>
+        <li><strong>Financial liability page:</strong> Models when you "earn back" the cost of a hire based on their ramp and seasonality — the "payback period" for each hire</li>
+        <li><strong>ROI analysis:</strong> If I add a product specialist overlay to a region, what's the incremental revenue impact vs. the cost?</li>
+        <li>These are backend-heavy pages — not primary customer demo material but useful for finance and RevOps discussions</li>
+      </ul>
+
+      <hr>
+
+      <h2>What to Demo to Customers (20–30 min)</h2>
+      <ol>
+        <li><strong>Ramp profile</strong> — show the productivity assumptions by role</li>
+        <li><strong>Coverage ratios</strong> — show the segment-to-role mapping and the explicit connection to Segmentation outputs</li>
+        <li><strong>Tops-down (one level)</strong> — show the NTE concept and the suggested vs. planned headcount</li>
+        <li><strong>Bottoms-up holy grail page</strong> — hire X people, see the revenue gap close in real time</li>
+        <li><strong>Scenario comparison</strong> — show two scenarios side by side</li>
+      </ol>
+
+      <div class="callout-note">
+        <strong>Calibration note from real workshop experience:</strong> When Anaplan used this tool internally for their own capacity planning, even their own team found the full app too complex — too many features turned on. They had to strip it back significantly. When implementing for customers, start with the minimum configuration needed to answer the core question: <em>how many people do we need to hire and when?</em> Add complexity only when there's clear demand and demonstrated value.
+      </div>
+
+    </div>
+  </main>
+  <script src="../js/nav.js"></script>
+</body>
+</html>

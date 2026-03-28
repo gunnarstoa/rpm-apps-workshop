@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Segmentation & Scoring App: End-to-End Walkthrough — RPM Apps Lab Guide</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div class="mobile-header">
+    <button id="hamburger">☰</button>
+    <span>RPM Apps Lab Guide</span>
+  </div>
+
+  <nav class="sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-title">RPM Apps Workshop</div>
+      <div class="sidebar-subtitle">T&amp;Q Lab Guide — Day 1</div>
+    </div>
+    <ul class="nav-list">
+      <li class="nav-section-title">Getting Started</li>
+      <li><a class="nav-link" href="./00-overview.html">Workshop Overview</a></li>
+      <li class="nav-section-title">Day 1 — T&amp;Q</li>
+      <li><a class="nav-link" href="./01-spm-overview.html">SPM/RPM Overview</a></li>
+      <li><a class="nav-link" href="./02-anaplan-way.html">Anaplan Way for Apps</a></li>
+      <li><a class="nav-link" href="./03-configurator-walkthrough.html">Configurator Walkthrough</a></li>
+      <li><a class="nav-link" href="./04-configurator-exercise.html">Lab: Configurator Exercise</a></li>
+      <li><a class="nav-link" href="./05-post-gen-steps.html">Post-Generation Steps</a></li>
+      <li><a class="nav-link" href="./06-ado-integration.html">Data Integration &amp; ADO</a></li>
+      <li><a class="nav-link" href="./07-spoke-app-walkthrough.html">Spoke App Walkthrough</a></li>
+      <li><a class="nav-link" href="./08-extensions.html">Common Extensions</a></li>
+      <li class="nav-section-title">Day 2 — Seg &amp; Capacity</li>
+      <li><a class="nav-link" href="./09-day2-overview.html">Day 2 Overview</a></li>
+      <li><a class="nav-link" href="./10-segmentation-configurator.html">Segmentation Configurator</a></li>
+      <li><a class="nav-link" href="./11-capacity-configurator.html">Capacity Configurator</a></li>
+      <li><a class="nav-link" href="./12-seg-cap-exercise.html">Lab: Seg &amp; Cap Exercise</a></li>
+      <li><a class="nav-link active" href="./13-segmentation-walkthrough.html">Segmentation App Walkthrough</a></li>
+      <li><a class="nav-link" href="./14-capacity-walkthrough.html">Capacity App Walkthrough</a></li>
+      <li><a class="nav-link" href="./15-whats-coming.html">What's Coming</a></li>
+      <li class="nav-section-title">Reference</li>
+      <li><a class="nav-link" href="./16-qanda.html">Q&amp;A from Sessions</a></li>
+      <li><a class="nav-link" href="./17-resources.html">Resources &amp; Downloads</a></li>
+    </ul>
+    <div class="lang-switcher">
+      <span class="lang-switcher-label">🌐 Language</span>
+      <select id="lang-select" class="lang-select">
+        <option value="en">🇺🇸 English</option>
+        <option value="ja">🇯🇵 日本語</option>
+        <option value="es">🇪🇸 Español</option>
+        <option value="fr">🇫🇷 Français</option>
+        <option value="de">🇩🇪 Deutsch</option>
+        <option value="pt">🇧🇷 Português</option>
+        <option value="ko">🇰🇷 한국어</option>
+        <option value="zh">🇨🇳 中文</option>
+      </select>
+    </div>
+  </nav>
+
+  <main class="main-content">
+    <div class="content-header">
+      <h1>Segmentation &amp; Scoring App: End-to-End Walkthrough</h1>
+      <p class="subtitle">Understanding the generated Segmentation UX application</p>
+    </div>
+    <div class="content-body">
+
+      <p>The Segmentation app answers one core question: <strong>which segment does each account belong to, and why?</strong> This drives territory carving in T&amp;Q and headcount planning in Capacity. A 15–20 minute customer demo should focus almost entirely on sections 4 and 5 — rule-based and score-based segmentation.</p>
+
+      <h2>App Overview</h2>
+      <ul>
+        <li>Access the <strong>Segmentation Demo UX App</strong> in your partner workspace</li>
+        <li>The app processes all accounts through scoring and/or rule-based logic to arrive at a final segment for each account</li>
+        <li>Key output: a segment attribute per account that flows into T&amp;Q (territory carving) and Capacity (headcount planning)</li>
+      </ul>
+
+      <hr>
+
+      <h2>1. Historical Performance</h2>
+      <p>Shows historical performance data by sales hierarchy and configurable dimensions.</p>
+      <ul>
+        <li>Purpose: baseline understanding of how different account types have performed historically</li>
+        <li>Filters on the left apply to visuals on the right</li>
+        <li><strong>Low priority for customer demo</strong> — spend your time on sections 4 and 5 instead</li>
+      </ul>
+      <figure class="screenshot">
+        <img src="../img/day2/13-seg-app-overview.png" alt="Segmentation app overview — historical performance page" style="width:100%;border-radius:6px;border:1px solid #e2e8f0;">
+        <figcaption style="font-size:0.8rem;color:#6b7280;margin-top:0.4rem;text-align:center;">Segmentation app overview — historical performance by account type and hierarchy</figcaption>
+      </figure>
+
+      <hr>
+
+      <h2>2. Account Hierarchy Setup</h2>
+      <p>Review and manage parent-subsidiary relationships before running segmentation.</p>
+      <ul>
+        <li>Key toggle: are you segmenting at the <strong>parent level</strong> or the <strong>lowest account level</strong>?</li>
+        <li>Ability to <strong>"separate"</strong> an account from its Global Ultimate Parent — breaks the roll-up chain, making the account its own independent entity for segmentation purposes</li>
+        <li>Use case: a subsidiary that operates independently and should be segmented on its own merits, not inherited from the parent</li>
+      </ul>
+      <figure class="screenshot">
+        <img src="../img/day2/13-seg-account-hierarchy.png" alt="Account hierarchy setup in Segmentation app" style="width:100%;border-radius:6px;border:1px solid #e2e8f0;">
+        <figcaption style="font-size:0.8rem;color:#6b7280;margin-top:0.4rem;text-align:center;">Account hierarchy setup — managing parent-subsidiary relationships</figcaption>
+      </figure>
+
+      <hr>
+
+      <h2>3. Universal Coverage Population (UCP) — Eligibility Rules</h2>
+      <p>The UCP defines which accounts are <strong>in scope for segmentation</strong> — which ones will receive a segment at all. Accounts that don't meet any UCP inclusion criteria will not get a segment.</p>
+
+      <p>Two types of rules:</p>
+      <ul>
+        <li><strong>Inclusion rules:</strong> Accounts that match are included in the segmentation universe</li>
+        <li><strong>Exclusion rules:</strong> Accounts that match are removed from consideration entirely</li>
+      </ul>
+
+      <div class="callout-warning">
+        <strong>UI gotcha — the "exclude rule" checkbox is counterintuitive.</strong> When the checkbox is <em>checked</em>, the rule is active and will exclude matching accounts. When unchecked, the rule is inactive. The label reads like a double negative. Be prepared to explain this to customers — it trips up experienced users too.
+      </div>
+
+      <ul>
+        <li>Use case: remove tiny companies (&lt;10 employees) that will never be relevant prospects</li>
+        <li>Shows count of matched accounts in <strong>real time</strong> as you build rules — instant feedback</li>
+      </ul>
+      <figure class="screenshot">
+        <img src="../img/day2/13-seg-ucp-rules.png" alt="UCP eligibility rule builder" style="width:100%;border-radius:6px;border:1px solid #e2e8f0;">
+        <figcaption style="font-size:0.8rem;color:#6b7280;margin-top:0.4rem;text-align:center;">UCP rule builder — real-time account count feedback as rules are added</figcaption>
+      </figure>
+
+      <hr>
+
+      <h2>4. Rule-Based Segmentation <em>(Core Demo Section)</em></h2>
+      <p>Define explicit rules per segment: if an account meets these attribute conditions → it gets assigned to this segment.</p>
+      <ul>
+        <li>All rules within a segment are additive — if an account matches two different Strategic rules, it's still Strategic</li>
+        <li>Attributes must be list-formatted (as configured in the Configurator)</li>
+        <li>Example rules:
+          <ul>
+            <li><strong>Strategic</strong> = high wallet tier + enterprise industry + revenue band &gt; $10M</li>
+            <li><strong>Named</strong> = large employee count + key target industry (but below Strategic threshold)</li>
+          </ul>
+        </li>
+        <li>Rules for each segment stack — more specific conditions narrow the account count shown in real time</li>
+        <li>Account count updates <strong>in real time</strong> as you add conditions — immediately tangible</li>
+      </ul>
+      <figure class="screenshot">
+        <img src="../img/day2/13-seg-rule-based.png" alt="Rule-based segmentation configuration" style="width:100%;border-radius:6px;border:1px solid #e2e8f0;">
+        <figcaption style="font-size:0.8rem;color:#6b7280;margin-top:0.4rem;text-align:center;">Rule-based segmentation — real-time account count as attribute conditions are added</figcaption>
+      </figure>
+      <div class="callout-tip">
+        <strong>Spend the bulk of your customer demo here.</strong> This is what they'll actually use day-to-day. Show them how adding a condition narrows the account count in real time — it's immediately tangible and answers the "does it actually work?" question on the spot.
+      </div>
+
+      <hr>
+
+      <h2>5. Score-Based Segmentation</h2>
+      <p>Every account gets a numeric score (0–10 by default) based on weighted metrics. That score maps to a segment via the rubric defined in Admin.</p>
+      <ul>
+        <li>Acts as a <strong>catch-all</strong>: accounts that don't meet rule-based criteria still get a segment via scoring</li>
+        <li>Rule-based can be configured to override score-based when both apply</li>
+        <li><strong>Score distribution chart:</strong> shows how many accounts fall into each scoring bucket — great for calibrating with customers ("you said you want 10% Strategic — let's see if the scoring gets us there")</li>
+      </ul>
+      <figure class="screenshot">
+        <img src="../img/day2/13-seg-score-based.png" alt="Score-based segmentation and distribution chart" style="width:100%;border-radius:6px;border:1px solid #e2e8f0;">
+        <figcaption style="font-size:0.8rem;color:#6b7280;margin-top:0.4rem;text-align:center;">Score-based segmentation — scoring metrics, weights, and account distribution chart</figcaption>
+      </figure>
+      <div class="callout-important">
+        <strong>Score-based and rule-based are complementary, not competing.</strong> Score-based gives every account a segment. Rule-based overrides the score for accounts that explicitly meet your defined conditions. Use both. If you only use rule-based, accounts that don't match any rule are left unassigned — a problem in production.
+      </div>
+
+      <hr>
+
+      <h2>6. Segment Inflow / Outflow</h2>
+      <p>Shows how accounts are <strong>moving between segments</strong> as a result of your segmentation exercise. Compares the incoming segment (from CRM/upstream system) to the new segment this app is assigning.</p>
+      <ul>
+        <li>Powerful for demonstrating the business impact of a re-segmentation exercise to leadership</li>
+        <li>Example: "You're moving 500 accounts from Commercial to SMB, and 120 from Named to Strategic — here's what that means for your headcount requirements in Capacity."</li>
+        <li>This is the <strong>key connection point to Capacity Planning</strong></li>
+      </ul>
+      <figure class="screenshot">
+        <img src="../img/day2/13-seg-inflow-outflow.png" alt="Segment inflow/outflow analysis" style="width:100%;border-radius:6px;border:1px solid #e2e8f0;">
+        <figcaption style="font-size:0.8rem;color:#6b7280;margin-top:0.4rem;text-align:center;">Segment inflow/outflow — comparing current vs. new segments and business impact</figcaption>
+      </figure>
+
+      <hr>
+
+      <h2>7. GTM Hierarchy Planning (Segmentation → T&amp;Q Bridge)</h2>
+      <p>A sandbox environment for modeling next year's territory hierarchy structure before committing anything to T&amp;Q.</p>
+      <ul>
+        <li>Create a new hierarchy from scratch: define nodes, parent relationships, and rules for which accounts fall into each node</li>
+        <li>Visualize via hierarchy tree card</li>
+        <li><strong>Resource alerts (V2):</strong> flags if your planned hierarchy is unbalanced — too many accounts in one node, too few in another</li>
+        <li>Completely separate from the live hierarchy — changes here don't affect T&amp;Q until exported</li>
+        <li>V2 improvement: much more intuitive with significantly better reporting on hierarchy balance</li>
+      </ul>
+      <figure class="screenshot">
+        <img src="../img/day2/13-seg-gtm-hierarchy.png" alt="GTM hierarchy planning in Segmentation app" style="width:100%;border-radius:6px;border:1px solid #e2e8f0;">
+        <figcaption style="font-size:0.8rem;color:#6b7280;margin-top:0.4rem;text-align:center;">GTM hierarchy planning — sandbox for modeling next year's territory structure</figcaption>
+      </figure>
+      <div class="callout-note">
+        <strong>No native connection to T&amp;Q.</strong> When you finalize your planning hierarchy in Segmentation, you'll have a hierarchy structure that can then be integrated into T&amp;Q — but it's a manual export/import step. There is no automatic sync. This is an area that will improve in future versions.
+      </div>
+
+      <hr>
+
+      <h2>What to Demo to Customers (15–20 min)</h2>
+      <ol>
+        <li><strong>UCP rules</strong> — show how you filter the account universe and see real-time counts</li>
+        <li><strong>Rule-based segmentation</strong> — show real-time account count as rules are added (this is the money shot)</li>
+        <li><strong>Score-based</strong> — show the distribution chart and calibrate to target segment mix</li>
+        <li><strong>Inflow/outflow</strong> — show the business impact of re-segmentation</li>
+        <li><strong>Wallet size</strong> (if applicable) — show the math and the whitespace calculation</li>
+      </ol>
+
+      <h2>What to Skip in Customer Demos</h2>
+      <ul>
+        <li><strong>Historical performance page</strong> — low value for the time it takes</li>
+        <li><strong>Backend admin pages</strong> — not relevant to business users</li>
+        <li><strong>Wallet size detail pages</strong> — unless the customer specifically cares about whitespace analysis</li>
+      </ul>
+
+    </div>
+  </main>
+  <script src="../js/nav.js"></script>
+</body>
+</html>

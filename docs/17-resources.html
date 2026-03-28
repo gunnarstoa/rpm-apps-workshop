@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resources & Downloads — RPM Apps Lab Guide</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .resource-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    @media (max-width: 768px) { .resource-grid { grid-template-columns: 1fr; } }
+    .resource-card {
+      background: #fff;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius);
+      padding: 1.25rem;
+      transition: box-shadow 0.15s;
+    }
+    .resource-card:hover { box-shadow: var(--shadow-md); }
+    .resource-card h3 { font-size: 0.95rem; color: var(--color-primary); margin-bottom: 0.5rem; }
+    .resource-card p { font-size: 0.82rem; color: var(--color-text-muted); margin-bottom: 0.75rem; }
+    .resource-list { list-style: none; padding: 0; }
+    .resource-list li { margin-bottom: 0.4rem; }
+    .resource-list a {
+      font-size: 0.85rem;
+      color: var(--color-primary);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .resource-list a:hover { text-decoration: underline; }
+    .file-icon { font-size: 1rem; flex-shrink: 0; }
+    .section-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--color-text-muted);
+      margin: 2rem 0 0.75rem;
+      padding-bottom: 0.4rem;
+      border-bottom: 1px solid var(--color-border);
+    }
+  </style>
+</head>
+<body>
+  <div class="mobile-header">
+    <button id="hamburger">☰</button>
+    <span>RPM Apps Lab Guide</span>
+  </div>
+
+  <nav class="sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-title">RPM Apps Workshop</div>
+      <div class="sidebar-subtitle">T&amp;Q Lab Guide — Day 1</div>
+    </div>
+    <ul class="nav-list">
+      <li class="nav-section-title">Getting Started</li>
+      <li><a class="nav-link" href="./00-overview.html">Workshop Overview</a></li>
+      <li class="nav-section-title">Day 1 — T&amp;Q</li>
+      <li><a class="nav-link" href="./01-spm-overview.html">SPM/RPM Overview</a></li>
+      <li><a class="nav-link" href="./02-anaplan-way.html">Anaplan Way for Apps</a></li>
+      <li><a class="nav-link" href="./03-configurator-walkthrough.html">Configurator Walkthrough</a></li>
+      <li><a class="nav-link" href="./04-configurator-exercise.html">Lab: Configurator Exercise</a></li>
+      <li><a class="nav-link" href="./05-post-gen-steps.html">Post-Generation Steps</a></li>
+      <li><a class="nav-link" href="./06-ado-integration.html">Data Integration &amp; ADO</a></li>
+      <li><a class="nav-link" href="./07-spoke-app-walkthrough.html">Spoke App Walkthrough</a></li>
+      <li><a class="nav-link" href="./08-extensions.html">Common Extensions</a></li>
+      <li class="nav-section-title">Day 2 — Seg &amp; Capacity</li>
+      <li><a class="nav-link" href="./09-day2-overview.html">Day 2 Overview</a></li>
+      <li><a class="nav-link" href="./10-segmentation-configurator.html">Segmentation Configurator</a></li>
+      <li><a class="nav-link" href="./11-capacity-configurator.html">Capacity Configurator</a></li>
+      <li><a class="nav-link" href="./12-seg-cap-exercise.html">Lab: Seg &amp; Cap Exercise</a></li>
+      <li><a class="nav-link" href="./13-segmentation-walkthrough.html">Segmentation App Walkthrough</a></li>
+      <li><a class="nav-link" href="./14-capacity-walkthrough.html">Capacity App Walkthrough</a></li>
+      <li><a class="nav-link" href="./15-whats-coming.html">What's Coming</a></li>
+      <li class="nav-section-title">Reference</li>
+      <li><a class="nav-link" href="./16-qanda.html">Q&amp;A from Sessions</a></li>
+      <li><a class="nav-link" href="./17-resources.html">Resources &amp; Downloads</a></li>
+    </ul>
+    <div class="lang-switcher">
+      <span class="lang-switcher-label">🌐 Language</span>
+      <select id="lang-select" class="lang-select">
+        <option value="en">🇺🇸 English</option>
+        <option value="ja">🇯🇵 日本語</option>
+        <option value="es">🇪🇸 Español</option>
+        <option value="fr">🇫🇷 Français</option>
+        <option value="de">🇩🇪 Deutsch</option>
+        <option value="pt">🇧🇷 Português</option>
+        <option value="ko">🇰🇷 한국어</option>
+        <option value="zh">🇨🇳 中文</option>
+      </select>
+    </div>
+  </nav>
+
+  <main class="main-content">
+    <div class="content-header">
+      <h1>Resources &amp; Downloads</h1>
+      <p class="subtitle">Official Anaplan Apps team collateral from the NY Connect 2026 Workshop</p>
+    </div>
+    <div class="content-body">
+
+      <div class="callout-tip">
+        <strong>How to use these files</strong><br>
+        These are the actual materials provided by the Anaplan Apps team. Use them as-is with your customers, add your logo, or draw inspiration. Yellow-tabbed slides in the kickoff deck are customer-specific; red-tabbed slides are reusable T&amp;Q content.
+      </div>
+
+      <p class="section-label">Territory &amp; Quota (T&amp;Q)</p>
+      <div class="resource-grid">
+
+        <div class="resource-card">
+          <h3>📋 Implementation Guide</h3>
+          <p>End-to-end T&amp;Q implementation methodology, session recommendations, and delivery guidance.</p>
+          <ul class="resource-list">
+            <li><a href="../collateral/RPM Apps - NY Connect 26 Workshop/TQ App Documentation + Collateral/T&Q Planning App Implementation Guide V2.0.docx"><span class="file-icon">📄</span> T&amp;Q Implementation Guide V2.0</a></li>
+            <li><a href="../collateral/RPM Apps - NY Connect 26 Workshop/TQ App Documentation + Collateral/Application Specific Configuration Kickoff Template.pptx"><span class="file-icon">📊</span> Kickoff Deck Template</a></li>
+          </ul>
+        </div>
+
+        <div class="resource-card">
+          <h3>🗄️ Data Prep &amp; Discovery</h3>
+          <p>Data preparation workbook and discovery template for scoping T&amp;Q implementations.</p>
+          <ul class="resource-list">
+            <li><a href="../collateral/RPM Apps - NY Connect 26 Workshop/TQ App Documentation + Collateral/T&Q Planning App Data Prep Workbook V2.0.xlsx"><span class="file-icon">📊</span> Data Prep Workbook V2.0</a></li>
+            <li><a href="../collateral/RPM Apps - NY Connect 26 Workshop/TQ App Documentation + Collateral/Discovery Template - TnQ v3.xlsx"><span class="file-icon">📊</span> Discovery Template (V3)</a></li>
+          </ul>
+        </div>
+
+        <div class="resource-card">
+          <h3>🔧 Technical &amp; Functional Overviews</h3>
+          <p>Deep-dive technical and business-facing overview decks — use for pre-sales or internal enablement.</p>
+          <ul class="resource-list">
+            <li><a href="../collateral/RPM Apps - NY Connect 26 Workshop/TQ App Documentation + Collateral/T&Q Planning App Technical Overview V2.0.pptx"><span class="file-icon">📊</span> Technical Overview V2.0</a></li>
+            <li><a href="../collateral/RPM Apps - NY Connect 26 Workshop/TQ App Documentation + Collateral/Territory and Quota Planning Application Functional Overview.pptx"><span class="file-icon">📊</span> Functional Overview</a></li>
+          </ul>
+        </div>
+
+        <div class="resource-card">
+          <h3>📝 Post-Generation &amp; UAT</h3>
+          <p>Post-gen checklist, extension estimates, and deployment planning tools.</p>
+          <ul class="resource-list">
+            <li><a href="../collateral/RPM Apps - NY Connect 26 Workshop/TQ App Documentation + Collateral/DRAFT - T&Q Planning App Post-Generation Updates V2.0.pptx"><span class="file-icon">📊</span> Post-Gen Updates Checklist V2.0</a></li>
+            <li><a href="../collateral/RPM Apps - NY Connect 26 Workshop/TQ App Documentation + Collateral/Deployment Cutover Plan and Tasks (UAT _ PROD).xlsx"><span class="file-icon">📊</span> UAT &amp; Production Cutover Plan</a></li>
+            <li><a href="../collateral/RPM Apps - NY Connect 26 Workshop/TQ App Documentation + Collateral/TQ Application Extension Estimation Template.xlsx"><span class="file-icon">📊</span> Extension Estimation Template</a></li>
+            <li><a href="../collateral/RPM Apps - NY Connect 26 Workshop/TQ App Documentation + Collateral/TnQ Extension Suggestions.xlsx"><span class="file-icon">📊</span> Extension Suggestions List</a></li>
+          </ul>
+        </div>
+
+        <div class="resource-card">
+          <h3>📖 User Stories &amp; Admin Runbook</h3>
+          <p>Out-of-box user stories for UAT, and the Optimizer admin runbook.</p>
+          <ul class="resource-list">
+            <li><a href="../collateral/RPM Apps - NY Connect 26 Workshop/TQ App Documentation + Collateral/T&Q Planning App OOTB User Stories V2.0.xlsx"><span class="file-icon">📊</span> OOTB User Stories V2.0</a></li>
+            <li><a href="../collateral/RPM Apps - NY Connect 26 Workshop/TQ App Documentation + Collateral/Sales Territories Optimizer Admin RunBook V2.0.docx"><span class="file-icon">📄</span> Optimizer Admin Runbook V2.0</a></li>
+          </ul>
+        </div>
+
+        <div class="resource-card">
+          <h3>🧪 Configurator Exercise</h3>
+          <p>CloudWorks case study and exercise dataset files used in the workshop.</p>
+          <ul class="resource-list">
+            <li><a href="../collateral/RPM Apps - NY Connect 26 Workshop/Configurator CloudWorks_Case_Study_Handout.docx"><span class="file-icon">📄</span> CloudWorks Case Study</a></li>
+            <li><a href="../collateral/RPM Apps - NY Connect 26 Workshop/TQ Configurator Exercise/TnQ v2 Configurator Exercise  2026.pptx"><span class="file-icon">📊</span> Configurator Exercise Deck</a></li>
+            <li><a href="../collateral/RPM Apps - NY Connect 26 Workshop/TQ Configurator Exercise/Configurator Exercise Account_Flat File.csv"><span class="file-icon">📁</span> Account Flat File (CSV)</a></li>
+            <li><a href="../collateral/RPM Apps - NY Connect 26 Workshop/TQ Configurator Exercise/Configurator Exercise Employee File.xlsx"><span class="file-icon">📊</span> Employee File</a></li>
+            <li><a href="../collateral/RPM Apps - NY Connect 26 Workshop/TQ Configurator Exercise/Configurator Exercise Opportunity line File.csv"><span class="file-icon">📁</span> Opportunity Line File (CSV)</a></li>
+            <li><a href="../collateral/RPM Apps - NY Connect 26 Workshop/TQ Configurator Exercise/Configurator Exercise Territory_Flat File.csv"><span class="file-icon">📁</span> Territory Flat File (CSV)</a></li>
+          </ul>
+        </div>
+
+        <div class="resource-card">
+          <h3>🏋️ Post-Gen Exercise</h3>
+          <p>T&amp;Q post-generation exercise materials from the workshop.</p>
+          <ul class="resource-list">
+            <li><a href="../collateral/RPM Apps - NY Connect 26 Workshop/TQ Post-Gen Exercise/TnQ Post-Gen Exercise Draft Winter 2026.pptx"><span class="file-icon">📊</span> Post-Gen Exercise Deck</a></li>
+            <li><a href="../collateral/RPM Apps - NY Connect 26 Workshop/TQ Post-Gen Exercise/DE_Area Targets.csv"><span class="file-icon">📁</span> Area Targets CSV</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <p class="section-label">Account Segmentation &amp; Scoring</p>
+      <div class="resource-grid">
+
+        <div class="resource-card">
+          <h3>📋 Implementation &amp; Data Prep</h3>
+          <p>Implementation guide and data preparation workbook for the Segmentation app.</p>
+          <ul class="resource-list">
+            <li><a href="../collateral/RPM Apps - NY Connect 26 Workshop/Segmentation App Documentation + Collateral/Account Seg&Score App Implementation Guide V1.docx"><span class="file-icon">📄</span> Implementation Guide V1</a></li>
+            <li><a href="../collateral/RPM Apps - NY Connect 26 Workshop/Segmentation App Documentation + Collateral/Segmentation and Scoring App Data Prep Workbook.xlsx"><span class="file-icon">📊</span> Data Prep Workbook</a></li>
+            <li><a href="../collateral/RPM Apps - NY Connect 26 Workshop/Segmentation App Documentation + Collateral/Seg & Scoring App Scoping & Sizing Questionnaire.xlsx"><span class="file-icon">📊</span> Scoping &amp; Sizing Questionnaire</a></li>
+          </ul>
+        </div>
+
+        <div class="resource-card">
+          <h3>🔧 Technical &amp; Functional Overviews</h3>
+          <p>Technical and business-facing overview decks for Segmentation.</p>
+          <ul class="resource-list">
+            <li><a href="../collateral/RPM Apps - NY Connect 26 Workshop/Segmentation App Documentation + Collateral/Segmentation and Scoring App Technical Overview.pptx"><span class="file-icon">📊</span> Technical Overview</a></li>
+            <li><a href="../collateral/RPM Apps - NY Connect 26 Workshop/Segmentation App Documentation + Collateral/Segmentation Planning Application Functional Overview.pptx"><span class="file-icon">📊</span> Functional Overview</a></li>
+          </ul>
+        </div>
+
+        <div class="resource-card">
+          <h3>📝 Post-Gen, User Stories &amp; Runbook</h3>
+          <p>Post-generation checklist, OOTB user stories, and admin runbook.</p>
+          <ul class="resource-list">
+            <li><a href="../collateral/RPM Apps - NY Connect 26 Workshop/Segmentation App Documentation + Collateral/Segmentation App Post-Generation Updates.pptx"><span class="file-icon">📊</span> Post-Gen Updates Checklist</a></li>
+            <li><a href="../collateral/RPM Apps - NY Connect 26 Workshop/Segmentation App Documentation + Collateral/Account Seg&Score App OOTB User Stories V0.9.xlsx"><span class="file-icon">📊</span> OOTB User Stories V0.9</a></li>
+            <li><a href="../collateral/RPM Apps - NY Connect 26 Workshop/Segmentation App Documentation + Collateral/Segmenation and Scoring App Admin RunBook.docx"><span class="file-icon">📄</span> Admin Runbook</a></li>
+          </ul>
+        </div>
+
+        <div class="resource-card">
+          <h3>🧪 Post-Gen Exercise</h3>
+          <p>Segmentation &amp; Capacity combined post-gen exercise from Day 2.</p>
+          <ul class="resource-list">
+            <li><a href="../collateral/RPM Apps - NY Connect 26 Workshop/SG + CP Post-Gen Exercise/SG_CP Post Gen Exercise.pptx"><span class="file-icon">📊</span> Seg &amp; Cap Post-Gen Exercise</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <p class="section-label">Go-to-Market Capacity Planning</p>
+      <div class="resource-grid">
+
+        <div class="resource-card">
+          <h3>📋 Implementation &amp; Data Prep</h3>
+          <p>Implementation guide and data preparation workbook for the Capacity app.</p>
+          <ul class="resource-list">
+            <li><a href="../collateral/RPM Apps - NY Connect 26 Workshop/Capacity App Documentation + Collateral/GTM Capacity Planning App Implementation Guide V1.docx"><span class="file-icon">📄</span> Implementation Guide V1</a></li>
+            <li><a href="../collateral/RPM Apps - NY Connect 26 Workshop/Capacity App Documentation + Collateral/GTM Capacity Planning App Data Prep Workbook.xlsx"><span class="file-icon">📊</span> Data Prep Workbook</a></li>
+            <li><a href="../collateral/RPM Apps - NY Connect 26 Workshop/Capacity App Documentation + Collateral/Capacity App Scoping & Sizing Questionnaire.xlsx"><span class="file-icon">📊</span> Scoping &amp; Sizing Questionnaire</a></li>
+          </ul>
+        </div>
+
+        <div class="resource-card">
+          <h3>🔧 Technical &amp; Functional Overviews</h3>
+          <p>Technical and business-facing overview decks for Capacity Planning.</p>
+          <ul class="resource-list">
+            <li><a href="../collateral/RPM Apps - NY Connect 26 Workshop/Capacity App Documentation + Collateral/Go-to-Market Capacity App Technical Overview.pptx"><span class="file-icon">📊</span> Technical Overview</a></li>
+            <li><a href="../collateral/RPM Apps - NY Connect 26 Workshop/Capacity App Documentation + Collateral/Go-to-Market Capacity Planning Functional Overview v1.1.0.pptx"><span class="file-icon">📊</span> Functional Overview v1.1</a></li>
+          </ul>
+        </div>
+
+        <div class="resource-card">
+          <h3>📝 Post-Gen, User Stories &amp; Runbook</h3>
+          <p>Post-generation checklist, OOTB user stories, and admin runbook.</p>
+          <ul class="resource-list">
+            <li><a href="../collateral/RPM Apps - NY Connect 26 Workshop/Capacity App Documentation + Collateral/GTM Capacity Planning App Post-Generation Updates.pptx"><span class="file-icon">📊</span> Post-Gen Updates Checklist</a></li>
+            <li><a href="../collateral/RPM Apps - NY Connect 26 Workshop/Capacity App Documentation + Collateral/GTM Capacity App OOTB User Stories V0.9.xlsx"><span class="file-icon">📊</span> OOTB User Stories V0.9</a></li>
+            <li><a href="../collateral/RPM Apps - NY Connect 26 Workshop/Capacity App Documentation + Collateral/GTM Capacity Planning App Admin Run Book.docx"><span class="file-icon">📄</span> Admin Runbook</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <p class="section-label">General Workshop Materials</p>
+      <div class="resource-grid">
+
+        <div class="resource-card">
+          <h3>📊 Workshop Overview &amp; Roadmap</h3>
+          <p>The RPM overview deck used in Day 1, and the What's Coming deck.</p>
+          <ul class="resource-list">
+            <li><a href="../collateral/RPM Apps - NY Connect 26 Workshop/RPM Overview FY26 - TQ App Enablement.pptx"><span class="file-icon">📊</span> RPM Overview FY26 — T&amp;Q Enablement</a></li>
+            <li><a href="../collateral/RPM Apps - NY Connect 26 Workshop/What is coming to RPM Apps March 2026.pptx"><span class="file-icon">📊</span> What's Coming in RPM Apps (March 2026)</a></li>
+            <li><a href="../collateral/RPM Apps - NY Connect 26 Workshop/ADO Overview.pptx"><span class="file-icon">📊</span> ADO Overview</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <script src="../js/nav.js"></script>
+</body>
+</html>

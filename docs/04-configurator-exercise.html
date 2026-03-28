@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lab: Configurator Exercise — T&amp;Q Lab Guide</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div class="mobile-header">
+    <button id="hamburger">☰</button>
+    <span>T&amp;Q Lab Guide</span>
+  </div>
+
+  <nav class="sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-title">RPM Apps Workshop</div>
+      <div class="sidebar-subtitle">T&amp;Q Lab Guide — Day 1</div>
+    </div>
+    <ul class="nav-list">
+      <li class="nav-section-title">Getting Started</li>
+      <li><a class="nav-link" href="./00-overview.html">Workshop Overview</a></li>
+      <li class="nav-section-title">Day 1 &mdash; T&amp;Q</li>
+      <li><a class="nav-link" href="./01-spm-overview.html">SPM/RPM Overview</a></li>
+      <li><a class="nav-link" href="./02-anaplan-way.html">Anaplan Way for Apps</a></li>
+      <li><a class="nav-link" href="./03-configurator-walkthrough.html">Configurator Walkthrough</a></li>
+      <li><a class="nav-link" href="./04-configurator-exercise.html">Lab: Configurator Exercise</a></li>
+      <li><a class="nav-link" href="./05-post-gen-steps.html">Post-Generation Steps</a></li>
+      <li><a class="nav-link" href="./06-ado-integration.html">Data Integration &amp; ADO</a></li>
+      <li><a class="nav-link" href="./07-spoke-app-walkthrough.html">Spoke App Walkthrough</a></li>
+      <li><a class="nav-link" href="./08-extensions.html">Common Extensions</a></li>
+      <li class="nav-section-title">Day 2 &mdash; Seg &amp; Capacity</li>
+      <li><a class="nav-link" href="./09-day2-overview.html">Day 2 Overview</a></li>
+      <li><a class="nav-link" href="./10-segmentation-configurator.html">Segmentation Configurator</a></li>
+      <li><a class="nav-link" href="./11-capacity-configurator.html">Capacity Configurator</a></li>
+      <li><a class="nav-link" href="./12-seg-cap-exercise.html">Lab: Seg &amp; Cap Exercise</a></li>
+      <li><a class="nav-link" href="./13-segmentation-walkthrough.html">Segmentation App Walkthrough</a></li>
+      <li><a class="nav-link" href="./14-capacity-walkthrough.html">Capacity App Walkthrough</a></li>
+      <li><a class="nav-link" href="./15-whats-coming.html">What's Coming</a></li>
+      <li class="nav-section-title">Reference</li>
+      <li><a class="nav-link" href="./16-qanda.html">Q&amp;A from Sessions</a></li>
+      <li><a class="nav-link" href="./17-resources.html">Resources &amp; Downloads</a></li>
+    </ul>
+    <div class="lang-switcher">
+      <span class="lang-switcher-label">🌐 Language</span>
+      <select id="lang-select" class="lang-select">
+        <option value="en">🇺🇸 English</option>
+        <option value="ja">🇯🇵 日本語</option>
+        <option value="es">🇪🇸 Español</option>
+        <option value="fr">🇫🇷 Français</option>
+        <option value="de">🇩🇪 Deutsch</option>
+        <option value="pt">🇧🇷 Português</option>
+        <option value="ko">🇰🇷 한국어</option>
+        <option value="zh">🇨🇳 中文</option>
+      </select>
+    </div>
+  </nav>
+
+  <main class="main-content">
+    <div class="content-header">
+      <h1>Lab: Configurator Exercise</h1>
+      <p class="subtitle">Hands-on configuration using the CloudWorks scenario dataset</p>
+      <div class="badge-row">
+        <span class="content-badge">Lab</span>
+        <span class="content-badge">90 min</span>
+        <span class="content-badge">Hands-On</span>
+      </div>
+    </div>
+    <div class="content-body">
+
+      <h2>Scenario: CloudWorks Technologies</h2>
+      <p><strong>CloudWorks Technologies</strong> is a fictional B2B SaaS company that sells cloud infrastructure and developer tools to mid-market and enterprise customers. They have approximately 180 sales reps across North America and EMEA, organized into a 4-tier territory hierarchy. They currently manage their territory planning and quota-setting in Excel and are moving to Anaplan T&amp;Q for the coming fiscal year.</p>
+
+      <p>You have been brought in as the Anaplan delivery lead to complete the T&amp;Q configuration for CloudWorks. The customer has completed Session Zero and provided sample data. Your job is to work through the configurator and complete the key configuration pages using the information provided below.</p>
+
+      <div class="callout-note">
+        <span class="callout-label">📋 Lab Objective</span>
+        <p>Complete the following configurator pages for CloudWorks: Data Hub Setup, Hierarchy Setup, Transactional Data Routing, Planning Measures, Target &amp; Allocation, and Territory Assignment. Work independently or in pairs. Debrief with the group at the end.</p>
+      </div>
+
+      <h2>CloudWorks — Company Profile</h2>
+      <div class="two-col">
+        <div class="card">
+          <h3>Organization</h3>
+          <ul>
+            <li><strong>Sales reps:</strong> 180 AEs across NA and EMEA</li>
+            <li><strong>Overlay reps:</strong> 25 SEs (pre-sales engineers)</li>
+            <li><strong>Markets:</strong> Mid-Market (&lt;1000 EE) and Enterprise (1000+ EE)</li>
+            <li><strong>Products:</strong> Compute Platform (primary), Developer Suite (secondary)</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Hierarchy</h3>
+          <ul>
+            <li><strong>Tier 1:</strong> Global</li>
+            <li><strong>Tier 2:</strong> Theater (NA, EMEA)</li>
+            <li><strong>Tier 3:</strong> Region (e.g., US-West, US-East, UK, DACH)</li>
+            <li><strong>Tier 4:</strong> Territory (individual rep territories)</li>
+          </ul>
+        </div>
+      </div>
+      <div class="two-col">
+        <div class="card">
+          <h3>Planning Measures</h3>
+          <ul>
+            <li><strong>Primary:</strong> ARR (Annual Recurring Revenue) — currency</li>
+            <li><strong>Secondary:</strong> New Logos — count</li>
+            <li>Fiscal Year: February – January (FY starts Feb 1)</li>
+            <li>Planning granularity: Quarterly</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Data &amp; Integration</h3>
+          <ul>
+            <li>CRM: Salesforce (source of actuals and account data)</li>
+            <li>Data Hub: New (no existing Anaplan for SPM)</li>
+            <li>Integration: ADO (IT team confirmed readiness)</li>
+            <li>Historical actuals: 2 years (FY23, FY24)</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2>Dataset Files</h2>
+      <p>The following sample data files have been provided by CloudWorks. These are available in the lab workshop folder (distributed by the facilitator). You will <em>reference</em> these files to make configuration decisions — you will not load them into the configurator during this exercise.</p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>File</th>
+              <th>Description</th>
+              <th>Rows</th>
+              <th>Key Fields</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>CW_Accounts.csv</code></td>
+              <td>Full account list from Salesforce</td>
+              <td>~4,200</td>
+              <td>Account ID, Name, Industry, Segment, Employee Count, HQ State, Country, Current ARR, Potential Spend</td>
+            </tr>
+            <tr>
+              <td><code>CW_Territories.xlsx</code></td>
+              <td>Territory hierarchy (all 4 tiers)</td>
+              <td>~220 territories</td>
+              <td>Territory Code, Territory Name, Region, Theater, Type (MM/Ent)</td>
+            </tr>
+            <tr>
+              <td><code>CW_Resources.csv</code></td>
+              <td>Sales rep roster with territory assignments</td>
+              <td>~205 reps+SEs</td>
+              <td>Rep ID, Name, Title, Territory Code, Start Date, Ramp Status</td>
+            </tr>
+            <tr>
+              <td><code>CW_Actuals_FY23.csv</code></td>
+              <td>FY23 closed-won revenue by account by quarter</td>
+              <td>~18,000 rows</td>
+              <td>Account ID, Quarter, ARR Amount, New Logo Flag</td>
+            </tr>
+            <tr>
+              <td><code>CW_Actuals_FY24.csv</code></td>
+              <td>FY24 closed-won revenue by account by quarter</td>
+              <td>~21,000 rows</td>
+              <td>Account ID, Quarter, ARR Amount, New Logo Flag</td>
+            </tr>
+            <tr>
+              <td><code>CW_FY25_Targets.xlsx</code></td>
+              <td>FY25 top-down targets from Finance</td>
+              <td>~10 rows</td>
+              <td>Theater, Total ARR Target, New Logo Target, Q1–Q4 seasonality %</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="screenshot-placeholder">
+        <div class="ss-icon">📸</div>
+        <div class="ss-label">Screenshot: Configurator workspace — your starting point for the lab exercise</div>
+        <div class="ss-desc">The configurator should be pre-loaded in your training workspace. Navigate to the T&Q Configurator app before starting.</div>
+      </div>
+
+      <h2>Exercise Steps</h2>
+
+      <h3>Step 1: Data Hub Setup</h3>
+      <div class="step">
+        <div class="step-badge">1</div>
+        <div class="step-content">
+          <p>Navigate to <strong>Page 2: Data Hub Setup</strong> in the configurator. Using the CloudWorks profile information above, complete the following settings:</p>
+          <ul>
+            <li>Use Existing Data Hub? → <em>No</em> (CloudWorks is a new implementation)</li>
+            <li>Use ADO? → <em>Yes</em> (IT confirmed readiness)</li>
+            <li>Use Flat File Imports? → <em>No</em> (ADO is primary)</li>
+          </ul>
+          <p>For attributes, enable the following from the pre-populated list:</p>
+          <ul>
+            <li>Industry, Segment (Mid-Market / Enterprise), Employee Count, HQ State, Country</li>
+            <li>Current ARR, Potential Spend</li>
+          </ul>
+          <p>Disable all other pre-populated attributes that are not in CloudWorks's account data.</p>
+          <div class="callout-tip">
+            <span class="callout-label">💡 Instructor Tip</span>
+            <p>Look at the <code>CW_Accounts.csv</code> header row — only enable attributes that actually exist in the file. If you enable attributes with no data, they add noise and load complexity without adding value.</p>
+          </div>
+        </div>
+      </div>
+
+      <h3>Step 2: Hierarchy Setup</h3>
+      <div class="step">
+        <div class="step-badge">2</div>
+        <div class="step-content">
+          <p>Navigate to <strong>Page 3: Hierarchy Setup</strong>. Configure the 4-tier hierarchy:</p>
+          <ul>
+            <li>Tier count: <strong>4</strong></li>
+            <li>Tier 1 name: <strong>Global</strong></li>
+            <li>Tier 2 name: <strong>Theater</strong></li>
+            <li>Tier 3 name: <strong>Region</strong></li>
+            <li>Tier 4 name: <strong>Territory</strong></li>
+            <li>Fiscal Year Start: <strong>February</strong></li>
+            <li>Planning granularity: <strong>Quarterly</strong></li>
+          </ul>
+          <div class="callout-warning">
+            <span class="callout-label">⚠ Check Your Work</span>
+            <p>Open <code>CW_Territories.xlsx</code> and verify that the data actually has 4 distinct levels. Count the unique values at each tier. If you see only 3 tiers in the data, go back and adjust.</p>
+          </div>
+        </div>
+      </div>
+
+      <h3>Step 3: Transactional Data Routing</h3>
+      <div class="step">
+        <div class="step-badge">3</div>
+        <div class="step-content">
+          <p>Navigate to <strong>Page 4: Transactional Data Routing</strong>. CloudWorks actuals are stored at the account level in Salesforce (Account ID + Quarter + ARR). Configure accordingly:</p>
+          <ul>
+            <li>Source of actuals: <strong>CRM (Salesforce)</strong></li>
+            <li>Routing method: <strong>By Account</strong> (actuals are at account level)</li>
+            <li>Account-to-territory mapping: <strong>Account Assignment</strong> (accounts are assigned to territories; actuals follow the assignment)</li>
+            <li>Historical periods: <strong>2 years</strong> (FY23, FY24)</li>
+          </ul>
+          <div class="callout-note">
+            <span class="callout-label">📝 Discussion</span>
+            <p>What would you do differently if CloudWorks's Salesforce data only had actuals at the rep level, not the account level? Discuss with your partner before moving on.</p>
+          </div>
+        </div>
+      </div>
+
+      <h3>Step 4: Planning Measures</h3>
+      <div class="step">
+        <div class="step-badge">4</div>
+        <div class="step-content">
+          <p>Navigate to <strong>Page 5: Planning Measures</strong>. This is a critical page — take your time.</p>
+          <ul>
+            <li>Primary measure name: <strong>ARR</strong></li>
+            <li>Primary measure type: <strong>Currency (USD)</strong></li>
+            <li>Secondary measure name: <strong>New Logos</strong></li>
+            <li>Secondary measure type: <strong>Count (Integer)</strong></li>
+            <li>Enable seasonality for ARR: <strong>Yes</strong> (Finance provided Q1–Q4 percentages)</li>
+            <li>Enable seasonality for New Logos: <strong>No</strong> (uniform distribution)</li>
+          </ul>
+          <div class="callout-tip">
+            <span class="callout-label">💡 Instructor Tip</span>
+            <p>The seasonality percentages from <code>CW_FY25_Targets.xlsx</code> will be loaded as data, not configured in the configurator. What you're enabling here is the <em>capability</em> for seasonality curves to be applied per measure — the actual percentages come from the data load after generation.</p>
+          </div>
+        </div>
+      </div>
+
+      <h3>Step 5: Target &amp; Allocation</h3>
+      <div class="step">
+        <div class="step-badge">5</div>
+        <div class="step-content">
+          <p>Navigate to <strong>Page 9: Target &amp; Allocation</strong>. CloudWorks Finance enters targets at the Theater level. Configure:</p>
+          <ul>
+            <li>Target entry tier: <strong>Tier 2 (Theater)</strong></li>
+            <li>Allocation methods: Enable <strong>Weighted by Historical Actuals</strong> and <strong>Manual Override</strong></li>
+            <li>Over-allocation: <strong>Enable</strong>, max 115%</li>
+            <li>Approval required: <strong>Yes</strong> — 2-stage (Regional Manager → Theater VP)</li>
+            <li>Adjustment reasons: Use defaults (the customer will customize these post-gen)</li>
+          </ul>
+          <div class="callout-warning">
+            <span class="callout-label">⚠ Double-Check</span>
+            <p>Confirm you are not adding extra dimensions here. CloudWorks has 2 planning measures (ARR, New Logos) and quarterly granularity — that's it. Do not enable annual/monthly breakdowns unless the customer explicitly needs them.</p>
+          </div>
+        </div>
+      </div>
+
+      <h3>Step 6: Territory Assignment</h3>
+      <div class="step">
+        <div class="step-badge">6</div>
+        <div class="step-content">
+          <p>Navigate to <strong>Page 10: Territory Assignment</strong>. CloudWorks wants flexibility — they use a mix of manual assignment (for named enterprise accounts) and the Rule Engine (for mid-market accounts). Configure:</p>
+          <ul>
+            <li>Enable Manual Assignment: <strong>Yes</strong></li>
+            <li>Enable Geographic Mapping: <strong>No</strong> (their territories are not geo-defined)</li>
+            <li>Enable Rule Engine: <strong>Yes</strong></li>
+            <li>Enable Optimizer: <strong>No</strong> (not needed for now)</li>
+            <li>Split accounts: <strong>Yes</strong> (enterprise accounts can be split across territories)</li>
+            <li>Reassignment governance: Sales Ops can reassign; approval not required for individual accounts</li>
+          </ul>
+          <div class="callout-tip">
+            <span class="callout-label">💡 Instructor Tip</span>
+            <p>Since we're enabling the Rule Engine here, go back and check Page 14 (Rule Engine Setup) before calling configuration complete. The Rule Engine setup must reference attributes enabled in Data Hub Setup — make sure Industry and Segment are selected as rule attributes.</p>
+          </div>
+        </div>
+      </div>
+
+      <h2>Debrief Questions</h2>
+      <p>When you've completed the exercise, discuss the following questions with your group:</p>
+      <ol>
+        <li>Which configuration decision was the hardest? What additional information would you have asked the customer?</li>
+        <li>If CloudWorks had asked for a third planning measure (Services ARR), what would your recommendation be? Would you add it now or leave it out?</li>
+        <li>What would change in your configuration if CloudWorks had an existing Anaplan workspace with a V2 T&amp;Q deployment?</li>
+        <li>On Page 5 (Planning Measures) you saw a checkbox for "Enable Quota Composition." When would you check this box for CloudWorks?</li>
+        <li>The Rule Engine on Page 14 requires attributes — you enabled Industry and Segment. What's a real rule you'd write for CloudWorks using those attributes?</li>
+      </ol>
+
+      <div class="callout-tip">
+        <span class="callout-label">✅ Lab Complete</span>
+        <p>When the group reconvenes, the facilitator will walk through a reference configuration for CloudWorks and discuss common decision points and tradeoffs. There are often multiple valid approaches — the goal is to understand the reasoning behind each choice.</p>
+      </div>
+
+    </div>
+  </main>
+
+  <script src="../js/nav.js"></script>
+</body>
+</html>

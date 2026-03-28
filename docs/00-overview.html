@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Workshop Overview — T&amp;Q Lab Guide</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div class="mobile-header">
+    <button id="hamburger">☰</button>
+    <span>T&amp;Q Lab Guide</span>
+  </div>
+
+  <nav class="sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-title">RPM Apps Workshop</div>
+      <div class="sidebar-subtitle">T&amp;Q Lab Guide — Day 1</div>
+    </div>
+    <ul class="nav-list">
+      <li class="nav-section-title">Getting Started</li>
+      <li><a class="nav-link" href="./00-overview.html">Workshop Overview</a></li>
+      <li class="nav-section-title">Day 1 &mdash; T&amp;Q</li>
+      <li><a class="nav-link" href="./01-spm-overview.html">SPM/RPM Overview</a></li>
+      <li><a class="nav-link" href="./02-anaplan-way.html">Anaplan Way for Apps</a></li>
+      <li><a class="nav-link" href="./03-configurator-walkthrough.html">Configurator Walkthrough</a></li>
+      <li><a class="nav-link" href="./04-configurator-exercise.html">Lab: Configurator Exercise</a></li>
+      <li><a class="nav-link" href="./05-post-gen-steps.html">Post-Generation Steps</a></li>
+      <li><a class="nav-link" href="./06-ado-integration.html">Data Integration &amp; ADO</a></li>
+      <li><a class="nav-link" href="./07-spoke-app-walkthrough.html">Spoke App Walkthrough</a></li>
+      <li><a class="nav-link" href="./08-extensions.html">Common Extensions</a></li>
+      <li class="nav-section-title">Day 2 &mdash; Seg &amp; Capacity</li>
+      <li><a class="nav-link" href="./09-day2-overview.html">Day 2 Overview</a></li>
+      <li><a class="nav-link" href="./10-segmentation-configurator.html">Segmentation Configurator</a></li>
+      <li><a class="nav-link" href="./11-capacity-configurator.html">Capacity Configurator</a></li>
+      <li><a class="nav-link" href="./12-seg-cap-exercise.html">Lab: Seg &amp; Cap Exercise</a></li>
+      <li><a class="nav-link" href="./13-segmentation-walkthrough.html">Segmentation App Walkthrough</a></li>
+      <li><a class="nav-link" href="./14-capacity-walkthrough.html">Capacity App Walkthrough</a></li>
+      <li><a class="nav-link" href="./15-whats-coming.html">What's Coming</a></li>
+      <li class="nav-section-title">Reference</li>
+      <li><a class="nav-link" href="./16-qanda.html">Q&amp;A from Sessions</a></li>
+      <li><a class="nav-link" href="./17-resources.html">Resources &amp; Downloads</a></li>
+    </ul>
+    <div class="lang-switcher">
+      <span class="lang-switcher-label">🌐 Language</span>
+      <select id="lang-select" class="lang-select">
+        <option value="en">🇺🇸 English</option>
+        <option value="ja">🇯🇵 日本語</option>
+        <option value="es">🇪🇸 Español</option>
+        <option value="fr">🇫🇷 Français</option>
+        <option value="de">🇩🇪 Deutsch</option>
+        <option value="pt">🇧🇷 Português</option>
+        <option value="ko">🇰🇷 한국어</option>
+        <option value="zh">🇨🇳 中文</option>
+      </select>
+    </div>
+  </nav>
+
+  <main class="main-content">
+    <div class="content-header">
+      <h1>RPM Apps Tech Enablement Workshop — Day 1</h1>
+      <p class="subtitle">Territory &amp; Quota (T&amp;Q) Application Lab Guide</p>
+      <div class="badge-row">
+        <span class="content-badge">Day 1</span>
+        <span class="content-badge">T&amp;Q V3</span>
+        <span class="content-badge">Full Day</span>
+      </div>
+    </div>
+    <div class="content-body">
+
+      <h2>About This Workshop</h2>
+      <p>The <strong>RPM Apps Technical Enablement Workshop</strong> is a full-day, hands-on session designed for Anaplan delivery practitioners — Solutions Consultants, Solution Architects, and Technical Consultants — who will be implementing or supporting the Territory &amp; Quota (T&amp;Q) application for customers.</p>
+      <p>This workshop covers the complete T&amp;Q implementation lifecycle: from initial discovery and the Anaplan Way methodology, through the configurator tool, post-generation steps, data integration, the spoke app user experience, and common extensions. By the end of Day 1, participants will have hands-on experience with the configurator and a clear picture of what it takes to deliver a successful T&amp;Q implementation.</p>
+      <p>The T&amp;Q application is the <strong>cornerstone of the Anaplan RPM (Revenue Performance Management) Apps suite</strong> and is consistently the highest-demand, highest-value application in the portfolio. A strong T&amp;Q skillset is foundational to the broader SPM practice.</p>
+
+      <h2>Learning Objectives</h2>
+      <p>By the end of this workshop, participants will be able to:</p>
+      <ol>
+        <li><strong>Understand the SPM landscape</strong> — articulate the five SPM pillars, explain how T&amp;Q fits into the broader Revenue Performance Management picture, and identify the strongest landing scenarios for T&amp;Q.</li>
+        <li><strong>Navigate the configurator</strong> — walk through all 14 configurator pages, make informed decisions on each setting, and understand which choices are difficult to reverse post-generation.</li>
+        <li><strong>Understand and execute post-generation steps</strong> — apply the post-gen checklist, identify and resolve known issues, and assess model readiness for customer handoff.</li>
+        <li><strong>Walk a customer through the spoke app</strong> — guide a customer through all major sections of the T&amp;Q spoke application, explaining each workflow and data view in business terms.</li>
+        <li><strong>Identify and scope common extensions</strong> — recognize when base app functionality meets a requirement vs. when a net-new extension is needed, and provide T-shirt size estimates for the most common extension types.</li>
+      </ol>
+
+      <h2>Day 1 Agenda</h2>
+      <div class="table-wrap">
+        <table class="agenda-table">
+          <thead>
+            <tr>
+              <th>Time</th>
+              <th>Duration</th>
+              <th>Topic</th>
+              <th>Presenter</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>9:00 AM</td>
+              <td>30 min</td>
+              <td>Introductions &amp; Workshop Kickoff</td>
+              <td>All</td>
+            </tr>
+            <tr>
+              <td>9:30 AM</td>
+              <td>45 min</td>
+              <td>SPM/RPM Landscape Overview — 5 Pillars, T&amp;Q Positioning, Key Concepts</td>
+              <td>Facilitator</td>
+            </tr>
+            <tr>
+              <td>10:15 AM</td>
+              <td>45 min</td>
+              <td>Anaplan Way for Apps — Implementation Methodology, Customer Types, Upgrade Path</td>
+              <td>Facilitator</td>
+            </tr>
+            <tr>
+              <td>11:00 AM</td>
+              <td>15 min</td>
+              <td>☕ Break</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td>11:15 AM</td>
+              <td>90 min</td>
+              <td>Configurator Walkthrough — All 14 Pages, Key Decision Points, Best Practices</td>
+              <td>Facilitator</td>
+            </tr>
+            <tr>
+              <td>12:45 PM</td>
+              <td>60 min</td>
+              <td>🍽 Lunch</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td>1:45 PM</td>
+              <td>90 min</td>
+              <td>Lab: Configurator Exercise — CloudWorks Scenario, Hands-on Configuration</td>
+              <td>Participants</td>
+            </tr>
+            <tr>
+              <td>3:15 PM</td>
+              <td>15 min</td>
+              <td>☕ Break</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td>3:30 PM</td>
+              <td>45 min</td>
+              <td>Post-Generation Steps, Model Readiness, Known Issues</td>
+              <td>Facilitator</td>
+            </tr>
+            <tr>
+              <td>4:15 PM</td>
+              <td>30 min</td>
+              <td>Data Integration &amp; ADO Architecture (V3)</td>
+              <td>Facilitator</td>
+            </tr>
+            <tr>
+              <td>4:45 PM</td>
+              <td>15 min</td>
+              <td>Wrap-up, Q&amp;A, Preview of Day 2</td>
+              <td>All</td>
+            </tr>
+            <tr>
+              <td>5:00 PM</td>
+              <td>—</td>
+              <td>End of Day 1</td>
+              <td>—</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout-note">
+        <span class="callout-label">📅 Note</span>
+        <p>Times are approximate. We will adjust based on Q&amp;A and discussion. The configurator walkthrough and lab are the highest-value activities — we will protect that time if we run long elsewhere.</p>
+      </div>
+
+      <h2>Prerequisites</h2>
+      <p>To get the most out of this workshop, participants should have:</p>
+      <ul>
+        <li><strong>Basic Anaplan platform knowledge</strong> — familiarity with modules, lists, dashboards, and model building concepts. This is not an Anaplan 101 session.</li>
+        <li><strong>Completed Anaplan Level 1 certification</strong> (or equivalent platform experience)</li>
+        <li><strong>Access to an Anaplan workspace</strong> — you will need a workspace with at least one model to run the configurator during the hands-on lab. Confirm with your manager ahead of time.</li>
+        <li><strong>Reviewed the T&amp;Q solution brief</strong> — available on the internal enablement portal</li>
+        <li><strong>Downloaded the lab dataset files</strong> — see the Configurator Exercise section for the CloudWorks data files. Have these ready before the afternoon lab session.</li>
+      </ul>
+
+      <div class="callout-warning">
+        <span class="callout-label">⚠ Important</span>
+        <p>Do <strong>not</strong> run the configurator app generation against a customer workspace during this workshop. The exercise uses a dedicated training workspace. Generating a T&amp;Q app creates ~8,000 objects and cannot be easily undone.</p>
+      </div>
+
+      <h2>Workshop Materials</h2>
+      <p>All workshop materials are available in the shared drive folder distributed prior to the workshop. This includes:</p>
+      <ul>
+        <li><strong>This lab guide</strong> — the document you're reading now</li>
+        <li><strong>Configurator slide deck</strong> — reference screenshots for each configurator page</li>
+        <li><strong>Data Prep Workbook</strong> — the Excel template used to collect and validate customer data during Session Zero</li>
+        <li><strong>CloudWorks dataset files</strong> — CSV/Excel files for the hands-on lab exercise</li>
+        <li><strong>Post-Gen Checklist</strong> — printable checklist for post-generation model readiness steps</li>
+        <li><strong>Extension Scoping Template</strong> — discovery question guide and T-shirt size reference</li>
+        <li><strong>T&amp;Q Spoke App Demo Video</strong> — reference walkthrough (35 min) for the spoke app sections</li>
+      </ul>
+
+      <div class="callout-tip">
+        <span class="callout-label">💡 Tip</span>
+        <p>Keep this lab guide open in a browser tab throughout the day. Each section corresponds to a workshop segment and includes the key details, callouts, and reference tables you'll need. You don't need to memorize everything — learn where to find it.</p>
+      </div>
+
+    </div>
+  </main>
+
+  <script src="../js/nav.js"></script>
+</body>
+</html>

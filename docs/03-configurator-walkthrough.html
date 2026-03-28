@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Configurator Walkthrough — T&amp;Q Lab Guide</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div class="mobile-header">
+    <button id="hamburger">☰</button>
+    <span>T&amp;Q Lab Guide</span>
+  </div>
+
+  <nav class="sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-title">RPM Apps Workshop</div>
+      <div class="sidebar-subtitle">T&amp;Q Lab Guide — Day 1</div>
+    </div>
+    <ul class="nav-list">
+      <li class="nav-section-title">Getting Started</li>
+      <li><a class="nav-link" href="./00-overview.html">Workshop Overview</a></li>
+      <li class="nav-section-title">Day 1 &mdash; T&amp;Q</li>
+      <li><a class="nav-link" href="./01-spm-overview.html">SPM/RPM Overview</a></li>
+      <li><a class="nav-link" href="./02-anaplan-way.html">Anaplan Way for Apps</a></li>
+      <li><a class="nav-link" href="./03-configurator-walkthrough.html">Configurator Walkthrough</a></li>
+      <li><a class="nav-link" href="./04-configurator-exercise.html">Lab: Configurator Exercise</a></li>
+      <li><a class="nav-link" href="./05-post-gen-steps.html">Post-Generation Steps</a></li>
+      <li><a class="nav-link" href="./06-ado-integration.html">Data Integration &amp; ADO</a></li>
+      <li><a class="nav-link" href="./07-spoke-app-walkthrough.html">Spoke App Walkthrough</a></li>
+      <li><a class="nav-link" href="./08-extensions.html">Common Extensions</a></li>
+      <li class="nav-section-title">Day 2 &mdash; Seg &amp; Capacity</li>
+      <li><a class="nav-link" href="./09-day2-overview.html">Day 2 Overview</a></li>
+      <li><a class="nav-link" href="./10-segmentation-configurator.html">Segmentation Configurator</a></li>
+      <li><a class="nav-link" href="./11-capacity-configurator.html">Capacity Configurator</a></li>
+      <li><a class="nav-link" href="./12-seg-cap-exercise.html">Lab: Seg &amp; Cap Exercise</a></li>
+      <li><a class="nav-link" href="./13-segmentation-walkthrough.html">Segmentation App Walkthrough</a></li>
+      <li><a class="nav-link" href="./14-capacity-walkthrough.html">Capacity App Walkthrough</a></li>
+      <li><a class="nav-link" href="./15-whats-coming.html">What's Coming</a></li>
+      <li class="nav-section-title">Reference</li>
+      <li><a class="nav-link" href="./16-qanda.html">Q&amp;A from Sessions</a></li>
+      <li><a class="nav-link" href="./17-resources.html">Resources &amp; Downloads</a></li>
+    </ul>
+    <div class="lang-switcher">
+      <span class="lang-switcher-label">🌐 Language</span>
+      <select id="lang-select" class="lang-select">
+        <option value="en">🇺🇸 English</option>
+        <option value="ja">🇯🇵 日本語</option>
+        <option value="es">🇪🇸 Español</option>
+        <option value="fr">🇫🇷 Français</option>
+        <option value="de">🇩🇪 Deutsch</option>
+        <option value="pt">🇧🇷 Português</option>
+        <option value="ko">🇰🇷 한국어</option>
+        <option value="zh">🇨🇳 中文</option>
+      </select>
+    </div>
+  </nav>
+
+  <main class="main-content">
+    <div class="content-header">
+      <h1>Configurator Walkthrough</h1>
+      <p class="subtitle">All 14 configurator pages — key settings, best practices, and decision points</p>
+      <div class="badge-row">
+        <span class="content-badge">Section 3</span>
+        <span class="content-badge">90 min</span>
+        <span class="content-badge">Core Content</span>
+      </div>
+    </div>
+    <div class="content-body">
+
+      <p>The <strong>T&amp;Q Configurator</strong> is a specialized Anaplan app that drives the generation of the T&amp;Q spoke application. Think of it as a highly sophisticated setup wizard — you work through 14 pages of settings, and when complete, the app engineering team triggers generation, producing a fully functional T&amp;Q application pre-configured to your customer's exact specifications.</p>
+      <p>The configurator dramatically reduces implementation time compared to building T&amp;Q from scratch. A well-run configuration process (with good data and prepared stakeholders) can be completed in 1–2 weeks of focused sessions. The quality of what comes out of generation is directly proportional to the quality of what you put into the configurator — garbage in, garbage out.</p>
+      <p>Pages are completed in order. Some pages have dependencies on earlier choices. Pay close attention to the <span class="star">⭐</span> starred pages — these have the highest impact on the generated app and the greatest risk if misconfigured.</p>
+
+      <div class="screenshot-placeholder">
+        <div class="ss-icon">📸</div>
+        <div class="ss-label">Screenshot: Configurator app home page — overview of all 14 pages with completion status indicators</div>
+        <div class="ss-desc">Show the configurator navigation panel and page status (complete/incomplete/locked)</div>
+      </div>
+
+      <!-- PAGE 1 -->
+      <div class="config-section">
+        <div class="config-section-header">
+          <div class="config-section-num">1</div>
+          <div class="config-section-title">Getting Started</div>
+        </div>
+        <p>The Getting Started page is the initialization step. It establishes the basic project metadata and validates that the configurator workspace is properly set up before any configuration begins.</p>
+        <p><strong>Key settings on this page:</strong></p>
+        <ul>
+          <li><strong>Customer/Project Name</strong> — used throughout the generated app for labeling</li>
+          <li><strong>App Version</strong> — confirm you are configuring V3 (not V2)</li>
+          <li><strong>Workspace validation</strong> — the configurator checks that it has sufficient workspace capacity for generation</li>
+          <li><strong>Configurator version</strong> — note the version number; if you encounter unexpected behavior, this helps the App Engineering team diagnose issues</li>
+        </ul>
+        <div class="callout-tip">
+          <span class="callout-label">💡 Tip</span>
+          <p>Always confirm the app version before starting. V3 and V2 configurators look similar but produce very different outputs. If a customer has been given an older configurator file, get the latest version from the enablement portal before you start.</p>
+        </div>
+        <div class="screenshot-placeholder">
+          <div class="ss-icon">📸</div>
+          <div class="ss-label">Screenshot: Page 1 — Getting Started, project name and version fields</div>
+        </div>
+      </div>
+
+      <!-- PAGE 2 -->
+      <div class="config-section">
+        <div class="config-section-header">
+          <div class="config-section-num">2</div>
+          <div class="config-section-title">Data Hub Setup <span class="config-section-star">⭐</span></div>
+        </div>
+        <p>Data Hub Setup is the <strong>most important page in the configurator</strong>. The decisions here shape the entire data architecture of the generated app. Get this wrong and you face significant rework. This page should be completed in collaboration with the customer's Sales Ops and IT stakeholders.</p>
+        <p><strong>The Three Critical Booleans:</strong></p>
+        <ul>
+          <li><strong>Use Existing Data Hub?</strong> — If the customer already has a T&amp;Q Data Hub (e.g., from a V2 implementation or another Anaplan app), you can point the generated app at it. If not, the configurator generates a new Data Hub. <em>Be careful with V2 upgrades — the V3 Data Hub structure is different.</em></li>
+          <li><strong>Use ADO?</strong> — Enables the Anaplan Data Orchestrator integration for data feeds. Strongly recommended for new V3 implementations. See the ADO Integration section for details.</li>
+          <li><strong>Use Flat File Imports?</strong> — Enables flat-file (CSV/Excel) based data loading as the primary integration method. Common for customers who aren't ready for ADO or have simple data requirements.</li>
+        </ul>
+        <p><strong>Attribute Setup:</strong></p>
+        <p>The Data Hub Setup page also controls which account and territory attributes are surfaced in the app. Attributes are the descriptive fields attached to accounts (e.g., Industry, Segment, Region, Employee Count) that can be used for segmentation, filtering, and rule engine logic.</p>
+        <ul>
+          <li>The configurator comes pre-populated with <strong>20 standard attributes</strong> — review these with the customer and enable only what they actually use</li>
+          <li>Adding unnecessary attributes bloats the Data Hub and slows imports — keep it lean</li>
+          <li>Custom attributes can be added (within limits) if the standard list doesn't cover a customer need</li>
+        </ul>
+        <div class="callout-important">
+          <span class="callout-label">🚫 Critical</span>
+          <p>The Data Hub structure is extremely difficult to change post-generation. If you enable ADO here but the customer later decides they want flat files (or vice versa), you're looking at a re-generation. Lock this down before moving forward. Get sign-off from both Sales Ops and IT.</p>
+        </div>
+        <div class="screenshot-placeholder">
+          <div class="ss-icon">📸</div>
+          <div class="ss-label">Screenshot: Page 2 — Data Hub Setup, showing the three booleans and attribute configuration grid</div>
+          <div class="ss-desc">Highlight the Use Existing Data Hub, Use ADO, and Use Flat File Imports toggles. Show the 20 pre-populated attributes.</div>
+        </div>
+      </div>
+
+      <!-- PAGE 3 -->
+      <div class="config-section">
+        <div class="config-section-header">
+          <div class="config-section-num">3</div>
+          <div class="config-section-title">Hierarchy Setup</div>
+        </div>
+        <p>Hierarchy Setup defines the structure of the territory hierarchy — how many levels, what they're called, and how they roll up. This is one of the most customer-specific pages in the configurator.</p>
+        <p><strong>Key settings:</strong></p>
+        <ul>
+          <li><strong>Number of hierarchy tiers</strong> — how many levels from the top of the org to the individual territory (typical range: 3–5 tiers)</li>
+          <li><strong>Tier names</strong> — what each level is called at the customer (e.g., Global → Area → Region → Territory, or Country → District → Territory)</li>
+          <li><strong>Roll-up behavior</strong> — how targets and actuals aggregate up the hierarchy</li>
+          <li><strong>Fiscal year settings</strong> — calendar year vs. fiscal year, fiscal year start month</li>
+          <li><strong>Time granularity</strong> — annual, quarterly, monthly planning periods</li>
+        </ul>
+        <div class="callout-warning">
+          <span class="callout-label">⚠ Warning</span>
+          <p>Validate tier count against the customer's actual data. It's common for customers to <em>think</em> they have 4 tiers but actually have 3 or 5 when you look at the data. Count the levels in the sample data, not the org chart. An extra tier you don't need adds complexity; a missing tier is a major structural problem post-gen.</p>
+        </div>
+        <div class="screenshot-placeholder">
+          <div class="ss-icon">📸</div>
+          <div class="ss-label">Screenshot: Page 3 — Hierarchy Setup, showing tier count and naming fields</div>
+        </div>
+      </div>
+
+      <!-- PAGE 4 -->
+      <div class="config-section">
+        <div class="config-section-header">
+          <div class="config-section-num">4</div>
+          <div class="config-section-title">Transactional Data Routing</div>
+        </div>
+        <p>This page controls how transactional (actuals) data flows into the app. Specifically, it defines where historical sales data comes from and how it is routed to territories for reporting and comparison purposes.</p>
+        <p><strong>Key settings:</strong></p>
+        <ul>
+          <li><strong>Source of actuals</strong> — CRM (Salesforce, SFDC), ERP, Data Warehouse, or flat file</li>
+          <li><strong>Routing method</strong> — should actuals route by account, by territory, or by rep? This depends on the customer's source data structure.</li>
+          <li><strong>Account-to-territory mapping</strong> — how the system determines which territory an account (and its revenue) belongs to</li>
+          <li><strong>Historical periods to include</strong> — how many years of actuals to load (impacts Data Hub size)</li>
+        </ul>
+        <div class="callout-note">
+          <span class="callout-label">📝 Note</span>
+          <p>Many customers have actuals at the rep level in their CRM, not the account level. If rep-level data is all that's available, the routing logic needs to account for this — and it means territory reassignments won't retroactively re-route historical actuals. Set this expectation early.</p>
+        </div>
+        <div class="screenshot-placeholder">
+          <div class="ss-icon">📸</div>
+          <div class="ss-label">Screenshot: Page 4 — Transactional Data Routing, showing source and routing method options</div>
+        </div>
+      </div>
+
+      <!-- PAGE 5 -->
+      <div class="config-section">
+        <div class="config-section-header">
+          <div class="config-section-num">5</div>
+          <div class="config-section-title">Planning Measures <span class="config-section-star">⭐</span></div>
+        </div>
+        <p>Planning Measures define the metric(s) that the T&amp;Q app will plan against — the things reps will be measured on (e.g., Revenue, ARR, New Logos, Units). This is the second most critical page in the configurator, and it is <strong>very hard to change post-generation</strong>.</p>
+        <p><strong>Get this right. Get sign-off. Don't guess.</strong></p>
+        <p><strong>Key settings:</strong></p>
+        <ul>
+          <li><strong>Primary planning measure</strong> — the single main metric (usually Revenue or ARR). Every target, quota, and approval workflow will center on this measure.</li>
+          <li><strong>Secondary planning measures</strong> — additional metrics that run alongside the primary (e.g., Units, New Logos, Services Revenue). Each adds a layer of complexity — only include what the customer will actually plan.</li>
+          <li><strong>Measure names and labels</strong> — what these measures are called in the customer's terminology (not generic "Measure 1")</li>
+          <li><strong>Measure type</strong> — currency, count, percentage — this drives formatting and aggregation behavior</li>
+          <li><strong>Seasonality curves</strong> — can each measure have a seasonality pattern applied? (e.g., Q4-heavy revenue)</li>
+        </ul>
+        <div class="callout-important">
+          <span class="callout-label">🚫 Critical Decision Point</span>
+          <p>Adding a planning measure post-generation requires significant rework — the measure must be manually added to dozens of modules, dashboards, and actions. If the customer says "we might want to add a New Logo measure later," add it now as inactive rather than skipping it. Removing an unused measure is trivial; adding one is expensive.</p>
+        </div>
+        <div class="callout-warning">
+          <span class="callout-label">⚠ Warning — Dimension Creep</span>
+          <p>Every additional planning measure adds a dimension to the app's core modules. Three measures is manageable. Five measures starts to create performance and usability issues. Push back on customers who want to plan 6+ measures — ask which ones they'll actually enter data for on Day 1.</p>
+        </div>
+        <div class="screenshot-placeholder">
+          <div class="ss-icon">📸</div>
+          <div class="ss-label">Screenshot: Page 5 — Planning Measures, showing primary and secondary measure setup</div>
+          <div class="ss-desc">Show the measure name, type, and seasonality settings for a sample 2-measure configuration (Revenue + New Logos)</div>
+        </div>
+      </div>
+
+      <!-- PAGE 6 -->
+      <div class="config-section">
+        <div class="config-section-header">
+          <div class="config-section-num">6</div>
+          <div class="config-section-title">Optimizer Setup</div>
+        </div>
+        <p>The Optimizer is an optional T&amp;Q feature that uses Anaplan's optimization engine to automatically suggest territory carve-outs and account assignments based on defined balance criteria (e.g., equalize revenue potential, minimize rep travel distance). This page controls whether the Optimizer is included and how it is configured.</p>
+        <p><strong>Key settings:</strong></p>
+        <ul>
+          <li><strong>Enable Optimizer?</strong> — Boolean toggle. Only enable if the customer has a clear use case for automated territory balancing.</li>
+          <li><strong>Optimization objective</strong> — what the optimizer is trying to balance (revenue potential, account count, travel distance/geo)</li>
+          <li><strong>Constraints</strong> — limits on how much the optimizer can move accounts (e.g., no territory can be more than 120% of the average)</li>
+          <li><strong>Number of scenarios</strong> — how many parallel what-if scenarios the optimizer can run</li>
+        </ul>
+        <div class="callout-note">
+          <span class="callout-label">📝 Note</span>
+          <p>The Optimizer is a powerful feature, but it's not universally applicable. Customers with geographic territories (field sales) benefit most. Customers with named account models or highly relationship-driven selling often find the optimizer less useful because they don't want accounts automatically reassigned. Always validate the use case before enabling.</p>
+        </div>
+        <div class="screenshot-placeholder">
+          <div class="ss-icon">📸</div>
+          <div class="ss-label">Screenshot: Page 6 — Optimizer Setup, showing enable toggle and objective settings</div>
+        </div>
+      </div>
+
+      <!-- PAGE 7 -->
+      <div class="config-section">
+        <div class="config-section-header">
+          <div class="config-section-num">7</div>
+          <div class="config-section-title">Historical Reporting</div>
+        </div>
+        <p>Historical Reporting controls what prior-year data is surfaced in the app for context and comparison. This is useful for "prior year actuals" views alongside current-year targets and quotas.</p>
+        <p><strong>Recommendation: Keep this minimal.</strong> Historical reporting modules add significant size to the generated app and often provide marginal value. Most customers want to see 1 year of prior actuals for comparison — rarely more.</p>
+        <p><strong>Key settings:</strong></p>
+        <ul>
+          <li><strong>Number of historical periods</strong> — how many prior years/quarters to include (recommend: 1 year max)</li>
+          <li><strong>Reporting measures</strong> — which measures to include in historical views (should match planning measures)</li>
+          <li><strong>Territory alignment</strong> — historical actuals aligned to current territory structure vs. historical structure (usually current — avoids a complex alignment problem)</li>
+        </ul>
+        <div class="callout-tip">
+          <span class="callout-label">💡 Best Practice</span>
+          <p>Start with minimal historical reporting. You can always load more data, but you can't easily remove modules from a generated app. If a customer insists on 3 years of history, make sure they have clean, formatted data for all 3 years before generation. Dirty historical data is a nightmare to clean post-gen.</p>
+        </div>
+        <div class="screenshot-placeholder">
+          <div class="ss-icon">📸</div>
+          <div class="ss-label">Screenshot: Page 7 — Historical Reporting, period count and measure selection</div>
+        </div>
+      </div>
+
+      <!-- PAGE 8 -->
+      <div class="config-section">
+        <div class="config-section-header">
+          <div class="config-section-num">8</div>
+          <div class="config-section-title">Account Values &amp; Mapping</div>
+        </div>
+        <p>This page defines how account-level value (revenue potential, addressable market, current spend) is captured and mapped to territories. Account Values are a key input to both the Optimizer and the Territory Sizing dashboards.</p>
+        <p><strong>Key settings:</strong></p>
+        <ul>
+          <li><strong>Account value metrics</strong> — which value fields are loaded with accounts (e.g., Current Revenue, Potential Spend, Employee Count, Contract Value)</li>
+          <li><strong>Value source</strong> — CRM fields, manual load, or derived from historical actuals</li>
+          <li><strong>Mapping method</strong> — how accounts are mapped to territories (account code, postal code/geo, manual assignment, rule engine)</li>
+          <li><strong>Multi-territory accounts</strong> — can a single account span multiple territories? (important for global/named account customers)</li>
+        </ul>
+        <div class="callout-note">
+          <span class="callout-label">📝 Note</span>
+          <p>Account value data quality is one of the biggest risk factors for T&amp;Q implementations. Many customers have account data that is incomplete, stale, or inconsistently formatted. Invest time during Session Zero validating the account file — size, coverage, and value field completeness — before committing to a go-live date.</p>
+        </div>
+        <div class="screenshot-placeholder">
+          <div class="ss-icon">📸</div>
+          <div class="ss-label">Screenshot: Page 8 — Account Values &amp; Mapping, showing value metric setup</div>
+        </div>
+      </div>
+
+      <!-- PAGE 9 -->
+      <div class="config-section">
+        <div class="config-section-header">
+          <div class="config-section-num">9</div>
+          <div class="config-section-title">Target &amp; Allocation <span class="config-section-star">⭐</span></div>
+        </div>
+        <p>Target &amp; Allocation is the third critical page. It controls how Finance targets flow into the app and how they are distributed down the territory hierarchy. This is the core financial planning logic of T&amp;Q.</p>
+
+        <h4>The 3-Step Target Process</h4>
+        <div class="step">
+          <div class="step-badge">A</div>
+          <div class="step-content">
+            <strong>Finance Import</strong> — Total targets are imported from Finance (usually at a high level — total company, by region, or by product). The configurator defines which tier of the hierarchy Finance enters targets at.
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-badge">B</div>
+          <div class="step-content">
+            <strong>Allocation Method</strong> — Targets are distributed down the hierarchy using one of several methods: equal split, weighted by account potential, weighted by historical actuals, or manual override. Configure which methods are available.
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-badge">C</div>
+          <div class="step-content">
+            <strong>Over-allocation &amp; Override</strong> — Most sales orgs allocate more than 100% of targets to ensure coverage (e.g., 110% over-allocation buffer). The configurator controls whether over-allocation is allowed and by how much.
+          </div>
+        </div>
+
+        <p><strong>Key settings:</strong></p>
+        <ul>
+          <li><strong>Target entry tier</strong> — at which hierarchy level does Finance enter targets? (usually top 1–2 levels)</li>
+          <li><strong>Allocation methods available</strong> — which allocation algorithms are enabled in the app</li>
+          <li><strong>Over-allocation settings</strong> — max over-allocation %, warning thresholds</li>
+          <li><strong>Approval required?</strong> — does target allocation require approval before it flows to quotas?</li>
+          <li><strong>Adjustment reasons</strong> — preset list of reasons a manager can use when manually overriding an allocation</li>
+        </ul>
+
+        <div class="callout-important">
+          <span class="callout-label">🚫 Critical — Avoid Extra Dimensions</span>
+          <p>Do <strong>not</strong> add unnecessary dimensions to the target/allocation modules. Every extra dimension (additional planning measure, additional time period, additional hierarchy level) multiplies the size of the allocation modules exponentially. This is a common source of performance problems and workspace overages. Only include dimensions you will actually use.</p>
+        </div>
+        <div class="screenshot-placeholder">
+          <div class="ss-icon">📸</div>
+          <div class="ss-label">Screenshot: Page 9 — Target &amp; Allocation, showing the 3-step target flow and allocation method options</div>
+        </div>
+      </div>
+
+      <!-- PAGE 10 -->
+      <div class="config-section">
+        <div class="config-section-header">
+          <div class="config-section-num">10</div>
+          <div class="config-section-title">Territory Assignment</div>
+        </div>
+        <p>Territory Assignment configures how accounts are assigned to territories — one of the most operationally important workflows in the app. The configurator controls which assignment methods are available and how the assignment process is governed.</p>
+        <p><strong>Assignment methods (configure which to enable):</strong></p>
+        <ul>
+          <li><strong>Manual Assignment</strong> — Sales Ops manually assigns each account to a territory. Simple, full control, time-intensive for large account lists.</li>
+          <li><strong>Geographic Mapping</strong> — Accounts are assigned based on postal code or geographic region mapping. Good for geo-defined territories.</li>
+          <li><strong>Rule Engine</strong> — Accounts are assigned based on defined rules (e.g., all accounts in Industry = "Healthcare" AND Employee Count &gt; 500 → Territory X). Powerful but requires well-structured attribute data.</li>
+          <li><strong>Optimizer</strong> — Automated optimization-based assignment (requires Optimizer to be enabled on Page 6).</li>
+        </ul>
+        <p><strong>Other key settings:</strong></p>
+        <ul>
+          <li><strong>Reassignment governance</strong> — who can reassign accounts, and is approval required?</li>
+          <li><strong>Split accounts</strong> — can an account be split across multiple territories?</li>
+          <li><strong>Unassigned account handling</strong> — what happens to accounts with no territory match?</li>
+        </ul>
+        <div class="screenshot-placeholder">
+          <div class="ss-icon">📸</div>
+          <div class="ss-label">Screenshot: Page 10 — Territory Assignment, showing assignment method checkboxes</div>
+        </div>
+      </div>
+
+      <!-- PAGE 11 -->
+      <div class="config-section">
+        <div class="config-section-header">
+          <div class="config-section-num">11</div>
+          <div class="config-section-title">Resource Assignment</div>
+        </div>
+        <p>Resource Assignment controls how sales reps (Resources) are assigned to territories, and how those assignments translate into quota calculations. This is where the link between territories and people is defined.</p>
+        <p><strong>Key settings:</strong></p>
+        <ul>
+          <li><strong>Assignment type</strong> — full territory (one rep owns 100%) vs. split (multiple reps share a territory with defined percentages)</li>
+          <li><strong>Ramp rates</strong> — new hire ramp schedules (e.g., a rep in month 3 of their first year carries 60% of a full quota)</li>
+          <li><strong>Overlay reps</strong> — specialist or overlay reps who cover accounts across multiple territories (SE overlays, product specialists, etc.)</li>
+          <li><strong>Multiple assignments</strong> — can one rep be assigned to multiple territories? (yes, and this is common)</li>
+          <li><strong>Headcount tracking</strong> — does the app track open vs. filled territory headcount?</li>
+        </ul>
+        <div class="callout-tip">
+          <span class="callout-label">💡 Tip</span>
+          <p>The ramp rate setup is a frequent source of confusion. Confirm with the customer exactly how they calculate ramp — monthly ramp tables, a fixed percentage by tenure-quarter, or full quota from day one. Get a concrete example before configuring.</p>
+        </div>
+        <div class="screenshot-placeholder">
+          <div class="ss-icon">📸</div>
+          <div class="ss-label">Screenshot: Page 11 — Resource Assignment, showing ramp rate configuration and overlay settings</div>
+        </div>
+      </div>
+
+      <!-- PAGE 12 -->
+      <div class="config-section">
+        <div class="config-section-header">
+          <div class="config-section-num">12</div>
+          <div class="config-section-title">Target Approval</div>
+        </div>
+        <p>Target Approval configures the approval workflow for targets and quotas. This governs how targets flow from Finance → Sales Leadership → Sales Ops → Reps, with required approvals at each stage.</p>
+        <p><strong>Key settings:</strong></p>
+        <ul>
+          <li><strong>Enable approval workflow?</strong> — Boolean. Only enable if the customer has a defined approval process. Adding approval without a defined process creates friction.</li>
+          <li><strong>Approval stages</strong> — how many approval stages (e.g., Regional Manager → VP of Sales → Sales Ops)</li>
+          <li><strong>Approval by level</strong> — which hierarchy levels require approval (approve at Region? At Territory? Both?)</li>
+          <li><strong>Override with reason</strong> — can approvers override allocations, and must they provide a reason?</li>
+          <li><strong>Notification settings</strong> — email notifications for pending approvals (requires Anaplan CloudWorks or Action Hub)</li>
+        </ul>
+        <div class="callout-note">
+          <span class="callout-label">📝 Note</span>
+          <p>Keep the approval workflow simple. Complex multi-stage approval chains sound good in design but often break down in practice. A 2-stage workflow (manager approves, VP locks) covers 90% of use cases. Start simple and extend if needed — adding stages post-gen is manageable.</p>
+        </div>
+        <div class="screenshot-placeholder">
+          <div class="ss-icon">📸</div>
+          <div class="ss-label">Screenshot: Page 12 — Target Approval, showing approval stages and hierarchy level settings</div>
+        </div>
+      </div>
+
+      <!-- PAGE 13 -->
+      <div class="config-section">
+        <div class="config-section-header">
+          <div class="config-section-num">13</div>
+          <div class="config-section-title">Account Capacity</div>
+        </div>
+        <p>Account Capacity modules allow the app to estimate how much revenue potential a territory "can hold" based on the accounts assigned to it — comparing territory carrying capacity to the target allocated. This is a territory sizing and fairness feature.</p>
+        <p><strong>Key settings:</strong></p>
+        <ul>
+          <li><strong>Enable Account Capacity?</strong> — Optional module. Enable only if the customer actively wants to use potential-based territory sizing.</li>
+          <li><strong>Capacity metric</strong> — what defines capacity? (Addressable Market, Potential Spend, Customer Employee Count, etc.)</li>
+          <li><strong>Capacity vs. Target comparison</strong> — how does the app signal when a territory is over- or under-targeted relative to its potential?</li>
+        </ul>
+        <div class="callout-tip">
+          <span class="callout-label">💡 Tip</span>
+          <p>Account Capacity is a compelling feature for customers who want data-driven territory sizing. However, it only works if account-level potential data is clean and up-to-date. If the customer's account data is incomplete or stale, skip this for now and revisit in a Phase 2.</p>
+        </div>
+        <div class="screenshot-placeholder">
+          <div class="ss-icon">📸</div>
+          <div class="ss-label">Screenshot: Page 13 — Account Capacity, showing capacity metric selection</div>
+        </div>
+      </div>
+
+      <!-- PAGE 14 -->
+      <div class="config-section">
+        <div class="config-section-header">
+          <div class="config-section-num">14</div>
+          <div class="config-section-title">Rule Engine Setup</div>
+        </div>
+        <p>The Rule Engine is the automated account assignment logic that evaluates account attributes against defined rules to suggest or execute territory assignments. This is one of the most powerful — and most complex — features in T&amp;Q.</p>
+        <p><strong>Key settings:</strong></p>
+        <ul>
+          <li><strong>Enable Rule Engine?</strong> — Boolean. Only enable if the customer has structured attribute data and a desire to automate account assignments.</li>
+          <li><strong>Rule attributes</strong> — which account attributes can rules be based on (must be a subset of attributes enabled in Data Hub Setup)</li>
+          <li><strong>Rule priority</strong> — when multiple rules match an account, which takes precedence?</li>
+          <li><strong>Auto-apply vs. suggest</strong> — does the rule engine automatically assign accounts, or does it produce suggestions for Sales Ops to review?</li>
+          <li><strong>Conflict handling</strong> — what happens when an account matches no rule, or matches multiple conflicting rules?</li>
+        </ul>
+        <div class="callout-warning">
+          <span class="callout-label">⚠ Warning</span>
+          <p>The Rule Engine is only as good as the attribute data. If account attributes are sparse, inconsistent, or missing, the Rule Engine will produce poor results. Before enabling, spot-check: what percentage of accounts have values for the attributes you plan to use in rules? If it's below 70%, the Rule Engine will leave too many accounts unassigned and create more work, not less.</p>
+        </div>
+        <div class="screenshot-placeholder">
+          <div class="ss-icon">📸</div>
+          <div class="ss-label">Screenshot: Page 14 — Rule Engine Setup, showing rule attribute selection and auto-apply toggle</div>
+        </div>
+      </div>
+
+      <hr class="divider">
+
+      <h2>Completion &amp; Generation</h2>
+      <p>Once all 14 pages are completed and reviewed, the configurator provides a summary view showing the configuration choices and any remaining items that need attention before generation can proceed.</p>
+      <p><strong>Pre-generation checklist:</strong></p>
+      <ul>
+        <li>All 14 pages marked complete (no incomplete required fields)</li>
+        <li>Red-tab decisions finalized and signed off by the customer</li>
+        <li>Data Hub Setup, Planning Measures, and Target &amp; Allocation reviewed one final time</li>
+        <li>Workspace has sufficient capacity (the App Engineering team validates this)</li>
+        <li>A generation time has been scheduled with Chan/John — plan for 2–3 hours of their time</li>
+        <li>Customer stakeholders are available post-generation for the initial data validation session</li>
+      </ul>
+
+      <div class="callout-tip">
+        <span class="callout-label">💡 Best Practice</span>
+        <p>Run a "configuration review" session with the full project team 1–2 days before generation. Walk through every page together and verbally confirm each major decision. This is your last chance to catch mistakes before 8,000 objects are created. It usually takes 60–90 minutes and is always worth it.</p>
+      </div>
+
+      <div class="screenshot-placeholder" style="min-height:160px;">
+        <div class="ss-icon">📸</div>
+        <div class="ss-label">Screenshot: Configurator completion summary page — all pages green, ready for generation</div>
+      </div>
+
+    </div>
+  </main>
+
+  <script src="../js/nav.js"></script>
+</body>
+</html>

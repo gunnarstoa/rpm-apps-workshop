@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Post-Generation Steps — T&amp;Q Lab Guide</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div class="mobile-header">
+    <button id="hamburger">☰</button>
+    <span>T&amp;Q Lab Guide</span>
+  </div>
+
+  <nav class="sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-title">RPM Apps Workshop</div>
+      <div class="sidebar-subtitle">T&amp;Q Lab Guide — Day 1</div>
+    </div>
+    <ul class="nav-list">
+      <li class="nav-section-title">Getting Started</li>
+      <li><a class="nav-link" href="./00-overview.html">Workshop Overview</a></li>
+      <li class="nav-section-title">Day 1 &mdash; T&amp;Q</li>
+      <li><a class="nav-link" href="./01-spm-overview.html">SPM/RPM Overview</a></li>
+      <li><a class="nav-link" href="./02-anaplan-way.html">Anaplan Way for Apps</a></li>
+      <li><a class="nav-link" href="./03-configurator-walkthrough.html">Configurator Walkthrough</a></li>
+      <li><a class="nav-link" href="./04-configurator-exercise.html">Lab: Configurator Exercise</a></li>
+      <li><a class="nav-link" href="./05-post-gen-steps.html">Post-Generation Steps</a></li>
+      <li><a class="nav-link" href="./06-ado-integration.html">Data Integration &amp; ADO</a></li>
+      <li><a class="nav-link" href="./07-spoke-app-walkthrough.html">Spoke App Walkthrough</a></li>
+      <li><a class="nav-link" href="./08-extensions.html">Common Extensions</a></li>
+      <li class="nav-section-title">Day 2 &mdash; Seg &amp; Capacity</li>
+      <li><a class="nav-link" href="./09-day2-overview.html">Day 2 Overview</a></li>
+      <li><a class="nav-link" href="./10-segmentation-configurator.html">Segmentation Configurator</a></li>
+      <li><a class="nav-link" href="./11-capacity-configurator.html">Capacity Configurator</a></li>
+      <li><a class="nav-link" href="./12-seg-cap-exercise.html">Lab: Seg &amp; Cap Exercise</a></li>
+      <li><a class="nav-link" href="./13-segmentation-walkthrough.html">Segmentation App Walkthrough</a></li>
+      <li><a class="nav-link" href="./14-capacity-walkthrough.html">Capacity App Walkthrough</a></li>
+      <li><a class="nav-link" href="./15-whats-coming.html">What's Coming</a></li>
+      <li class="nav-section-title">Reference</li>
+      <li><a class="nav-link" href="./16-qanda.html">Q&amp;A from Sessions</a></li>
+      <li><a class="nav-link" href="./17-resources.html">Resources &amp; Downloads</a></li>
+    </ul>
+    <div class="lang-switcher">
+      <span class="lang-switcher-label">🌐 Language</span>
+      <select id="lang-select" class="lang-select">
+        <option value="en">🇺🇸 English</option>
+        <option value="ja">🇯🇵 日本語</option>
+        <option value="es">🇪🇸 Español</option>
+        <option value="fr">🇫🇷 Français</option>
+        <option value="de">🇩🇪 Deutsch</option>
+        <option value="pt">🇧🇷 Português</option>
+        <option value="ko">🇰🇷 한국어</option>
+        <option value="zh">🇨🇳 中文</option>
+      </select>
+    </div>
+  </nav>
+
+  <main class="main-content">
+    <div class="content-header">
+      <h1>Post-Generation Steps</h1>
+      <p class="subtitle">From raw generation to Model Readiness — the complete post-gen checklist</p>
+      <div class="badge-row">
+        <span class="content-badge">Section 5</span>
+        <span class="content-badge">45 min</span>
+        <span class="content-badge">Reference</span>
+      </div>
+    </div>
+    <div class="content-body">
+
+      <p>After the T&amp;Q app is generated, you have a structurally complete application — but it is not yet ready for the customer. There is a defined set of post-generation steps that must be completed before the app can be considered "Model Ready" and presented to the customer with data. With focused effort, the actual hands-on work is approximately <strong>1–2 days</strong>, though it is typically spread over 1–2 weeks to allow for data preparation on the customer side.</p>
+
+      <p>The goal of the Model Readiness phase is to deliver a live demo of the app with the customer's own data loaded, so they can validate the configuration choices and sign off before building begins.</p>
+
+      <div class="callout-warning">
+        <span class="callout-label">⚠ Known Issues</span>
+        <p>The following known issues occur regularly after generation and should be expected. Do not escalate these as bugs unless they persist after the documented fix:</p>
+        <ul>
+          <li><strong>Source model bug:</strong> Some formula references in generated modules point to the configurator source model rather than the generated app. These must be manually updated in the affected line items. The App Engineering team maintains a log of which line items are typically affected for each version.</li>
+          <li><strong>Save view mappings:</strong> Dashboard saved views are not always correctly mapped after generation. Check every dashboard page and re-save any view that shows incorrect filters or formatting.</li>
+          <li><strong>Broken formula references:</strong> Modules that are conditionally generated (only exist when certain features are enabled) sometimes have forward references from always-generated modules. These show as formula errors. Work through the error log systematically — most are one-line fixes.</li>
+        </ul>
+      </div>
+
+      <h2>Who Handles What</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Activity</th>
+              <th>Owner</th>
+              <th>Timing</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>App Generation (running the generator)</td>
+              <td>App Engineering (Chan/John)</td>
+              <td>Day 0 (generation day)</td>
+              <td>Schedule 2–3 hrs with the App Engineering team</td>
+            </tr>
+            <tr>
+              <td>Generation error review</td>
+              <td>App Engineering + Delivery Lead</td>
+              <td>Day 0–1</td>
+              <td>App Engineering reviews the error log; delivery lead gets a summary</td>
+            </tr>
+            <tr>
+              <td>Source model bug fixes</td>
+              <td>Delivery Lead</td>
+              <td>Day 1–2</td>
+              <td>Follow the App Engineering fix guide for the current version</td>
+            </tr>
+            <tr>
+              <td>Formula reference cleanup</td>
+              <td>Delivery Lead</td>
+              <td>Day 1–3</td>
+              <td>Work through the Anaplan model errors list systematically</td>
+            </tr>
+            <tr>
+              <td>Save view remapping</td>
+              <td>Delivery Lead</td>
+              <td>Day 2–3</td>
+              <td>Go through every dashboard page; re-save views as needed</td>
+            </tr>
+            <tr>
+              <td>Data Hub data loads (accounts, territories, reps)</td>
+              <td>Delivery Lead + Customer IT</td>
+              <td>Day 3–7</td>
+              <td>Requires customer to provide formatted data files</td>
+            </tr>
+            <tr>
+              <td>Historical actuals load</td>
+              <td>Delivery Lead + Customer IT</td>
+              <td>Day 5–10</td>
+              <td>Often the slowest step — data quality issues are common</td>
+            </tr>
+            <tr>
+              <td>ADO pipeline setup</td>
+              <td>Delivery Lead + Customer IT</td>
+              <td>Day 3–10</td>
+              <td>Requires IT involvement; can parallelize with data cleanup</td>
+            </tr>
+            <tr>
+              <td>Initial target load</td>
+              <td>Delivery Lead</td>
+              <td>Day 8–12</td>
+              <td>Load Finance targets, validate rollup totals</td>
+            </tr>
+            <tr>
+              <td>Model Readiness demo to customer</td>
+              <td>Delivery Lead</td>
+              <td>Day 10–14</td>
+              <td>Present the loaded app; get sign-off to proceed to UAT</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Post-Generation Checklist</h2>
+      <p>Work through this checklist in order. Each category contains sub-steps — see the full printable checklist (distributed as a separate document) for the complete item-level list.</p>
+
+      <h3>1. Generation Validation</h3>
+      <ul class="checklist">
+        <li>Review the generation error log — count total errors (0–200 is acceptable)</li>
+        <li>Categorize errors: formula errors vs. structural errors vs. data errors</li>
+        <li>Identify and log any errors above the expected count for the configuration</li>
+        <li>Confirm all expected modules, lists, and dashboards were created</li>
+        <li>Confirm workspace size post-generation — check for any workspace overage warnings</li>
+      </ul>
+
+      <h3>2. Formula &amp; Reference Fixes</h3>
+      <ul class="checklist">
+        <li>Open the model errors panel — work through every error</li>
+        <li>Fix source model references (broken links to configurator source model)</li>
+        <li>Fix forward formula references to conditionally-generated modules</li>
+        <li>Verify all line items in core modules (Target Allocation, Quota Calculation, Resource Assignment) are formula-correct</li>
+        <li>Re-run any failed process actions to verify they complete cleanly</li>
+      </ul>
+
+      <h3>3. Dashboard &amp; View Cleanup</h3>
+      <ul class="checklist">
+        <li>Open every dashboard page in the spoke app</li>
+        <li>Check saved view filters — re-save any that are blank or incorrect</li>
+        <li>Verify pivot table headers are correct (not showing "undefined" or configurator placeholders)</li>
+        <li>Check conditional formatting rules are firing correctly</li>
+        <li>Verify navigation links between dashboard pages work correctly</li>
+      </ul>
+
+      <h3>4. Data Hub Setup &amp; Initial Data Load</h3>
+      <ul class="checklist">
+        <li>Load Territory hierarchy (all tiers) — verify rollup integrity</li>
+        <li>Load Account list — check for duplicate IDs, missing mandatory fields</li>
+        <li>Load Resource (rep) list — verify territory assignments are populated</li>
+        <li>Load Account-to-territory mapping (if using pre-assigned mapping)</li>
+        <li>Run the "Validate Data Hub" action and resolve any errors</li>
+        <li>Spot-check: select 3–5 territories and verify accounts, reps, and rollups look correct</li>
+      </ul>
+
+      <h3>5. Historical Actuals Load</h3>
+      <ul class="checklist">
+        <li>Format historical actuals data to match the import template</li>
+        <li>Load actuals for each historical period (Year 1, Year 2)</li>
+        <li>Verify actuals roll up correctly to territory → region → theater → global</li>
+        <li>Compare total actuals in Anaplan to source system total — must reconcile to within 0.5%</li>
+        <li>Check for orphaned actuals (actuals with no matching account or territory)</li>
+      </ul>
+
+      <h3>6. Target Import &amp; Allocation Validation</h3>
+      <ul class="checklist">
+        <li>Import Finance targets at the configured entry tier</li>
+        <li>Run the allocation process down the hierarchy</li>
+        <li>Verify allocation totals match Finance targets (before over-allocation buffer)</li>
+        <li>Spot-check 3–5 territories: allocated target vs. manual expectation</li>
+        <li>Test the over-allocation warning — verify it fires at the configured threshold</li>
+      </ul>
+
+      <h3>7. Quota Calculation Validation</h3>
+      <ul class="checklist">
+        <li>Assign test resources to territories (use test reps, not real reps)</li>
+        <li>Run the quota calculation process</li>
+        <li>Verify quota = territory target × assignment % × ramp factor</li>
+        <li>Test ramp scenarios: 100% assignment, 50% split, new hire ramp</li>
+        <li>Verify quota totals roll up correctly</li>
+      </ul>
+
+      <h3>8. Integration &amp; ADO Setup</h3>
+      <ul class="checklist">
+        <li>Configure ADO pipelines for each data source (accounts, actuals, reps)</li>
+        <li>Run a test data refresh end-to-end</li>
+        <li>Verify incremental update behavior (new accounts added, removed accounts handled)</li>
+        <li>Set up and test scheduling for ongoing data refreshes</li>
+        <li>Document the ADO pipeline architecture for handoff to customer IT</li>
+      </ul>
+
+      <h2>Model Readiness Goal</h2>
+      <p>The Model Readiness milestone is a working session with the customer (typically the Sales Ops lead and at least one Sales manager) where you demonstrate the app with their data. The goal is:</p>
+      <ol>
+        <li>Customer sees their actual territories, accounts, reps, and targets in the app</li>
+        <li>Customer can navigate the spoke app independently for the major workflows</li>
+        <li>Customer signs off that the configuration reflects their requirements</li>
+        <li>Any remaining configuration changes are documented as change requests</li>
+        <li>Project proceeds to UAT or extension development</li>
+      </ol>
+
+      <div class="callout-tip">
+        <span class="callout-label">💡 Tip</span>
+        <p>Don't try to make the app "perfect" before the Model Readiness demo. The goal is to show enough working functionality with real data that the customer can validate. Cosmetic issues, placeholder labels, and secondary dashboards can be cleaned up during UAT. Getting to a live demo quickly builds customer confidence and surfaces real feedback.</p>
+      </div>
+
+      <h2>V3 Note</h2>
+      <div class="callout-note">
+        <span class="callout-label">📝 V3 Specifics</span>
+        <p>The V3 app generates significantly more dashboards and modules than V2. The post-gen checklist above is calibrated for V3. If you are working on a V2 → V3 upgrade, note that:</p>
+        <ul>
+          <li>V3 uses per-tier hierarchy views (not a flat territory list) — the data load format is different from V2</li>
+          <li>V3 ADO integration replaces V2's flat-file Data Hub approach — IT will need separate setup support</li>
+          <li>V3 has additional dashboard categories that don't exist in V2 — plan extra time for dashboard validation</li>
+          <li>V2 extensions do NOT automatically transfer to V3 — each extension must be re-evaluated</li>
+        </ul>
+      </div>
+
+    </div>
+  </main>
+
+  <script src="../js/nav.js"></script>
+</body>
+</html>

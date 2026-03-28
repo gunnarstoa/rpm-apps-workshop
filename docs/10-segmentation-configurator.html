@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Account Segmentation & Scoring Configurator — RPM Apps Lab Guide</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div class="mobile-header">
+    <button id="hamburger">☰</button>
+    <span>RPM Apps Lab Guide</span>
+  </div>
+
+  <nav class="sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-title">RPM Apps Workshop</div>
+      <div class="sidebar-subtitle">T&amp;Q Lab Guide — Day 1</div>
+    </div>
+    <ul class="nav-list">
+      <li class="nav-section-title">Getting Started</li>
+      <li><a class="nav-link" href="./00-overview.html">Workshop Overview</a></li>
+      <li class="nav-section-title">Day 1 — T&amp;Q</li>
+      <li><a class="nav-link" href="./01-spm-overview.html">SPM/RPM Overview</a></li>
+      <li><a class="nav-link" href="./02-anaplan-way.html">Anaplan Way for Apps</a></li>
+      <li><a class="nav-link" href="./03-configurator-walkthrough.html">Configurator Walkthrough</a></li>
+      <li><a class="nav-link" href="./04-configurator-exercise.html">Lab: Configurator Exercise</a></li>
+      <li><a class="nav-link" href="./05-post-gen-steps.html">Post-Generation Steps</a></li>
+      <li><a class="nav-link" href="./06-ado-integration.html">Data Integration &amp; ADO</a></li>
+      <li><a class="nav-link" href="./07-spoke-app-walkthrough.html">Spoke App Walkthrough</a></li>
+      <li><a class="nav-link" href="./08-extensions.html">Common Extensions</a></li>
+      <li class="nav-section-title">Day 2 — Seg &amp; Capacity</li>
+      <li><a class="nav-link" href="./09-day2-overview.html">Day 2 Overview</a></li>
+      <li><a class="nav-link active" href="./10-segmentation-configurator.html">Segmentation Configurator</a></li>
+      <li><a class="nav-link" href="./11-capacity-configurator.html">Capacity Configurator</a></li>
+      <li><a class="nav-link" href="./12-seg-cap-exercise.html">Lab: Seg &amp; Cap Exercise</a></li>
+      <li><a class="nav-link" href="./13-segmentation-walkthrough.html">Segmentation App Walkthrough</a></li>
+      <li><a class="nav-link" href="./14-capacity-walkthrough.html">Capacity App Walkthrough</a></li>
+      <li><a class="nav-link" href="./15-whats-coming.html">What's Coming</a></li>
+      <li class="nav-section-title">Reference</li>
+      <li><a class="nav-link" href="./16-qanda.html">Q&amp;A from Sessions</a></li>
+      <li><a class="nav-link" href="./17-resources.html">Resources &amp; Downloads</a></li>
+    </ul>
+    <div class="lang-switcher">
+      <span class="lang-switcher-label">🌐 Language</span>
+      <select id="lang-select" class="lang-select">
+        <option value="en">🇺🇸 English</option>
+        <option value="ja">🇯🇵 日本語</option>
+        <option value="es">🇪🇸 Español</option>
+        <option value="fr">🇫🇷 Français</option>
+        <option value="de">🇩🇪 Deutsch</option>
+        <option value="pt">🇧🇷 Português</option>
+        <option value="ko">🇰🇷 한국어</option>
+        <option value="zh">🇨🇳 中文</option>
+      </select>
+    </div>
+  </nav>
+
+  <main class="main-content">
+    <div class="content-header">
+      <h1>Account Segmentation &amp; Scoring Configurator</h1>
+      <p class="subtitle">Key configuration decisions for the Segmentation app</p>
+    </div>
+    <div class="content-body">
+
+      <p>The Segmentation configurator shares the same app as Capacity. Navigate to the <strong>Segmentation section</strong> within the configurator. Key principle: you're defining <em>at what level of detail</em> you want to manage various assumptions. The dimensionality choices you make here cascade through the entire app — changing them post-generation is very painful.</p>
+
+      <h2>Overview of Segmentation Configuration Goals</h2>
+      <ul>
+        <li>Define the account universe and what data objects drive segmentation</li>
+        <li>Configure scoring dimensions and wallet size calculation methods</li>
+        <li>Set up rule-based segmentation parameters</li>
+        <li>Define hierarchy planning setup (GTM modeling)</li>
+      </ul>
+
+      <div class="callout-note">
+        <strong>Complexity Reference:</strong> T&amp;Q configurator = 1.0 complexity. Segmentation configurator = ~0.4 complexity. Fewer pages, fewer decisions, less dimensionality — but still requires care.
+      </div>
+
+      <hr>
+
+      <h2>Page: Data Setup</h2>
+      <p>This is a mirror of the T&amp;Q data setup — same data objects (accounts, employees, opportunities). If you're configuring both Segmentation and Capacity, you only need to set this up once.</p>
+      <ul>
+        <li>Additional segmentation-specific attributes: <strong>firmographic data</strong> — employee count bands, revenue bands, industry</li>
+        <li><strong>Key:</strong> Enable list-formatted attributes (<em>Enable for Calculate</em>) for anything you want to use as a segmentation dimension</li>
+        <li>Banded attributes are required for the rule engine — numeric values don't work directly. For example: "employee band: 0–250, 250–1,000, 1,000+" rather than a raw number field</li>
+      </ul>
+      <figure class="screenshot">
+        <img src="../img/day2/10-seg-config-overview.png" alt="Segmentation configurator data setup overview" style="width:100%;border-radius:6px;border:1px solid #e2e8f0;">
+        <figcaption style="font-size:0.8rem;color:#6b7280;margin-top:0.4rem;text-align:center;">Segmentation configurator data setup overview</figcaption>
+      </figure>
+
+      <hr>
+
+      <h2>Page: Account Hierarchy Setup</h2>
+      <p>Define account hierarchy levels — typically from Global Ultimate Parent down through the subsidiary structure.</p>
+      <p><strong>Critical decision: at what level do you segment?</strong></p>
+      <ul>
+        <li><strong>Parent-level segmentation:</strong> All subsidiaries inherit the parent's segment. Simpler, fewer unique segment assignments.</li>
+        <li><strong>Lowest-level segmentation:</strong> Each entity gets its own segment independently. More granular, but significantly more complex to manage.</li>
+      </ul>
+      <p>This toggle is set in the configurator and is very painful to change post-generation. Be deliberate with the customer before committing.</p>
+
+      <hr>
+
+      <h2>Page: Rule-Based Segmentation Setup</h2>
+      <p>Define which attributes are available as rule dimensions and configure the segment list.</p>
+      <ul>
+        <li>Attributes must be list-formatted (configured in Data Setup) to be available as rule dimensions</li>
+        <li>Configure the number and names of segments (e.g., Strategic, Named, Commercial, SMB)</li>
+        <li>These segments become the output — every account that goes through segmentation will map to exactly one</li>
+      </ul>
+      <div class="callout-tip">
+        <strong>Fewer segments is better.</strong> Customers often want 8–10 segments; push back toward 3–5. More segments = more complexity in every downstream app — more territory types, more coverage ratios, more headcount planning rows. Every extra segment you add compounds through T&amp;Q and Capacity.
+      </div>
+      <figure class="screenshot">
+        <img src="../img/day2/10-seg-config-rules.png" alt="Rule-based segmentation configuration" style="width:100%;border-radius:6px;border:1px solid #e2e8f0;">
+        <figcaption style="font-size:0.8rem;color:#6b7280;margin-top:0.4rem;text-align:center;">Rule-based segmentation configuration — defining segments and rule dimensions</figcaption>
+      </figure>
+
+      <hr>
+
+      <h2>Page: Score-Based Segmentation Setup</h2>
+      <p>Configure the scoring model that assigns every account a numeric score, which then maps to a segment.</p>
+      <ul>
+        <li>Define up to 10 scoring metrics and their weights — <strong>weights must sum to 100%</strong></li>
+        <li>Score range: 0–10 by default (can be changed, but all scoring must scale accordingly)</li>
+        <li>Define score-to-segment mapping thresholds (e.g., 7–10 = Strategic, 4–7 = Mid-Market, 0–4 = SMB)</li>
+        <li>Every account gets a score → every account gets a segment (unlike rule-based, which may leave gaps if an account doesn't match any rule)</li>
+        <li><strong>Score-based = default assignment; rule-based = override</strong></li>
+      </ul>
+
+      <hr>
+
+      <h2>Page: Wallet Size Configuration</h2>
+      <p>Wallet size estimates the total addressable spend for each account — your potential revenue from that account. Three methods are available and can be used in combination, selectable per industry:</p>
+      <ol>
+        <li><strong>OpEx method:</strong> Based on company operating expenditure as a percentage of their spend in your category</li>
+        <li><strong>Employee method:</strong> Based on spend per employee × employee count</li>
+        <li><strong>Revenue method:</strong> Based on company revenue × addressable market percentage</li>
+      </ol>
+      <ul>
+        <li><strong>Geo index:</strong> Regional scaling factor — e.g., Americas gets a slight uplift, APAC a slight reduction</li>
+        <li><strong>Remaining wallet</strong> = total wallet − current ARR = your potential / whitespace</li>
+        <li>This feeds directly into T&amp;Q as the default allocation method for target cascading</li>
+      </ul>
+      <div class="callout-note">
+        <strong>Wallet size is optional.</strong> If the customer won't use it for target allocation or segmentation rules, skip the setup entirely. Don't over-engineer it. If they don't have reliable firmographic data and won't buy third-party data, the wallet size model will be directional at best.
+      </div>
+
+      <hr>
+
+      <h2>Page: GTM Hierarchy Planning Setup</h2>
+      <p>Define how many levels of GTM hierarchy planning you want to model. This is the sandbox for modeling next year's territory structure before committing anything to T&amp;Q.</p>
+      <ul>
+        <li>Completely separate from the live hierarchy — changes here don't affect T&amp;Q until explicitly exported</li>
+        <li>The number of levels you configure here determines how the planning hierarchy section of the Segmentation app is built</li>
+        <li>V2 redesign (imminent): significantly more intuitive, with better hierarchy balance reporting</li>
+      </ul>
+
+      <hr>
+
+      <h2>Timing Guidance</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Configurator</th>
+            <th>Estimated Time</th>
+            <th>Relative Complexity</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>T&amp;Q</td>
+            <td>~1 week</td>
+            <td>1.0×</td>
+          </tr>
+          <tr>
+            <td>Segmentation</td>
+            <td>~2–3 hours</td>
+            <td>~0.4×</td>
+          </tr>
+          <tr>
+            <td>Capacity</td>
+            <td>~2 days</td>
+            <td>~0.5×</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>Segmentation is much simpler than T&amp;Q — fewer pages, less dimensionality. A well-prepared customer with clean firmographic data can move quickly. The biggest time sink is usually the wallet size configuration, which you can skip if it's not needed.</p>
+
+    </div>
+  </main>
+  <script src="../js/nav.js"></script>
+</body>
+</html>

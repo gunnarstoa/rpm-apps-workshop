@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spoke App Walkthrough — T&amp;Q Lab Guide</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div class="mobile-header">
+    <button id="hamburger">☰</button>
+    <span>T&amp;Q Lab Guide</span>
+  </div>
+
+  <nav class="sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-title">RPM Apps Workshop</div>
+      <div class="sidebar-subtitle">T&amp;Q Lab Guide — Day 1</div>
+    </div>
+    <ul class="nav-list">
+      <li class="nav-section-title">Getting Started</li>
+      <li><a class="nav-link" href="./00-overview.html">Workshop Overview</a></li>
+      <li class="nav-section-title">Day 1 &mdash; T&amp;Q</li>
+      <li><a class="nav-link" href="./01-spm-overview.html">SPM/RPM Overview</a></li>
+      <li><a class="nav-link" href="./02-anaplan-way.html">Anaplan Way for Apps</a></li>
+      <li><a class="nav-link" href="./03-configurator-walkthrough.html">Configurator Walkthrough</a></li>
+      <li><a class="nav-link" href="./04-configurator-exercise.html">Lab: Configurator Exercise</a></li>
+      <li><a class="nav-link" href="./05-post-gen-steps.html">Post-Generation Steps</a></li>
+      <li><a class="nav-link" href="./06-ado-integration.html">Data Integration &amp; ADO</a></li>
+      <li><a class="nav-link" href="./07-spoke-app-walkthrough.html">Spoke App Walkthrough</a></li>
+      <li><a class="nav-link" href="./08-extensions.html">Common Extensions</a></li>
+      <li class="nav-section-title">Day 2 &mdash; Seg &amp; Capacity</li>
+      <li><a class="nav-link" href="./09-day2-overview.html">Day 2 Overview</a></li>
+      <li><a class="nav-link" href="./10-segmentation-configurator.html">Segmentation Configurator</a></li>
+      <li><a class="nav-link" href="./11-capacity-configurator.html">Capacity Configurator</a></li>
+      <li><a class="nav-link" href="./12-seg-cap-exercise.html">Lab: Seg &amp; Cap Exercise</a></li>
+      <li><a class="nav-link" href="./13-segmentation-walkthrough.html">Segmentation App Walkthrough</a></li>
+      <li><a class="nav-link" href="./14-capacity-walkthrough.html">Capacity App Walkthrough</a></li>
+      <li><a class="nav-link" href="./15-whats-coming.html">What's Coming</a></li>
+      <li class="nav-section-title">Reference</li>
+      <li><a class="nav-link" href="./16-qanda.html">Q&amp;A from Sessions</a></li>
+      <li><a class="nav-link" href="./17-resources.html">Resources &amp; Downloads</a></li>
+    </ul>
+    <div class="lang-switcher">
+      <span class="lang-switcher-label">🌐 Language</span>
+      <select id="lang-select" class="lang-select">
+        <option value="en">🇺🇸 English</option>
+        <option value="ja">🇯🇵 日本語</option>
+        <option value="es">🇪🇸 Español</option>
+        <option value="fr">🇫🇷 Français</option>
+        <option value="de">🇩🇪 Deutsch</option>
+        <option value="pt">🇧🇷 Português</option>
+        <option value="ko">🇰🇷 한국어</option>
+        <option value="zh">🇨🇳 中文</option>
+      </select>
+    </div>
+  </nav>
+
+  <main class="main-content">
+    <div class="content-header">
+      <h1>Generated T&amp;Q Spoke App: End-to-End Walkthrough</h1>
+      <p class="subtitle">Understanding the generated UX application — use the template app with fictitious data to explore alongside this guide.</p>
+    </div>
+    <div class="content-body">
+
+      <p>The generated T&amp;Q Spoke app is the main working environment for sales planners, sales ops, and admins. This section walks through each category and key page. The UX app is organized into 8 categories. Note: the current ordering doesn't follow a perfect planning sequence — V3 will introduce a more persona-driven layout.</p>
+
+      <div class="callout-note">
+        <strong>Template App Access</strong><br>
+        You should have access to the T&amp;Q V2 template app with fictitious data in your partner workspace. Use this to explore each section as you read through this walkthrough. Search for "V2" in your Anaplan apps list.
+      </div>
+
+      <!-- CATEGORY 1 -->
+      <h2>1. Overview &amp; Dashboards</h2>
+      <p>The overview pages serve as a landing zone and navigation aid for business users. They contain pre-built dashboards for first-line and second-line managers showing key metrics across their hierarchy.</p>
+      <ul>
+        <li>Two sample dashboards included out of the box (Level 1 and Level 2 manager views)</li>
+        <li>These are conversation starters, not finished products — use them to ask "what does your ideal dashboard look like?"</li>
+        <li>Common extension: custom dashboards tailored to the customer's KPIs and hierarchy levels</li>
+        <li>Don't present these as final — frame them as the starting baseline</li>
+      </ul>
+      <figure class="screenshot">
+  <img src="../img/07-spoke-overview.png" alt="T&Q Spoke App — Overview dashboards for first-line and second-line managers" style="width:100%;border-radius:6px;border:1px solid #e2e8f0;">
+  <figcaption style="font-size:0.8rem;color:#6b7280;margin-top:0.4rem;text-align:center;">T&Q Spoke App — Overview dashboards for first-line and second-line managers</figcaption>
+</figure>
+
+      <!-- CATEGORY 2 -->
+      <h2>2. Account Information</h2>
+      <p>This category covers account-level data, reporting, and the inputs that inform potential spend — the default metric used for target allocation.</p>
+
+      <h3>Historical Reporting</h3>
+      <p>Validates that transactional data (Orders, Opportunities) is loading correctly and linking to accounts. The primary purpose is data validation during model readiness — confirming the pipeline matches what the customer sees in their CRM.</p>
+
+      <h3>Addressable Market</h3>
+      <p>This is the landing spot for segmentation outputs from the Anaplan Segmentation app. Two key fields:</p>
+      <ul>
+        <li><strong>Initial Account Segment</strong>: The segment as defined by the segmentation process or imported from CRM</li>
+        <li><strong>Override Account Segment</strong>: Manual override capability for planners</li>
+      </ul>
+      <div class="callout-tip">
+        <strong>Segmentation Selling Point</strong><br>
+        Even if the customer just has a segment attribute in Salesforce today, the Addressable Market page is a great place to show the value of the Segmentation app. You can say: "This attribute you have today — here's what a full, data-driven segmentation process would look like, and how it feeds directly into T&amp;Q."
+      </div>
+
+      <h3>Potential Spend</h3>
+      <p>Potential Spend is the primary out-of-box allocation method — targets cascade down the hierarchy proportionally based on each territory's Potential Spend. It's built from a combination of:</p>
+      <ul>
+        <li><strong>Manual override</strong>: Admin-entered values per account</li>
+        <li><strong>Industry average</strong>: Benchmark values by industry segment</li>
+        <li><strong>Anaplan Predictive Insights (APCD)</strong>: An optional third-party scoring model. In practice, most customers don't use it — the correlation to their specific revenue is often unclear, and it requires an additional purchase through an external endpoint.</li>
+      </ul>
+      <figure class="screenshot">
+  <img src="../img/07-target-import.png" alt="Account Information — Potential Spend inputs informing default allocation method" style="width:100%;border-radius:6px;border:1px solid #e2e8f0;">
+  <figcaption style="font-size:0.8rem;color:#6b7280;margin-top:0.4rem;text-align:center;">Account Information — Potential Spend inputs informing default allocation method</figcaption>
+</figure>
+
+      <!-- CATEGORY 3 -->
+      <h2>3. Scenario Planning</h2>
+      <p>Scenario planning allows planners to compare different account-to-territory assignment configurations before committing. This category also houses the Optimizer.</p>
+
+      <h3>Scenario Comparison</h3>
+      <p>Select two scenarios (A and B) to compare side-by-side. As you move accounts between territories in a scenario, the delta is highlighted automatically. Key metrics compared:</p>
+      <ul>
+        <li>Number of accounts per territory</li>
+        <li>Pipeline / addressable market value</li>
+        <li>Potential spend distribution</li>
+      </ul>
+      <p>This page is also the <strong>landing spot for Optimizer results</strong> — after running the Optimizer, you import results into a scenario here and compare against the current state before committing.</p>
+      <figure class="screenshot">
+  <img src="../img/07-scenario-comparison.png" alt="Scenario Planning — side-by-side comparison of two account assignment scenarios with delta highlighting" style="width:100%;border-radius:6px;border:1px solid #e2e8f0;">
+  <figcaption style="font-size:0.8rem;color:#6b7280;margin-top:0.4rem;text-align:center;">Scenario Planning — side-by-side comparison of two account assignment scenarios with delta highlighting</figcaption>
+</figure>
+
+      <h3>Optimizer Setup</h3>
+      <p>The Optimizer is one of the most powerful — and least-used — Anaplan platform capabilities. The T&amp;Q app provides it out-of-the-box, configured through the Configurator. Key concepts:</p>
+
+      <p><strong>Scopes</strong>: Geographic boundaries within which accounts can be moved. You can't run the optimizer across your entire hierarchy at once — define scopes like "Americas West" or "California Sub-Region."</p>
+
+      <p><strong>Runs per Scope</strong>: Each scope can have up to 2 optimization runs with different objectives or constraints.</p>
+
+      <p><strong>Geography Constraint vs. Balance Level</strong>: These are not the same thing:</p>
+      <ul>
+        <li><strong>Geography Constraint</strong>: The tier within which accounts are allowed to move (e.g., within a Region — accounts can cross sub-regions but not cross regions)</li>
+        <li><strong>Balance Level</strong>: The tier at which territories should be balanced relative to each other (e.g., balance within Sub-Region — territories in the same sub-region should be roughly equal)</li>
+        <li>Balance level should never be set higher than the geography constraint level</li>
+      </ul>
+
+      <p><strong>Objectives</strong>: The metric to balance across territories. Defaults: Potential Spend, Addressable Market, Pipeline Amount. You can add custom objectives via the Configurator.</p>
+
+      <p><strong>Constraints per territory</strong>: Min/max account count, segment mix requirements. Use with care — conflicting constraints will cause the Optimizer to fail.</p>
+
+      <div class="callout-tip">
+        <strong>How the Optimizer Works</strong><br>
+        The Optimizer ranks all accounts within the scope by the objective metric, then distributes them across territories in a round-robin fashion while respecting constraints. It achieves <em>balance</em> — not true mathematical optimization. Territory 1 gets the highest-value account, Territory 2 gets the second-highest, etc. The result is roughly equal territories, not revenue-maximized territories.
+      </div>
+
+      <div class="callout-warning">
+        <strong>Outlier Accounts</strong><br>
+        A single account whose addressable market exceeds the combined total of all other accounts will make the Optimizer infeasible. Exclude these outliers from the run using the account exclusion settings, or mark them as "preserve existing assignment."
+      </div>
+
+      <div class="callout-warning">
+        <strong>Satellite Model Architecture</strong><br>
+        The Optimizer runs in a satellite spoke model — separate from the main spoke — to avoid freezing the model for other users during execution. Runs take a few minutes. This is intentional design, not a bug.
+      </div>
+      <figure class="screenshot">
+  <img src="../img/07-optimizer-setup.png" alt="Optimizer Setup — define scopes, runs, objectives, and geography constraints" style="width:100%;border-radius:6px;border:1px solid #e2e8f0;">
+  <figcaption style="font-size:0.8rem;color:#6b7280;margin-top:0.4rem;text-align:center;">Optimizer Setup — define scopes, runs, objectives, and geography constraints</figcaption>
+</figure>
+
+      <h3>Confirm Plan</h3>
+      <p>Once you've reviewed a scenario and are satisfied, use Confirm Plan to commit it as the current account-to-territory assignment. This replaces the live assignment state.</p>
+
+      <!-- CATEGORY 4 -->
+      <h2>4. Target Setup</h2>
+      <p>The target setting process has three steps, mirroring what was configured in the Configurator.</p>
+
+      <h3>Step 1 — Finance Import</h3>
+      <p>Finance provides annual or quarterly targets at the defined import level (e.g., at the Region level). The import view and action are generated based on your Configurator settings:</p>
+      <ul>
+        <li>Import level: the tier where targets enter the system</li>
+        <li>Time granularity: annual or quarterly</li>
+        <li>Dimensions: Planning measures + optional product/BU if configured</li>
+      </ul>
+      <p>Note: Export actions are not generated out of the box (there's nothing to export until targets exist). Add export actions post-generation as needed.</p>
+      <figure class="screenshot">
+  <img src="../img/07-target-import.png" alt="Target Setup Step 1 — Finance imports annual or quarterly targets at the defined hierarchy level" style="width:100%;border-radius:6px;border:1px solid #e2e8f0;">
+  <figcaption style="font-size:0.8rem;color:#6b7280;margin-top:0.4rem;text-align:center;">Target Setup Step 1 — Finance imports annual or quarterly targets at the defined hierarchy level</figcaption>
+</figure>
+
+      <h3>Step 2 — Allocation Method</h3>
+      <p>Once targets are imported at the top level, the allocation method cascades them down to the leaf-level territory. Three default methods are available (configured in the Configurator):</p>
+      <ul>
+        <li><strong>Potential Spend</strong>: Distribute proportionally to each territory's potential spend value</li>
+        <li><strong>Prior Year Actuals</strong>: Distribute proportionally to last year's bookings/performance</li>
+        <li><strong>Pipeline Amount</strong>: Distribute proportionally to current pipeline</li>
+      </ul>
+      <p>You can select one or combine multiple. A common extension is weighted blending — allowing admins to set a percentage weight for each method (e.g., 60% prior year, 40% pipeline).</p>
+      <figure class="screenshot">
+  <img src="../img/07-target-allocation.png" alt="Target Setup Step 2 — Allocation method selection distributes targets proportionally down the hierarchy" style="width:100%;border-radius:6px;border:1px solid #e2e8f0;">
+  <figcaption style="font-size:0.8rem;color:#6b7280;margin-top:0.4rem;text-align:center;">Target Setup Step 2 — Allocation method selection distributes targets proportionally down the hierarchy</figcaption>
+</figure>
+
+      <h3>Step 3 — Over-allocation &amp; Override</h3>
+      <p><strong>Over-allocation</strong>: A percentage uplift applied at each level below the import level. For example, if T5 (leaf) targets total $9.3M, and you set 10% over-allocation at T5, then T4 (the parent rollup) targets become $10.2M. This accounts for attrition and ramp.</p>
+
+      <p><strong>Override</strong>: A hard number entered at a specific level, superseding the over-allocation calculation. V3 allows overrides at every level; V2 allows override at only one configured level.</p>
+
+      <div class="callout-important">
+        <strong>Override Supersedes Over-allocation</strong><br>
+        When both are set, the override wins. Override is a deliberate, explicit number. Over-allocation is a systematic uplift. Be clear with customers about which mechanism to use when.
+      </div>
+
+      <h3>Target Approval</h3>
+      <p>After targets are set and reviewed, managers can approve them level by level. Once approved:</p>
+      <ul>
+        <li>Targets are locked (DCA enforced — users cannot edit approved values)</li>
+        <li>Tied to Workflow: approval triggers email notifications to sales roles with email addresses on file</li>
+        <li>Approval flows bottom-up (leaf level approved first, rolling up to area/region)</li>
+      </ul>
+      <div class="callout-important">
+        <strong>Plan Your Approval Workflow</strong><br>
+        Once a target level is approved, it is locked. Ensure the customer understands the approval sequence and that re-opening requires admin action. Design DCA roles carefully to control who can approve at each level.
+      </div>
+      <figure class="screenshot">
+  <img src="../img/07-over-allocation.png" alt="Target Setup Step 3 — Over-allocation, override, and approval locking" style="width:100%;border-radius:6px;border:1px solid #e2e8f0;">
+  <figcaption style="font-size:0.8rem;color:#6b7280;margin-top:0.4rem;text-align:center;">Target Setup Step 3 — Over-allocation, override, and approval locking</figcaption>
+</figure>
+
+      <!-- CATEGORY 5 -->
+      <h2>5. Resource &amp; Quota Setup</h2>
+
+      <h3>Admin Setup</h3>
+      <p>The admin setup page controls global planning parameters:</p>
+      <ul>
+        <li><strong>Current Period</strong>: Sets the active planning period for the model</li>
+        <li><strong>Target Setting Methodology</strong>: Top-down or bottoms-up (currently universal — not per planning measure; adding the planning measure dimension is a small extension)</li>
+        <li><strong>Alert Thresholds</strong>: For territory capacity warnings</li>
+        <li><strong>Sales Role Definitions</strong>: Which roles are applicable at which hierarchy levels</li>
+        <li><strong>Ramping Profiles</strong>: Multiplier schedules for new hire quota ramp (3 profiles out of the box)</li>
+      </ul>
+
+      <h3>Quota Composition</h3>
+      <p>For each sales role, define how quotas are built:</p>
+      <ul>
+        <li><strong>Quota types</strong>: Each role can have multiple quota types (e.g., Bookings Quota, New ARR Quota). Recommended: keep under 3 per role, ideally 2.</li>
+        <li><strong>Planning measure mapping</strong>: Which planning measure feeds each quota type</li>
+        <li><strong>Product/BU selection</strong>: If targets were set by product, which product(s) apply to this role's quota. Leaving blank = all products.</li>
+        <li><strong>Territory level</strong>: Which tier's target becomes this role's quota (e.g., a rep assigned to T5 picks up the T5 target; a manager assigned to T4 picks up the T4 target)</li>
+        <li><strong>Raw vs. Discrete quota</strong>: Discrete = the target assigned to that specific territory. Raw = the rollup of all child territory targets. Common for first-line managers who are accountable for their team's combined number.</li>
+      </ul>
+
+      <h3>Resource Assignment</h3>
+      <p><strong>Initialization</strong>: Used at the start of a planning year or when onboarding new employees. Filters by role and assignment status; creates effective-dated assignment records.</p>
+
+      <p><strong>Assignment Updates</strong>: For in-year changes:</p>
+      <ul>
+        <li>Select the territory and the departing employee</li>
+        <li>Set the end date for the current assignment</li>
+        <li>Optionally set a replacement with a start date</li>
+        <li>Clicking Apply automatically creates a new effective-dated record for the replacement</li>
+      </ul>
+
+      <p><strong>Under-assignment flagging</strong>: If a territory has no assigned rep for part of the year, the app flags it. This represents <em>quota leakage</em> — a territory with a target but no one covering it.</p>
+
+      <p><strong>Over-assignment flagging</strong>: If two reps cover the same territory simultaneously, the app flags the overlap for admin review.</p>
+
+      <p><strong>Overlay assignment</strong>: For non-frontline roles (product specialists, solution engineers, etc.) assigned at higher hierarchy levels. Configured in the Admin Setup page; the corresponding input area appears once enabled.</p>
+
+      <figure class="screenshot">
+  <img src="../img/07-resource-assignment.png" alt="Resource Assignment — effective-dated assignments with under-assignment and overlap flagging" style="width:100%;border-radius:6px;border:1px solid #e2e8f0;">
+  <figcaption style="font-size:0.8rem;color:#6b7280;margin-top:0.4rem;text-align:center;">Resource Assignment — effective-dated assignments with under-assignment and overlap flagging</figcaption>
+</figure>
+
+      <h3>Quota Review</h3>
+      <p>Two views for reviewing quotas:</p>
+      <ul>
+        <li><strong>Territory quota view</strong>: Shows all reps assigned to a territory and their quota amounts by period. Territory-centric — doesn't consolidate across multiple territories per rep.</li>
+        <li><strong>Calc Quota by Quota Types module</strong>: Dimensioned by Employee × Quota Type × Time. This is the <strong>primary export module</strong> for downstream systems (CRM, ICM, HR). If a rep covers 3 territories in a year, this view consolidates their full quota picture.</li>
+      </ul>
+      <figure class="screenshot">
+  <img src="../img/07-resource-assignment.png" alt="Quota Review — Calc Quota by Quota Types module consolidates quota across all territories per rep" style="width:100%;border-radius:6px;border:1px solid #e2e8f0;">
+  <figcaption style="font-size:0.8rem;color:#6b7280;margin-top:0.4rem;text-align:center;">Quota Review — Calc Quota by Quota Types module consolidates quota across all territories per rep</figcaption>
+</figure>
+
+      <!-- CATEGORY 6 -->
+      <h2>6. Territory Management</h2>
+      <p>Manage the territory hierarchy structure — add new territories, retire existing ones, change parent assignments (reparenting).</p>
+      <ul>
+        <li>Changes apply immediately to the active hierarchy</li>
+        <li>When reparenting a territory, child territories do not automatically move (extension available for "child follows parent" behavior)</li>
+        <li>Retiring a territory: end-date the territory and reassign its accounts and reps</li>
+      </ul>
+
+      <p><strong>V3 Enhancement — Current vs. Planning Hierarchy</strong>:</p>
+      <ul>
+        <li>V3 introduces a current hierarchy (from ADO, read-only) and a planning hierarchy (editable copy for next year's design)</li>
+        <li>Run the "Initialize Planning Hierarchy" action once per year to create a copy of current into planning</li>
+        <li>V3 includes comparison pages showing what changed between current and planning — great for year-over-year review with leadership</li>
+      </ul>
+      <figure class="screenshot">
+  <img src="../img/07-spoke-overview.png" alt="Territory Management — add, retire, and reparent territories" style="width:100%;border-radius:6px;border:1px solid #e2e8f0;">
+  <figcaption style="font-size:0.8rem;color:#6b7280;margin-top:0.4rem;text-align:center;">Territory Management — add, retire, and reparent territories</figcaption>
+</figure>
+
+      <!-- CATEGORY 7 -->
+      <h2>7. Account Assignment — 4 Methods</h2>
+      <p>T&amp;Q provides four distinct methods for assigning accounts to territories. Each has a different use case.</p>
+
+      <h3>Method 1 — Manual Assignment</h3>
+      <p>The most straightforward approach. A summary view shows all accounts assigned to a selected territory, along with the assigned rep and key KPIs (pipeline, potential spend, addressable market).</p>
+      <ul>
+        <li><strong>Modify existing assignments</strong>: Change territory, set end date for in-year moves</li>
+        <li><strong>Assign unassigned accounts</strong>: A lower grid shows all orphaned/unassigned accounts — select and assign to any territory</li>
+        <li>Best for: small-scale adjustments, one-off account moves, initial assignment when there's no existing data</li>
+      </ul>
+      <figure class="screenshot">
+  <img src="../img/07-account-manual.png" alt="Account Assignment Method 1 — manual assignment and modification of existing assignments" style="width:100%;border-radius:6px;border:1px solid #e2e8f0;">
+  <figcaption style="font-size:0.8rem;color:#6b7280;margin-top:0.4rem;text-align:center;">Account Assignment Method 1 — manual assignment and modification of existing assignments</figcaption>
+</figure>
+
+      <h3>Method 2 — Geo Mapping (Lasso)</h3>
+      <p>Visualize account locations on a map and lasso-select groups of accounts for assignment. Requires latitude and longitude attributes on account records.</p>
+      <ul>
+        <li>Select the entity type to display (assigned accounts, unassigned accounts)</li>
+        <li>Draw a lasso around a geographic cluster</li>
+        <li>Double-click to close the selection</li>
+        <li>Review the selected accounts in the grid below, then assign or modify</li>
+      </ul>
+      <div class="callout-tip">
+        <strong>Demo Tip</strong><br>
+        Clear lasso memory before demoing this feature — the widget can retain previous selections and behave unexpectedly. Test it before showing a customer. Also confirm the customer has lat/long data on their accounts before leading with this feature.
+      </div>
+      <figure class="screenshot">
+  <img src="../img/07-geo-mapping.png" alt="Account Assignment Method 2 — geo mapping lasso selection of accounts by geographic area" style="width:100%;border-radius:6px;border:1px solid #e2e8f0;">
+  <figcaption style="font-size:0.8rem;color:#6b7280;margin-top:0.4rem;text-align:center;">Account Assignment Method 2 — geo mapping lasso selection of accounts by geographic area</figcaption>
+</figure>
+
+      <h3>Method 3 — Rule Engine</h3>
+      <p>Define attribute-based rules per territory to automatically identify and assign matching accounts. Powerful for large account universes where manual assignment isn't feasible.</p>
+
+      <p><strong>Eligibility Criteria</strong>: Narrows the full account universe to the relevant subset before matching. Example: "Only accounts in the Commercial segment" reduces 500K accounts to 100K before running rules.</p>
+
+      <p><strong>Attribute Weighting</strong>: When multiple territories have overlapping rules, weighting determines priority. The guiding principle: smaller geographic scope = higher weight (zip code &gt; city &gt; county &gt; state &gt; country). More specific rules win ties.</p>
+
+      <p><strong>Matching Criteria</strong>: Per-territory rules using list-formatted attributes (configured in the Configurator). As you add criteria, the "total eligible accounts" count updates in real time.</p>
+
+      <p><strong>Review before executing</strong>: Before running the assignment, review the matched accounts to confirm they're correct. Then execute to move them to the territory.</p>
+
+      <p><strong>V3 Inheritance Rules</strong>: Define a rule at a parent territory — all child territories inherit it. In V2 you must define the rule on every territory individually.</p>
+      <figure class="screenshot">
+  <img src="../img/07-rule-engine.png" alt="Account Assignment Method 3 — rule engine with eligibility and matching criteria" style="width:100%;border-radius:6px;border:1px solid #e2e8f0;">
+  <figcaption style="font-size:0.8rem;color:#6b7280;margin-top:0.4rem;text-align:center;">Account Assignment Method 3 — rule engine with eligibility and matching criteria</figcaption>
+</figure>
+
+      <h3>Method 4 — Optimizer</h3>
+      <p>See the <a href="#3-scenario-planning">Scenario Planning section</a> above. Run from the Optimizer Setup page; results import into a scenario for comparison before committing to the current assignment.</p>
+
+      <!-- CATEGORY 8 -->
+      <h2>8. Administration</h2>
+
+      <h3>Data Loads</h3>
+      <p>The generated app includes a "load everything" action that runs all ~62 import actions in sequence. <strong>Best practice: replace this with per-object actions.</strong></p>
+      <ul>
+        <li>Create separate buttons/actions for: Account refresh, Employee refresh, Opportunity refresh, Territory refresh</li>
+        <li>Admins can be deliberate about what to reload and when</li>
+        <li>Errors are easier to isolate (if Accounts fail, you know immediately — you don't have to hunt through 62 actions)</li>
+        <li>Many of the 62 generated actions are one-time initialization — they don't need to be in the regular load process</li>
+      </ul>
+      <figure class="screenshot">
+  <img src="../img/07-spoke-overview.png" alt="Administration — data load actions and new year initialization" style="width:100%;border-radius:6px;border:1px solid #e2e8f0;">
+  <figcaption style="font-size:0.8rem;color:#6b7280;margin-top:0.4rem;text-align:center;">Administration — data load actions and new year initialization</figcaption>
+</figure>
+
+      <h3>New Year Initialization</h3>
+      <p>At the start of each planning year, run the initialization actions to:</p>
+      <ul>
+        <li>Re-load the current territory hierarchy from source</li>
+        <li>Re-load account-to-territory assignments (if the territory attribute exists on accounts)</li>
+        <li>Re-initialize the leaf-level and leaf-1 employee assignments from the prior year baseline</li>
+      </ul>
+
+      <h3>Seasonality</h3>
+      <p>Defines how annual or quarterly targets break down to monthly quotas. Three options:</p>
+      <ul>
+        <li><strong>Prior Year Seasonality</strong>: Use last year's actual monthly distribution pattern</li>
+        <li><strong>Straight Line</strong>: Divide equally across months (e.g., annual ÷ 12)</li>
+        <li><strong>Manual Input</strong>: Admin enters the monthly percentages directly</li>
+      </ul>
+      <p>Seasonality typically differs by geography (APAC vs. EMEA holiday schedules) or by industry/segment (different buying cycles). Configure at the appropriate tier in the Configurator.</p>
+
+      <h3>Role-Based Quota</h3>
+      <p>If role-based quotas are applicable (all reps with the same role in the same region share the same quota regardless of territory), configure the quota values and applicable levels here. V3 has a more intuitive interface for this.</p>
+      <figure class="screenshot">
+  <img src="../img/07-target-allocation.png" alt="Administration — seasonality configuration for monthly quota breakdown" style="width:100%;border-radius:6px;border:1px solid #e2e8f0;">
+  <figcaption style="font-size:0.8rem;color:#6b7280;margin-top:0.4rem;text-align:center;">Administration — seasonality configuration for monthly quota breakdown</figcaption>
+</figure>
+
+    </div>
+  </main>
+
+  <script src="../js/nav.js"></script>
+</body>
+</html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lab: Segmentation & Capacity Configurator Exercise — RPM Apps Lab Guide</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div class="mobile-header">
+    <button id="hamburger">☰</button>
+    <span>RPM Apps Lab Guide</span>
+  </div>
+
+  <nav class="sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-title">RPM Apps Workshop</div>
+      <div class="sidebar-subtitle">T&amp;Q Lab Guide — Day 1</div>
+    </div>
+    <ul class="nav-list">
+      <li class="nav-section-title">Getting Started</li>
+      <li><a class="nav-link" href="./00-overview.html">Workshop Overview</a></li>
+      <li class="nav-section-title">Day 1 — T&amp;Q</li>
+      <li><a class="nav-link" href="./01-spm-overview.html">SPM/RPM Overview</a></li>
+      <li><a class="nav-link" href="./02-anaplan-way.html">Anaplan Way for Apps</a></li>
+      <li><a class="nav-link" href="./03-configurator-walkthrough.html">Configurator Walkthrough</a></li>
+      <li><a class="nav-link" href="./04-configurator-exercise.html">Lab: Configurator Exercise</a></li>
+      <li><a class="nav-link" href="./05-post-gen-steps.html">Post-Generation Steps</a></li>
+      <li><a class="nav-link" href="./06-ado-integration.html">Data Integration &amp; ADO</a></li>
+      <li><a class="nav-link" href="./07-spoke-app-walkthrough.html">Spoke App Walkthrough</a></li>
+      <li><a class="nav-link" href="./08-extensions.html">Common Extensions</a></li>
+      <li class="nav-section-title">Day 2 — Seg &amp; Capacity</li>
+      <li><a class="nav-link" href="./09-day2-overview.html">Day 2 Overview</a></li>
+      <li><a class="nav-link" href="./10-segmentation-configurator.html">Segmentation Configurator</a></li>
+      <li><a class="nav-link" href="./11-capacity-configurator.html">Capacity Configurator</a></li>
+      <li><a class="nav-link active" href="./12-seg-cap-exercise.html">Lab: Seg &amp; Cap Exercise</a></li>
+      <li><a class="nav-link" href="./13-segmentation-walkthrough.html">Segmentation App Walkthrough</a></li>
+      <li><a class="nav-link" href="./14-capacity-walkthrough.html">Capacity App Walkthrough</a></li>
+      <li><a class="nav-link" href="./15-whats-coming.html">What's Coming</a></li>
+      <li class="nav-section-title">Reference</li>
+      <li><a class="nav-link" href="./16-qanda.html">Q&amp;A from Sessions</a></li>
+      <li><a class="nav-link" href="./17-resources.html">Resources &amp; Downloads</a></li>
+    </ul>
+    <div class="lang-switcher">
+      <span class="lang-switcher-label">🌐 Language</span>
+      <select id="lang-select" class="lang-select">
+        <option value="en">🇺🇸 English</option>
+        <option value="ja">🇯🇵 日本語</option>
+        <option value="es">🇪🇸 Español</option>
+        <option value="fr">🇫🇷 Français</option>
+        <option value="de">🇩🇪 Deutsch</option>
+        <option value="pt">🇧🇷 Português</option>
+        <option value="ko">🇰🇷 한국어</option>
+        <option value="zh">🇨🇳 中文</option>
+      </select>
+    </div>
+  </nav>
+
+  <main class="main-content">
+    <div class="content-header">
+      <h1>Lab: Segmentation &amp; Capacity Configurator Exercise</h1>
+      <p class="subtitle">Using the CloudWorks case study — Segmentation and Capacity sections</p>
+    </div>
+    <div class="content-body">
+
+      <h2>Exercise Overview</h2>
+      <p>Using the same <strong>CloudWorks case study</strong> from Day 1, configure the Segmentation and Capacity sections of the configurator. The case study has a dedicated section for each — scroll down past the T&amp;Q section to find them.</p>
+
+      <h2>Access</h2>
+      <ul>
+        <li>Use the <strong>same configurator app</strong> you used in the T&amp;Q exercise</li>
+        <li>Find the <strong>Segmentation section</strong> (lower in the same nav)</li>
+        <li>Then the <strong>Capacity section</strong> below that</li>
+        <li>Reference dataset files are the same — same accounts, employees, and opportunities from Day 1</li>
+      </ul>
+
+      <div class="callout-tip">
+        After each configurator page, hit <strong>Apply / Calculate</strong> before moving on — same rule as T&amp;Q. Don't skip this step or your downstream pages may not reflect your inputs correctly.
+      </div>
+
+      <hr>
+
+      <h2>Part 1: Segmentation Exercise</h2>
+
+      <h3><span class="step-badge">1</span> Data Setup</h3>
+      <ul>
+        <li>Review the CloudWorks account data for firmographic attributes: industry, employee count, revenue bands</li>
+        <li>Identify which attributes should be <strong>list-formatted</strong> for use in segmentation rules — remember, numeric values can't be used directly as rule dimensions</li>
+        <li>Configure appropriate attributes with <em>Enable for Calculate</em> where applicable</li>
+        <li>Check that employee count and revenue are represented as banded attributes (not raw numbers)</li>
+      </ul>
+
+      <h3><span class="step-badge">2</span> Rule-Based Segmentation</h3>
+      <p>CloudWorks uses <strong>4 segments</strong>: Strategic, Named, Commercial, SMB.</p>
+      <ul>
+        <li>Configure the segment list in the configurator with these four segments</li>
+        <li>Identify which account attributes will serve as rule dimensions:
+          <ul>
+            <li>Industry</li>
+            <li>Employee band</li>
+            <li>Revenue band</li>
+            <li>Wallet size tier (if configured)</li>
+          </ul>
+        </li>
+        <li>Enable these attributes as rule dimensions</li>
+      </ul>
+
+      <h3><span class="step-badge">3</span> Score-Based Segmentation</h3>
+      <ul>
+        <li>Configure scoring metrics from the case study data</li>
+        <li>Assign weights — <strong>must sum to 100%</strong></li>
+        <li>Define score-to-segment mapping thresholds (e.g., 7–10 = Strategic, 4–7 = Named/Commercial, 0–4 = SMB)</li>
+      </ul>
+
+      <h3><span class="step-badge">4</span> Wallet Size</h3>
+      <p>CloudWorks uses the <strong>Revenue method</strong> for wallet size calculation.</p>
+      <ul>
+        <li>Navigate to the Wallet Size configuration page</li>
+        <li>Select Revenue method</li>
+        <li>Configure the revenue-based wallet size page with appropriate addressable market % assumptions from the case study</li>
+      </ul>
+
+      <div class="callout-tip">
+        Don't overthink the wallet size exercise — use simple revenue-based assumptions for the exercise. The point is to understand the configuration flow, not to tune the model precisely.
+      </div>
+
+      <hr>
+
+      <h2>Part 2: Capacity Exercise</h2>
+
+      <h3><span class="step-badge">1</span> Role Hierarchy</h3>
+      <p>CloudWorks has the following role structure:</p>
+      <ul>
+        <li><strong>Job Family Groups:</strong> Core, Support</li>
+        <li><strong>Job Families:</strong> AE, CS, Pre-Sales, Management</li>
+        <li><strong>Sales Roles:</strong> Strategic AE, Commercial AE, SMB AE, Customer Success Manager, Pre-Sales Engineer, Regional Manager</li>
+      </ul>
+      <ul>
+        <li>Configure <strong>3 levels</strong>: Job Family Group → Job Family → Sales Role</li>
+        <li><strong>Do NOT enable role grade</strong> for this exercise — it's not needed for CloudWorks and adds unnecessary complexity</li>
+      </ul>
+
+      <h3><span class="step-badge">2</span> Coverage Assumptions</h3>
+      <p>From the CloudWorks case study, configure these coverage ratios <strong>at the Americas level</strong>:</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Role</th>
+            <th>Segment Coverage</th>
+            <th>Coverage Ratio</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Strategic AE</td>
+            <td>Strategic + Named</td>
+            <td>1 AE : 5 accounts</td>
+          </tr>
+          <tr>
+            <td>Commercial AE</td>
+            <td>Commercial</td>
+            <td>1 AE : 30 accounts</td>
+          </tr>
+          <tr>
+            <td>SMB AE</td>
+            <td>SMB</td>
+            <td>1 AE : 100 accounts</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>Map overlay roles as <strong>derived coverage</strong>:</p>
+      <ul>
+        <li>1 generalist per 8 AEs</li>
+        <li>1 manager per 10 AEs</li>
+      </ul>
+
+      <h3><span class="step-badge">3</span> Revenue Target</h3>
+      <ul>
+        <li>CloudWorks receives revenue targets at the <strong>sub-region level, by account segment</strong></li>
+        <li>Configure accordingly in the Revenue Target page</li>
+        <li>Note: this dimensionality (sub-region + segment) will require post-gen routing work — be aware of this before generating</li>
+      </ul>
+
+      <h3><span class="step-badge">4</span> Tops-Down Setup</h3>
+      <ul>
+        <li>Configure tops-down at the <strong>Americas level</strong></li>
+        <li>Configure <strong>2 scenarios</strong> (base + conservative)</li>
+      </ul>
+
+      <h3><span class="step-badge">5</span> Bottoms-Up Setup</h3>
+      <ul>
+        <li>Configure bottoms-up entry at the <strong>territory level</strong></li>
+        <li>Configure approval at the <strong>region level</strong></li>
+      </ul>
+
+      <div class="callout-tip">
+        If you're doing both Segmentation and Capacity, the <strong>data setup is shared</strong> — you only need to configure accounts, employees, and opportunities once. Don't re-enter the same data in the Capacity section if you've already done it for Segmentation.
+      </div>
+
+    </div>
+  </main>
+  <script src="../js/nav.js"></script>
+</body>
+</html>

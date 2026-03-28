@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Integration &amp; ADO — T&amp;Q Lab Guide</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div class="mobile-header">
+    <button id="hamburger">☰</button>
+    <span>T&amp;Q Lab Guide</span>
+  </div>
+
+  <nav class="sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-title">RPM Apps Workshop</div>
+      <div class="sidebar-subtitle">T&amp;Q Lab Guide — Day 1</div>
+    </div>
+    <ul class="nav-list">
+      <li class="nav-section-title">Getting Started</li>
+      <li><a class="nav-link" href="./00-overview.html">Workshop Overview</a></li>
+      <li class="nav-section-title">Day 1 &mdash; T&amp;Q</li>
+      <li><a class="nav-link" href="./01-spm-overview.html">SPM/RPM Overview</a></li>
+      <li><a class="nav-link" href="./02-anaplan-way.html">Anaplan Way for Apps</a></li>
+      <li><a class="nav-link" href="./03-configurator-walkthrough.html">Configurator Walkthrough</a></li>
+      <li><a class="nav-link" href="./04-configurator-exercise.html">Lab: Configurator Exercise</a></li>
+      <li><a class="nav-link" href="./05-post-gen-steps.html">Post-Generation Steps</a></li>
+      <li><a class="nav-link" href="./06-ado-integration.html">Data Integration &amp; ADO</a></li>
+      <li><a class="nav-link" href="./07-spoke-app-walkthrough.html">Spoke App Walkthrough</a></li>
+      <li><a class="nav-link" href="./08-extensions.html">Common Extensions</a></li>
+      <li class="nav-section-title">Day 2 &mdash; Seg &amp; Capacity</li>
+      <li><a class="nav-link" href="./09-day2-overview.html">Day 2 Overview</a></li>
+      <li><a class="nav-link" href="./10-segmentation-configurator.html">Segmentation Configurator</a></li>
+      <li><a class="nav-link" href="./11-capacity-configurator.html">Capacity Configurator</a></li>
+      <li><a class="nav-link" href="./12-seg-cap-exercise.html">Lab: Seg &amp; Cap Exercise</a></li>
+      <li><a class="nav-link" href="./13-segmentation-walkthrough.html">Segmentation App Walkthrough</a></li>
+      <li><a class="nav-link" href="./14-capacity-walkthrough.html">Capacity App Walkthrough</a></li>
+      <li><a class="nav-link" href="./15-whats-coming.html">What's Coming</a></li>
+      <li class="nav-section-title">Reference</li>
+      <li><a class="nav-link" href="./16-qanda.html">Q&amp;A from Sessions</a></li>
+      <li><a class="nav-link" href="./17-resources.html">Resources &amp; Downloads</a></li>
+    </ul>
+    <div class="lang-switcher">
+      <span class="lang-switcher-label">🌐 Language</span>
+      <select id="lang-select" class="lang-select">
+        <option value="en">🇺🇸 English</option>
+        <option value="ja">🇯🇵 日本語</option>
+        <option value="es">🇪🇸 Español</option>
+        <option value="fr">🇫🇷 Français</option>
+        <option value="de">🇩🇪 Deutsch</option>
+        <option value="pt">🇧🇷 Português</option>
+        <option value="ko">🇰🇷 한국어</option>
+        <option value="zh">🇨🇳 中文</option>
+      </select>
+    </div>
+  </nav>
+
+  <main class="main-content">
+    <div class="content-header">
+      <h1>Data Integration &amp; ADO</h1>
+      <p class="subtitle">Anaplan Data Orchestrator — Current State and the V3 Transition</p>
+    </div>
+    <div class="content-body">
+
+      <h2>Current State vs. Future State</h2>
+      <p>T&amp;Q V2 uses a <strong>Data Hub model</strong> as the data layer between source systems and the spoke model. Starting May 2026, all three SPM apps (T&amp;Q, Capacity Planning, Segmentation) move to <strong>Anaplan Data Orchestrator (ADO)</strong> — eliminating the Data Hub model entirely.</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Aspect</th>
+            <th>V2 (Current)</th>
+            <th>V3 (May 2026+)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Data layer</td>
+            <td>Data Hub model</td>
+            <td>ADO (no Data Hub model)</td>
+          </tr>
+          <tr>
+            <td>Data flow direction</td>
+            <td>Pull from sources into Data Hub; Hub pushes to Spoke</td>
+            <td>ADO pushes directly to Spoke</td>
+          </tr>
+          <tr>
+            <td>Scheduling</td>
+            <td>External ETL or manual</td>
+            <td>ADO Workflows (included with app)</td>
+          </tr>
+          <tr>
+            <td>Workspace cost</td>
+            <td>Data Hub consumes workspace size</td>
+            <td>ADO is a separate entity — no model size cost</td>
+          </tr>
+          <tr>
+            <td>Territory file format</td>
+            <td>One flat file (all tiers in columns)</td>
+            <td>Separate source view per hierarchy tier</td>
+          </tr>
+          <tr>
+            <td>Access requirement</td>
+            <td>Standard model access</td>
+            <td>Requires Workflow entitlement (included with app)</td>
+          </tr>
+          <tr>
+            <td>Large transactional data</td>
+            <td>Stored in Data Hub model</td>
+            <td>Stored in ADO — doesn't bloat spoke model</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>What is ADO?</h2>
+      <p>Anaplan Data Orchestrator is a separate entity — <strong>not a model</strong>. It functions as a central data repository and transformation layer. Think of it like a data warehouse that exists alongside your Anaplan workspace.</p>
+
+      <h3>Key Differences from Data Hub</h3>
+      <ul>
+        <li><strong>Push vs. Pull architecture</strong>: In V2, each model pulls data from the Data Hub. With ADO, data is pushed from ADO to all connected models simultaneously — you schedule once, all models update.</li>
+        <li><strong>No workspace size cost</strong>: ADO doesn't consume Anaplan workspace. Customers with large transactional datasets (e.g., 3 years of opportunity data) won't blow up their Polaris spoke model.</li>
+        <li><strong>Native transformation logic</strong>: ADO has its own transformation layer (different from Data Hub formula approach). Data shaping happens before it reaches the spoke.</li>
+        <li><strong>Scheduling via Workflows</strong>: ADO uses Workflows to schedule data pushes. This is why the Workflow entitlement is bundled with app subscriptions.</li>
+        <li><strong>Multi-model push</strong>: If a customer has T&amp;Q, Capacity, and Segmentation, one ADO push can feed all three — no need to manage separate import processes per model.</li>
+      </ul>
+
+      <div class="callout-note">
+        <strong>Polaris + Large Data</strong><br>
+        A Siemens Opportunity Data module with 3 years historical + future data reached 20GB. ADO prevents this kind of bloat by keeping transactional data out of the spoke model and only pushing aggregated or required data through.
+      </div>
+
+      <h2>Why ADO is Required for V3 Apps</h2>
+      <p>All V3 SPM apps are built on Polaris and designed for ADO from the ground up. Starting May 2026, when T&amp;Q V3 ships, partners will need to:</p>
+      <ol>
+        <li>Set up an ADO instance for the customer</li>
+        <li>Create source connections (Salesforce, Snowflake, flat files, etc.)</li>
+        <li>Define transformation views for each key data object (accounts, employees, opportunities, territories)</li>
+        <li>Create links from ADO views to the generated spoke model's import actions</li>
+        <li>Set up ADO Workflows to schedule regular data pushes</li>
+      </ol>
+
+      <p>The Anaplan Apps team is working toward auto-generating ADO links as part of app generation. Target: ADO links for all key spoke imports are generated automatically; partners only need to map the links to the customer's actual source views.</p>
+
+      <div class="callout-tip">
+        <strong>ADO Training</strong><br>
+        ADO training is available on Anaplan Academy and is worth the ~half-day investment before your first V3 project. Both Chan and John have completed it and recommend it. There's a noticeable learning curve, but the architecture is clean once it clicks.
+      </div>
+
+      <h2>Territory Data Structure Change (Important)</h2>
+      <p>This is one of the most impactful changes between V2 and V3 for data preparation:</p>
+
+      <div class="callout-warning">
+        <strong>V2 vs V3 Territory File Format</strong><br>
+        <strong>V2</strong>: Provide one flat file with all hierarchy tiers as columns (T1, T2, T3, T4, T5 in one file). The Data Hub parses the hierarchy and creates the list structure.<br><br>
+        <strong>V3</strong>: Provide a <em>separate source view per tier</em> in ADO. Each view only needs the member name and its parent. If you have a 5-tier hierarchy, you provide 5 ADO views.<br><br>
+        Update your customer data prep conversations and the Data Prep Workbook guidance accordingly.
+      </div>
+
+      <p>For each tier view in V3, you need at minimum:</p>
+      <ul>
+        <li>Member name / ID</li>
+        <li>Parent member name / ID</li>
+        <li>Any additional reporting attributes for that tier</li>
+      </ul>
+
+      <h2>ADO Setup Tips</h2>
+      <ul>
+        <li><strong>Connectors available today</strong>: Flat file, Salesforce, generic REST/JDBC. Snowflake connector is in progress.</li>
+        <li><strong>Bidirectional feeds coming</strong>: Snowflake and Databricks connectors will support writing data back from Anaplan to the source — currently all ADO flows are one-directional (inbound to Anaplan).</li>
+        <li><strong>Batch size limits</strong>: Be aware of record volume limits per push. Larger datasets may require batching strategies.</li>
+        <li><strong>Performance tip</strong>: ADO can be slower than expected when inserting new list members (same as Polaris generally). Plan data load windows accordingly.</li>
+        <li><strong>Workflow entitlement</strong>: Included with app subscription — customers do not need to purchase it separately. Confirm this is provisioned in their tenant before project kickoff.</li>
+      </ul>
+
+      <div class="screenshot-placeholder">[Screenshot: ADO architecture diagram — source systems → ADO → Spoke model]</div>
+
+      <h2>Existing COE / Data Hub Customers</h2>
+      <p>If a customer already has an established COE with a functioning Data Hub, they are not required to migrate to ADO immediately. The existing Data Hub can continue to feed the V2 spoke. Options to discuss with the customer:</p>
+      <ul>
+        <li><strong>Keep Data Hub (V2)</strong>: Continue using the existing integration pattern. Straightforward, no additional setup. Limited to V2 app.</li>
+        <li><strong>Migrate to ADO (V3)</strong>: Required if they want V3 apps. Plan for a data integration migration project as part of the upgrade.</li>
+        <li><strong>Run in parallel temporarily</strong>: Use Data Hub for current app while planning the ADO transition.</li>
+      </ul>
+
+      <div class="callout-note">
+        <strong>Don't Force ADO</strong><br>
+        Don't push ADO on a customer who has a well-functioning Data Hub setup, especially mid-project. The value proposition is clear for new implementations and V3 upgrades — but for an existing V2 customer, the migration cost may not be worth it until they're ready to upgrade to V3.
+      </div>
+
+      <h2>Data Integration Checklist (Session Zero)</h2>
+      <p>Before project kickoff, confirm the following with the customer:</p>
+      <table>
+        <thead>
+          <tr><th>Item</th><th>V2 (Data Hub)</th><th>V3 (ADO)</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Account data source identified</td><td>✓</td><td>✓</td></tr>
+          <tr><td>Employee data source identified</td><td>✓</td><td>✓</td></tr>
+          <tr><td>Territory hierarchy file available</td><td>One flat file</td><td>One view per tier</td></tr>
+          <tr><td>Opportunity / Order source identified</td><td>✓</td><td>✓</td></tr>
+          <tr><td>Unique identifiers confirmed</td><td>✓</td><td>✓</td></tr>
+          <tr><td>Workflow entitlement provisioned</td><td>N/A</td><td>✓ Required</td></tr>
+          <tr><td>ADO instance provisioned</td><td>N/A</td><td>✓ Required</td></tr>
+          <tr><td>Data Prep Workbook completed by customer</td><td>✓</td><td>✓</td></tr>
+        </tbody>
+      </table>
+
+    </div>
+  </main>
+
+  <script src="../js/nav.js"></script>
+</body>
+</html>

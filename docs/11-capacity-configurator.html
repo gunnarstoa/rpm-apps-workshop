@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Go-to-Market Capacity Planning Configurator — RPM Apps Lab Guide</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div class="mobile-header">
+    <button id="hamburger">☰</button>
+    <span>RPM Apps Lab Guide</span>
+  </div>
+
+  <nav class="sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-title">RPM Apps Workshop</div>
+      <div class="sidebar-subtitle">T&amp;Q Lab Guide — Day 1</div>
+    </div>
+    <ul class="nav-list">
+      <li class="nav-section-title">Getting Started</li>
+      <li><a class="nav-link" href="./00-overview.html">Workshop Overview</a></li>
+      <li class="nav-section-title">Day 1 — T&amp;Q</li>
+      <li><a class="nav-link" href="./01-spm-overview.html">SPM/RPM Overview</a></li>
+      <li><a class="nav-link" href="./02-anaplan-way.html">Anaplan Way for Apps</a></li>
+      <li><a class="nav-link" href="./03-configurator-walkthrough.html">Configurator Walkthrough</a></li>
+      <li><a class="nav-link" href="./04-configurator-exercise.html">Lab: Configurator Exercise</a></li>
+      <li><a class="nav-link" href="./05-post-gen-steps.html">Post-Generation Steps</a></li>
+      <li><a class="nav-link" href="./06-ado-integration.html">Data Integration &amp; ADO</a></li>
+      <li><a class="nav-link" href="./07-spoke-app-walkthrough.html">Spoke App Walkthrough</a></li>
+      <li><a class="nav-link" href="./08-extensions.html">Common Extensions</a></li>
+      <li class="nav-section-title">Day 2 — Seg &amp; Capacity</li>
+      <li><a class="nav-link" href="./09-day2-overview.html">Day 2 Overview</a></li>
+      <li><a class="nav-link" href="./10-segmentation-configurator.html">Segmentation Configurator</a></li>
+      <li><a class="nav-link active" href="./11-capacity-configurator.html">Capacity Configurator</a></li>
+      <li><a class="nav-link" href="./12-seg-cap-exercise.html">Lab: Seg &amp; Cap Exercise</a></li>
+      <li><a class="nav-link" href="./13-segmentation-walkthrough.html">Segmentation App Walkthrough</a></li>
+      <li><a class="nav-link" href="./14-capacity-walkthrough.html">Capacity App Walkthrough</a></li>
+      <li><a class="nav-link" href="./15-whats-coming.html">What's Coming</a></li>
+      <li class="nav-section-title">Reference</li>
+      <li><a class="nav-link" href="./16-qanda.html">Q&amp;A from Sessions</a></li>
+      <li><a class="nav-link" href="./17-resources.html">Resources &amp; Downloads</a></li>
+    </ul>
+    <div class="lang-switcher">
+      <span class="lang-switcher-label">🌐 Language</span>
+      <select id="lang-select" class="lang-select">
+        <option value="en">🇺🇸 English</option>
+        <option value="ja">🇯🇵 日本語</option>
+        <option value="es">🇪🇸 Español</option>
+        <option value="fr">🇫🇷 Français</option>
+        <option value="de">🇩🇪 Deutsch</option>
+        <option value="pt">🇧🇷 Português</option>
+        <option value="ko">🇰🇷 한국어</option>
+        <option value="zh">🇨🇳 中文</option>
+      </select>
+    </div>
+  </nav>
+
+  <main class="main-content">
+    <div class="content-header">
+      <h1>Go-to-Market Capacity Planning Configurator</h1>
+      <p class="subtitle">Key configuration decisions for the Capacity Planning app</p>
+    </div>
+    <div class="content-body">
+
+      <p>The Capacity configurator is in the <strong>same app as Segmentation</strong> — scroll down to the Capacity section. Same principle as all configurators: decisions here define dimensionality that is very painful to change post-generation. Capacity configurator = ~0.5× complexity vs. T&amp;Q (~2 days with a prepared customer vs. ~1 week for T&amp;Q).</p>
+
+      <h2>Overview of Capacity Configuration Goals</h2>
+      <ul>
+        <li>Define the sales role / job family hierarchy structure</li>
+        <li>Configure coverage assumptions (accounts per role ratio)</li>
+        <li>Set up productivity modeling approach</li>
+        <li>Configure tops-down and bottoms-up planning levels</li>
+      </ul>
+
+      <div class="callout-note">
+        <strong>Shared data setup:</strong> If you're configuring both Segmentation and Capacity in the same sessions, the data setup is shared — you only need to configure accounts, employees, and opportunities once.
+      </div>
+
+      <hr>
+
+      <h2>Page: Role / Job Family Hierarchy</h2>
+      <p>Define the sales role hierarchy — the structure that determines how headcount is planned and reported.</p>
+      <ul>
+        <li>Up to 3 levels: <strong>Job Family Group → Job Family → Sales Role</strong></li>
+        <li>Key question: how many levels do you actually need? More levels = more granular planning, but significantly more maintenance overhead</li>
+        <li><strong>Role grade:</strong> Optional additional dimension (e.g., P1–P5). Adds substantial complexity — only enable if the customer genuinely needs grade-level headcount planning</li>
+      </ul>
+      <div class="callout-warning">
+        <strong>Challenge role grade hard before enabling it.</strong> If you configure role grade and the customer doesn't really need it, you've added substantial complexity with no value. Every additional dimension multiplies the number of rows in every coverage, productivity, and hiring table. Challenge this requirement rigorously before enabling it.
+      </div>
+
+      <hr>
+
+      <h2>Page: Coverage &amp; Workload</h2>
+      <p>Define how roles cover accounts — the fundamental input for calculating how many people you need.</p>
+      <ul>
+        <li>Configure at what level of geography you manage coverage assumptions (e.g., all Americas at once, or per sub-region)</li>
+        <li><strong>Direct sellers — account-based coverage:</strong> 1 AE per N accounts</li>
+        <li><strong>Overlay / support roles — derived coverage:</strong> 1 generalist per N AEs, 1 manager per N AEs</li>
+        <li><strong>Segment mapping:</strong> Which roles cover which account segments (e.g., Strategic AEs cover Strategic + Named accounts only)</li>
+        <li><strong>Hours-based planning:</strong> Optional workload model for non-revenue roles (e.g., 1 specialist handles 32 hours/week of customer requests). Rarely used — revenue-based coverage is the standard approach.</li>
+      </ul>
+      <figure class="screenshot">
+        <img src="../img/day2/11-cap-config-coverage.png" alt="Capacity configurator coverage and workload setup" style="width:100%;border-radius:6px;border:1px solid #e2e8f0;">
+        <figcaption style="font-size:0.8rem;color:#6b7280;margin-top:0.4rem;text-align:center;">Coverage &amp; workload configuration — defining role coverage ratios and segment mapping</figcaption>
+      </figure>
+
+      <hr>
+
+      <h2>Page: Revenue Target</h2>
+      <p>Define the dimensionality of revenue targets — how Finance will provide the numbers that drive tops-down planning.</p>
+      <ul>
+        <li>At what level of detail does Finance provide revenue targets? (By region? By sub-region? By sub-region + account segment?)</li>
+        <li>What dimensionality? By sub-region only, or by sub-region AND account segment?</li>
+      </ul>
+      <div class="callout-warning">
+        <strong>Market dimensions pitfall:</strong> The "market dimensions" input (revenue target by account segment) exists in the configurator, but it does <em>not</em> automatically tie the productivity of roles in that segment to the target. This requires post-generation work to route properly. Know this before committing to that dimensionality with a customer — it will add implementation effort that isn't visible in the configurator.
+      </div>
+
+      <hr>
+
+      <h2>Page: Tops-Down Planning</h2>
+      <p>Define the guardrail structure for finance-driven headcount planning.</p>
+      <ul>
+        <li>At what level of the geo hierarchy does tops-down target setting begin? (Usually the top — all Americas, or global)</li>
+        <li>Tops-down sets the NTE (Not to Exceed) guardrails that constrain bottoms-up planning at every level below</li>
+        <li>Scenario planning: how many scenarios do you want to model? (Typically 2–3: conservative, base, optimistic)</li>
+      </ul>
+      <figure class="screenshot">
+        <img src="../img/day2/11-cap-config-overview.png" alt="Capacity configurator tops-down planning setup" style="width:100%;border-radius:6px;border:1px solid #e2e8f0;">
+        <figcaption style="font-size:0.8rem;color:#6b7280;margin-top:0.4rem;text-align:center;">Tops-down planning configuration — NTE hierarchy and scenario setup</figcaption>
+      </figure>
+
+      <hr>
+
+      <h2>Page: Bottoms-Up Planning</h2>
+      <p>Define the tactical hiring planning layer — where planners actually enter month-by-month hire plans.</p>
+      <ul>
+        <li>At what level are bottoms-up hiring plans entered? (Typically territory or leaf level)</li>
+        <li>Approval levels: once submitted, at what level does the plan get approved? (e.g., submitted at sub-region, approved at region)</li>
+        <li><strong>OWP connection:</strong> Optional import of data from Anaplan Workforce Planning — ramping profiles, historical headcount data. Define at what level this data comes in if using OWP.</li>
+      </ul>
+      <figure class="screenshot">
+        <img src="../img/day2/11-cap-config-bottoms-up.png" alt="Capacity configurator bottoms-up planning setup" style="width:100%;border-radius:6px;border:1px solid #e2e8f0;">
+        <figcaption style="font-size:0.8rem;color:#6b7280;margin-top:0.4rem;text-align:center;">Bottoms-up planning configuration — entry levels, approval workflow, and OWP connection</figcaption>
+      </figure>
+
+      <hr>
+
+      <div class="callout-warning">
+        <strong>⚠ Critical Dimensionality Warning</strong><br><br>
+        Dimensionality decisions in the Capacity configurator are <strong>extremely difficult to change post-generation</strong>. If you configure cost assumptions at the region level and later decide you need sub-region, you will need to disconnect and reconnect many formulaic references — or regenerate and lose any custom work.<br><br>
+        Be thorough and deliberate with your customer. Validate every dimensionality choice before generating. <strong>This is the #1 source of rework on Capacity implementations.</strong>
+      </div>
+
+      <hr>
+
+      <h2>Timing Guidance</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Configurator</th>
+            <th>Estimated Time</th>
+            <th>Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>T&amp;Q</td>
+            <td>~1 week</td>
+            <td>Full data setup + all config pages</td>
+          </tr>
+          <tr>
+            <td>Segmentation</td>
+            <td>~2–3 hours</td>
+            <td>Data setup shared with Capacity</td>
+          </tr>
+          <tr>
+            <td>Capacity</td>
+            <td>~2 days</td>
+            <td>Data setup shared with Segmentation</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>If doing both Segmentation and Capacity together, the data setup is shared — you don't repeat it. Both configurators live in the same app, so you can run them in the same set of customer sessions without switching context.</p>
+
+    </div>
+  </main>
+  <script src="../js/nav.js"></script>
+</body>
+</html>
