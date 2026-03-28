@@ -92,11 +92,10 @@
 
       <p>Pages are completed in order. Some pages have dependencies on earlier choices. Pay close attention to the <span class="star">⭐</span> starred pages — these have the highest impact on the generated app and the greatest risk if misconfigured.</p>
 
-      <div class="screenshot-placeholder">
-        <div class="ss-icon">📸</div>
-        <div class="ss-label">Screenshot: Configurator app home page — overview of all 14 pages with completion status indicators</div>
-        <div class="ss-desc">Show the configurator navigation panel and page status (complete/incomplete/locked)</div>
-      </div>
+      <figure class="screenshot">
+  <img src="../img/configurator/00-overview.png" alt="T&Q Configurator — overview and capabilities guide" style="width:100%;border-radius:6px;border:1px solid #e2e8f0;">
+  <figcaption style="font-size:0.8rem;color:#6b7280;margin-top:0.4rem;text-align:center;">T&Q Configurator — capabilities overview and the Anaplan Sales Planning Framework</figcaption>
+</figure>
 
       <!-- PAGE 1 -->
       <div class="config-section">
@@ -116,10 +115,10 @@
           <span class="callout-label">💡 Tip</span>
           <p>Always confirm the app version before starting. V3 and V2 configurators look similar but produce very different outputs. If a customer has been given an older configurator file, get the latest version from the enablement portal before you start.</p>
         </div>
-        <div class="screenshot-placeholder">
-          <div class="ss-icon">📸</div>
-          <div class="ss-label">Screenshot: Page 1 — Getting Started, project name and version fields</div>
-        </div>
+        <figure class="screenshot">
+  <img src="../img/configurator/01-getting-started.png" alt="Page 1 — Getting Started, application module selection and configuration checklist" style="width:100%;border-radius:6px;border:1px solid #e2e8f0;">
+  <figcaption style="font-size:0.8rem;color:#6b7280;margin-top:0.4rem;text-align:center;">Page 1: Getting Started — module selection (Data Hub, T&Q, Optimizer, CRM Connector) and configuration checklist</figcaption>
+</figure>
       </div>
 
       <!-- PAGE 2 -->
@@ -146,11 +145,14 @@
           <span class="callout-label">🚫 Critical</span>
           <p>The Data Hub structure is extremely difficult to change post-generation. If you enable ADO here but the customer later decides they want flat files (or vice versa), you're looking at a re-generation. Lock this down before moving forward. Get sign-off from both Sales Ops and IT.</p>
         </div>
-        <div class="screenshot-placeholder">
-          <div class="ss-icon">📸</div>
-          <div class="ss-label">Screenshot: Page 2 — Data Hub Setup, showing the three booleans and attribute configuration grid</div>
-          <div class="ss-desc">Highlight the Use Existing Data Hub, Use ADO, and Use Flat File Imports toggles. Show the 20 pre-populated attributes.</div>
-        </div>
+        <figure class="screenshot">
+  <img src="../img/configurator/02-data-hub-setup.png" alt="Page 2 — Data Hub Setup, dimensions and facts configuration grid" style="width:100%;border-radius:6px;border:1px solid #e2e8f0;">
+  <figcaption style="font-size:0.8rem;color:#6b7280;margin-top:0.4rem;text-align:center;">Page 2: Data Hub Setup — objects/lists grid (Opportunity, Account, Product, Employee, Territory) with SPM Data Hub, Spoke, and Optimizer columns</figcaption>
+</figure>
+      <figure class="screenshot">
+  <img src="../img/configurator/03-data-hub-attrs.png" alt="Page 2 — Data Hub Setup, attribute configuration for account and employee objects" style="width:100%;border-radius:6px;border:1px solid #e2e8f0;">
+  <figcaption style="font-size:0.8rem;color:#6b7280;margin-top:0.4rem;text-align:center;">Page 2: Data Hub Setup (continued) — attribute configuration showing employee and account fields</figcaption>
+</figure>
       </div>
 
       <!-- PAGE 3 -->
@@ -172,10 +174,10 @@
           <span class="callout-label">⚠ Warning</span>
           <p>Validate tier count against the customer's actual data. It's common for customers to <em>think</em> they have 4 tiers but actually have 3 or 5 when you look at the data. Count the levels in the sample data, not the org chart. An extra tier you don't need adds complexity; a missing tier is a major structural problem post-gen.</p>
         </div>
-        <div class="screenshot-placeholder">
-          <div class="ss-icon">📸</div>
-          <div class="ss-label">Screenshot: Page 3 — Hierarchy Setup, showing tier count and naming fields</div>
-        </div>
+        <figure class="screenshot">
+  <img src="../img/configurator/04-hierarchies.png" alt="Page 3 — Hierarchy Setup, territory hierarchy level count and tier naming" style="width:100%;border-radius:6px;border:1px solid #e2e8f0;">
+  <figcaption style="font-size:0.8rem;color:#6b7280;margin-top:0.4rem;text-align:center;">Page 3: Hierarchy Setup — tier count, level naming, and hierarchy structure configuration</figcaption>
+</figure>
       </div>
 
       <!-- PAGE 4 -->
@@ -196,10 +198,10 @@
           <span class="callout-label">📝 Note</span>
           <p>Many customers have actuals at the rep level in their CRM, not the account level. If rep-level data is all that's available, the routing logic needs to account for this — and it means territory reassignments won't retroactively re-route historical actuals. Set this expectation early.</p>
         </div>
-        <div class="screenshot-placeholder">
-          <div class="ss-icon">📸</div>
-          <div class="ss-label">Screenshot: Page 4 — Transactional Data Routing, showing source and routing method options</div>
-        </div>
+        <figure class="screenshot">
+  <img src="../img/configurator/05-scenario-planning.png" alt="Page 4 — Transactional Data Routing, planning measures and data source mapping" style="width:100%;border-radius:6px;border:1px solid #e2e8f0;">
+  <figcaption style="font-size:0.8rem;color:#6b7280;margin-top:0.4rem;text-align:center;">Page 4: Transactional Data Routing — planning measures list and data hub attribute mapping configuration</figcaption>
+</figure>
       </div>
 
       <!-- PAGE 5 -->
@@ -226,11 +228,10 @@
           <span class="callout-label">⚠ Warning — Dimension Creep</span>
           <p>Every additional planning measure adds a dimension to the app's core modules. Three measures is manageable. Five measures starts to create performance and usability issues. Push back on customers who want to plan 6+ measures — ask which ones they'll actually enter data for from day one of go-live.</p>
         </div>
-        <div class="screenshot-placeholder">
-          <div class="ss-icon">📸</div>
-          <div class="ss-label">Screenshot: Page 5 — Planning Measures, showing primary and secondary measure setup</div>
-          <div class="ss-desc">Show the measure name, type, and seasonality settings for a sample 2-measure configuration (Revenue + New Logos)</div>
-        </div>
+        <figure class="screenshot">
+  <img src="../img/configurator/05-scenario-planning.png" alt="Page 5 — Planning Measures, primary and secondary measure setup with seasonality" style="width:100%;border-radius:6px;border:1px solid #e2e8f0;">
+  <figcaption style="font-size:0.8rem;color:#6b7280;margin-top:0.4rem;text-align:center;">Page 5: Planning Measures — configure primary measure (Revenue/ARR), secondary measures (New Logos), and seasonality curves</figcaption>
+</figure>
       </div>
 
       <!-- PAGE 6 -->
@@ -251,10 +252,10 @@
           <span class="callout-label">📝 Note</span>
           <p>The Optimizer is a powerful feature, but it's not universally applicable. Customers with geographic territories (field sales) benefit most. Customers with named account models or highly relationship-driven selling often find the optimizer less useful because they don't want accounts automatically reassigned. Always validate the use case before enabling.</p>
         </div>
-        <div class="screenshot-placeholder">
-          <div class="ss-icon">📸</div>
-          <div class="ss-label">Screenshot: Page 6 — Optimizer Setup, showing enable toggle and objective settings</div>
-        </div>
+        <figure class="screenshot">
+  <img src="../img/configurator/06-optimizer.png" alt="Page 6 — Optimizer Setup, objectives and geography constraint levels" style="width:100%;border-radius:6px;border:1px solid #e2e8f0;">
+  <figcaption style="font-size:0.8rem;color:#6b7280;margin-top:0.4rem;text-align:center;">Page 6: Optimizer Setup — balance objectives (Potential Spend, Addressable Market, Pipeline) and geography constraint level selection</figcaption>
+</figure>
       </div>
 
       <!-- PAGE 7 -->
@@ -275,10 +276,10 @@
           <span class="callout-label">💡 Best Practice</span>
           <p>Start with minimal historical reporting. You can always load more data, but you can't easily remove modules from a generated app. If a customer insists on 3 years of history, make sure they have clean, formatted data for all 3 years before generation. Dirty historical data is a nightmare to clean post-gen.</p>
         </div>
-        <div class="screenshot-placeholder">
-          <div class="ss-icon">📸</div>
-          <div class="ss-label">Screenshot: Page 7 — Historical Reporting, period count and measure selection</div>
-        </div>
+        <figure class="screenshot">
+  <img src="../img/configurator/07-historical-data.png" alt="Page 7 — Historical Data Reporting, period count and reporting dimension selection" style="width:100%;border-radius:6px;border:1px solid #e2e8f0;">
+  <figcaption style="font-size:0.8rem;color:#6b7280;margin-top:0.4rem;text-align:center;">Page 7: Historical Data Reporting — configure historical periods and reporting dimensions</figcaption>
+</figure>
       </div>
 
       <!-- PAGE 8 -->
@@ -299,10 +300,10 @@
           <span class="callout-label">📝 Note</span>
           <p>Account value data quality is one of the biggest risk factors for T&amp;Q implementations. Many customers have account data that is incomplete, stale, or inconsistently formatted. Invest time during Session Zero validating the account file — size, coverage, and value field completeness — before committing to a go-live date.</p>
         </div>
-        <div class="screenshot-placeholder">
-          <div class="ss-icon">📸</div>
-          <div class="ss-label">Screenshot: Page 8 — Account Values &amp; Mapping, showing value metric setup</div>
-        </div>
+        <figure class="screenshot">
+  <img src="../img/configurator/08-account-values.png" alt="Page 8 — Account Value KPIs, potential spend metrics and account attribute selection" style="width:100%;border-radius:6px;border:1px solid #e2e8f0;">
+  <figcaption style="font-size:0.8rem;color:#6b7280;margin-top:0.4rem;text-align:center;">Page 8: Account Value KPIs — configure potential spend assumptions, account value metrics, and additional attributes</figcaption>
+</figure>
       </div>
 
       <!-- PAGE 9 -->
@@ -346,10 +347,10 @@
           <span class="callout-label">🚫 Critical — Avoid Extra Dimensions</span>
           <p>Do <strong>not</strong> add unnecessary dimensions to the target/allocation modules. Every extra dimension (additional planning measure, additional time period, additional hierarchy level) multiplies the size of the allocation modules exponentially. This is a common source of performance problems and workspace overages. Only include dimensions you will actually use.</p>
         </div>
-        <div class="screenshot-placeholder">
-          <div class="ss-icon">📸</div>
-          <div class="ss-label">Screenshot: Page 9 — Target &amp; Allocation, showing the 3-step target flow and allocation method options</div>
-        </div>
+        <figure class="screenshot">
+  <img src="../img/configurator/09-target-allocation.png" alt="Page 9 — Target & Allocation, configure dimensions and target import level" style="width:100%;border-radius:6px;border:1px solid #e2e8f0;">
+  <figcaption style="font-size:0.8rem;color:#6b7280;margin-top:0.4rem;text-align:center;">Page 9: Target & Allocation — Step 1 configure dimensions, target import tier, time dimension, and role-based quota settings</figcaption>
+</figure>
       </div>
 
       <!-- PAGE 10 -->
@@ -372,10 +373,10 @@
           <li><strong>Split accounts</strong> — can an account be split across multiple territories?</li>
           <li><strong>Unassigned account handling</strong> — what happens to accounts with no territory match?</li>
         </ul>
-        <div class="screenshot-placeholder">
-          <div class="ss-icon">📸</div>
-          <div class="ss-label">Screenshot: Page 10 — Territory Assignment, showing assignment method checkboxes</div>
-        </div>
+        <figure class="screenshot">
+  <img src="../img/configurator/10-territory-assignment.png" alt="Page 10 — Territory Assignment, assignment method checkboxes" style="width:100%;border-radius:6px;border:1px solid #e2e8f0;">
+  <figcaption style="font-size:0.8rem;color:#6b7280;margin-top:0.4rem;text-align:center;">Page 10: Territory Assignment — enable manual assignment, geo mapping, rule engine, and optimizer; configure reassignment governance</figcaption>
+</figure>
       </div>
 
       <!-- PAGE 11 -->
@@ -397,10 +398,10 @@
           <span class="callout-label">💡 Tip</span>
           <p>The ramp rate setup is a frequent source of confusion. Confirm with the customer exactly how they calculate ramp — monthly ramp tables, a fixed percentage by tenure-quarter, or full quota from day one. Get a concrete example before configuring.</p>
         </div>
-        <div class="screenshot-placeholder">
-          <div class="ss-icon">📸</div>
-          <div class="ss-label">Screenshot: Page 11 — Resource Assignment, showing ramp rate configuration and overlay settings</div>
-        </div>
+        <figure class="screenshot">
+  <img src="../img/configurator/11-resource-assignment.png" alt="Page 11 — Resource Assignment, sales rep attributes and ramp rate configuration" style="width:100%;border-radius:6px;border:1px solid #e2e8f0;">
+  <figcaption style="font-size:0.8rem;color:#6b7280;margin-top:0.4rem;text-align:center;">Page 11: Resource Assignment — configure sales rep attributes, ramp profiles, overlay settings, and headcount tracking</figcaption>
+</figure>
       </div>
 
       <!-- PAGE 12 -->
@@ -422,10 +423,10 @@
           <span class="callout-label">📝 Note</span>
           <p>Keep the approval workflow simple. Complex multi-stage approval chains sound good in design but often break down in practice. A 2-stage workflow (manager approves, VP locks) covers 90% of use cases. Start simple and extend if needed — adding stages post-gen is manageable.</p>
         </div>
-        <div class="screenshot-placeholder">
-          <div class="ss-icon">📸</div>
-          <div class="ss-label">Screenshot: Page 12 — Target Approval, showing approval stages and hierarchy level settings</div>
-        </div>
+        <figure class="screenshot">
+  <img src="../img/configurator/09-target-allocation.png" alt="Page 12 — Target Approval, approval stages and hierarchy level settings" style="width:100%;border-radius:6px;border:1px solid #e2e8f0;">
+  <figcaption style="font-size:0.8rem;color:#6b7280;margin-top:0.4rem;text-align:center;">Page 12: Target Approval — approval workflow stages, hierarchy levels, and notification settings</figcaption>
+</figure>
       </div>
 
       <!-- PAGE 13 -->
@@ -445,10 +446,10 @@
           <span class="callout-label">💡 Tip</span>
           <p>Account Capacity is a compelling feature for customers who want data-driven territory sizing. However, it only works if account-level potential data is clean and up-to-date. If the customer's account data is incomplete or stale, skip this for now and revisit in a Phase 2.</p>
         </div>
-        <div class="screenshot-placeholder">
-          <div class="ss-icon">📸</div>
-          <div class="ss-label">Screenshot: Page 13 — Account Capacity, showing capacity metric selection</div>
-        </div>
+        <figure class="screenshot">
+  <img src="../img/configurator/08-account-values.png" alt="Page 13 — Account Capacity, capacity metric selection" style="width:100%;border-radius:6px;border:1px solid #e2e8f0;">
+  <figcaption style="font-size:0.8rem;color:#6b7280;margin-top:0.4rem;text-align:center;">Page 13: Account Capacity — enable capacity module and configure the account value metric used for territory capacity calculations</figcaption>
+</figure>
       </div>
 
       <!-- PAGE 14 -->
@@ -470,10 +471,10 @@
           <span class="callout-label">⚠ Warning</span>
           <p>The Rule Engine is only as good as the attribute data. If account attributes are sparse, inconsistent, or missing, the Rule Engine will produce poor results. Before enabling, spot-check: what percentage of accounts have values for the attributes you plan to use in rules? If it's below 70%, the Rule Engine will leave too many accounts unassigned and create more work, not less.</p>
         </div>
-        <div class="screenshot-placeholder">
-          <div class="ss-icon">📸</div>
-          <div class="ss-label">Screenshot: Page 14 — Rule Engine Setup, showing rule attribute selection and auto-apply toggle</div>
-        </div>
+        <figure class="screenshot">
+  <img src="../img/configurator/12-rule-engine.png" alt="Page 14 — Rule Engine Setup, attribute selection and auto-apply configuration" style="width:100%;border-radius:6px;border:1px solid #e2e8f0;">
+  <figcaption style="font-size:0.8rem;color:#6b7280;margin-top:0.4rem;text-align:center;">Page 14: Rule Engine — enable rule engine, select rule attributes (must match Data Hub Setup), configure auto-apply vs. suggest mode</figcaption>
+</figure>
       </div>
 
       <hr class="divider">
@@ -495,10 +496,10 @@
         <p>Run a "configuration review" session with the full project team 1–2 days before generation. Walk through every page together and verbally confirm each major decision. This is your last chance to catch mistakes before 8,000 objects are created. It usually takes 60–90 minutes and is always worth it.</p>
       </div>
 
-      <div class="screenshot-placeholder" style="min-height:160px;">
-        <div class="ss-icon">📸</div>
-        <div class="ss-label">Screenshot: Configurator completion summary page — all pages green, ready for generation</div>
-      </div>
+      <figure class="screenshot">
+  <img src="../img/configurator/13-model-generation.png" alt="Configurator — Model Generation page, all pages complete and ready for generation" style="width:100%;border-radius:6px;border:1px solid #e2e8f0;">
+  <figcaption style="font-size:0.8rem;color:#6b7280;margin-top:0.4rem;text-align:center;">Model Generation (3.07) — workspace settings, module/list counts, and UX generation options. This page is run by the App Engineering team, not the delivery lead.</figcaption>
+</figure>
 
       <div class="callout-do">
         <span class="callout-label">✅ Do — Ready for the Lab</span>
