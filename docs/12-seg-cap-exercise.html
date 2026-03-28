@@ -14,13 +14,13 @@
 
   <nav class="sidebar">
     <div class="sidebar-header">
-      <div class="sidebar-title">RPM Apps Workshop</div>
-      <div class="sidebar-subtitle">T&amp;Q Lab Guide — Day 1</div>
+      <div class="sidebar-title">RPM Apps Lab Guide</div>
+      <div class="sidebar-subtitle">RPM Apps Lab Guide</div>
     </div>
     <ul class="nav-list">
       <li class="nav-section-title">Getting Started</li>
       <li><a class="nav-link" href="./00-overview.html">Workshop Overview</a></li>
-      <li class="nav-section-title">Day 1 — T&amp;Q</li>
+      <li class="nav-section-title">Territory &amp; Quota (T&amp;Q)</li>
       <li><a class="nav-link" href="./01-spm-overview.html">SPM/RPM Overview</a></li>
       <li><a class="nav-link" href="./02-anaplan-way.html">Anaplan Way for Apps</a></li>
       <li><a class="nav-link" href="./03-configurator-walkthrough.html">Configurator Walkthrough</a></li>
@@ -29,8 +29,8 @@
       <li><a class="nav-link" href="./06-ado-integration.html">Data Integration &amp; ADO</a></li>
       <li><a class="nav-link" href="./07-spoke-app-walkthrough.html">Spoke App Walkthrough</a></li>
       <li><a class="nav-link" href="./08-extensions.html">Common Extensions</a></li>
-      <li class="nav-section-title">Day 2 — Seg &amp; Capacity</li>
-      <li><a class="nav-link" href="./09-day2-overview.html">Day 2 Overview</a></li>
+      <li class="nav-section-title">Segmentation &amp; Capacity</li>
+      <li><a class="nav-link" href="./09-day2-overview.html">Seg &amp; Capacity Overview</a></li>
       <li><a class="nav-link" href="./10-segmentation-configurator.html">Segmentation Configurator</a></li>
       <li><a class="nav-link" href="./11-capacity-configurator.html">Capacity Configurator</a></li>
       <li><a class="nav-link active" href="./12-seg-cap-exercise.html">Lab: Seg &amp; Cap Exercise</a></li>
@@ -65,14 +65,14 @@
     <div class="content-body">
 
       <h2>Exercise Overview</h2>
-      <p>Using the same <strong>CloudWorks case study</strong> from Day 1, configure the Segmentation and Capacity sections of the configurator. The case study has a dedicated section for each — scroll down past the T&amp;Q section to find them.</p>
+      <p>Using the same <strong>CloudWorks case study</strong> from the T&amp;Q module, configure the Segmentation and Capacity sections of the configurator. The case study has a dedicated section for each — scroll down past the T&amp;Q section to find them.</p>
 
       <h2>Access</h2>
       <ul>
         <li>Use the <strong>same configurator app</strong> you used in the T&amp;Q exercise</li>
         <li>Find the <strong>Segmentation section</strong> (lower in the same nav)</li>
         <li>Then the <strong>Capacity section</strong> below that</li>
-        <li>Reference dataset files are the same — same accounts, employees, and opportunities from Day 1</li>
+        <li>Reference dataset files are the same — same accounts, employees, and opportunities from the T&amp;Q module</li>
       </ul>
 
       <div class="callout-tip">
@@ -196,6 +196,32 @@
 
       <div class="callout-tip">
         If you're doing both Segmentation and Capacity, the <strong>data setup is shared</strong> — you only need to configure accounts, employees, and opportunities once. Don't re-enter the same data in the Capacity section if you've already done it for Segmentation.
+      </div>
+
+      <hr>
+
+      <h2>Debrief Questions</h2>
+      <p>After completing both exercises, discuss these questions with your group:</p>
+
+      <h3>Segmentation</h3>
+      <ol>
+        <li>You configured 4 segments for CloudWorks (Strategic, Named, Commercial, SMB). A customer pushes back and says they want 8 segments. How do you respond? What's the downstream impact?</li>
+        <li>The scoring weights must sum to 100%. You assigned weights to 3 metrics. A 4th stakeholder now wants to add "recent growth rate" as a scoring factor. How does this change your weights, and what data would you need?</li>
+        <li>What would happen if 30% of CloudWorks's accounts had missing employee count data — a field you relied on for both rule-based and score-based segmentation? What's your mitigation plan?</li>
+        <li>A customer says: "We already have segments in Salesforce — why do we need the Segmentation app?" How do you answer?</li>
+      </ol>
+
+      <h3>Capacity</h3>
+      <ol>
+        <li>You configured coverage ratios at the Americas level. A stakeholder says EMEA needs different ratios (EMEA AEs cover fewer accounts due to relationship-based selling). How does this affect your configuration? What would you change?</li>
+        <li>CloudWorks's revenue targets are provided at sub-region level by account segment. You learned this requires post-generation routing work. What's the risk if you don't flag this clearly during configuration? How would you communicate it?</li>
+        <li>You configured 2 scenarios (base + conservative). Sales leadership now wants a 3rd scenario (stretch/optimistic). Is this a configuration change or a post-gen setup? What's the effort?</li>
+        <li>A customer's ramp profile shows new AEs at 0% in Month 1 and 20% in Month 2. Their Finance team insists on using a simpler model: full quota from Month 3. How does this difference affect your capacity calculations over a 12-month planning horizon?</li>
+      </ol>
+
+      <div class="callout-tip">
+        <span class="callout-label">✅ Exercises Complete</span>
+        <p>When the group reconvenes, the facilitator will walk through reference configurations for both Segmentation and Capacity. As with the T&amp;Q exercise, there are often multiple valid approaches — the goal is to understand the tradeoffs, not find the single "right" answer.</p>
       </div>
 
     </div>

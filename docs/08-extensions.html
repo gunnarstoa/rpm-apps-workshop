@@ -9,18 +9,18 @@
 <body>
   <div class="mobile-header">
     <button id="hamburger">☰</button>
-    <span>T&amp;Q Lab Guide</span>
+    <span>RPM Apps Lab Guide</span>
   </div>
 
   <nav class="sidebar">
     <div class="sidebar-header">
-      <div class="sidebar-title">RPM Apps Workshop</div>
-      <div class="sidebar-subtitle">T&amp;Q Lab Guide — Day 1</div>
+      <div class="sidebar-title">RPM Apps Lab Guide</div>
+      <div class="sidebar-subtitle">RPM Apps Lab Guide</div>
     </div>
     <ul class="nav-list">
       <li class="nav-section-title">Getting Started</li>
       <li><a class="nav-link" href="./00-overview.html">Workshop Overview</a></li>
-      <li class="nav-section-title">Day 1 &mdash; T&amp;Q</li>
+      <li class="nav-section-title">Territory &amp; Quota (T&amp;Q)</li>
       <li><a class="nav-link" href="./01-spm-overview.html">SPM/RPM Overview</a></li>
       <li><a class="nav-link" href="./02-anaplan-way.html">Anaplan Way for Apps</a></li>
       <li><a class="nav-link" href="./03-configurator-walkthrough.html">Configurator Walkthrough</a></li>
@@ -29,8 +29,8 @@
       <li><a class="nav-link" href="./06-ado-integration.html">Data Integration &amp; ADO</a></li>
       <li><a class="nav-link" href="./07-spoke-app-walkthrough.html">Spoke App Walkthrough</a></li>
       <li><a class="nav-link" href="./08-extensions.html">Common Extensions</a></li>
-      <li class="nav-section-title">Day 2 &mdash; Seg &amp; Capacity</li>
-      <li><a class="nav-link" href="./09-day2-overview.html">Day 2 Overview</a></li>
+      <li class="nav-section-title">Segmentation &amp; Capacity</li>
+      <li><a class="nav-link" href="./09-day2-overview.html">Seg &amp; Capacity Overview</a></li>
       <li><a class="nav-link" href="./10-segmentation-configurator.html">Segmentation Configurator</a></li>
       <li><a class="nav-link" href="./11-capacity-configurator.html">Capacity Configurator</a></li>
       <li><a class="nav-link" href="./12-seg-cap-exercise.html">Lab: Seg &amp; Cap Exercise</a></li>
@@ -80,6 +80,62 @@
           <span class="tsd-step-heading">Scope an Extension</span>
           <span class="tsd-step-desc">Given the CloudWorks scenario, identify one extension the customer would likely need. Scope it: what does it do, how long, what risk?</span>
         </div>
+      </div>
+
+      <h2>Configure vs. Extend — Decision Framework</h2>
+      <p>Before writing a single line of custom logic, work through this decision tree with the customer. Extensions are expensive to build and to maintain across upgrades. Exhaust configuration options first.</p>
+
+      <div class="decision-tree">
+        <div class="dt-question">Does the base app include this capability at all?</div>
+        <div class="dt-branches">
+          <div class="dt-branch">
+            <div class="dt-branch-label dt-no">No</div>
+            <div class="dt-branch-content">
+              <div class="dt-answer dt-extend">Extension required — scope it, size it, document it from the start.</div>
+            </div>
+          </div>
+          <div class="dt-branch">
+            <div class="dt-branch-label dt-yes">Yes</div>
+            <div class="dt-branch-content">
+              <div class="dt-question">Is the customer's requirement a configuration setting in the Configurator?</div>
+              <div class="dt-branches">
+                <div class="dt-branch">
+                  <div class="dt-branch-label dt-yes">Yes</div>
+                  <div class="dt-answer dt-configure">Configure it. Go back to the Configurator — this is a generation-time decision.</div>
+                </div>
+                <div class="dt-branch">
+                  <div class="dt-branch-label dt-no">No</div>
+                  <div class="dt-question">Can the customer change their <em>process</em> to match what the base app provides?</div>
+                  <div class="dt-branches">
+                    <div class="dt-branch">
+                      <div class="dt-branch-label dt-yes">Yes</div>
+                      <div class="dt-answer dt-configure">Recommend the process change. This is a consulting conversation, not a build conversation. Changing the process protects their upgrade path forever.</div>
+                    </div>
+                    <div class="dt-branch">
+                      <div class="dt-branch-label dt-no">No</div>
+                      <div class="dt-question">Is this a small calibration (label rename, add an export action, minor formula tweak)?</div>
+                      <div class="dt-branches">
+                        <div class="dt-branch">
+                          <div class="dt-branch-label dt-yes">Yes</div>
+                          <div class="dt-answer dt-configure">Post-gen configuration — handle it during Model Readiness. Not a project extension scope item.</div>
+                        </div>
+                        <div class="dt-branch">
+                          <div class="dt-branch-label dt-no">No</div>
+                          <div class="dt-answer dt-extend">Extension required — but build it <strong>cleanly</strong>: net-new modules, EXT_ naming prefix, full documentation. Never modify base app line items.</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout-tip" style="margin-top:1rem;">
+        <span class="callout-label">💡 The Golden Rule</span>
+        <p>When a customer shows you a custom spreadsheet column and says "we need this in Anaplan" — your first question is always: <strong>"Does the base app already provide this?"</strong> Show them the base app page that covers it before agreeing to build anything. This conversation alone eliminates a large fraction of extensions on every project.</p>
       </div>
 
       <div class="callout-note">

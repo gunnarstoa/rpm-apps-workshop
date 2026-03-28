@@ -9,18 +9,18 @@
 <body>
   <div class="mobile-header">
     <button id="hamburger">☰</button>
-    <span>T&amp;Q Lab Guide</span>
+    <span>RPM Apps Lab Guide</span>
   </div>
 
   <nav class="sidebar">
     <div class="sidebar-header">
-      <div class="sidebar-title">RPM Apps Workshop</div>
-      <div class="sidebar-subtitle">T&amp;Q Lab Guide — Day 1</div>
+      <div class="sidebar-title">RPM Apps Lab Guide</div>
+      <div class="sidebar-subtitle">RPM Apps Lab Guide</div>
     </div>
     <ul class="nav-list">
       <li class="nav-section-title">Getting Started</li>
       <li><a class="nav-link" href="./00-overview.html">Workshop Overview</a></li>
-      <li class="nav-section-title">Day 1 &mdash; T&amp;Q</li>
+      <li class="nav-section-title">Territory &amp; Quota (T&amp;Q)</li>
       <li><a class="nav-link" href="./01-spm-overview.html">SPM/RPM Overview</a></li>
       <li><a class="nav-link" href="./02-anaplan-way.html">Anaplan Way for Apps</a></li>
       <li><a class="nav-link" href="./03-configurator-walkthrough.html">Configurator Walkthrough</a></li>
@@ -29,8 +29,8 @@
       <li><a class="nav-link" href="./06-ado-integration.html">Data Integration &amp; ADO</a></li>
       <li><a class="nav-link" href="./07-spoke-app-walkthrough.html">Spoke App Walkthrough</a></li>
       <li><a class="nav-link" href="./08-extensions.html">Common Extensions</a></li>
-      <li class="nav-section-title">Day 2 &mdash; Seg &amp; Capacity</li>
-      <li><a class="nav-link" href="./09-day2-overview.html">Day 2 Overview</a></li>
+      <li class="nav-section-title">Segmentation &amp; Capacity</li>
+      <li><a class="nav-link" href="./09-day2-overview.html">Seg &amp; Capacity Overview</a></li>
       <li><a class="nav-link" href="./10-segmentation-configurator.html">Segmentation Configurator</a></li>
       <li><a class="nav-link" href="./11-capacity-configurator.html">Capacity Configurator</a></li>
       <li><a class="nav-link" href="./12-seg-cap-exercise.html">Lab: Seg &amp; Cap Exercise</a></li>
@@ -260,14 +260,65 @@
       </ul>
 
       <h3>Quota Composition</h3>
-      <p>For each sales role, define how quotas are built:</p>
+      <p>Quota composition is where the T&amp;Q app translates territory targets into individual rep quotas. This is one of the most complex and most frequently misunderstood areas of the app. Take your time here.</p>
+
+      <p>For each sales role, you define how quotas are built:</p>
       <ul>
-        <li><strong>Quota types</strong>: Each role can have multiple quota types (e.g., Bookings Quota, New ARR Quota). Recommended: keep under 3 per role, ideally 2.</li>
-        <li><strong>Planning measure mapping</strong>: Which planning measure feeds each quota type</li>
-        <li><strong>Product/BU selection</strong>: If targets were set by product, which product(s) apply to this role's quota. Leaving blank = all products.</li>
-        <li><strong>Territory level</strong>: Which tier's target becomes this role's quota (e.g., a rep assigned to T5 picks up the T5 target; a manager assigned to T4 picks up the T4 target)</li>
-        <li><strong>Raw vs. Discrete quota</strong>: Discrete = the target assigned to that specific territory. Raw = the rollup of all child territory targets. Common for first-line managers who are accountable for their team's combined number.</li>
+        <li><strong>Quota types:</strong> Each role can have multiple quota types (e.g., Bookings Quota, New ARR Quota). Keep this under 3 per role — ideally 2. Every additional quota type multiplies complexity for every downstream process.</li>
+        <li><strong>Planning measure mapping:</strong> Which planning measure feeds each quota type</li>
+        <li><strong>Product/BU selection:</strong> If targets were set by product, which product(s) apply to this role's quota. Leaving blank = all products.</li>
+        <li><strong>Territory level:</strong> Which tier's target becomes this role's quota (e.g., a rep assigned to T5 picks up the T5 target; a manager assigned to T4 picks up the T4 target)</li>
+        <li><strong>Raw vs. Discrete quota:</strong> See below — this distinction is critical.</li>
       </ul>
+
+      <h4>Raw vs. Discrete Quota — A Worked Example</h4>
+      <p>This trips up almost every first-time implementer. Here's the clean distinction:</p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Type</th>
+              <th>Definition</th>
+              <th>Who Gets It</th>
+              <th>Example</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Discrete</strong></td>
+              <td>The target assigned <em>directly</em> to the territory the rep is assigned to</td>
+              <td>Individual contributors (leaf-level reps)</td>
+              <td>Sarah is assigned to Territory T-West-47. T-West-47 has a $1.2M target. Sarah's quota = $1.2M (adjusted for assignment % and ramp).</td>
+            </tr>
+            <tr>
+              <td><strong>Raw</strong></td>
+              <td>The <em>rollup</em> of all child territory targets below the manager's territory</td>
+              <td>First-line and above managers accountable for their team's total</td>
+              <td>John manages Region US-West (T3). US-West has 8 territories totaling $11.4M. John's quota = $11.4M (the sum of his reps' targets).</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout-warning">
+        <span class="callout-label">⚠ Common Mistake</span>
+        <p><strong>Don't give managers a Discrete quota.</strong> A manager's territory at T3 (Region) has a target — but that target was set as an intermediate roll-up, not what the manager is actually accountable for. Managers are accountable for the sum of their direct reports' quotas, not the region roll-up target. Use Raw quota for managers.</p>
+        <p>Exception: if a manager also carries their own individual territory (player-coach model), they may need both a Raw quota for their team's total and a Discrete quota for their personal territory. This requires a custom extension.</p>
+      </div>
+
+      <h4>Multi-Territory Reps</h4>
+      <p>When a rep covers more than one territory (common with overlay roles or coverage gaps during in-year changes), their quota picture gets more complex:</p>
+      <ul>
+        <li>The <strong>territory quota view</strong> shows the quota per territory — it doesn't consolidate across multiple territories per rep</li>
+        <li>The <strong>Calc Quota by Quota Types module</strong> (dimensioned by Employee × Quota Type × Time) consolidates a rep's full quota across all territory assignments — this is the primary export for CRM, ICM, and HR systems</li>
+        <li>When a rep covers 3 territories with 33% assignment each, this module shows their full blended quota; the territory view only shows their quota for each individual territory</li>
+      </ul>
+
+      <div class="callout-tip">
+        <span class="callout-label">💡 Which Module to Use When</span>
+        <p>For rep-facing quota letters and ICM feeds: always use the <strong>Calc Quota by Quota Types</strong> module — it gives the full picture. For territory management and assignment validation: use the territory quota view — it's easier to troubleshoot per-territory.</p>
+      </div>
 
       <h3>Resource Assignment</h3>
       <p><strong>Initialization</strong>: Used at the start of a planning year or when onboarding new employees. Filters by role and assignment status; creates effective-dated assignment records.</p>
