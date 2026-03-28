@@ -180,126 +180,218 @@
   <figcaption style="font-size:0.8rem;color:#6b7280;margin-top:0.4rem;text-align:center;">Your starting point: the T&amp;Q Configurator — navigate to the Application Configurator section in your training workspace before beginning</figcaption>
 </figure>
 
-      <h2>Exercise Steps</h2>
+      <h2>Mini-Labs</h2>
+      <p>Complete each mini-lab in order. Each one covers a single configurator page. Hit <strong>Apply / Calculate</strong> after completing each page before moving to the next.</p>
 
-      <h3>Step 1: Data Hub Setup</h3>
-      <div class="step">
-        <div class="step-badge">1</div>
-        <div class="step-content">
-          <p>Navigate to <strong>Page 2: Data Hub Setup</strong> in the configurator. Using the CloudWorks profile information above, complete the following settings:</p>
-          <ul>
-            <li>Use Existing Data Hub? → <em>No</em> (CloudWorks is a new implementation)</li>
-            <li>Use ADO? → <em>Yes</em> (IT confirmed readiness)</li>
-            <li>Use Flat File Imports? → <em>No</em> (ADO is primary)</li>
-          </ul>
-          <p>For attributes, enable the following from the pre-populated list:</p>
-          <ul>
-            <li>Industry, Segment (Mid-Market / Enterprise), Employee Count, HQ State, Country</li>
-            <li>Current ARR, Potential Spend</li>
-          </ul>
-          <p>Disable all other pre-populated attributes that are not in CloudWorks's account data.</p>
-          <div class="callout-tip">
-            <span class="callout-label">💡 Instructor Tip</span>
-            <p>Look at the <code>CW_Accounts.csv</code> header row — only enable attributes that actually exist in the file. If you enable attributes with no data, they add noise and load complexity without adding value.</p>
+      <!-- MINI-LAB 1 -->
+      <div class="mini-lab">
+        <div class="mini-lab-header">
+          <div class="mini-lab-number">1</div>
+          <div class="mini-lab-title">Data Hub Setup — Page 2</div>
+          <div class="mini-lab-duration">⏱ 10 min</div>
+        </div>
+        <div class="mini-lab-body">
+          <div class="mini-lab-objective">
+            <strong>Objective</strong>
+            Configure the data architecture and account attributes for CloudWorks. This is the most critical page — decisions here shape the entire generated app.
           </div>
+          <ol class="mini-lab-steps">
+            <li><span class="mini-lab-step-num">1</span> Navigate to <strong>Page 2: Data Hub Setup</strong> in the configurator.</li>
+            <li><span class="mini-lab-step-num">2</span> Set <strong>Use Existing Data Hub?</strong> → <em>No</em> (CloudWorks is a new implementation, no prior Anaplan).</li>
+            <li><span class="mini-lab-step-num">3</span> Set <strong>Use ADO?</strong> → <em>Yes</em> (IT has confirmed ADO readiness).</li>
+            <li><span class="mini-lab-step-num">4</span> Set <strong>Use Flat File Imports?</strong> → <em>No</em> (ADO is the primary integration method).</li>
+            <li><span class="mini-lab-step-num">5</span> In the attribute section, enable only these attributes: <strong>Industry, Segment, Employee Count, HQ State, Country, Current ARR, Potential Spend</strong>. These match the fields in <code>CW_Accounts.csv</code>.</li>
+            <li><span class="mini-lab-step-num">6</span> Disable all other pre-populated attributes not in the CloudWorks account file.</li>
+            <li><span class="mini-lab-step-num">7</span> Click <strong>Apply</strong> to save.</li>
+          </ol>
+          <div class="callout-tip" style="margin-top:0.75rem;">
+            <span class="callout-label">💡 Tip</span>
+            <p>Only enable attributes that exist in the actual data file. Enabled attributes with no data bloat the Data Hub and slow imports — keep it lean.</p>
+          </div>
+        </div>
+        <div class="mini-lab-completion">
+          <div class="mini-lab-completion-label">✅ What it should look like when complete</div>
+          <figure class="screenshot" style="margin:0;">
+            <img src="../img/configurator/02-data-hub-setup.png" alt="Data Hub Setup — objects and dimensions grid completed" style="width:100%;border-radius:4px;border:1px solid #e2e8f0;">
+            <figcaption style="font-size:0.78rem;color:#6b7280;margin-top:0.35rem;text-align:center;">Page 2: Data Hub Setup — dimensions/objects grid configured with ADO enabled</figcaption>
+          </figure>
+          <figure class="screenshot" style="margin:0.75rem 0 0;">
+            <img src="../img/configurator/03-data-hub-attrs.png" alt="Data Hub Setup — account attributes configured" style="width:100%;border-radius:4px;border:1px solid #e2e8f0;">
+            <figcaption style="font-size:0.78rem;color:#6b7280;margin-top:0.35rem;text-align:center;">Page 2 (continued): Attributes configured — only CloudWorks fields enabled</figcaption>
+          </figure>
         </div>
       </div>
 
-      <h3>Step 2: Hierarchy Setup</h3>
-      <div class="step">
-        <div class="step-badge">2</div>
-        <div class="step-content">
-          <p>Navigate to <strong>Page 3: Hierarchy Setup</strong>. Configure the 4-tier hierarchy:</p>
-          <ul>
-            <li>Tier count: <strong>4</strong></li>
-            <li>Tier 1 name: <strong>Global</strong></li>
-            <li>Tier 2 name: <strong>Theater</strong></li>
-            <li>Tier 3 name: <strong>Region</strong></li>
-            <li>Tier 4 name: <strong>Territory</strong></li>
-            <li>Fiscal Year Start: <strong>February</strong></li>
-            <li>Planning granularity: <strong>Quarterly</strong></li>
-          </ul>
-          <div class="callout-warning">
+      <!-- MINI-LAB 2 -->
+      <div class="mini-lab">
+        <div class="mini-lab-header">
+          <div class="mini-lab-number">2</div>
+          <div class="mini-lab-title">Hierarchy Setup — Page 3</div>
+          <div class="mini-lab-duration">⏱ 8 min</div>
+        </div>
+        <div class="mini-lab-body">
+          <div class="mini-lab-objective">
+            <strong>Objective</strong>
+            Define CloudWorks's 4-tier territory hierarchy structure, tier names, fiscal year, and planning granularity.
+          </div>
+          <ol class="mini-lab-steps">
+            <li><span class="mini-lab-step-num">1</span> Navigate to <strong>Page 3: Hierarchy Setup</strong>.</li>
+            <li><span class="mini-lab-step-num">2</span> Set <strong>tier count</strong> to <em>4</em>. Verify this matches <code>CW_Territories.xlsx</code> — count the distinct levels in the file before committing.</li>
+            <li><span class="mini-lab-step-num">3</span> Name the tiers: <strong>Tier 1 = Global, Tier 2 = Theater, Tier 3 = Region, Tier 4 = Territory</strong>.</li>
+            <li><span class="mini-lab-step-num">4</span> Set <strong>Fiscal Year Start</strong> → <em>February</em> (CloudWorks FY starts Feb 1).</li>
+            <li><span class="mini-lab-step-num">5</span> Set <strong>Planning granularity</strong> → <em>Quarterly</em>.</li>
+            <li><span class="mini-lab-step-num">6</span> Click <strong>Apply</strong>.</li>
+          </ol>
+          <div class="callout-warning" style="margin-top:0.75rem;">
             <span class="callout-label">⚠ Check Your Work</span>
-            <p>Open <code>CW_Territories.xlsx</code> and verify that the data actually has 4 distinct levels. Count the unique values at each tier. If you see only 3 tiers in the data, go back and adjust.</p>
+            <p>Open <code>CW_Territories.xlsx</code> and count distinct values at each tier level before moving on. A mis-counted tier is very painful to fix post-generation.</p>
           </div>
+        </div>
+        <div class="mini-lab-completion">
+          <div class="mini-lab-completion-label">✅ What it should look like when complete</div>
+          <figure class="screenshot" style="margin:0;">
+            <img src="../img/configurator/04-hierarchies.png" alt="Hierarchy Setup — 4 tiers configured with CloudWorks names" style="width:100%;border-radius:4px;border:1px solid #e2e8f0;">
+            <figcaption style="font-size:0.78rem;color:#6b7280;margin-top:0.35rem;text-align:center;">Page 3: Hierarchy Setup — 4 tiers named Global → Theater → Region → Territory</figcaption>
+          </figure>
         </div>
       </div>
 
-      <h3>Step 3: Transactional Data Routing</h3>
-      <div class="step">
-        <div class="step-badge">3</div>
-        <div class="step-content">
-          <p>Navigate to <strong>Page 4: Transactional Data Routing</strong>. CloudWorks actuals are stored at the account level in Salesforce (Account ID + Quarter + ARR). Configure accordingly:</p>
-          <ul>
-            <li>Source of actuals: <strong>CRM (Salesforce)</strong></li>
-            <li>Routing method: <strong>By Account</strong> (actuals are at account level)</li>
-            <li>Account-to-territory mapping: <strong>Account Assignment</strong> (accounts are assigned to territories; actuals follow the assignment)</li>
-            <li>Historical periods: <strong>2 years</strong> (FY23, FY24)</li>
-          </ul>
-          <div class="callout-note">
-            <span class="callout-label">📝 Discussion</span>
+      <!-- MINI-LAB 3 -->
+      <div class="mini-lab">
+        <div class="mini-lab-header">
+          <div class="mini-lab-number">3</div>
+          <div class="mini-lab-title">Transactional Data Routing — Page 4</div>
+          <div class="mini-lab-duration">⏱ 8 min</div>
+        </div>
+        <div class="mini-lab-body">
+          <div class="mini-lab-objective">
+            <strong>Objective</strong>
+            Define how CloudWorks's historical actuals flow from Salesforce into the app and route to territories.
+          </div>
+          <ol class="mini-lab-steps">
+            <li><span class="mini-lab-step-num">1</span> Navigate to <strong>Page 4: Transactional Data Routing</strong>.</li>
+            <li><span class="mini-lab-step-num">2</span> Set <strong>Source of actuals</strong> → <em>CRM (Salesforce)</em>.</li>
+            <li><span class="mini-lab-step-num">3</span> Set <strong>Routing method</strong> → <em>By Account</em> (CloudWorks's actuals are stored at the account level in Salesforce).</li>
+            <li><span class="mini-lab-step-num">4</span> Set <strong>Account-to-territory mapping</strong> → <em>Account Assignment</em> (actuals follow the assigned territory).</li>
+            <li><span class="mini-lab-step-num">5</span> Set <strong>Historical periods</strong> → <em>2 years</em> (FY23 and FY24).</li>
+            <li><span class="mini-lab-step-num">6</span> Click <strong>Apply</strong>.</li>
+          </ol>
+          <div class="callout-note" style="margin-top:0.75rem;">
+            <span class="callout-label">📝 Discussion Point</span>
             <p>What would you do differently if CloudWorks's Salesforce data only had actuals at the rep level, not the account level? Discuss with your partner before moving on.</p>
           </div>
         </div>
-      </div>
-
-      <h3>Step 4: Planning Measures</h3>
-      <div class="step">
-        <div class="step-badge">4</div>
-        <div class="step-content">
-          <p>Navigate to <strong>Page 5: Planning Measures</strong>. This is a critical page — take your time.</p>
-          <ul>
-            <li>Primary measure name: <strong>ARR</strong></li>
-            <li>Primary measure type: <strong>Currency (USD)</strong></li>
-            <li>Secondary measure name: <strong>New Logos</strong></li>
-            <li>Secondary measure type: <strong>Count (Integer)</strong></li>
-            <li>Enable seasonality for ARR: <strong>Yes</strong> (Finance provided Q1–Q4 percentages)</li>
-            <li>Enable seasonality for New Logos: <strong>No</strong> (uniform distribution)</li>
-          </ul>
-          <div class="callout-tip">
-            <span class="callout-label">💡 Instructor Tip</span>
-            <p>The seasonality percentages from <code>CW_FY25_Targets.xlsx</code> will be loaded as data, not configured in the configurator. What you're enabling here is the <em>capability</em> for seasonality curves to be applied per measure — the actual percentages come from the data load after generation.</p>
-          </div>
+        <div class="mini-lab-completion">
+          <div class="mini-lab-completion-label">✅ What it should look like when complete</div>
+          <figure class="screenshot" style="margin:0;">
+            <img src="../img/configurator/05-scenario-planning.png" alt="Transactional Data Routing — CRM source and account-level routing configured" style="width:100%;border-radius:4px;border:1px solid #e2e8f0;">
+            <figcaption style="font-size:0.78rem;color:#6b7280;margin-top:0.35rem;text-align:center;">Page 4: Transactional Data Routing — planning measures and data source mapping configured</figcaption>
+          </figure>
         </div>
       </div>
 
-      <h3>Step 5: Target &amp; Allocation</h3>
-      <div class="step">
-        <div class="step-badge">5</div>
-        <div class="step-content">
-          <p>Navigate to <strong>Page 9: Target &amp; Allocation</strong>. CloudWorks Finance enters targets at the Theater level. Configure:</p>
-          <ul>
-            <li>Target entry tier: <strong>Tier 2 (Theater)</strong></li>
-            <li>Allocation methods: Enable <strong>Weighted by Historical Actuals</strong> and <strong>Manual Override</strong></li>
-            <li>Over-allocation: <strong>Enable</strong>, max 115%</li>
-            <li>Approval required: <strong>Yes</strong> — 2-stage (Regional Manager → Theater VP)</li>
-            <li>Adjustment reasons: Use defaults (the customer will customize these post-gen)</li>
-          </ul>
-          <div class="callout-warning">
+      <!-- MINI-LAB 4 -->
+      <div class="mini-lab">
+        <div class="mini-lab-header">
+          <div class="mini-lab-number">4</div>
+          <div class="mini-lab-title">Planning Measures — Page 5</div>
+          <div class="mini-lab-duration">⏱ 10 min</div>
+        </div>
+        <div class="mini-lab-body">
+          <div class="mini-lab-objective">
+            <strong>Objective</strong>
+            Define the metrics CloudWorks will plan against. This page is very difficult to change post-generation — get sign-off before moving forward.
+          </div>
+          <ol class="mini-lab-steps">
+            <li><span class="mini-lab-step-num">1</span> Navigate to <strong>Page 5: Planning Measures</strong>.</li>
+            <li><span class="mini-lab-step-num">2</span> Set <strong>Primary measure name</strong> → <em>ARR</em>, type → <em>Currency (USD)</em>.</li>
+            <li><span class="mini-lab-step-num">3</span> Add <strong>Secondary measure name</strong> → <em>New Logos</em>, type → <em>Count (Integer)</em>.</li>
+            <li><span class="mini-lab-step-num">4</span> Enable <strong>seasonality for ARR</strong> → <em>Yes</em> (Finance provided Q1–Q4 percentages in <code>CW_FY25_Targets.xlsx</code>).</li>
+            <li><span class="mini-lab-step-num">5</span> Set <strong>seasonality for New Logos</strong> → <em>No</em> (uniform distribution).</li>
+            <li><span class="mini-lab-step-num">6</span> Click <strong>Apply</strong>.</li>
+          </ol>
+          <div class="callout-important" style="margin-top:0.75rem;">
+            <span class="callout-label">🚫 Critical</span>
+            <p>Adding a planning measure post-generation requires significant rework across dozens of modules. If in doubt, add it now as inactive — removing an unused measure is trivial; adding one later is expensive.</p>
+          </div>
+        </div>
+        <div class="mini-lab-completion">
+          <div class="mini-lab-completion-label">✅ What it should look like when complete</div>
+          <figure class="screenshot" style="margin:0;">
+            <img src="../img/configurator/05-scenario-planning.png" alt="Planning Measures — ARR and New Logos configured with seasonality" style="width:100%;border-radius:4px;border:1px solid #e2e8f0;">
+            <figcaption style="font-size:0.78rem;color:#6b7280;margin-top:0.35rem;text-align:center;">Page 5: Planning Measures — primary (ARR) and secondary (New Logos) measures configured</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <!-- MINI-LAB 5 -->
+      <div class="mini-lab">
+        <div class="mini-lab-header">
+          <div class="mini-lab-number">5</div>
+          <div class="mini-lab-title">Target &amp; Allocation — Page 9</div>
+          <div class="mini-lab-duration">⏱ 12 min</div>
+        </div>
+        <div class="mini-lab-body">
+          <div class="mini-lab-objective">
+            <strong>Objective</strong>
+            Configure how Finance targets flow into T&amp;Q and how they are distributed down the territory hierarchy to CloudWorks's reps.
+          </div>
+          <ol class="mini-lab-steps">
+            <li><span class="mini-lab-step-num">1</span> Navigate to <strong>Page 9: Target &amp; Allocation</strong>.</li>
+            <li><span class="mini-lab-step-num">2</span> Set <strong>Target entry tier</strong> → <em>Tier 2 (Theater)</em>. Finance provides targets at the Theater level (NA, EMEA).</li>
+            <li><span class="mini-lab-step-num">3</span> Enable allocation methods: <strong>Weighted by Historical Actuals</strong> and <strong>Manual Override</strong>. Leave others disabled.</li>
+            <li><span class="mini-lab-step-num">4</span> Enable <strong>over-allocation</strong> → <em>Yes</em>, max <em>115%</em>.</li>
+            <li><span class="mini-lab-step-num">5</span> Enable <strong>approval workflow</strong> → <em>Yes</em>, 2 stages: Regional Manager → Theater VP.</li>
+            <li><span class="mini-lab-step-num">6</span> Leave adjustment reasons as defaults.</li>
+            <li><span class="mini-lab-step-num">7</span> Click <strong>Apply</strong>.</li>
+          </ol>
+          <div class="callout-warning" style="margin-top:0.75rem;">
             <span class="callout-label">⚠ Double-Check</span>
-            <p>Confirm you are not adding extra dimensions here. CloudWorks has 2 planning measures (ARR, New Logos) and quarterly granularity — that's it. Do not enable annual/monthly breakdowns unless the customer explicitly needs them.</p>
+            <p>Confirm no extra dimensions are added. CloudWorks = 2 measures (ARR, New Logos) + quarterly granularity. That's it. Do not enable annual or monthly breakdowns.</p>
           </div>
+        </div>
+        <div class="mini-lab-completion">
+          <div class="mini-lab-completion-label">✅ What it should look like when complete</div>
+          <figure class="screenshot" style="margin:0;">
+            <img src="../img/configurator/09-target-allocation.png" alt="Target & Allocation — Theater-level entry with 2-stage approval configured" style="width:100%;border-radius:4px;border:1px solid #e2e8f0;">
+            <figcaption style="font-size:0.78rem;color:#6b7280;margin-top:0.35rem;text-align:center;">Page 9: Target &amp; Allocation — Theater-level target entry, allocation methods, and over-allocation configured</figcaption>
+          </figure>
         </div>
       </div>
 
-      <h3>Step 6: Territory Assignment</h3>
-      <div class="step">
-        <div class="step-badge">6</div>
-        <div class="step-content">
-          <p>Navigate to <strong>Page 10: Territory Assignment</strong>. CloudWorks wants flexibility — they use a mix of manual assignment (for named enterprise accounts) and the Rule Engine (for mid-market accounts). Configure:</p>
-          <ul>
-            <li>Enable Manual Assignment: <strong>Yes</strong></li>
-            <li>Enable Geographic Mapping: <strong>No</strong> (their territories are not geo-defined)</li>
-            <li>Enable Rule Engine: <strong>Yes</strong></li>
-            <li>Enable Optimizer: <strong>No</strong> (not needed for now)</li>
-            <li>Split accounts: <strong>Yes</strong> (enterprise accounts can be split across territories)</li>
-            <li>Reassignment governance: Sales Ops can reassign; approval not required for individual accounts</li>
-          </ul>
-          <div class="callout-tip">
-            <span class="callout-label">💡 Instructor Tip</span>
-            <p>Since we're enabling the Rule Engine here, go back and check Page 14 (Rule Engine Setup) before calling configuration complete. The Rule Engine setup must reference attributes enabled in Data Hub Setup — make sure Industry and Segment are selected as rule attributes.</p>
+      <!-- MINI-LAB 6 -->
+      <div class="mini-lab">
+        <div class="mini-lab-header">
+          <div class="mini-lab-number">6</div>
+          <div class="mini-lab-title">Territory Assignment — Page 10</div>
+          <div class="mini-lab-duration">⏱ 10 min</div>
+        </div>
+        <div class="mini-lab-body">
+          <div class="mini-lab-objective">
+            <strong>Objective</strong>
+            Configure how CloudWorks assigns accounts to territories. They use a hybrid approach: manual for named enterprise accounts, Rule Engine for mid-market.
           </div>
+          <ol class="mini-lab-steps">
+            <li><span class="mini-lab-step-num">1</span> Navigate to <strong>Page 10: Territory Assignment</strong>.</li>
+            <li><span class="mini-lab-step-num">2</span> Enable <strong>Manual Assignment</strong> → <em>Yes</em>.</li>
+            <li><span class="mini-lab-step-num">3</span> Enable <strong>Geographic Mapping</strong> → <em>No</em> (CloudWorks territories are not geo-defined).</li>
+            <li><span class="mini-lab-step-num">4</span> Enable <strong>Rule Engine</strong> → <em>Yes</em>.</li>
+            <li><span class="mini-lab-step-num">5</span> Enable <strong>Optimizer</strong> → <em>No</em> (not in scope for this implementation).</li>
+            <li><span class="mini-lab-step-num">6</span> Enable <strong>Split accounts</strong> → <em>Yes</em> (enterprise accounts can span multiple territories).</li>
+            <li><span class="mini-lab-step-num">7</span> Set reassignment governance: Sales Ops can reassign; approval not required for individual accounts.</li>
+            <li><span class="mini-lab-step-num">8</span> Click <strong>Apply</strong>. Then navigate to <strong>Page 14: Rule Engine Setup</strong> and confirm Industry and Segment are selected as rule attributes — they must match what you enabled in Data Hub Setup.</li>
+          </ol>
+        </div>
+        <div class="mini-lab-completion">
+          <div class="mini-lab-completion-label">✅ What it should look like when complete</div>
+          <figure class="screenshot" style="margin:0;">
+            <img src="../img/configurator/10-territory-assignment.png" alt="Territory Assignment — Manual and Rule Engine enabled, Geo and Optimizer disabled" style="width:100%;border-radius:4px;border:1px solid #e2e8f0;">
+            <figcaption style="font-size:0.78rem;color:#6b7280;margin-top:0.35rem;text-align:center;">Page 10: Territory Assignment — Manual Assignment and Rule Engine enabled; Geo Mapping and Optimizer disabled</figcaption>
+          </figure>
+          <figure class="screenshot" style="margin:0.75rem 0 0;">
+            <img src="../img/configurator/12-rule-engine.png" alt="Rule Engine Setup — Industry and Segment selected as rule attributes" style="width:100%;border-radius:4px;border:1px solid #e2e8f0;">
+            <figcaption style="font-size:0.78rem;color:#6b7280;margin-top:0.35rem;text-align:center;">Page 14: Rule Engine Setup — Industry and Segment enabled as rule attributes</figcaption>
+          </figure>
         </div>
       </div>
 
