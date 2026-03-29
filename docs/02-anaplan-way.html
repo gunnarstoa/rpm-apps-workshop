@@ -55,6 +55,7 @@
       <li class="nav-section-title">Sales Forecasting</li>
       <li><a class="nav-link" href="./sf-01-overview.html">App Overview</a></li>
       <li class="nav-section-title">Reference</li>
+      <li><a class="nav-link" href="./reference-inter-app-flows.html">Inter-App Data Flows</a></li>
       <li><a class="nav-link" href="./15-whats-coming.html">What's Coming</a></li>
       <li><a class="nav-link" href="./16-qanda.html">Q&amp;A from Sessions</a></li>
       <li><a class="nav-link" href="./17-resources.html">Resources &amp; Downloads</a></li>
@@ -291,6 +292,116 @@
           <li>What's the most common place projects go off the rails? What's the fix?</li>
         </ul>
         <p>Be ready to share your timeline sketch during the debrief.</p>
+      </div>
+
+      <hr class="divider">
+
+      <h2>Delivery Methodology by Application</h2>
+      <p>While the Anaplan Way for Apps provides the overall framework, each RPM application has nuances in how the phases play out. Here's what's different for each app:</p>
+
+      <h3>Account Segmentation &amp; Scoring</h3>
+      <div class="two-col">
+        <div class="card">
+          <h3>Session Zero Differences</h3>
+          <ul>
+            <li>Data focus shifts to <strong>firmographic quality</strong> — employee count, revenue bands, industry classification. Ask: "Do you have banded versions of these fields, or only raw numbers?"</li>
+            <li>Validate that the customer has a <strong>segment definition</strong> they're willing to commit to. "We'll figure it out during config" is a red flag — the segment list is set at generation.</li>
+            <li>If Segmentation will feed T&amp;Q, coordinate data timing: Segmentation outputs need to be ready before T&amp;Q territory carving begins.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Configuration Session Pacing</h3>
+          <ul>
+            <li>Segmentation configurator = ~0.4× the complexity of T&amp;Q. Plan 2–3 hours of focused sessions with a prepared customer.</li>
+            <li>The wallet size configuration is where sessions slow down — customers often want to model multiple methods. Set a decision deadline.</li>
+            <li>Score-based segmentation weights require a stakeholder decision. Don't let this become a committee exercise — recommend weights based on the data and get a single decision-maker to approve.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="callout-tip">
+        <span class="callout-label">💡 Model Readiness for Segmentation</span>
+        <p>Model Readiness for Segmentation means: accounts are loaded with firmographic attributes, the segmentation calculation has run, and the customer can see their own accounts in the right segments. Schedule a calibration session — customers almost always want to adjust thresholds after seeing the initial distribution. Build that into the timeline.</p>
+      </div>
+
+      <h3>Go-to-Market Capacity Planning</h3>
+      <div class="two-col">
+        <div class="card">
+          <h3>Session Zero Differences</h3>
+          <ul>
+            <li>Data focus is on <strong>role hierarchy structure</strong> — Job Family Groups, Job Families, Sales Roles. Get organizational HR data early: this structure must match how Finance reports headcount.</li>
+            <li>Confirm ramp profile data: what does the customer believe a new AE's month-by-month productivity looks like? This is often an assumption, not a tracked metric — surface that early.</li>
+            <li>If using Segmentation outputs as coverage inputs, confirm the Segmentation timeline. Capacity planning needs segment counts before coverage ratios can be configured.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Configuration Session Pacing</h3>
+          <ul>
+            <li>Capacity configurator = ~0.5× the complexity of T&amp;Q. Plan 2 days of focused sessions with a prepared customer.</li>
+            <li>The tops-down vs. bottoms-up entry level decision requires Finance and Sales in the same room. Don't configure this without both stakeholders present.</li>
+            <li>Dimensionality decisions (sub-region + segment vs. sub-region only) are the #1 source of rework on Capacity projects. Slow down here — get explicit sign-off before generating.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="callout-tip">
+        <span class="callout-label">💡 Model Readiness for Capacity</span>
+        <p>Model Readiness for Capacity means: ramp profiles are loaded, coverage ratios are set, the tops-down suggested headcount calculation runs without errors, and at least one region's bottoms-up hiring plan has been entered and the "holy grail" revenue gap page shows a result. That page — hire X people on Y dates, close the revenue gap — is the customer sign-off moment. Get there as fast as possible.</p>
+      </div>
+
+      <h3>Sales Forecasting</h3>
+      <div class="two-col">
+        <div class="card">
+          <h3>Implementation Approach</h3>
+          <ul>
+            <li>No configurator — there is no configuration session in the traditional sense. The app ships as-is with limited post-deployment configuration.</li>
+            <li>The primary implementation work is <strong>CRM data integration</strong>: connecting Salesforce (via ADO or Anaplan for Salesforce) and validating that opportunity data is loading correctly with the right fields and stage mapping.</li>
+            <li>T&amp;Q quota data must be available and structured correctly before Sales Forecasting can show meaningful attainment data. Sequence matters: T&amp;Q live before Sales Forecasting launch.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Go-Live Readiness</h3>
+          <ul>
+            <li>MEDDPICC field mapping from Salesforce — confirm which Salesforce fields map to which MEDDPICC components. Missing fields will surface immediately as hygiene alerts.</li>
+            <li>Brief the customer's sales leadership before go-live: the pipeline hygiene page will show data quality problems on day one. Frame this as a feature, not a bug.</li>
+            <li>First forecast cycle is the highest-risk moment — sellers are learning a new process. Plan a check-in session 2 weeks after go-live to catch confusion early.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="callout-note">
+        <span class="callout-label">📝 No "Model Readiness" Milestone</span>
+        <p>Because there is no configurator and no generation, there is no traditional Model Readiness milestone for Sales Forecasting. The equivalent is a <strong>Data Validation Review</strong> — confirm CRM data is loading correctly, quota data is flowing from T&amp;Q, and at least one forecast submission has been tested end-to-end before rolling out to the full sales team.</p>
+      </div>
+
+      <hr class="divider">
+
+      <h2>Recommended Implementation Sequence</h2>
+      <p>When a customer is implementing multiple RPM apps, the sequence matters. Here is the recommended order and the reasoning behind it:</p>
+      <div class="step">
+        <div class="step-badge">1</div>
+        <div class="step-content">
+          <strong>Account Segmentation &amp; Scoring</strong> — Run segmentation first to classify the account universe. Segment outputs feed into both T&amp;Q (territory carving, Rule Engine) and Capacity (coverage ratio calculations). Doing this first means T&amp;Q and Capacity are built on accurate data.
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-badge">2</div>
+        <div class="step-content">
+          <strong>Go-to-Market Capacity Planning</strong> — With segment counts from Segmentation, model headcount needs by role and geography. The output — territories per headcount — informs how many territories to design in T&amp;Q. Doing this before T&amp;Q prevents rebuilding the territory hierarchy after the headcount model runs.
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-badge">3</div>
+        <div class="step-content">
+          <strong>Territory &amp; Quota</strong> — Design territories informed by segment mix and headcount model. Configure the T&amp;Q app last among the three configurator apps because it depends on outputs from both Segmentation and Capacity. This is still typically the first app go-live because it delivers the most immediate customer value.
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-badge">4</div>
+        <div class="step-content">
+          <strong>Sales Forecasting</strong> — Implement after T&amp;Q is live and quota data is structured correctly. Sales Forecasting without quota data is meaningless — attainment tracking requires a baseline. This is the natural second or third engagement with a customer who already has T&amp;Q.
+        </div>
+      </div>
+      <div class="callout-warning">
+        <span class="callout-label">⚠ Reality Check</span>
+        <p>This is the <em>recommended</em> sequence, not the sequence every customer follows. Many customers implement T&amp;Q first and add Segmentation and Capacity later. That's fine — the apps work independently. What matters is that when all three are in scope simultaneously, you run them in this order. And when a customer asks "which should we do first?" — this is your answer.</p>
       </div>
     </div>
   </main>

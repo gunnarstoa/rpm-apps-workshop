@@ -190,6 +190,7 @@
       <li class="nav-section-title">Sales Forecasting</li>
       <li><a class="nav-link" href="./sf-01-overview.html">App Overview</a></li>
       <li class="nav-section-title">Reference</li>
+      <li><a class="nav-link" href="./reference-inter-app-flows.html">Inter-App Data Flows</a></li>
       <li><a class="nav-link" href="./15-whats-coming.html">What's Coming</a></li>
       <li><a class="nav-link" href="./16-qanda.html">Q&amp;A from Sessions</a></li>
       <li><a class="nav-link" href="./17-resources.html">Resources &amp; Downloads</a></li>
@@ -824,6 +825,73 @@
       </div>
 
       <div class="facilitator-note">📝 Collect feedback verbally or share a quick survey link. Note any topics that generated a lot of questions — those are candidates for deeper coverage in the next workshop iteration.</div>
+
+      <hr class="section-divider">
+
+      <h2>Lab Debrief Answer Keys</h2>
+      <p>Reference answers for the debrief questions in each configurator lab. These aren't the only valid answers — use them as a baseline and let discussion surface additional insights.</p>
+
+      <h3>T&amp;Q Configurator Lab — Debrief</h3>
+      <ol>
+        <li><strong>Hardest decision:</strong> Usually Data Hub Setup (ADO vs. flat file, attribute selection) or Planning Measures (adding a measure later is expensive). Push participants to articulate <em>why</em> it was hard — usually it's because they didn't have enough customer information. That's the lesson.</li>
+        <li><strong>Third planning measure (Services ARR):</strong> Add it now, mark it inactive if not immediately needed. Removing an unused measure is trivial; adding one post-generation requires updates across dozens of modules. The cost of adding it now is near zero.</li>
+        <li><strong>Existing V2 deployment:</strong> Check whether the existing Data Hub structure is compatible with V3. Set the "Use Existing Data Hub" flag correctly. Expect the territory file format to differ (flat file vs. per-tier). Budget extra time for data migration.</li>
+        <li><strong>Enable Quota Composition:</strong> Enable it when the customer has multiple quota types per role (e.g., Bookings Quota + New ARR Quota), or when different roles need different quota compositions. If a rep only has one quota type, you technically don't need it — but enabling it adds flexibility at low cost.</li>
+        <li><strong>Real Rule Engine rule for CloudWorks:</strong> Example — Strategic: Industry = "Technology" AND Employee Band = "5K–25K+" AND Revenue Band = "$100M+". This uses the attributes enabled in Data Hub Setup (Industry, Segment).</li>
+      </ol>
+
+      <h3>Segmentation Configurator Lab — Debrief</h3>
+      <ol>
+        <li><strong>Eight segments pushback:</strong> "Every extra segment multiplies complexity in T&amp;Q and Capacity. More territory types, more coverage ratios, more planning rows. What's the actual business need for eight? Can we achieve it with four to five well-defined segments and use the Rule Engine to handle edge cases?" Push toward four or fewer.</li>
+        <li><strong>Adding a fourth scoring factor:</strong> Weights must still sum to 100%. Adding growth rate means reducing other weights proportionally. Confirm the customer has reliable growth rate data — if it's incomplete, it degrades score quality. Add it only if data quality supports it.</li>
+        <li><strong>Thirty percent missing employee count:</strong> Those accounts will have incomplete scoring. Options: (a) exclude from score-based and let them fall back to rule-based, (b) use a default/median value for missing fields, (c) use data enrichment. In production: flag this during Session Zero and don't proceed without a data remediation plan.</li>
+        <li><strong>Segments already in Salesforce:</strong> "Great — we'll import those as the starting point. The Segmentation app gives you a governed, data-driven process to review and refine those classifications every year — not just sales rep judgment. And the output feeds automatically into your territory and headcount planning."</li>
+      </ol>
+
+      <h3>Capacity Configurator Lab — Debrief</h3>
+      <ol>
+        <li><strong>EMEA needs different coverage ratios:</strong> This requires configuring coverage at the sub-region level — not just Americas. Going back to the Coverage &amp; Workload page to change the planning level may require re-generation if the dimensionality is already locked. Flag this as a potential rework scenario if not caught before generation.</li>
+        <li><strong>Revenue target routing risk:</strong> The risk is generating the app with the right dimensionality but without the formula connections between the revenue target and the productivity model. Post-gen routing work takes one to two days and requires someone who understands the Capacity model structure. If not flagged early, it surfaces as a bug during Model Readiness — at the worst time.</li>
+        <li><strong>Third scenario (stretch):</strong> This is a configurator setting — the number of scenarios is set at generation time. Adding post-gen requires extending the scenario list and replicating scenario logic across modules. Estimated effort: small (half a day). Needs careful testing to confirm all pages reflect the new scenario.</li>
+        <li><strong>Ramp profile revenue impact:</strong> The simplified model (full quota from Month three) is less accurate but easier to explain. The nuanced model produces lower projected revenue in the first two months. Over a 12-month horizon for a $1M quota AE hired in January: the simplified model shows roughly $833K projected contribution; the nuanced model shows closer to $700K. The difference is whether Q1 hires are expected to contribute meaningfully. For Finance planning, this matters.</li>
+      </ol>
+
+      <hr class="section-divider">
+
+      <h2>Sales Forecasting Module</h2>
+      <p>Sales Forecasting is covered as a single App Overview session — no configurator, no configurator lab. The primary facilitation challenge is managing expectations: this is a newer, less configurable app. Keep the session focused on what it does well and honest about current limitations.</p>
+
+      <h3 class="section-heading">App Overview <span class="timing-badge">45–60 min</span></h3>
+
+      <div class="script-block">
+        <p>"Sales Forecasting went generally available in March 2026 — the day after the first run of this workshop. We have it now. Let's talk about what it does, how it connects to T&amp;Q, and what the realistic implementation conversation looks like with a customer."</p>
+      </div>
+
+      <div class="script-block">
+        <p>"There is no configurator for this app. You get it as-is — far fewer configuration options than T&amp;Q, Segmentation, or Capacity. That's actually fine, because the complexity here isn't in the configuration — it's in the CRM integration and in getting sellers to actually use it."</p>
+      </div>
+
+      <div class="facilitator-note">📝 Pull up the Sales Forecasting app in a demo environment if available. Walk through the homepage (quota attainment, forecast waterfall), then the pipeline analytics page. These two pages are the core of the demo — the lab guide has screenshots of both.</div>
+
+      <div class="script-block">
+        <p>"The homepage shows quota attainment, forecast call, and the opportunity pipeline in one view. The key numbers: Won Attainment — what's already closed — and Commit Attainment — what's committed to close. The gap between Commit and quota is what needs to come from Upside and Pipeline."</p>
+      </div>
+
+      <div class="script-block">
+        <p>"The pipeline analytics page is where managers live. Week-over-week pipeline change — is our pipeline growing or shrinking? Pipeline hygiene — which deals have stale stages, missing MEDDPICC fields, or close dates in the past? The app enforces CRM hygiene by making it visible. That's either going to be very popular with your Sales Ops team or very unpopular with your sales reps."</p>
+      </div>
+
+      <div class="facilitator-note">📝 Common question: "Can it write forecast decisions back to Salesforce?" Answer: Not currently — inbound data only. This is the most-asked limitation. Frame it honestly: "It's on the roadmap. Right now, Anaplan is the system of record for the forecast, not Salesforce. Some customers are fine with that. Others need bidirectionality before they'll commit."</div>
+
+      <div class="script-block">
+        <p>"The critical dependency: T&amp;Q quota data needs to be live and structured correctly before Sales Forecasting means anything. If reps don't have quotas in Anaplan, there's nothing to measure attainment against. This is why Sales Forecasting is almost always a second engagement — you implement T&amp;Q first, get quotas right, then add Forecasting."</p>
+      </div>
+
+      <div class="script-block">
+        <p>"One thing to prepare customers for: this app will surface their Salesforce data quality problems immediately. Stale opportunity stages, missing close dates, incomplete MEDDPICC — all of it becomes visible on day one. Brief sales leadership before go-live. Frame it as a feature, not a bug. You want to know about dirty pipeline data — that's the point."</p>
+      </div>
+
+      <div class="facilitator-note">📝 Wrap up with the roadmap context: ICM is still on the roadmap. When it ships, the full five-pillar RPM suite will be complete. Sales Forecasting going GA is a signal that the platform is maturing quickly. Keep participants engaged in the roadmap — this is a fast-moving space.</div>
 
     </div>
   </main>
