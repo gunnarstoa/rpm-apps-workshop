@@ -91,27 +91,89 @@
       <p>The <strong>RPM Apps Technical Enablement Workshop</strong> is a hands-on technical enablement program for Anaplan delivery practitioners — Solutions Consultants, Solution Architects, and Technical Consultants — who will be implementing or supporting the Anaplan Revenue Performance Management (RPM) application suite.</p>
       <p>This is not a lecture series. It is a structured sequence of demonstrations, discussions, and hands-on labs designed to take you from <em>knowing about</em> these applications to being capable of <em>configuring, explaining, and delivering</em> them for real customers.</p>
 
-      <h2>How This Workshop Is Structured</h2>
-      <p>The workshop is organized into <strong>four application modules</strong>, each covering one RPM app from end to end. Every module follows the same repeating structure, so as you progress through the workshop the pattern becomes familiar and the learning compounds:</p>
+      <h2>How Each Module Flows</h2>
+      <p>The workshop is organized into <strong>four application modules</strong> — one per RPM app. Every module follows the same deliberate sequence. The order matters: each section builds on the one before it. Here is the flow and the reasoning behind it:</p>
 
-      <div class="table-wrap">
-        <table>
-          <thead>
-            <tr><th>#</th><th>Section</th><th>Purpose</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>1</td><td><strong>Functional Overview</strong></td><td>What the app produces, who uses it, and why it matters. Short — 15 minutes max.</td></tr>
-            <tr><td>2</td><td><strong>Sample Data Structures</strong></td><td>What data the app needs, in what format, and why each field matters. Grounds you before touching the configurator.</td></tr>
-            <tr><td>3</td><td><strong>Configurator Review</strong></td><td>A guided walkthrough of every configurator page — key decisions, risk points, and what's hard to change post-generation.</td></tr>
-            <tr><td>4</td><td><strong>Lab: Configurator</strong></td><td>Hands-on. You configure the app yourself using the CloudWorks case study. This is where the knowledge becomes real.</td></tr>
-            <tr><td>5</td><td><strong>Post-Generation Steps</strong></td><td>What happens between generation and a customer-ready app. Who does what, how long it takes, what breaks.</td></tr>
-            <tr><td>6</td><td><strong>Model Review</strong></td><td>Key modules to understand in the generated model — the structural patterns every practitioner should know.</td></tr>
-            <tr><td>7</td><td><strong>Lab: CoModeler</strong></td><td>Hands-on. Use Anaplan's AI documentation tool to explore the generated model, generate a line item dictionary, and answer specific questions about formula logic.</td></tr>
-            <tr><td>8</td><td><strong>Application Review</strong></td><td>End-to-end walkthrough of the UX app — what each section does, who uses it, and how to demo it to a customer.</td></tr>
-            <tr><td>9</td><td><strong>Data Integration &amp; ADO</strong></td><td>(T&amp;Q module only) — how data flows in and out of the app, V2 vs V3 architecture, ADO setup.</td></tr>
-            <tr><td>10</td><td><strong>Common Extensions</strong></td><td>What customers commonly ask for beyond the base app, how to scope it, and how to protect the upgrade path.</td></tr>
-          </tbody>
-        </table>
+      <div class="step">
+        <div class="step-badge">1</div>
+        <div class="step-content">
+          <strong>Functional Overview</strong> — <em>Orient before you configure</em><br>
+          We start with a short, high-level answer to: what does this app do, who uses it, and why does it exist in the RPM suite? This isn't a deep dive — it's context-setting. You need to understand the shape of what you're about to build before you touch a single setting. 15 minutes max.
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-badge">2</div>
+        <div class="step-content">
+          <strong>Sample Data Structures</strong> — <em>Know the data before you configure it</em><br>
+          Every configuration decision is a data decision in disguise. Before we open the configurator, we look at exactly what data the app expects — the objects, the required fields, the format, and the common problems. This section grounds you in what the customer needs to have ready before a configuration session can even begin. The CloudWorks dataset is introduced here.
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-badge">3</div>
+        <div class="step-content">
+          <strong>Configurator Review</strong> — <em>See every decision before you make it</em><br>
+          The instructor walks through the full configurator page by page — live, with the app open. This is the Tell and Show. For each page you'll learn what the setting controls, what's at risk if you get it wrong, and what questions to ask the customer before answering it. Pay attention to the red-tab decisions — these are the ones that are painful or impossible to reverse after generation.
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-badge">4</div>
+        <div class="step-content">
+          <strong>Lab: Configurator</strong> — <em>Configure it yourself</em><br>
+          Now you do it. Using the CloudWorks case study, you work through the configurator yourself — making the same decisions you just watched the instructor make, but for a specific customer scenario. Each step is a mini-lab with a clear objective, explicit actions, and a completion screenshot so you know whether you got it right. This is the most important part of each module. Don't skip it, don't rush it.
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-badge">5</div>
+        <div class="step-content">
+          <strong>Post-Generation Steps</strong> — <em>Generation is not go-live</em><br>
+          The configurator triggers generation — but what comes out is not a customer-ready app. There is a defined sequence of post-generation work that must happen before you can put the app in front of a customer: fixing formula errors, remapping saved views, loading data, validating rollups, and confirming the core workflows function correctly. This section walks through that checklist so you know what to expect and who does what.
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-badge">6</div>
+        <div class="step-content">
+          <strong>Model Review</strong> — <em>Understand what was built</em><br>
+          After generation, the app contains thousands of objects. You don't need to understand all of them — but you do need to understand the key structural patterns: which modules drive the core logic, how data flows through the model, and where to look first when something doesn't look right. The Model Review focuses on the handful of modules that matter most for implementation and troubleshooting.
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-badge">7</div>
+        <div class="step-content">
+          <strong>Lab: CoModeler</strong> — <em>Explore the model with AI assistance</em><br>
+          CoModeler is Anaplan's AI-powered documentation tool. With the generated app open, you'll use it to produce a line item dictionary for a specific module, then ask targeted questions about formula logic — how does the quota calculation actually work? What module consolidates a rep's quota across multiple territory assignments? These aren't hypothetical questions — they're the exact questions that come up during implementation and customer conversations. The lab produces verifiable answers.
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-badge">8</div>
+        <div class="step-content">
+          <strong>Application Review</strong> — <em>Walk the app like a customer would</em><br>
+          Now that you understand what was built and how it works under the hood, you walk the generated UX application end to end — the same way you would with a customer. Every section, every key page, every workflow. You'll learn where to spend your demo time, what to skip, and how to tell the planning story in business language rather than model builder language.
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-badge">9</div>
+        <div class="step-content">
+          <strong>Common Extensions</strong> — <em>Know when to build and when to configure</em><br>
+          The last section of each module covers what customers consistently ask for beyond the base app — what it is, how to scope it, how long it takes, and how to build it in a way that doesn't break the upgrade path. Before scoping any extension, you'll use the configure-vs-extend decision tree to confirm the base app genuinely doesn't already handle the requirement. Often it does.
+        </div>
+      </div>
+
+      <div class="callout-note">
+        <span class="callout-label">📝 T&amp;Q module also includes</span>
+        <p><strong>Data Integration &amp; ADO</strong> — a dedicated section on how data flows into and out of the app, the V2 Data Hub vs. V3 ADO architecture, and what changes when your customer transitions to V3. This is covered in the T&amp;Q module because T&amp;Q is typically the first app implemented, and the data architecture decisions made here affect all three configurator apps.</p>
+      </div>
+
+      <div class="callout-note">
+        <span class="callout-label">📝 Sales Forecasting module</span>
+        <p>Sales Forecasting is covered as a single <strong>App Overview</strong> section rather than the full module structure above. It has no configurator, so there is no configurator lab or post-gen checklist — the app is deployed as-is with limited configuration options. The section covers capabilities, limitations, CRM integration, and how it connects to T&amp;Q quota data.</p>
       </div>
 
       <p>The four modules covered in this workshop are:</p>
