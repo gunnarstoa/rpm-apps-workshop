@@ -892,5 +892,26 @@
   </main>
 
   <script src="../js/nav.js"></script>
+  <!-- Review Mode Toggle -->
+  <button class="review-toggle-btn" id="reviewToggle" onclick="toggleReview()" title="Toggle v0.2 review highlights">
+    <span class="dot"></span>
+    <span id="reviewLabel">Review Mode</span>
+  </button>
+  <script>
+    (function() {
+      var on = localStorage.getItem('reviewMode') === 'on';
+      if (on) {
+        document.body.classList.add('review-mode');
+        document.getElementById('reviewToggle').classList.add('active');
+        document.getElementById('reviewLabel').textContent = 'Review Mode ON';
+      }
+    })();
+    function toggleReview() {
+      var on = document.body.classList.toggle('review-mode');
+      localStorage.setItem('reviewMode', on ? 'on' : 'off');
+      document.getElementById('reviewToggle').classList.toggle('active', on);
+      document.getElementById('reviewLabel').textContent = on ? 'Review Mode ON' : 'Review Mode';
+    }
+  </script>
 </body>
 </html>

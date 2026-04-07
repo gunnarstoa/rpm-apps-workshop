@@ -80,8 +80,8 @@
         <span class="content-badge">Reference</span>
       </div>
     </div>
-    <div class="content-body">
-      <p>T&amp;Q requires five core data objects. Understanding their structure before configuration sessions prevents the most common data-related delays. The <strong>Data Prep Workbook</strong> (available in Resources) contains templates for each object.</p>
+    <div class="content-body review-highlight">
+      <p>T&amp;Q requires five core data objects, with a sixth (Product) almost always required in practice. Understanding their structure before configuration sessions prevents the most common data-related delays. The <strong>Data Prep Workbook</strong> (available in Resources) contains templates for each object.</p>
 
       <h2>Required Data Objects</h2>
 
@@ -94,6 +94,7 @@
             <tr><td><strong>Employee</strong></td><td>Sales reps and managers with role and assignment data</td><td>HR / CRM</td><td>User ID, User Name, Sales Role, Job Family, Hire Date, Source Territory, Manager, Is Active?</td></tr>
             <tr><td><strong>Opportunity / Order</strong></td><td>Historical actuals for allocation and reporting</td><td>CRM / ERP</td><td>Account ID, Amount, Planning Measure, Service Date, Territory</td></tr>
             <tr><td><strong>Finance Targets</strong></td><td>Top-down targets from Finance</td><td>Finance / FP&amp;A</td><td>Territory/Region, Planning Measure, Period, Amount</td></tr>
+            <tr><td><strong>Product</strong> <span style="background:#e8f4fd;color:#0066cc;font-size:11px;padding:2px 6px;border-radius:3px;margin-left:6px;">Almost Always Required</span></td><td>Product or SKU catalog — used as a planning dimension (e.g., product family, product line)</td><td>CRM / ERP / Product Master</td><td>Product ID, Product Name, Product Family, Product Line, Is Active</td></tr>
           </tbody>
         </table>
       </div>
@@ -174,5 +175,26 @@
   </main>
 
   <script src="../js/nav.js"></script>
+  <!-- Review Mode Toggle -->
+  <button class="review-toggle-btn" id="reviewToggle" onclick="toggleReview()" title="Toggle v0.2 review highlights">
+    <span class="dot"></span>
+    <span id="reviewLabel">Review Mode</span>
+  </button>
+  <script>
+    (function() {
+      var on = localStorage.getItem('reviewMode') === 'on';
+      if (on) {
+        document.body.classList.add('review-mode');
+        document.getElementById('reviewToggle').classList.add('active');
+        document.getElementById('reviewLabel').textContent = 'Review Mode ON';
+      }
+    })();
+    function toggleReview() {
+      var on = document.body.classList.toggle('review-mode');
+      localStorage.setItem('reviewMode', on ? 'on' : 'off');
+      document.getElementById('reviewToggle').classList.toggle('active', on);
+      document.getElementById('reviewLabel').textContent = on ? 'Review Mode ON' : 'Review Mode';
+    }
+  </script>
 </body>
 </html>

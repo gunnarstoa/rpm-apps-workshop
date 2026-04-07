@@ -1363,3 +1363,65 @@ pre code {
   background: #0052a3;
   color: #fff;
 }
+
+/* ── Review Mode ─────────────────────────────────────────── */
+.review-toggle-btn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 1000;
+  background: #fff;
+  border: 2px solid #d1d5db;
+  border-radius: 24px;
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #6b7280;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.review-toggle-btn:hover {
+  border-color: #f59e0b;
+  color: #92400e;
+}
+.review-toggle-btn.active {
+  background: #fef3c7;
+  border-color: #f59e0b;
+  color: #92400e;
+}
+.review-toggle-btn .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #d1d5db;
+}
+.review-toggle-btn.active .dot {
+  background: #f59e0b;
+}
+
+/* Highlighted sections when review mode is on */
+body.review-mode .review-highlight {
+  border-left: 4px solid #f59e0b;
+  background: #fffbeb;
+  border-radius: 0 6px 6px 0;
+  padding-left: 16px;
+  margin-left: -20px;
+  position: relative;
+}
+body.review-mode .review-highlight::before {
+  content: 'v0.2';
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: #92400e;
+  background: #fde68a;
+  border-radius: 4px;
+  padding: 2px 6px;
+}
