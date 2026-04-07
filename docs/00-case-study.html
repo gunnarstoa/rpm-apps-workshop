@@ -12,14 +12,13 @@
     <span>RPM Apps Lab Guide</span>
   </div>
 
-  <nav class="sidebar">
+    <nav class="sidebar">
     <div class="sidebar-header">
       <div class="sidebar-title">RPM Apps Lab Guide</div>
     </div>
     <ul class="nav-list">
       <li class="nav-section-title">Getting Started</li>
-      <li><a class="nav-link" class="nav-link" href="./00-overview.html">Workshop Overview</a></li>
-      <li><a class="nav-link active" href="./00-case-study.html">Case Study: CloudWorks</a></li>
+      <li><a class="nav-link" href="./00-overview.html">Workshop Overview</a></li>
       <li><a class="nav-link" href="./01-spm-overview.html">SPM/RPM Overview</a></li>
       <li><a class="nav-link" href="./02-anaplan-way.html">Anaplan Way for Apps</a></li>
       <li class="nav-section-title">Territory &amp; Quota</li>
@@ -29,7 +28,6 @@
       <li><a class="nav-link" href="./04-configurator-exercise.html">Lab: Configurator</a></li>
       <li><a class="nav-link" href="./05-post-gen-steps.html">Post-Generation Steps</a></li>
       <li><a class="nav-link" href="./tq-06-model-review.html">Model Review</a></li>
-      <li><a class="nav-link" href="./tq-07-comodeler-lab.html">Lab: CoModeler</a></li>
       <li><a class="nav-link" href="./07-spoke-app-walkthrough.html">Application Review</a></li>
       <li><a class="nav-link" href="./06-ado-integration.html">Data Integration &amp; ADO</a></li>
       <li><a class="nav-link" href="./08-extensions.html">Common Extensions</a></li>
@@ -40,7 +38,6 @@
       <li><a class="nav-link" href="./seg-04-lab.html">Lab: Configurator</a></li>
       <li><a class="nav-link" href="./seg-05-post-gen.html">Post-Generation Steps</a></li>
       <li><a class="nav-link" href="./seg-06-model-review.html">Model Review</a></li>
-      <li><a class="nav-link" href="./seg-07-comodeler-lab.html">Lab: CoModeler</a></li>
       <li><a class="nav-link" href="./13-segmentation-walkthrough.html">Application Review</a></li>
       <li><a class="nav-link" href="./seg-08-extensions.html">Common Extensions</a></li>
       <li class="nav-section-title">Capacity Planning</li>
@@ -50,20 +47,14 @@
       <li><a class="nav-link" href="./cap-04-lab.html">Lab: Configurator</a></li>
       <li><a class="nav-link" href="./cap-05-post-gen.html">Post-Generation Steps</a></li>
       <li><a class="nav-link" href="./cap-06-model-review.html">Model Review</a></li>
-      <li><a class="nav-link" href="./cap-07-comodeler-lab.html">Lab: CoModeler</a></li>
       <li><a class="nav-link" href="./14-capacity-walkthrough.html">Application Review</a></li>
       <li><a class="nav-link" href="./cap-08-extensions.html">Common Extensions</a></li>
-      <li class="nav-section-title">Sales Forecasting</li>
-      <li><a class="nav-link" href="./sf-01-overview.html">App Overview</a></li>
       <li class="nav-section-title">Reference</li>
-      <li><a class="nav-link" href="./reference-inter-app-flows.html">Inter-App Data Flows</a></li>
       <li><a class="nav-link" href="./15-whats-coming.html">What's Coming</a></li>
       <li><a class="nav-link" href="./16-qanda.html">Q&amp;A from Sessions</a></li>
       <li><a class="nav-link" href="./17-resources.html">Resources &amp; Downloads</a></li>
+      <li><a class="nav-link" href="./tq-appendix-answer-key.html">T&amp;Q Answer Key</a></li>
       <li><a class="nav-link" href="./18-facilitator.html">Facilitator Guide</a></li>
-      <li><a class="nav-link" href="./limitations.html">Limitations Reference</a></li>
-      <li><a class="nav-link" href="./presales-demo.html">Pre-Sales Demo Playbook</a></li>
-      <li><a class="nav-link" href="./roadmap.html">Roadmap Snapshot</a></li>
     </ul>
     <div class="lang-switcher">
       <span class="lang-switcher-label">🌐 Language</span>
@@ -116,7 +107,7 @@
           <ul>
             <li><strong>Sales Reps (AEs):</strong> 180 across NA and EMEA</li>
             <li><strong>Overlay Reps:</strong> 25 Pre-Sales Engineers (SEs)</li>
-            <li><strong>Hierarchy:</strong> 4-tier territory structure</li>
+            <li><strong>Hierarchy:</strong> 5-tier territory structure</li>
             <li><strong>Fiscal Year:</strong> February – January (FY starts Feb 1)</li>
             <li><strong>Planning Granularity:</strong> Quarterly</li>
             <li><strong>Historical Actuals:</strong> 2 years (FY23, FY24)</li>
@@ -125,15 +116,16 @@
       </div>
 
       <h2>Territory Hierarchy</h2>
-      <p>CloudWorks uses a 4-tier territory hierarchy. This is the structure you'll configure in the T&amp;Q Hierarchy Setup page:</p>
+      <p>CloudWorks uses a 5-tier territory hierarchy. This is the structure you'll configure in the T&amp;Q Hierarchy Setup page:</p>
       <div class="table-wrap">
         <table>
           <thead><tr><th>Tier</th><th>Name</th><th>Example Values</th></tr></thead>
           <tbody>
-            <tr><td>Tier 1</td><td><strong>Global</strong></td><td>CloudWorks Global</td></tr>
-            <tr><td>Tier 2</td><td><strong>Theater</strong></td><td>NA, EMEA</td></tr>
+            <tr><td>Tier 1</td><td><strong>Geo</strong></td><td>CloudWorks Global</td></tr>
+            <tr><td>Tier 2</td><td><strong>Area</strong></td><td>NA, EMEA</td></tr>
             <tr><td>Tier 3</td><td><strong>Region</strong></td><td>US-West, US-East, UK, DACH</td></tr>
-            <tr><td>Tier 4</td><td><strong>Territory</strong></td><td>Individual rep territories (~220 total)</td></tr>
+            <tr><td>Tier 4</td><td><strong>Sub-Region</strong></td><td>Pacific NW, Mid-Atlantic, Benelux</td></tr>
+            <tr><td>Tier 5</td><td><strong>Territory</strong></td><td>Individual rep territories (~220 total)</td></tr>
           </tbody>
         </table>
       </div>
@@ -163,10 +155,10 @@
         <div class="card">
           <h3>Finance &amp; Targets</h3>
           <ul>
-            <li><strong>Target entry level:</strong> Theater (Finance provides targets at the NA / EMEA level)</li>
+            <li><strong>Target entry level:</strong> Area (Finance provides targets at the NA / EMEA level)</li>
             <li><strong>Allocation methods:</strong> Weighted by Historical Actuals + Manual Override</li>
             <li><strong>Over-allocation:</strong> Enabled — max 115%</li>
-            <li><strong>Approval workflow:</strong> 2-stage — Regional Manager → Theater VP</li>
+            <li><strong>Approval workflow:</strong> 2-stage — Regional Manager → Area VP</li>
           </ul>
         </div>
       </div>
@@ -235,15 +227,16 @@
       </div>
 
       <h2>Lab Dataset Files</h2>
-      <p>The following files are used in the T&amp;Q configurator lab. Distributed via the shared drive folder before the workshop.</p>
+      <p>The following files are provided in the exercise zip and used in the T&amp;Q configurator lab. Distributed via the shared drive folder before the workshop.</p>
       <div class="table-wrap">
         <table>
           <thead><tr><th>File</th><th>Rows</th><th>Key Fields</th></tr></thead>
           <tbody>
             <tr><td><code>Configurator Exercise Account_Flat File.csv</code></td><td>~4,200</td><td>Account ID, Name, Industry, Segment, Employee Count, Annual Revenue, Territory, Lat/Long, ARR Spend</td></tr>
             <tr><td><code>Configurator Exercise Territory_Flat File.csv</code></td><td>~220</td><td>Territory ID, Territory Name, Territory Parent, Territory Manager</td></tr>
-            <tr><td><code>Configurator Exercise Employee File.xlsx</code></td><td>~205</td><td>User ID, User Name, Sales Role, Job Family, Hire Date, Source Territory, Manager</td></tr>
-            <tr><td><code>Configurator Exercise Opportunity Line File.csv</code></td><td>~18,000</td><td>Opportunity Line ID, Account, Amount, Planning Measure, Service Date</td></tr>
+            <tr><td><code>Configurator Exercise Employee File.xlsx</code></td><td>~205</td><td>Employee ID, Employee Name, Sales Role, Job Family, Hire Date, Source Territory, Manager</td></tr>
+            <tr><td><code>Configurator Exercise Opportunity line File.csv</code></td><td>~18,000</td><td>Opportunity Line ID, Opportunity ID (parent), Account, Amount, Planning Measure, Service Date</td></tr>
+            <tr><td><strong>Opportunity</strong> <em>(parent record)</em></td><td>—</td><td>The Opportunity record is the parent of Opportunity Line. Depending on how the customer’s CRM exports data, both files may be required. Opportunity carries header-level fields (close date, stage, owner) while Opportunity Line carries the line-item amounts. Confirm with the customer whether their actuals export is at the Opportunity or Opportunity Line level.</td></tr>
           </tbody>
         </table>
       </div>

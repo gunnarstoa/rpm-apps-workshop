@@ -12,14 +12,13 @@
     <span>RPM Apps Lab Guide</span>
   </div>
 
-    <nav class="sidebar">
+      <nav class="sidebar">
     <div class="sidebar-header">
       <div class="sidebar-title">RPM Apps Lab Guide</div>
     </div>
     <ul class="nav-list">
       <li class="nav-section-title">Getting Started</li>
       <li><a class="nav-link active" href="./00-overview.html">Workshop Overview</a></li>
-      <li><a class="nav-link" href="./00-case-study.html">Case Study: CloudWorks</a></li>
       <li><a class="nav-link" href="./01-spm-overview.html">SPM/RPM Overview</a></li>
       <li><a class="nav-link" href="./02-anaplan-way.html">Anaplan Way for Apps</a></li>
       <li class="nav-section-title">Territory &amp; Quota</li>
@@ -29,7 +28,6 @@
       <li><a class="nav-link" href="./04-configurator-exercise.html">Lab: Configurator</a></li>
       <li><a class="nav-link" href="./05-post-gen-steps.html">Post-Generation Steps</a></li>
       <li><a class="nav-link" href="./tq-06-model-review.html">Model Review</a></li>
-      <li><a class="nav-link" href="./tq-07-comodeler-lab.html">Lab: CoModeler</a></li>
       <li><a class="nav-link" href="./07-spoke-app-walkthrough.html">Application Review</a></li>
       <li><a class="nav-link" href="./06-ado-integration.html">Data Integration &amp; ADO</a></li>
       <li><a class="nav-link" href="./08-extensions.html">Common Extensions</a></li>
@@ -40,7 +38,6 @@
       <li><a class="nav-link" href="./seg-04-lab.html">Lab: Configurator</a></li>
       <li><a class="nav-link" href="./seg-05-post-gen.html">Post-Generation Steps</a></li>
       <li><a class="nav-link" href="./seg-06-model-review.html">Model Review</a></li>
-      <li><a class="nav-link" href="./seg-07-comodeler-lab.html">Lab: CoModeler</a></li>
       <li><a class="nav-link" href="./13-segmentation-walkthrough.html">Application Review</a></li>
       <li><a class="nav-link" href="./seg-08-extensions.html">Common Extensions</a></li>
       <li class="nav-section-title">Capacity Planning</li>
@@ -50,20 +47,14 @@
       <li><a class="nav-link" href="./cap-04-lab.html">Lab: Configurator</a></li>
       <li><a class="nav-link" href="./cap-05-post-gen.html">Post-Generation Steps</a></li>
       <li><a class="nav-link" href="./cap-06-model-review.html">Model Review</a></li>
-      <li><a class="nav-link" href="./cap-07-comodeler-lab.html">Lab: CoModeler</a></li>
       <li><a class="nav-link" href="./14-capacity-walkthrough.html">Application Review</a></li>
       <li><a class="nav-link" href="./cap-08-extensions.html">Common Extensions</a></li>
-      <li class="nav-section-title">Sales Forecasting</li>
-      <li><a class="nav-link" href="./sf-01-overview.html">App Overview</a></li>
       <li class="nav-section-title">Reference</li>
-      <li><a class="nav-link" href="./reference-inter-app-flows.html">Inter-App Data Flows</a></li>
       <li><a class="nav-link" href="./15-whats-coming.html">What's Coming</a></li>
       <li><a class="nav-link" href="./16-qanda.html">Q&amp;A from Sessions</a></li>
       <li><a class="nav-link" href="./17-resources.html">Resources &amp; Downloads</a></li>
+      <li><a class="nav-link" href="./tq-appendix-answer-key.html">T&amp;Q Answer Key</a></li>
       <li><a class="nav-link" href="./18-facilitator.html">Facilitator Guide</a></li>
-      <li><a class="nav-link" href="./limitations.html">Limitations Reference</a></li>
-      <li><a class="nav-link" href="./presales-demo.html">Pre-Sales Demo Playbook</a></li>
-      <li><a class="nav-link" href="./roadmap.html">Roadmap Snapshot</a></li>
     </ul>
     <div class="lang-switcher">
       <span class="lang-switcher-label">🌐 Language</span>
@@ -119,7 +110,7 @@
         <div class="step-badge">3</div>
         <div class="step-content">
           <strong>Configurator Review</strong> — <em>See every decision before you make it</em><br>
-          The instructor walks through the full configurator page by page — live, with the app open. This is the Tell and Show. For each page you'll learn what the setting controls, what's at risk if you get it wrong, and what questions to ask the customer before answering it. Pay attention to the red-tab decisions — these are the ones that are painful or impossible to reverse after generation.
+          The instructor walks through the full configurator page by page — live, with the app open. This is the Tell and Show. For each page you'll learn what the setting controls, what's at risk if you get it wrong, and what questions to ask the customer before answering it.
         </div>
       </div>
 
@@ -392,7 +383,7 @@
       <div class="two-col">
         <div class="card">
           <h3>Capacity → T&amp;Q</h3>
-          <p>Territories-per-headcount (TPH) output from Capacity informs how many territories to design in T&amp;Q. Do capacity planning before you finalize the territory hierarchy.</p>
+          <p>Territories-per-headcount (TPH) output from Capacity informs how many territories to design in T&amp;Q. The right sequencing is a judgment call — capacity planning and territory design often happen in parallel, each informing the other. What’s better defined at the start of the engagement should go first.</p>
         </div>
         <div class="card">
           <h3>T&amp;Q → Sales Forecasting</h3>
@@ -402,10 +393,10 @@
 
       <div class="card" style="margin-top:1rem;">
         <h3>Recommended Implementation Sequence</h3>
+        <p style="font-size:0.85rem;margin-bottom:0.75rem;">The order below reflects common practice, but Segmentation, Capacity, and T&amp;Q often run in parallel — each informs the others. Use your judgment based on what’s best-defined for the customer at project start.</p>
         <ol style="padding-left:1.2rem;font-size:0.9rem;margin-top:0.5rem;">
           <li><strong>Segmentation</strong> — classify your account universe before designing territories</li>
-          <li><strong>Capacity Planning</strong> — determine headcount needs per role and geography</li>
-          <li><strong>T&amp;Q</strong> — design territories informed by segment mix and headcount model</li>
+          <li><strong>Capacity Planning &amp; T&amp;Q</strong> — these often happen in parallel; headcount planning and territory design inform each other</li>
           <li><strong>Sales Forecasting</strong> — add forecast tracking once quotas are live and trusted</li>
         </ol>
       </div>

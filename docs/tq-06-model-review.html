@@ -19,7 +19,6 @@
     <ul class="nav-list">
       <li class="nav-section-title">Getting Started</li>
       <li><a class="nav-link" href="./00-overview.html">Workshop Overview</a></li>
-      <li><a class="nav-link" href="./00-case-study.html">Case Study: CloudWorks</a></li>
       <li><a class="nav-link" href="./01-spm-overview.html">SPM/RPM Overview</a></li>
       <li><a class="nav-link" href="./02-anaplan-way.html">Anaplan Way for Apps</a></li>
       <li class="nav-section-title">Territory &amp; Quota</li>
@@ -29,7 +28,6 @@
       <li><a class="nav-link" href="./04-configurator-exercise.html">Lab: Configurator</a></li>
       <li><a class="nav-link" href="./05-post-gen-steps.html">Post-Generation Steps</a></li>
       <li><a class="nav-link active" href="./tq-06-model-review.html">Model Review</a></li>
-      <li><a class="nav-link" href="./tq-07-comodeler-lab.html">Lab: CoModeler</a></li>
       <li><a class="nav-link" href="./07-spoke-app-walkthrough.html">Application Review</a></li>
       <li><a class="nav-link" href="./06-ado-integration.html">Data Integration &amp; ADO</a></li>
       <li><a class="nav-link" href="./08-extensions.html">Common Extensions</a></li>
@@ -40,7 +38,6 @@
       <li><a class="nav-link" href="./seg-04-lab.html">Lab: Configurator</a></li>
       <li><a class="nav-link" href="./seg-05-post-gen.html">Post-Generation Steps</a></li>
       <li><a class="nav-link" href="./seg-06-model-review.html">Model Review</a></li>
-      <li><a class="nav-link" href="./seg-07-comodeler-lab.html">Lab: CoModeler</a></li>
       <li><a class="nav-link" href="./13-segmentation-walkthrough.html">Application Review</a></li>
       <li><a class="nav-link" href="./seg-08-extensions.html">Common Extensions</a></li>
       <li class="nav-section-title">Capacity Planning</li>
@@ -50,20 +47,14 @@
       <li><a class="nav-link" href="./cap-04-lab.html">Lab: Configurator</a></li>
       <li><a class="nav-link" href="./cap-05-post-gen.html">Post-Generation Steps</a></li>
       <li><a class="nav-link" href="./cap-06-model-review.html">Model Review</a></li>
-      <li><a class="nav-link" href="./cap-07-comodeler-lab.html">Lab: CoModeler</a></li>
       <li><a class="nav-link" href="./14-capacity-walkthrough.html">Application Review</a></li>
       <li><a class="nav-link" href="./cap-08-extensions.html">Common Extensions</a></li>
-      <li class="nav-section-title">Sales Forecasting</li>
-      <li><a class="nav-link" href="./sf-01-overview.html">App Overview</a></li>
       <li class="nav-section-title">Reference</li>
-      <li><a class="nav-link" href="./reference-inter-app-flows.html">Inter-App Data Flows</a></li>
       <li><a class="nav-link" href="./15-whats-coming.html">What's Coming</a></li>
       <li><a class="nav-link" href="./16-qanda.html">Q&amp;A from Sessions</a></li>
       <li><a class="nav-link" href="./17-resources.html">Resources &amp; Downloads</a></li>
+      <li><a class="nav-link" href="./tq-appendix-answer-key.html">T&amp;Q Answer Key</a></li>
       <li><a class="nav-link" href="./18-facilitator.html">Facilitator Guide</a></li>
-      <li><a class="nav-link" href="./limitations.html">Limitations Reference</a></li>
-      <li><a class="nav-link" href="./presales-demo.html">Pre-Sales Demo Playbook</a></li>
-      <li><a class="nav-link" href="./roadmap.html">Roadmap Snapshot</a></li>
     </ul>
     <div class="lang-switcher">
       <span class="lang-switcher-label">🌐 Language</span>
@@ -115,36 +106,70 @@
         </table>
       </div>
 
-
-      <h2>CoModeler — What to Expect</h2>
-      <p>Before running the CoModeler labs, familiarize yourself with the interface. CoModeler opens as a side panel within any Anaplan module. You type a natural language prompt, and CoModeler reads the model structure to generate a response.</p>
-
-      <div class="callout-note">
-        <span class="callout-label">📝 Access Note</span>
-        <p>CoModeler access must be enabled by the Apps team for your workspace. Confirm access before the lab session. If you see the toolbar but CoModeler is greyed out, contact Chan or Jon to enable it.</p>
+      <div class="mini-lab">
+        <div class="mini-lab-header">
+          <div class="mini-lab-number">A</div>
+          <div class="mini-lab-title">CoModeler Lab A — Generate a Line Item Dictionary</div>
+          <div class="mini-lab-duration">⏱ 15 min</div>
+        </div>
+        <div class="mini-lab-body">
+          <div class="mini-lab-objective">
+            <strong>Objective</strong>
+            Use CoModeler to generate a complete line item dictionary for the SYS Territory Quota module — the core quota calculation module in T&amp;Q.
+          </div>
+          <ol class="mini-lab-steps">
+            <li><span class="mini-lab-step-num">1</span> Open the <strong>T&amp;Q V2 template app</strong> in your partner workspace.</li>
+            <li><span class="mini-lab-step-num">2</span> Navigate to the <strong>SYS Territory Quota</strong> module (use the model map or search).</li>
+            <li><span class="mini-lab-step-num">3</span> Open <strong>CoModeler</strong> for this module.</li>
+            <li><span class="mini-lab-step-num">4</span> Prompt CoModeler: <em>"Generate a line item dictionary for this module. For each line item include: name, formula summary, data type, and purpose."</em></li>
+            <li><span class="mini-lab-step-num">5</span> Review the output. Identify which line items calculate: (a) the base target, (b) the assignment percentage adjustment, and (c) the ramp factor adjustment.</li>
+            <li><span class="mini-lab-step-num">6</span> Export or copy the dictionary — you'll use it as a reference during the extension exercise.</li>
+          </ol>
+          <div class="callout-tip" style="margin-top:0.75rem;">
+            <span class="callout-label">💡 What to Look For</span>
+            <p>The quota calculation follows this pattern: <strong>Base Target × Assignment % × Ramp Factor = Rep Quota</strong>. Find the line items that represent each of these three inputs and confirm you understand how they connect.</p>
+          </div>
+        </div>
+        <div class="mini-lab-completion">
+          <div class="mini-lab-completion-label">✅ Done when you can answer</div>
+          <p style="font-size:0.88rem;color:#14532d;margin:0;">Which line item in SYS Territory Quota holds the final calculated quota value for a rep? What are its inputs?</p>
+        </div>
       </div>
 
-      <h3>CoModeler Interface</h3>
-      <div class="screenshot-placeholder">
-        <div class="ss-icon">📸</div>
-        <div class="ss-label">[SCREENSHOT NEEDED: CoModeler panel open in a T&Q module]</div>
-        <div class="ss-desc">Show CoModeler side panel open alongside a T&Q module (e.g., SYS Territory Quota). The panel should show the prompt input field and the CoModeler icon highlighted in the toolbar. No suitable frame found in Day 2B recording — record from a live T&Q template app with CoModeler enabled.</div>
+      <div class="mini-lab">
+        <div class="mini-lab-header">
+          <div class="mini-lab-number">C</div>
+          <div class="mini-lab-title">CoModeler Lab C — Explain the Quota Calculation Logic</div>
+          <div class="mini-lab-duration">⏱ 15 min</div>
+        </div>
+        <div class="mini-lab-body">
+          <div class="mini-lab-objective">
+            <strong>Objective</strong>
+            Use CoModeler to understand exactly how quota is calculated for a rep who covers multiple territories with different assignment percentages.
+          </div>
+          <ol class="mini-lab-steps">
+            <li><span class="mini-lab-step-num">1</span> With the T&amp;Q template app open, launch <strong>CoModeler</strong>.</li>
+            <li><span class="mini-lab-step-num">2</span> Ask: <em>"How does the quota calculation work when a single rep is assigned to multiple territories at different assignment percentages? Walk me through the formula logic step by step."</em></li>
+            <li><span class="mini-lab-step-num">3</span> Read the explanation. Then ask a follow-up: <em>"Which module consolidates the quota across all territories for a single rep, and what is the output used for downstream systems like ICM?"</em></li>
+            <li><span class="mini-lab-step-num">4</span> Note the module name that consolidates multi-territory quota (hint: it's the one you'd export to CRM/ICM).</li>
+            <li><span class="mini-lab-step-num">5</span> Ask one more: <em>"If a rep has a ramp profile that starts at 0% in month 1 and reaches 100% in month 4, how does the app calculate their prorated annual quota?"</em></li>
+          </ol>
+        </div>
+        <div class="mini-lab-completion">
+          <div class="mini-lab-completion-label">✅ Done when you can answer</div>
+          <p style="font-size:0.88rem;color:#14532d;margin:0;">What is the name of the module that holds the consolidated quota for a rep across all their territory assignments? Why does this matter for ICM integration?</p>
+        </div>
       </div>
 
-      <h3>Entering a Prompt</h3>
-      <div class="screenshot-placeholder">
-        <div class="ss-icon">📸</div>
-        <div class="ss-label">[SCREENSHOT NEEDED: CoModeler prompt entry — typing a line item dictionary request]</div>
-        <div class="ss-desc">Show the CoModeler panel with a prompt typed in: "Generate a line item dictionary for this module." Cursor should be in the input field. Record from the T&Q template app.</div>
+      <div class="callout-do">
+        <span class="callout-label">✅ Do — Model Review Debrief</span>
+        <p>After completing both CoModeler labs, discuss with your partner:</p>
+        <ul>
+          <li>What surprised you about the quota calculation? Was it more or less complex than you expected?</li>
+          <li>How would you explain the quota formula to a Sales Ops stakeholder in plain language?</li>
+          <li>Which module would you check first if a rep's quota looked wrong after generation?</li>
+        </ul>
       </div>
-
-      <h3>Viewing CoModeler Output</h3>
-      <div class="screenshot-placeholder">
-        <div class="ss-icon">📸</div>
-        <div class="ss-label">[SCREENSHOT NEEDED: CoModeler output — line item dictionary response for SYS Territory Quota]</div>
-        <div class="ss-desc">Show CoModeler response listing line items with name, formula summary, data type, and purpose. Should show at least 5-6 line items from SYS Territory Quota.</div>
-      </div>
-
     </div>
   </main>
 

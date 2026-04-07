@@ -12,14 +12,13 @@
     <span>RPM Apps Lab Guide</span>
   </div>
 
-    <nav class="sidebar">
+      <nav class="sidebar">
     <div class="sidebar-header">
       <div class="sidebar-title">RPM Apps Lab Guide</div>
     </div>
     <ul class="nav-list">
       <li class="nav-section-title">Getting Started</li>
       <li><a class="nav-link" href="./00-overview.html">Workshop Overview</a></li>
-      <li><a class="nav-link" href="./00-case-study.html">Case Study: CloudWorks</a></li>
       <li><a class="nav-link" href="./01-spm-overview.html">SPM/RPM Overview</a></li>
       <li><a class="nav-link" href="./02-anaplan-way.html">Anaplan Way for Apps</a></li>
       <li class="nav-section-title">Territory &amp; Quota</li>
@@ -29,7 +28,6 @@
       <li><a class="nav-link" href="./04-configurator-exercise.html">Lab: Configurator</a></li>
       <li><a class="nav-link" href="./05-post-gen-steps.html">Post-Generation Steps</a></li>
       <li><a class="nav-link" href="./tq-06-model-review.html">Model Review</a></li>
-      <li><a class="nav-link" href="./tq-07-comodeler-lab.html">Lab: CoModeler</a></li>
       <li><a class="nav-link" href="./07-spoke-app-walkthrough.html">Application Review</a></li>
       <li><a class="nav-link active" href="./06-ado-integration.html">Data Integration &amp; ADO</a></li>
       <li><a class="nav-link" href="./08-extensions.html">Common Extensions</a></li>
@@ -40,7 +38,6 @@
       <li><a class="nav-link" href="./seg-04-lab.html">Lab: Configurator</a></li>
       <li><a class="nav-link" href="./seg-05-post-gen.html">Post-Generation Steps</a></li>
       <li><a class="nav-link" href="./seg-06-model-review.html">Model Review</a></li>
-      <li><a class="nav-link" href="./seg-07-comodeler-lab.html">Lab: CoModeler</a></li>
       <li><a class="nav-link" href="./13-segmentation-walkthrough.html">Application Review</a></li>
       <li><a class="nav-link" href="./seg-08-extensions.html">Common Extensions</a></li>
       <li class="nav-section-title">Capacity Planning</li>
@@ -50,20 +47,14 @@
       <li><a class="nav-link" href="./cap-04-lab.html">Lab: Configurator</a></li>
       <li><a class="nav-link" href="./cap-05-post-gen.html">Post-Generation Steps</a></li>
       <li><a class="nav-link" href="./cap-06-model-review.html">Model Review</a></li>
-      <li><a class="nav-link" href="./cap-07-comodeler-lab.html">Lab: CoModeler</a></li>
       <li><a class="nav-link" href="./14-capacity-walkthrough.html">Application Review</a></li>
       <li><a class="nav-link" href="./cap-08-extensions.html">Common Extensions</a></li>
-      <li class="nav-section-title">Sales Forecasting</li>
-      <li><a class="nav-link" href="./sf-01-overview.html">App Overview</a></li>
       <li class="nav-section-title">Reference</li>
-      <li><a class="nav-link" href="./reference-inter-app-flows.html">Inter-App Data Flows</a></li>
       <li><a class="nav-link" href="./15-whats-coming.html">What's Coming</a></li>
       <li><a class="nav-link" href="./16-qanda.html">Q&amp;A from Sessions</a></li>
       <li><a class="nav-link" href="./17-resources.html">Resources &amp; Downloads</a></li>
+      <li><a class="nav-link" href="./tq-appendix-answer-key.html">T&amp;Q Answer Key</a></li>
       <li><a class="nav-link" href="./18-facilitator.html">Facilitator Guide</a></li>
-      <li><a class="nav-link" href="./limitations.html">Limitations Reference</a></li>
-      <li><a class="nav-link" href="./presales-demo.html">Pre-Sales Demo Playbook</a></li>
-      <li><a class="nav-link" href="./roadmap.html">Roadmap Snapshot</a></li>
     </ul>
     <div class="lang-switcher">
       <span class="lang-switcher-label">🌐 Language</span>
@@ -124,7 +115,7 @@
           </tr>
           <tr>
             <td>Data flow direction</td>
-            <td>Pull from sources into Data Hub; Hub pushes to Spoke</td>
+            <td>Sources push to Data Hub; Spoke models pull from Data Hub</td>
             <td>ADO pushes directly to Spoke</td>
           </tr>
           <tr>
@@ -139,7 +130,7 @@
           </tr>
           <tr>
             <td>Territory file format</td>
-            <td>One flat file (all tiers in columns)</td>
+            <td>One file with all hierarchy levels (parent-child structure)</td>
             <td>Separate source view per hierarchy tier</td>
           </tr>
           <tr>
@@ -159,8 +150,12 @@
       <p>Anaplan Data Orchestrator is a separate entity — <strong>not a model</strong>. It functions as a central data repository and transformation layer. Think of it like a data warehouse that exists alongside your Anaplan workspace.</p>
 
       <h3>Key Differences from Data Hub</h3>
+      <div class="callout-note" style="margin-bottom:1rem;">
+        <span class="callout-label">🏗 V2 Hub-Spoke Architecture (Current)</span>
+        <p>In V2, spoke models <strong>pull</strong> data from the central Data Hub. External sources (Salesforce, flat files, etc.) load data into the Data Hub first, and each spoke model then pulls the data it needs via import actions. The Data Hub is the single source of truth — all three spoke apps (T&amp;Q, Capacity, Segmentation) draw from it. This page covers V2 architecture. V3 (ADO) content will be updated when V3 screens are finalized.</p>
+      </div>
       <ul>
-        <li><strong>Push vs. Pull architecture</strong>: In V2, each model pulls data from the Data Hub. With ADO, data is pushed from ADO to all connected models simultaneously — you schedule once, all models update.</li>
+        <li><strong>Pull vs. Push architecture</strong>: In V2, each spoke model pulls data from the Data Hub on a schedule or manually. With ADO, data is pushed from ADO to all connected models simultaneously — you schedule once, all models update.</li>
         <li><strong>No workspace size cost</strong>: ADO doesn't consume Anaplan workspace. Customers with large transactional datasets (e.g., 3 years of opportunity data) won't blow up their Polaris spoke model.</li>
         <li><strong>Native transformation logic</strong>: ADO has its own transformation layer (different from Data Hub formula approach). Data shaping happens before it reaches the spoke.</li>
         <li><strong>Scheduling via Workflows</strong>: ADO uses Workflows to schedule data pushes. This is why the Workflow entitlement is bundled with app subscriptions.</li>
@@ -194,8 +189,8 @@
 
       <div class="callout-warning">
         <strong>V2 vs V3 Territory File Format</strong><br>
-        <strong>V2</strong>: Provide one flat file with all hierarchy tiers as columns (T1, T2, T3, T4, T5 in one file). The Data Hub parses the hierarchy and creates the list structure.<br><br>
-        <strong>V3</strong>: Provide a <em>separate source view per tier</em> in ADO. Each view only needs the member name and its parent. If you have a 5-tier hierarchy, you provide 5 ADO views.<br><br>
+        <strong>V2</strong>: Provide one file containing all hierarchy levels. The file uses a parent-child structure — each member is listed alongside its parent — and the Data Hub builds the hierarchy list structure from it. All tiers are included in a single file.<br><br>
+        <strong>V3</strong>: Provide a <em>separate source view per tier</em> in ADO. Each view only needs the member name/ID and its parent. For a 5-tier hierarchy, you provide 5 ADO source views. Do not combine all tiers into one flat file for V3.<br><br>
         Update your customer data prep conversations and the Data Prep Workbook guidance accordingly.
       </div>
 

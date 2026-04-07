@@ -19,7 +19,6 @@
     <ul class="nav-list">
       <li class="nav-section-title">Getting Started</li>
       <li><a class="nav-link" href="./00-overview.html">Workshop Overview</a></li>
-      <li><a class="nav-link" href="./00-case-study.html">Case Study: CloudWorks</a></li>
       <li><a class="nav-link" href="./01-spm-overview.html">SPM/RPM Overview</a></li>
       <li><a class="nav-link" href="./02-anaplan-way.html">Anaplan Way for Apps</a></li>
       <li class="nav-section-title">Territory &amp; Quota</li>
@@ -29,7 +28,6 @@
       <li><a class="nav-link" href="./04-configurator-exercise.html">Lab: Configurator</a></li>
       <li><a class="nav-link" href="./05-post-gen-steps.html">Post-Generation Steps</a></li>
       <li><a class="nav-link" href="./tq-06-model-review.html">Model Review</a></li>
-      <li><a class="nav-link" href="./tq-07-comodeler-lab.html">Lab: CoModeler</a></li>
       <li><a class="nav-link" href="./07-spoke-app-walkthrough.html">Application Review</a></li>
       <li><a class="nav-link" href="./06-ado-integration.html">Data Integration &amp; ADO</a></li>
       <li><a class="nav-link" href="./08-extensions.html">Common Extensions</a></li>
@@ -40,7 +38,6 @@
       <li><a class="nav-link" href="./seg-04-lab.html">Lab: Configurator</a></li>
       <li><a class="nav-link" href="./seg-05-post-gen.html">Post-Generation Steps</a></li>
       <li><a class="nav-link" href="./seg-06-model-review.html">Model Review</a></li>
-      <li><a class="nav-link" href="./seg-07-comodeler-lab.html">Lab: CoModeler</a></li>
       <li><a class="nav-link" href="./13-segmentation-walkthrough.html">Application Review</a></li>
       <li><a class="nav-link" href="./seg-08-extensions.html">Common Extensions</a></li>
       <li class="nav-section-title">Capacity Planning</li>
@@ -50,20 +47,14 @@
       <li><a class="nav-link" href="./cap-04-lab.html">Lab: Configurator</a></li>
       <li><a class="nav-link" href="./cap-05-post-gen.html">Post-Generation Steps</a></li>
       <li><a class="nav-link active" href="./cap-06-model-review.html">Model Review</a></li>
-      <li><a class="nav-link" href="./cap-07-comodeler-lab.html">Lab: CoModeler</a></li>
       <li><a class="nav-link" href="./14-capacity-walkthrough.html">Application Review</a></li>
       <li><a class="nav-link" href="./cap-08-extensions.html">Common Extensions</a></li>
-      <li class="nav-section-title">Sales Forecasting</li>
-      <li><a class="nav-link" href="./sf-01-overview.html">App Overview</a></li>
       <li class="nav-section-title">Reference</li>
-      <li><a class="nav-link" href="./reference-inter-app-flows.html">Inter-App Data Flows</a></li>
       <li><a class="nav-link" href="./15-whats-coming.html">What's Coming</a></li>
       <li><a class="nav-link" href="./16-qanda.html">Q&amp;A from Sessions</a></li>
       <li><a class="nav-link" href="./17-resources.html">Resources &amp; Downloads</a></li>
+      <li><a class="nav-link" href="./tq-appendix-answer-key.html">T&amp;Q Answer Key</a></li>
       <li><a class="nav-link" href="./18-facilitator.html">Facilitator Guide</a></li>
-      <li><a class="nav-link" href="./limitations.html">Limitations Reference</a></li>
-      <li><a class="nav-link" href="./presales-demo.html">Pre-Sales Demo Playbook</a></li>
-      <li><a class="nav-link" href="./roadmap.html">Roadmap Snapshot</a></li>
     </ul>
     <div class="lang-switcher">
       <span class="lang-switcher-label">🌐 Language</span>
@@ -106,36 +97,52 @@
         </table>
       </div>
 
-
-      <h2>CoModeler — What to Expect</h2>
-      <p>CoModeler is particularly useful in the Capacity model because the ramp-to-revenue formula chains are longer and less obvious than in T&amp;Q or Segmentation. Use it to trace how a hire date in HC Hiring Plan propagates through ramp profiles to a revenue projection in HC Revenue Projection.</p>
-
-      <div class="callout-note">
-        <span class="callout-label">📝 Access Note</span>
-        <p>CoModeler access must be enabled by the Apps team for your workspace. Confirm before the lab session.</p>
+      <div class="mini-lab">
+        <div class="mini-lab-header">
+          <div class="mini-lab-number">A</div>
+          <div class="mini-lab-title">CoModeler Lab A — Document the Hiring Plan Module</div>
+          <div class="mini-lab-duration">⏱ 15 min</div>
+        </div>
+        <div class="mini-lab-body">
+          <div class="mini-lab-objective">
+            <strong>Objective</strong>
+            Generate a line item dictionary for the HC Hiring Plan module to understand the inputs and outputs of the bottoms-up hiring plan.
+          </div>
+          <ol class="mini-lab-steps">
+            <li><span class="mini-lab-step-num">1</span> Open the <strong>Capacity demo app</strong> in your partner workspace.</li>
+            <li><span class="mini-lab-step-num">2</span> Navigate to the <strong>HC Hiring Plan</strong> module.</li>
+            <li><span class="mini-lab-step-num">3</span> Open CoModeler and prompt: <em>"Generate a line item dictionary for this module. Include name, formula summary, data type, and what downstream modules depend on each line item."</em></li>
+            <li><span class="mini-lab-step-num">4</span> Identify which line item represents planned new hires by month and which line item represents cumulative headcount.</li>
+          </ol>
+        </div>
+        <div class="mini-lab-completion">
+          <div class="mini-lab-completion-label">✅ Done when you can answer</div>
+          <p style="font-size:0.88rem;color:#14532d;margin:0;">Which module reads from HC Hiring Plan to calculate projected revenue? What is the key formula that connects a hire date to a revenue contribution?</p>
+        </div>
       </div>
 
-      <h3>CoModeler Interface in Capacity</h3>
-      <div class="screenshot-placeholder">
-        <div class="ss-icon">📸</div>
-        <div class="ss-label">[SCREENSHOT NEEDED: CoModeler panel open in a Capacity module (HC Hiring Plan)]</div>
-        <div class="ss-desc">Show CoModeler side panel open alongside the HC Hiring Plan module. Panel shows the prompt input field ready. No suitable frame in Day 2B recording — capture from live Capacity demo app.</div>
+      <div class="mini-lab">
+        <div class="mini-lab-header">
+          <div class="mini-lab-number">C</div>
+          <div class="mini-lab-title">CoModeler Lab C — Explain the Ramp-to-Revenue Logic</div>
+          <div class="mini-lab-duration">⏱ 15 min</div>
+        </div>
+        <div class="mini-lab-body">
+          <div class="mini-lab-objective">
+            <strong>Objective</strong>
+            Use CoModeler to understand exactly how the ramp profile converts a hire date into a monthly revenue contribution.
+          </div>
+          <ol class="mini-lab-steps">
+            <li><span class="mini-lab-step-num">1</span> Launch CoModeler in the Capacity app.</li>
+            <li><span class="mini-lab-step-num">2</span> Ask: <em>"If I hire a Commercial AE on March 15th, and the ramp profile is 0% month 1, 30% month 2, 70% month 3, 100% month 4+, what is the projected revenue contribution for April, May, June, and July? Walk me through the exact calculation."</em></li>
+            <li><span class="mini-lab-step-num">3</span> Follow up: <em>"How does the hire-date-to-ramp rule work — what is the cutoff rule for whether ramp starts in the hire month or the next month?"</em></li>
+          </ol>
+        </div>
+        <div class="mini-lab-completion">
+          <div class="mini-lab-completion-label">✅ Done when you can answer</div>
+          <p style="font-size:0.88rem;color:#14532d;margin:0;">A hire on the 20th of March — does ramp start in March or April? What is the revenue impact of this decision over a 12-month planning horizon for a $1M quota AE?</p>
+        </div>
       </div>
-
-      <h3>Entering a Prompt</h3>
-      <div class="screenshot-placeholder">
-        <div class="ss-icon">📸</div>
-        <div class="ss-label">[SCREENSHOT NEEDED: CoModeler prompt entry — Capacity hiring plan documentation request]</div>
-        <div class="ss-desc">Show the prompt: "Generate a line item dictionary for this module. Include name, formula summary, data type, and what downstream modules depend on each line item."</div>
-      </div>
-
-      <h3>Viewing Ramp-to-Revenue Output</h3>
-      <div class="screenshot-placeholder">
-        <div class="ss-icon">📸</div>
-        <div class="ss-label">[SCREENSHOT NEEDED: CoModeler output — HC Hiring Plan line item dictionary showing ramp formula chain]</div>
-        <div class="ss-desc">Response listing HC Hiring Plan line items, with special attention to how monthly new hire counts feed into ramp profile lookups and downstream revenue projection.</div>
-      </div>
-
     </div>
   </main>
 
