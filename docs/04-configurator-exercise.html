@@ -179,7 +179,7 @@
       <hr class="divider">
 
       <!-- EXERCISE 1.00 -->
-      <div class="mini-lab review-highlight">
+      <div class="mini-lab">
         <div class="mini-lab-header">
           <div class="mini-lab-number">1.00</div>
           <div class="mini-lab-title">Getting Started</div>
@@ -215,7 +215,7 @@
       <hr>
 
       <!-- EXERCISE 1.01 -->
-      <div class="mini-lab review-highlight">
+      <div class="mini-lab">
         <div class="mini-lab-header">
           <div class="mini-lab-number">1.01</div>
           <div class="mini-lab-title">Data Hub Setup</div>
@@ -260,7 +260,7 @@
       <hr>
 
       <!-- EXERCISE 1.02 -->
-      <div class="mini-lab review-highlight">
+      <div class="mini-lab">
         <div class="mini-lab-header">
           <div class="mini-lab-number">1.02</div>
           <div class="mini-lab-title">Hierarchy Setup</div>
@@ -301,7 +301,7 @@
       <hr>
 
       <!-- EXERCISE 1.03 -->
-      <div class="mini-lab review-highlight">
+      <div class="mini-lab">
         <div class="mini-lab-header">
           <div class="mini-lab-number">1.03</div>
           <div class="mini-lab-title">Scenario Planning &amp; Planning Measures</div>
@@ -347,7 +347,7 @@
       <hr>
 
       <!-- EXERCISE 1.05 -->
-      <div class="mini-lab review-highlight">
+      <div class="mini-lab">
         <div class="mini-lab-header">
           <div class="mini-lab-number">1.05</div>
           <div class="mini-lab-title">Optimizer</div>
@@ -386,7 +386,7 @@
       <hr>
 
       <!-- EXERCISE 1.06 -->
-      <div class="mini-lab review-highlight">
+      <div class="mini-lab">
         <div class="mini-lab-header">
           <div class="mini-lab-number">1.06</div>
           <div class="mini-lab-title">Target and Allocation</div>
@@ -426,7 +426,7 @@
       <hr>
 
       <!-- EXERCISE 1.07 -->
-      <div class="mini-lab review-highlight">
+      <div class="mini-lab">
         <div class="mini-lab-header">
           <div class="mini-lab-number">1.07</div>
           <div class="mini-lab-title">Territory Assignment</div>
@@ -467,7 +467,7 @@
       <hr>
 
       <!-- EXERCISE 1.08 -->
-      <div class="mini-lab review-highlight">
+      <div class="mini-lab">
         <div class="mini-lab-header">
           <div class="mini-lab-number">1.08</div>
           <div class="mini-lab-title">Resource Assignment</div>
@@ -506,7 +506,7 @@
       <hr>
 
       <!-- EXERCISE 1.09 -->
-      <div class="mini-lab review-highlight">
+      <div class="mini-lab">
         <div class="mini-lab-header">
           <div class="mini-lab-number">1.09</div>
           <div class="mini-lab-title">Rule Engine Setup</div>
@@ -574,26 +574,5 @@
   </main>
 
   <script src="../js/nav.js"></script>
-  <!-- Review Mode Toggle -->
-  <button class="review-toggle-btn" id="reviewToggle" onclick="toggleReview()" title="Toggle v0.2 review highlights">
-    <span class="dot"></span>
-    <span id="reviewLabel">Review Mode</span>
-  </button>
-  <script>
-    (function() {
-      var on = localStorage.getItem('reviewMode') === 'on';
-      if (on) {
-        document.body.classList.add('review-mode');
-        document.getElementById('reviewToggle').classList.add('active');
-        document.getElementById('reviewLabel').textContent = 'Review Mode ON';
-      }
-    })();
-    function toggleReview() {
-      var on = document.body.classList.toggle('review-mode');
-      localStorage.setItem('reviewMode', on ? 'on' : 'off');
-      document.getElementById('reviewToggle').classList.toggle('active', on);
-      document.getElementById('reviewLabel').textContent = on ? 'Review Mode ON' : 'Review Mode';
-    }
-  </script>
 </body>
 </html>
