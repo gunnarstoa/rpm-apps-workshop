@@ -202,6 +202,7 @@
         <li>Confirm all expected modules, lists, and dashboards were created</li>
         <li>Confirm workspace size post-generation — check for any workspace overage warnings</li>
       </ul>
+      <img src="../screenshots/post-gen/postgen-02-formula-error.jpg" alt="Generation log showing formula and action error counts" style="width:100%;border-radius:6px;margin:16px 0;box-shadow:0 2px 8px rgba(0,0,0,0.15);">
 
       <h3>2. Formula &amp; Reference Fixes</h3>
       <ul class="checklist">
@@ -211,6 +212,7 @@
         <li>Verify all line items in core modules (Target Allocation, Quota Calculation, Resource Assignment) are formula-correct</li>
         <li>Re-run any failed process actions to verify they complete cleanly</li>
       </ul>
+      <div style="background:#fff8e1;border:2px dashed #f39c12;border-radius:6px;padding:16px;margin:16px 0;color:#795548;">📸 <strong>Screenshot needed:</strong> Model errors panel showing formula and reference errors after generation, with error count and types visible</div>
 
       <h3>3. Dashboard &amp; View Cleanup</h3>
       <ul class="checklist">
@@ -220,6 +222,7 @@
         <li>Check conditional formatting rules are firing correctly</li>
         <li>Verify navigation links between dashboard pages work correctly</li>
       </ul>
+      <div style="background:#fff8e1;border:2px dashed #f39c12;border-radius:6px;padding:16px;margin:16px 0;color:#795548;">📸 <strong>Screenshot needed:</strong> Dashboard page in spoke app showing saved view filters and pivot table headers being reviewed and corrected</div>
 
       <h3>4. Data Hub Setup &amp; Initial Data Load</h3>
       <ul class="checklist">
@@ -230,6 +233,7 @@
         <li>Run the "Validate Data Hub" action and resolve any errors</li>
         <li>Spot-check: select 3–5 territories and verify accounts, reps, and rollups look correct</li>
       </ul>
+      <img src="../screenshots/post-gen/postgen-01-generation-validation.jpg" alt="Data Hub attribute mapping for territory assignment initialization" style="width:100%;border-radius:6px;margin:16px 0;box-shadow:0 2px 8px rgba(0,0,0,0.15);">
 
       <h3>5. Historical Actuals Load</h3>
       <ul class="checklist">
@@ -239,6 +243,7 @@
         <li>Compare total actuals in Anaplan to source system total — must reconcile to within 0.5%</li>
         <li>Check for orphaned actuals (actuals with no matching account or territory)</li>
       </ul>
+      <div style="background:#fff8e1;border:2px dashed #f39c12;border-radius:6px;padding:16px;margin:16px 0;color:#795548;">📸 <strong>Screenshot needed:</strong> Historical actuals import view showing loaded data rolling up by territory and reconciliation totals vs. source system</div>
 
       <h3>6. Target Import &amp; Allocation Validation</h3>
       <ul class="checklist">
@@ -248,6 +253,7 @@
         <li>Spot-check 3–5 territories: allocated target vs. manual expectation</li>
         <li>Test the over-allocation warning — verify it fires at the configured threshold</li>
       </ul>
+      <div style="background:#fff8e1;border:2px dashed #f39c12;border-radius:6px;padding:16px;margin:16px 0;color:#795548;">📸 <strong>Screenshot needed:</strong> Target import view showing Finance targets entered at the top tier and the allocation cascade down to territory level with totals matching</div>
 
       <h3>7. Quota Calculation Validation</h3>
       <ul class="checklist">
@@ -257,6 +263,7 @@
         <li>Test ramp scenarios: 100% assignment, 50% split, new hire ramp</li>
         <li>Verify quota totals roll up correctly</li>
       </ul>
+      <div style="background:#fff8e1;border:2px dashed #f39c12;border-radius:6px;padding:16px;margin:16px 0;color:#795548;">📸 <strong>Screenshot needed:</strong> Quota calculation results showing rep quota = territory target × assignment % × ramp factor with test rep assignments visible</div>
 
       <h3>8. Integration &amp; ADO Setup</h3>
       <ul class="checklist">
@@ -266,6 +273,7 @@
         <li>Set up and test scheduling for ongoing data refreshes</li>
         <li>Document the ADO pipeline architecture for handoff to customer IT</li>
       </ul>
+      <div style="background:#fff8e1;border:2px dashed #f39c12;border-radius:6px;padding:16px;margin:16px 0;color:#795548;">📸 <strong>Screenshot needed:</strong> ADO pipeline configuration showing data source connections, scheduling settings, and a completed end-to-end test refresh result</div>
 
       <h2>Model Readiness Goal</h2>
       <p>The Model Readiness milestone is a working session with the customer (typically the Sales Ops lead and at least one Sales manager) where you demonstrate the app with their data. The goal is:</p>
