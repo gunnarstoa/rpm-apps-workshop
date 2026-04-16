@@ -56,6 +56,41 @@ Three official product team guides were reviewed for structure and technical acc
 | O-1 | Delete | Remove sentence about "pay attention to the red tab decisions in configurator" — Gunnar confirmed this is unclear/inaccurate and should be taken out | Transcript + Notes | High |
 | O-2 | Rewrite | Change language around "Do capacity planning before you finalize the territory hierarchy" — reframe as a judgment call; both often happen in parallel; remove prescriptive ordering | Transcript + Notes | High |
 | O-3 | Add context | Add brief note that T&Q content reflects V2; V3 screens will differ and content will be updated in a future version | Transcript | Medium |
+| O-4 | Rewrite / Extend | Expand the **"About This Workshop"** section. Keep the existing two opening paragraphs; add three new subsections (`<h3>`): "What we assume you bring" (pre-built vs from-scratch mindset), "What we will actually do" (pre-project assets → real client data → T&Q first as the Application-Led Workshop app), and "When the base app isn't enough" (extension labs). Full revised text below. | Gunnar (2026-04-16) | High |
+
+#### O-4 detail: revised "About This Workshop" section
+
+**Location:** [docs/00-overview.html:99-101](docs/00-overview.html#L99-L101) — replace the current `<h2>About This Workshop</h2>` block (current content is two `<p>` paragraphs ending before `<h2>How Each Module Flows</h2>`).
+
+**Current text (to be replaced):**
+
+> The **RPM Apps Technical Enablement Workshop** is a hands-on technical enablement program for Anaplan delivery practitioners — Solutions Consultants, Solution Architects, and Technical Consultants — who will be implementing or supporting the Anaplan Revenue Performance Management (RPM) application suite.
+>
+> This is not a lecture series. It is a structured sequence of demonstrations, discussions, and hands-on labs designed to take you from *knowing about* these applications to being capable of *configuring, explaining, and delivering* them for real customers.
+
+**New text (approved 2026-04-16):**
+
+> **About This Workshop**
+>
+> The **RPM Apps Technical Enablement Workshop** is a hands-on technical enablement program for Anaplan delivery practitioners — Solutions Consultants, Solution Architects, and Technical Consultants — who will be implementing or supporting the Anaplan Revenue Performance Management (RPM) application suite.
+>
+> This is not a lecture series. It is a structured sequence of demonstrations, discussions, and hands-on labs designed to take you from *knowing about* these applications to being capable of *configuring, explaining, and delivering* them for real customers.
+>
+> ### What we assume you bring
+>
+> This workshop assumes you already understand what pre-built applications are — and what they are not — and the prescribed methodology used to prepare, configure, and deliver them. If your Anaplan background is in from-scratch model building, be aware that delivering a pre-built application is fundamentally different work. The configurator, the data inputs, and the post-generation steps are not optional shortcuts around custom modeling — they *are* the delivery method.
+>
+> ### What we will actually do
+>
+> We will start by briefly reviewing the common assets that are expected to be shared with you during the pre-project phase — what to ask for, what to expect, and how to read what you receive. As we move into configuration, we will work with the data the client has provided. Not dummy data — real territories, real products, real hierarchies. This data is the input that drives configuration, and configuration is the input that drives what gets built into the client tenant. Treat this step with the weight it deserves: the decisions you make here determine what shows up in the app.
+>
+> With that input in hand, we will configure and build the **Territory & Quota** application first. T&Q is the application you will use during your Application-Led Workshops with clients — the one that demonstrates what comes out of the box. We will spend a full lab exploring the generated app in depth, because there is a lot to cover.
+>
+> ### When the base app isn't enough
+>
+> From there, we will look at scenarios where the base application needs to be extended. Several labs will walk through building and deploying extensions, ranging from straightforward changes to more involved work that requires more careful design upfront.
+
+**HTML structure note for whoever applies this:** The new subsections use `<h3>` tags. The existing `<h2>How Each Module Flows</h2>` block immediately following should remain unchanged.
 
 ---
 
