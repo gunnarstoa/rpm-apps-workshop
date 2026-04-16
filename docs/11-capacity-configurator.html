@@ -55,6 +55,8 @@
       <li><a class="nav-link" href="./16-qanda.html">Q&amp;A from Sessions</a></li>
       <li><a class="nav-link" href="./17-resources.html">Resources &amp; Downloads</a></li>
       <li><a class="nav-link" href="./tq-appendix-answer-key.html">T&amp;Q Answer Key</a></li>
+      <li><a class="nav-link" href="./seg-appendix-answer-key.html">Segmentation Answer Key</a></li>
+      <li><a class="nav-link" href="./cap-appendix-answer-key.html">Capacity Answer Key</a></li>
       <li><a class="nav-link" href="./18-facilitator.html">Facilitator Guide</a></li>
     </ul>
     <div class="lang-switcher">
@@ -75,7 +77,7 @@
   <main class="main-content">
     <div class="content-header">
       <h1>Go-to-Market Capacity Planning Configurator</h1>
-      <p class="subtitle">Key configuration decisions for the Capacity Planning app</p>
+      <p class="subtitle">Page-by-page walkthrough of the Capacity section (1.2.x) of the configurator</p>
     </div>
     <div class="content-body">
 
@@ -83,12 +85,12 @@
         <div class="tsd-step tsd-step-tell">
           <span class="tsd-step-label">📖 Tell</span>
           <span class="tsd-step-heading">Capacity Configuration</span>
-          <span class="tsd-step-desc">You'll learn the key decisions in the Capacity configurator — role hierarchy, coverage assumptions, and productivity modeling.</span>
+          <span class="tsd-step-desc">You'll learn the key decisions in the Capacity configurator — role hierarchy, coverage assumptions, productivity modeling, and planning structure.</span>
         </div>
         <div class="tsd-step tsd-step-show">
           <span class="tsd-step-label">👁 Show</span>
           <span class="tsd-step-heading">Facilitator Demo</span>
-          <span class="tsd-step-desc">Instructor walks through the Capacity configurator, highlighting the tops-down vs bottoms-up planning tradeoffs.</span>
+          <span class="tsd-step-desc">Instructor walks through the Capacity configurator page by page, highlighting the tops-down vs bottoms-up planning tradeoffs and key dimensionality decisions.</span>
         </div>
         <div class="tsd-step tsd-step-do">
           <span class="tsd-step-label">✅ Do</span>
@@ -97,88 +99,21 @@
         </div>
       </div>
 
-      <p>The Capacity configurator is in the <strong>same app as Segmentation</strong> — scroll down to the Capacity section. Same principle as all configurators: decisions here define dimensionality that is very painful to change post-generation. Capacity configurator = ~0.5× complexity vs. T&amp;Q (~2 days with a prepared customer vs. ~1 week for T&amp;Q).</p>
-
-      <h2>Overview of Capacity Configuration Goals</h2>
-      <ul>
-        <li>Define the sales role / job family hierarchy structure</li>
-        <li>Configure coverage assumptions (accounts per role ratio)</li>
-        <li>Set up productivity modeling approach</li>
-        <li>Configure tops-down and bottoms-up planning levels</li>
-      </ul>
+      <p>The Capacity configurator is in the <strong>same app as Segmentation</strong> — navigate to <strong>Section 1.2</strong> in the left nav. Same principle as all configurators: decisions here define dimensionality that is very painful to change post-generation. Capacity configurator = ~0.5× complexity vs. T&amp;Q (~2 days with a prepared customer vs. ~1 week for T&amp;Q).</p>
 
       <div class="callout-note">
-        <strong>Shared data setup:</strong> If you're configuring both Segmentation and Capacity in the same sessions, the data setup is shared — you only need to configure accounts, employees, and opportunities once.
+        <strong>Shared data setup:</strong> If you are configuring both Segmentation and Capacity in the same sessions, the data setup is shared — you only need to configure accounts, employees, and opportunities once (in Section 1.01 / 1.02).
       </div>
 
-      <hr>
+      <div class="callout-note">
+        <span class="callout-label">📝 How to Read This Page</span>
+        <p>Each subsection below corresponds to one UX page in the Capacity section of the configurator (1.2.x). For each page, this guide describes the tables present and what the user is being asked to configure. The <strong>"Step XX"</strong> labels visible on the left side of each table in the live configurator are the authoritative guide to what each table does — use them to confirm your understanding when in a live session.</p>
+      </div>
 
-      <h2>Page: Role / Job Family Hierarchy</h2>
-      <p>Define the sales role hierarchy — the structure that determines how headcount is planned and reported.</p>
-      <ul>
-        <li>Up to 3 levels: <strong>Job Family Group → Job Family → Sales Role</strong></li>
-        <li>Key question: how many levels do you actually need? More levels = more granular planning, but significantly more maintenance overhead</li>
-        <li><strong>Role grade:</strong> Optional additional dimension (e.g., P1–P5). Adds substantial complexity — only enable if the customer genuinely needs grade-level headcount planning</li>
-      </ul>
       <div class="callout-warning">
-        <strong>Challenge role grade hard before enabling it.</strong> If you configure role grade and the customer doesn't really need it, you've added substantial complexity with no value. Every additional dimension multiplies the number of rows in every coverage, productivity, and hiring table. Challenge this requirement rigorously before enabling it.
+        <span class="callout-label">⚠ Screenshot Audit Required</span>
+        <p>Several screenshots in earlier versions of this section were captured from <strong>Section 1A (Segmentation)</strong> instead of the correct <strong>Section 1.2 (Capacity)</strong> pages. All screenshots in this section must be verified and replaced with captures from the correct Capacity 1.2.x pages. Screenshot placeholders are marked below.</p>
       </div>
-
-      <hr>
-
-      <h2>Page: Coverage &amp; Workload</h2>
-      <p>Define how roles cover accounts — the fundamental input for calculating how many people you need.</p>
-      <ul>
-        <li>Configure at what level of geography you manage coverage assumptions (e.g., all Americas at once, or per sub-region)</li>
-        <li><strong>Direct sellers — account-based coverage:</strong> 1 AE per N accounts</li>
-        <li><strong>Overlay / support roles — derived coverage:</strong> 1 generalist per N AEs, 1 manager per N AEs</li>
-        <li><strong>Segment mapping:</strong> Which roles cover which account segments (e.g., Strategic AEs cover Strategic + Named accounts only)</li>
-        <li><strong>Hours-based planning:</strong> Optional workload model for non-revenue roles (e.g., 1 specialist handles 32 hours/week of customer requests). Rarely used — revenue-based coverage is the standard approach.</li>
-      </ul>
-      <figure class="screenshot">
-        <img src="../img/day2/11-cap-config-coverage.png" alt="Capacity configurator coverage and workload setup" style="width:100%;border-radius:6px;border:1px solid #e2e8f0;">
-        <figcaption style="font-size:0.8rem;color:#6b7280;margin-top:0.4rem;text-align:center;">Coverage &amp; workload configuration — defining role coverage ratios and segment mapping</figcaption>
-      </figure>
-
-      <hr>
-
-      <h2>Page: Revenue Target</h2>
-      <p>Define the dimensionality of revenue targets — how Finance will provide the numbers that drive tops-down planning.</p>
-      <ul>
-        <li>At what level of detail does Finance provide revenue targets? (By region? By sub-region? By sub-region + account segment?)</li>
-        <li>What dimensionality? By sub-region only, or by sub-region AND account segment?</li>
-      </ul>
-      <div class="callout-warning">
-        <strong>Market dimensions pitfall:</strong> The "market dimensions" input (revenue target by account segment) exists in the configurator, but it does <em>not</em> automatically tie the productivity of roles in that segment to the target. This requires post-generation work to route properly. Know this before committing to that dimensionality with a customer — it will add implementation effort that isn't visible in the configurator.
-      </div>
-
-      <hr>
-
-      <h2>Page: Tops-Down Planning</h2>
-      <p>Define the guardrail structure for finance-driven headcount planning.</p>
-      <ul>
-        <li>At what level of the geo hierarchy does tops-down target setting begin? (Usually the top — all Americas, or global)</li>
-        <li>Tops-down sets the NTE (Not to Exceed) guardrails that constrain bottoms-up planning at every level below</li>
-        <li>Scenario planning: how many scenarios do you want to model? (Typically 2–3: conservative, base, optimistic)</li>
-      </ul>
-      <figure class="screenshot">
-        <img src="../img/day2/11-cap-config-overview.png" alt="Capacity configurator tops-down planning setup" style="width:100%;border-radius:6px;border:1px solid #e2e8f0;">
-        <figcaption style="font-size:0.8rem;color:#6b7280;margin-top:0.4rem;text-align:center;">Tops-down planning configuration — NTE hierarchy and scenario setup</figcaption>
-      </figure>
-
-      <hr>
-
-      <h2>Page: Bottoms-Up Planning</h2>
-      <p>Define the tactical hiring planning layer — where planners actually enter month-by-month hire plans.</p>
-      <ul>
-        <li>At what level are bottoms-up hiring plans entered? (Typically territory or leaf level)</li>
-        <li>Approval levels: once submitted, at what level does the plan get approved? (e.g., submitted at sub-region, approved at region)</li>
-        <li><strong>OWP connection:</strong> Optional import of data from Anaplan Workforce Planning — ramping profiles, historical headcount data. Define at what level this data comes in if using OWP.</li>
-      </ul>
-      <figure class="screenshot">
-        <img src="../img/day2/11-cap-config-bottoms-up.png" alt="Capacity configurator bottoms-up planning setup" style="width:100%;border-radius:6px;border:1px solid #e2e8f0;">
-        <figcaption style="font-size:0.8rem;color:#6b7280;margin-top:0.4rem;text-align:center;">Bottoms-up planning configuration — entry levels, approval workflow, and OWP connection</figcaption>
-      </figure>
 
       <hr>
 
@@ -186,6 +121,104 @@
         <strong>⚠ Critical Dimensionality Warning</strong><br><br>
         Dimensionality decisions in the Capacity configurator are <strong>extremely difficult to change post-generation</strong>. If you configure cost assumptions at the region level and later decide you need sub-region, you will need to disconnect and reconnect many formulaic references — or regenerate and lose any custom work.<br><br>
         Be thorough and deliberate with your customer. Validate every dimensionality choice before generating. <strong>This is the #1 source of rework on Capacity implementations.</strong>
+      </div>
+
+      <hr>
+
+      <!-- PAGE 1.2.1 -->
+      <div class="config-section">
+        <div class="config-section-header">
+          <div class="config-section-num">1.2.1</div>
+          <div class="config-section-title">GTM Headcount Data <span class="config-section-star">⭐</span></div>
+        </div>
+        <div class="callout-warning">
+          <span class="callout-label">⚠ <strong>[PENDING: 1.2.1 GTM Headcount Data — full page description pending SME review of live UX]</strong></span>
+          <p>The description below is based on available knowledge. An SME should review the live configurator page and confirm: exact Step labels for each table, the full list of configuration options, and any page-specific pitfalls. Screenshot must also be replaced with a capture from the correct 1.2.1 page.</p>
+        </div>
+        <p>Page 1.2.1 is the entry point for the Capacity configurator section. It establishes the foundational data setup for capacity planning — defining what headcount data exists and how it maps into the Capacity model.</p>
+        <p><strong>Key tables and configuration decisions (verify Step labels in live UX):</strong></p>
+        <ul>
+          <li><strong>Data objects mapping</strong> — confirm which employee data objects from the Data Hub feed into the Capacity model. These should already be configured in 1.01 / 1.02, but this page verifies the connection is correct for Capacity-specific use.</li>
+          <li><strong>Historical headcount data</strong> — indicate whether historical headcount data (actuals from prior periods) is available and should be loaded. This feeds into ramp and productivity baselining.</li>
+          <li><strong>Employee attribute mapping</strong> — map employee attributes (Job Family, Sales Role, Hire Date) to the Capacity model's headcount structure. These drive ramp profile assignment and role-level planning.</li>
+        </ul>
+        <div style="background: #fff8e1; border: 2px dashed #f39c12; border-radius: 6px; padding: 16px; margin: 16px 0; color: #795548;">📸 <strong>[SCREENSHOT NEEDED — REPLACEMENT REQUIRED]:</strong> Capture from <strong>Page 1.2.1 GTM Headcount Data</strong> in the live Capacity configurator. Must show the table(s) with data populated. Verify this is from the 1.2.x Capacity section, NOT from Section 1A (Segmentation).</div>
+      </div>
+
+      <!-- PAGE 1.2.2 -->
+      <div class="config-section">
+        <div class="config-section-header">
+          <div class="config-section-num">1.2.2</div>
+          <div class="config-section-title">GTM Top-Down HC Target Setting <span class="config-section-star">⭐</span></div>
+        </div>
+        <div class="callout-warning">
+          <span class="callout-label">⚠ <strong>[PENDING: 1.2.2 GTM Top-Down HC Target Setting — full page description pending SME review of live UX]</strong></span>
+          <p>Confirm exact Step labels, full configuration options, and page-specific pitfalls via live UX review. Screenshot must be replaced.</p>
+        </div>
+
+        <div class="callout-important">
+          <span class="callout-label">🚨 Step 0 — Role Grade: Critical Decision</span>
+          <p><strong>Step 0 on this page is where Role Grade is enabled or turned off. This is one of the most consequential decisions in the entire Capacity configurator.</strong></p>
+          <p>Role Grade is an optional additional dimension (e.g., grade levels P1–P5 within a Sales Role). Enabling it adds substantial complexity — every coverage, productivity, and hiring table gains an additional dimension for every grade level. This multiplies the number of planning rows across the entire app.</p>
+          <p><strong>Only enable Role Grade if the customer genuinely needs grade-level headcount planning and has the data to support it.</strong> Challenge this requirement rigorously with the customer before enabling. If Role Grade is enabled when it isn't needed, significant re-work is required to remove it post-generation.</p>
+        </div>
+
+        <p>Page 1.2.2 configures the guardrail structure for finance-driven headcount planning — the tops-down Not-to-Exceed (NTE) ceiling that constrains all bottoms-up plans submitted at lower levels.</p>
+        <p><strong>Key tables and configuration decisions (verify Step labels in live UX):</strong></p>
+        <ul>
+          <li><strong>Step 0 — Role Grade</strong> — Enable or disable role grade dimension. See critical callout above.</li>
+          <li><strong>Sales role / job family hierarchy</strong> — define the structure of the sales role hierarchy: up to 3 levels (Job Family Group → Job Family → Sales Role). How many levels do you actually need? More levels = more granular planning and more maintenance overhead.</li>
+          <li><strong>Tops-down planning level</strong> — at what level of the geo hierarchy does tops-down target setting begin? (Usually the top — all Americas, or global). This sets the NTE guardrails that constrain bottoms-up planning at every level below.</li>
+          <li><strong>Scenario planning</strong> — how many planning scenarios does the customer want to model? (Typically 2–3: conservative, base, optimistic).</li>
+        </ul>
+        <div style="background: #fff8e1; border: 2px dashed #f39c12; border-radius: 6px; padding: 16px; margin: 16px 0; color: #795548;">📸 <strong>[SCREENSHOT NEEDED — REPLACEMENT REQUIRED]:</strong> Capture from <strong>Page 1.2.2 GTM Top-Down HC Target Setting</strong>. Must clearly show <strong>Step 0 (Role Grade toggle)</strong> as it is a critical configuration decision. Must be from the 1.2.x Capacity section, NOT from Section 1A.</div>
+      </div>
+
+      <!-- PAGE 1.2.3 -->
+      <div class="config-section">
+        <div class="config-section-header">
+          <div class="config-section-num">1.2.3</div>
+          <div class="config-section-title">GTM Coverage &amp; Workload Capacity</div>
+        </div>
+        <div class="callout-warning">
+          <span class="callout-label">⚠ <strong>[PENDING: 1.2.3 GTM Coverage &amp; Workload Capacity — full page description pending SME review of live UX]</strong></span>
+          <p>Confirm exact Step labels, full configuration options, and page-specific pitfalls via live UX review. Screenshot must be replaced.</p>
+        </div>
+        <p>Page 1.2.3 defines how roles cover accounts — the fundamental input for calculating how many people are needed. This is where the customer's coverage model is translated into the planning framework.</p>
+        <p><strong>Key tables and configuration decisions (verify Step labels in live UX):</strong></p>
+        <ul>
+          <li><strong>Geography level for coverage assumptions</strong> — configure at what level of geography coverage assumptions are managed (e.g., all Americas at once, or per sub-region). More granular = more flexibility but more maintenance.</li>
+          <li><strong>Direct seller coverage (account-based)</strong> — 1 AE per N accounts. Configure the ratio per role and per account segment (e.g., Strategic AE → 1:5 accounts covering Strategic + Named segments).</li>
+          <li><strong>Overlay / support role coverage (derived)</strong> — 1 generalist per N AEs, 1 manager per N AEs. Coverage is derived from the direct seller headcount rather than directly from account counts.</li>
+          <li><strong>Segment mapping</strong> — which roles cover which account segments (e.g., Strategic AEs cover Strategic + Named accounts only). This is the direct connection point to Segmentation app outputs.</li>
+          <li><strong>Hours-based planning</strong> — optional workload model for non-revenue roles (e.g., 1 specialist handles 32 hours/week of customer requests). Rarely used — revenue-based coverage is the standard approach.</li>
+        </ul>
+        <div style="background: #fff8e1; border: 2px dashed #f39c12; border-radius: 6px; padding: 16px; margin: 16px 0; color: #795548;">📸 <strong>[SCREENSHOT NEEDED — REPLACEMENT REQUIRED]:</strong> Capture from <strong>Page 1.2.3 GTM Coverage &amp; Workload</strong>. Show the coverage ratio configuration with role-to-segment mapping visible. Must be from the 1.2.x Capacity section, NOT from Section 1A.</div>
+      </div>
+
+      <!-- PAGE 1.2.4 -->
+      <div class="config-section">
+        <div class="config-section-header">
+          <div class="config-section-num">1.2.4</div>
+          <div class="config-section-title">GTM Bottom-Up Hiring Plan</div>
+        </div>
+        <div class="callout-warning">
+          <span class="callout-label">⚠ <strong>[PENDING: 1.2.4 GTM Bottom-Up Hiring Plan — full page description pending SME review of live UX]</strong></span>
+          <p>Confirm exact Step labels, full configuration options, and page-specific pitfalls via live UX review. Screenshot must be replaced.</p>
+        </div>
+        <p>Page 1.2.4 configures the tactical hiring planning layer — where planners actually enter month-by-month hire plans. This is the bottoms-up counterpart to the tops-down NTE set in 1.2.2.</p>
+        <p><strong>Key tables and configuration decisions (verify Step labels in live UX):</strong></p>
+        <ul>
+          <li><strong>Bottoms-up entry level</strong> — at what level are bottoms-up hiring plans entered? (Typically territory or leaf level of the geo hierarchy.)</li>
+          <li><strong>Approval levels</strong> — once submitted, at what level does the plan get approved? (e.g., submitted at sub-region, approved at region). The approved plan cannot exceed the NTE from tops-down.</li>
+          <li><strong>OWP connection</strong> — optional import of data from Anaplan Workforce Planning (OWP) — ramping profiles, historical headcount data. Define at what level this data comes in if the customer uses OWP. Leave disabled if not applicable.</li>
+        </ul>
+        <div style="background: #fff8e1; border: 2px dashed #f39c12; border-radius: 6px; padding: 16px; margin: 16px 0; color: #795548;">📸 <strong>[SCREENSHOT NEEDED — REPLACEMENT REQUIRED]:</strong> Capture from <strong>Page 1.2.4 GTM Bottom-Up Hiring Plan</strong>. Show entry level and approval level configuration. Must be from the 1.2.x Capacity section, NOT from Section 1A.</div>
+      </div>
+
+      <div class="callout-note">
+        <span class="callout-label">📝 Additional 1.2.x Pages</span>
+        <p><strong>[PENDING: Additional Capacity configurator pages beyond 1.2.4 require SME confirmation and live UX audit.]</strong> Navigate through all remaining pages in Section 1.2 of the configurator and document each page following the same pattern: page name/number, tables present (using Step XX labels as the guide), configuration decisions required, and a screenshot from that specific page. Add subsections here for each additional 1.2.x page found.</p>
       </div>
 
       <hr>
@@ -224,10 +257,10 @@
         <p>Before the exercise, make sure you can answer:</p>
         <ul>
           <li>What's the difference between a tops-down and bottoms-up hiring plan — and when does a customer use each?</li>
-          <li>Why does ramp profile matter so much for capacity calculations?</li>
-          <li>How many job families does CloudWorks have, and how does that affect the configuration?</li>
+          <li>Why is the Role Grade decision (Step 0 on 1.2.2) so critical? What happens if you enable it when the customer doesn't actually need it?</li>
+          <li>How many job families does CloudWorks have, and how does that affect the configuration of 1.2.2?</li>
         </ul>
-        <p><strong>Next:</strong> <a href="./12-seg-cap-exercise.html">Complete the Segmentation &amp; Capacity Lab →</a></p>
+        <p><strong>Next:</strong> <a href="./cap-04-lab.html">Complete the Capacity Configurator Lab →</a></p>
       </div>
     </div>
   </main>

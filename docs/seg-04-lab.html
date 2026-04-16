@@ -55,6 +55,8 @@
       <li><a class="nav-link" href="./16-qanda.html">Q&amp;A from Sessions</a></li>
       <li><a class="nav-link" href="./17-resources.html">Resources &amp; Downloads</a></li>
       <li><a class="nav-link" href="./tq-appendix-answer-key.html">T&amp;Q Answer Key</a></li>
+      <li><a class="nav-link" href="./seg-appendix-answer-key.html">Segmentation Answer Key</a></li>
+      <li><a class="nav-link" href="./cap-appendix-answer-key.html">Capacity Answer Key</a></li>
       <li><a class="nav-link" href="./18-facilitator.html">Facilitator Guide</a></li>
     </ul>
     <div class="lang-switcher">
@@ -83,143 +85,118 @@
       </div>
     </div>
     <div class="content-body">
+
+      <div class="callout-note">
+        <span class="callout-label">📋 Answer Key</span>
+        <p>This lab is an exercise — there are no answers on this page. Review the CloudWorks case study handout, navigate through the configurator pages, and fill in inputs based on the case study data. The answer key is available in the <a href="./seg-appendix-answer-key.html">Appendix →</a> and will be reviewed during the facilitator-led debrief.</p>
+      </div>
+
       <h2>Exercise Overview</h2>
-      <p>Using the <strong>CloudWorks case study</strong>, complete the Segmentation section of the configurator. Navigate to <strong>section 1A</strong> in the left nav of the configurator app.</p>
-      <div class="callout-tip">After each configurator page, hit <strong>Apply / Calculate</strong> before moving on.</div>
+      <p>Using the <strong>CloudWorks case study handout</strong>, complete the Segmentation section of the configurator. Work through the pages below in order, making configuration decisions based on the case study data. After each configurator page, hit <strong>Apply / Calculate</strong> before moving on.</p>
+
+      <div class="callout-tip">
+        <span class="callout-label">💡 Tip</span>
+        <p>After each configurator page, hit <strong>Apply / Calculate</strong> before moving on. If a step asks you to navigate to a specific page and the page name differs slightly in your instance, use your best judgment — configurator page names may vary slightly between versions.</p>
+      </div>
+
       <hr>
 
       <h2>Part 1: Segmentation Configuration</h2>
-      <p>Navigate to the <strong>Segmentation section</strong> of the configurator (section 1A in the left nav). Complete these mini-labs in order.</p>
+      <p>Navigate to the <strong>Segmentation section</strong> of the configurator. Complete these exercises in order.</p>
 
       <!-- SEG MINI-LAB 1 -->
       <div class="mini-lab">
         <div class="mini-lab-header">
           <div class="mini-lab-number">S1</div>
-          <div class="mini-lab-title">Data Setup — Page 1A.01</div>
-          <div class="mini-lab-duration">⏱ 8 min</div>
+          <div class="mini-lab-title">Data Hub Setup — Page 1.01</div>
+          <div class="mini-lab-duration">⏱ 10 min</div>
         </div>
         <div class="mini-lab-body">
           <div class="mini-lab-objective">
             <strong>Objective</strong>
-            Configure the account data attributes that will drive segmentation rules and scoring. Get this right — attributes must be list-formatted to work as rule dimensions.
+            Review and capture the firmographic account attributes that will drive segmentation. Ensure all quantitative fields have banded counterparts enabled for the rule engine, and that list-formatted attributes are correctly tagged.
           </div>
           <ol class="mini-lab-steps">
-            <li><span class="mini-lab-step-num">1</span> Navigate to <strong>Page 1A.01: SG GTM Performance Analysis Guided Setup</strong>.</li>
-            <li><span class="mini-lab-step-num">2</span> Review the CloudWorks account data: key firmographic fields are Industry, Employee Count, and Revenue Band.</li>
-            <li><span class="mini-lab-step-num">3</span> Enable <strong>list-formatted attributes</strong> for: Industry, Employee Band, Revenue Band. Raw numeric fields (Employee Count) must be banded — confirm the banded version is enabled, not the raw number.</li>
-            <li><span class="mini-lab-step-num">4</span> Enable <em>Enable for Calculate</em> for any attribute you plan to use in scoring.</li>
+            <li><span class="mini-lab-step-num">1</span> Navigate to <strong>Page 1.01: Data Hub Setup</strong>.</li>
+            <li><span class="mini-lab-step-num">2</span> Review the key firmographic fields available for the CloudWorks account data: refer to the case study handout for the full attribute list.</li>
+            <li><span class="mini-lab-step-num">3</span> <strong>Capture all relevant segmentation attributes/fields</strong> — identify which attributes will be used for rule dimensions, scoring, and UCP (Unacceptable Customer Profile) exclusion.</li>
+            <li><span class="mini-lab-step-num">4</span> For each <strong>numeric/quantitative field</strong> you intend to use (e.g., Employee Count, Annual Revenue): ensure an additional attribute exists for <strong>"banding"</strong> (e.g., Employee Band, Revenue Band). Enable the <strong>"Enable to Calculate"</strong> toggle on the banded attribute so the list is generated correctly at application generation.</li>
             <li><span class="mini-lab-step-num">5</span> Click <strong>Apply / Calculate</strong> before moving on.</li>
           </ol>
           <div class="callout-tip" style="margin-top:0.75rem;">
             <span class="callout-label">💡 Tip</span>
-            <p>Numeric values (like raw employee count) cannot be used directly as rule dimensions — only list-formatted attributes work. Always use banded versions for segmentation rules.</p>
+            <p>Raw numeric values (like Employee Count = 1,547) cannot be used as rule dimensions. Only list-formatted banded attributes (like Employee Band = "1K–5K") work. If a banded attribute does not yet exist in the data, flag it — it must be created in the source data before the configurator session.</p>
           </div>
-        </div>
-        <div class="mini-lab-completion">
-          <div class="mini-lab-completion-label">✅ What it should look like when complete</div>
-          <figure class="screenshot" style="margin:0;">
-            <img src="../img/day2/10-seg-config-overview.png" alt="Segmentation configurator data setup — attributes configured" style="width:100%;border-radius:4px;border:1px solid #e2e8f0;">
-            <figcaption style="font-size:0.78rem;color:#6b7280;margin-top:0.35rem;text-align:center;">Page 1A.01: Data setup — firmographic attributes configured and enabled for segmentation</figcaption>
-          </figure>
+          <div style="background: #fff8e1; border: 2px dashed #f39c12; border-radius: 6px; padding: 16px; margin: 16px 0; color: #795548;">📸 <strong>Screenshot needed:</strong> Page 1.01 — Data Hub Setup with data objects table populated (not blank/loading). Should show firmographic attributes with banded fields and "Enable to Calculate" toggles visible.</div>
         </div>
       </div>
 
-      <!-- SEG MINI-LAB 2 -->
+      <!-- SEG MINI-LAB 2 (absorbs former S3) -->
       <div class="mini-lab">
         <div class="mini-lab-header">
           <div class="mini-lab-number">S2</div>
-          <div class="mini-lab-title">Rule-Based Segmentation — Page 1A.05</div>
-          <div class="mini-lab-duration">⏱ 10 min</div>
+          <div class="mini-lab-title">Segmentation Configuration — Rule-Based &amp; Score-Based</div>
+          <div class="mini-lab-duration">⏱ 15 min</div>
         </div>
         <div class="mini-lab-body">
           <div class="mini-lab-objective">
             <strong>Objective</strong>
-            Define the 4 CloudWorks segments and the account attributes that will serve as rule dimensions for explicit rule-based assignment.
+            Configure the rule-based and score-based segmentation parameters, selecting account attributes, scoring dimensions, and reporting setup based on the CloudWorks case study.
           </div>
+
+          <div class="callout-note" style="margin-bottom:0.75rem;">
+            <span class="callout-label">📝 Note: Segment Names and Count</span>
+            <p>The number of segments and their names (e.g., Strategic, Named, Commercial, SMB) are <strong>not configured here</strong>. They are defined by admins after application generation via placeholder slots. Do not look for a segment naming input on this page.</p>
+          </div>
+
           <ol class="mini-lab-steps">
-            <li><span class="mini-lab-step-num">1</span> Navigate to <strong>Page 1A.05: SG Segmentation Configuration Guided Setup</strong>.</li>
-            <li><span class="mini-lab-step-num">2</span> Configure the segment list: <strong>Strategic, Named, Commercial, SMB</strong>.</li>
-            <li><span class="mini-lab-step-num">3</span> Enable the following as rule dimensions: <strong>Industry, Employee Band, Revenue Band</strong>.</li>
-            <li><span class="mini-lab-step-num">4</span> Enable Wallet Size Tier as a rule dimension if you completed the wallet size setup.</li>
-            <li><span class="mini-lab-step-num">5</span> Click <strong>Apply / Calculate</strong>.</li>
+            <li><span class="mini-lab-step-num">1</span> Navigate to the correct Segmentation Configuration page.
+              <div style="background: #fff3cd; border-left: 3px solid #f39c12; padding: 8px 12px; margin: 8px 0; font-size: 0.9rem;"><strong>[SME CONFIRMATION NEEDED: Exact configurator page name/path for Segmentation rule-based and score-based setup]</strong></div>
+            </li>
+            <li><span class="mini-lab-step-num">2</span> <strong>Select account attributes for Rule-Based Segmentation</strong> — the attribute list available for selection is populated from your S1 Data Hub Setup step. Choose the attributes relevant to CloudWorks's segmentation rules based on the case study.</li>
+            <li><span class="mini-lab-step-num">3</span> <strong>Select Account Score to Segment mapping dimensional drivers</strong> — at what level may the score-to-segment threshold differ? (e.g., thresholds may differ by region or industry). Select the applicable dimensions from the case study.</li>
+            <li><span class="mini-lab-step-num">4</span> <strong>Select Categorical Metrics to score account</strong> — choose the qualitative account attributes (list-formatted) that will be used as scoring inputs.</li>
+            <li><span class="mini-lab-step-num">5</span> <strong>Select Numerical Metrics to score account</strong> — choose the quantitative attributes (banded) that will be used as scoring inputs. These should correspond to the banded attributes you enabled in S1.</li>
+            <li><span class="mini-lab-step-num">6</span> <strong>Select Account Score Metric Drivers</strong> — at what dimensions can attribute weights differ? (e.g., a weight for Employee Band may differ by region). Select the applicable dimensions.</li>
+            <li><span class="mini-lab-step-num">7</span> <strong>Select applicable reporting dimensions for account segment movements</strong> — identify which dimensions should be tracked when accounts move between segments (e.g., year-over-year movement).</li>
+            <li><span class="mini-lab-step-num">8</span> Click <strong>Apply / Calculate</strong> before moving on.</li>
           </ol>
-          <div class="callout-tip" style="margin-top:0.75rem;">
-            <span class="callout-label">💡 Tip</span>
-            <p>Keep segments to 4 or fewer. Every extra segment multiplies complexity in T&amp;Q and Capacity — more territory types, more coverage ratios, more headcount rows.</p>
+
+          <div class="callout-important" style="margin-top:0.75rem;">
+            <span class="callout-label">🚨 Rule vs. Score Precedence</span>
+            <p><strong>Rule-Based ALWAYS overrides Score-Based</strong> when both are available for the same account. Score-based acts as a catch-all default only where no rule exists. Design your rules with this in mind — a well-designed rule set should cover your most strategically important accounts; scoring handles the rest.</p>
           </div>
-        </div>
-        <div class="mini-lab-completion">
-          <div class="mini-lab-completion-label">✅ What it should look like when complete</div>
-          <figure class="screenshot" style="margin:0;">
-            <img src="../img/day2/10-seg-config-rules.png" alt="Segmentation configurator — 4 segments defined with rule dimensions" style="width:100%;border-radius:4px;border:1px solid #e2e8f0;">
-            <figcaption style="font-size:0.78rem;color:#6b7280;margin-top:0.35rem;text-align:center;">Page 1A.05: 4 segments configured (Strategic, Named, Commercial, SMB) with rule dimensions enabled</figcaption>
-          </figure>
+
+          <div style="background: #fff8e1; border: 2px dashed #f39c12; border-radius: 6px; padding: 16px; margin: 16px 0; color: #795548;">📸 <strong>Screenshot needed (NEW — REPLACEMENT REQUIRED):</strong> The correct configurator page showing: account attribute selection for Rule-Based Segmentation, Score-to-Segment mapping drivers, Categorical and Numerical Metrics selection, Score Metric Drivers, and Reporting dimensions. Must be from the <em>configurator</em>, not from the generated UX app.</div>
         </div>
       </div>
 
-      <!-- SEG MINI-LAB 3 -->
-      <div class="mini-lab">
-        <div class="mini-lab-header">
-          <div class="mini-lab-number">S3</div>
-          <div class="mini-lab-title">Score-Based Segmentation — Page 1A.05</div>
-          <div class="mini-lab-duration">⏱ 10 min</div>
-        </div>
-        <div class="mini-lab-body">
-          <div class="mini-lab-objective">
-            <strong>Objective</strong>
-            Configure the scoring model that assigns every account a numeric score — acting as a catch-all for accounts that don't match any explicit rule.
-          </div>
-          <ol class="mini-lab-steps">
-            <li><span class="mini-lab-step-num">1</span> Scroll to the scoring section of <strong>Page 1A.05</strong>.</li>
-            <li><span class="mini-lab-step-num">2</span> Configure scoring metrics using CloudWorks's account data. Suggested: Employee Band (40%), Revenue Band (35%), Industry (25%).</li>
-            <li><span class="mini-lab-step-num">3</span> Verify <strong>weights sum to exactly 100%</strong> — the configurator will warn you if they don't.</li>
-            <li><span class="mini-lab-step-num">4</span> Define score-to-segment thresholds: 7–10 = Strategic, 5–7 = Named, 3–5 = Commercial, 0–3 = SMB.</li>
-            <li><span class="mini-lab-step-num">5</span> Click <strong>Apply / Calculate</strong>.</li>
-          </ol>
-          <div class="callout-note" style="margin-top:0.75rem;">
-            <span class="callout-label">📝 Note</span>
-            <p>Score-based acts as the default — every account gets a score and therefore a segment. Rule-based overrides the score for accounts that explicitly match your defined conditions. Use both.</p>
-          </div>
-        </div>
-        <div class="mini-lab-completion">
-          <div class="mini-lab-completion-label">✅ What it should look like when complete</div>
-          <figure class="screenshot" style="margin:0;">
-            <img src="../img/day2/13-seg-score-based.png" alt="Score-based segmentation — metrics, weights, and segment thresholds configured" style="width:100%;border-radius:4px;border:1px solid #e2e8f0;">
-            <figcaption style="font-size:0.78rem;color:#6b7280;margin-top:0.35rem;text-align:center;">Score-based segmentation — scoring metrics with weights summing to 100% and score-to-segment thresholds</figcaption>
-          </figure>
-        </div>
-      </div>
-
-      <!-- SEG MINI-LAB 4 -->
+      <!-- SEG MINI-LAB 4 (Wallet Size) -->
       <div class="mini-lab">
         <div class="mini-lab-header">
           <div class="mini-lab-number">S4</div>
-          <div class="mini-lab-title">Wallet Size — Page 1A.03</div>
-          <div class="mini-lab-duration">⏱ 8 min</div>
+          <div class="mini-lab-title">Wallet Size Configuration — Spend Assumption Dimensions</div>
+          <div class="mini-lab-duration">⏱ 10 min</div>
         </div>
         <div class="mini-lab-body">
           <div class="mini-lab-objective">
             <strong>Objective</strong>
-            Configure the wallet size model that estimates total addressable spend per account. CloudWorks uses the Revenue method. This feeds directly into T&amp;Q as the default target allocation metric.
+            Configure the spend assumption dimensions and reporting setup for wallet size calculation. This feeds directly into T&amp;Q as the basis for addressable market and target allocation.
           </div>
           <ol class="mini-lab-steps">
-            <li><span class="mini-lab-step-num">1</span> Navigate to <strong>Page 1A.03: SG Wallet Size Calculation Guided Setup</strong>.</li>
-            <li><span class="mini-lab-step-num">2</span> Select <strong>Revenue method</strong> for wallet size calculation.</li>
-            <li><span class="mini-lab-step-num">3</span> Set addressable market % assumptions by industry using the CloudWorks case study data.</li>
-            <li><span class="mini-lab-step-num">4</span> Configure geo index if prompted — use 1.0 (neutral) for all regions for this exercise.</li>
-            <li><span class="mini-lab-step-num">5</span> Click <strong>Apply / Calculate</strong>.</li>
+            <li><span class="mini-lab-step-num">1</span> Navigate to the Wallet Size configuration page in the Segmentation configurator.
+              <div style="background: #fff3cd; border-left: 3px solid #f39c12; padding: 8px 12px; margin: 8px 0; font-size: 0.9rem;"><strong>[SME CONFIRMATION NEEDED: Exact configurator page name/path for Wallet Size / Spend configuration]</strong></div>
+            </li>
+            <li><span class="mini-lab-step-num">2</span> <strong>Select applicable attributes/dimensions to inform different spending assumptions</strong> — choose which dimensions drive different spend assumptions (e.g., Industry, Revenue Band). Different industries or account sizes may have different addressable market percentages.</li>
+            <li><span class="mini-lab-step-num">3</span> <strong>Select applicable dimension to have a default addressable Market %</strong> — choose the dimension at which a default addressable market percentage is applied when no specific assumption exists.</li>
+            <li><span class="mini-lab-step-num">4</span> <strong>Select applicable territory hierarchy level for spend index driver</strong> — select the hierarchy level at which geographic spend index adjustments are applied (e.g., region-level adjustments to account for market differences).</li>
+            <li><span class="mini-lab-step-num">5</span> Configure any <strong>reporting setup and selection drivers</strong> applicable for wallet size analysis.</li>
+            <li><span class="mini-lab-step-num">6</span> Click <strong>Apply / Calculate</strong> before moving on.</li>
           </ol>
           <div class="callout-note" style="margin-top:0.75rem;">
             <span class="callout-label">📝 Note</span>
-            <p>Wallet size is optional. If a customer doesn't have reliable firmographic data, skip it. Don't over-engineer a model the customer won't trust or maintain.</p>
+            <p>Wallet size is optional. If CloudWorks does not have reliable firmographic data to support spend calculations, skip this section. Do not over-engineer a model the customer won't trust or maintain.</p>
           </div>
-        </div>
-        <div class="mini-lab-completion">
-          <div class="mini-lab-completion-label">✅ What it should look like when complete</div>
-          <figure class="screenshot" style="margin:0;">
-            <img src="../img/configurator/seg-wallet-size.png" alt="Wallet Size configuration — Revenue method selected with spending assumptions" style="width:100%;border-radius:4px;border:1px solid #e2e8f0;">
-            <figcaption style="font-size:0.78rem;color:#6b7280;margin-top:0.35rem;text-align:center;">Page 1A.03: Wallet Size Calculation — Revenue method with spending calculation and wallet calculation drivers configured</figcaption>
-          </figure>
         </div>
       </div>
 
@@ -227,11 +204,17 @@
 
       <h2>Debrief Questions — Segmentation</h2>
       <ol>
-        <li>You configured 4 segments for CloudWorks (Strategic, Named, Commercial, SMB). A customer pushes back and says they want 8 segments. How do you respond? What's the downstream impact?</li>
-        <li>The scoring weights must sum to 100%. You assigned weights to 3 metrics. A 4th stakeholder now wants to add "recent growth rate" as a scoring factor. How does this change your weights, and what data would you need?</li>
-        <li>What would happen if 30% of CloudWorks's accounts had missing employee count data — a field you relied on for both rule-based and score-based segmentation? What's your mitigation plan?</li>
-        <li>A customer says: "We already have segments in Salesforce — why do we need the Segmentation app?" How do you answer?</li>
+        <li>In S1, you identified both qualitative and quantitative segmentation attributes for CloudWorks. Give one example of each. For your quantitative attribute, what banded version did you need to create — and why does that banded version matter for the rule engine?</li>
+        <li>In S2, you had to distinguish between Categorical Metrics and Numerical Metrics for scoring. What was the difference in how you selected them, and what does each one produce in the generated app for the admin to manage?</li>
+        <li>A colleague says: "We configured score-based segmentation, so we know every account will get a segment — we don't really need rule-based." How do you respond? What is the correct relationship between rule-based and score-based segmentation?</li>
+        <li>In S4, you configured spend assumption dimensions by Industry and Revenue Band. A customer asks: "Can we set different addressable market percentages for each geography as well?" What would you need to configure to support that, and where in the configurator would it apply?</li>
+        <li>UCP stands for Unacceptable Customer Profile. What does it do to accounts that match its criteria? How is this different from what a learner might incorrectly assume it does?</li>
       </ol>
+
+      <div class="callout-tip">
+        <span class="callout-label">✅ Lab Complete</span>
+        <p>When the group reconvenes, refer to the <a href="./seg-appendix-answer-key.html">Answer Key in the Appendix</a> to compare your decisions. There are often multiple valid approaches — the goal is to understand the reasoning behind each choice.</p>
+      </div>
     </div>
   </main>
 

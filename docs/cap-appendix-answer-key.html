@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Capacity Planning Sample Data Structures — RPM Apps Lab Guide</title>
+  <title>Appendix: Capacity Answer Key — RPM Apps Lab Guide</title>
   <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
@@ -42,7 +42,7 @@
       <li><a class="nav-link" href="./seg-08-extensions.html">Common Extensions</a></li>
       <li class="nav-section-title">Capacity Planning</li>
       <li><a class="nav-link" href="./cap-01-overview.html">Functional Overview</a></li>
-      <li><a class="nav-link active" href="./cap-02-sample-data.html">Sample Data</a></li>
+      <li><a class="nav-link" href="./cap-02-sample-data.html">Sample Data</a></li>
       <li><a class="nav-link" href="./11-capacity-configurator.html">Configurator Review</a></li>
       <li><a class="nav-link" href="./cap-04-lab.html">Lab: Configurator</a></li>
       <li><a class="nav-link" href="./cap-05-post-gen.html">Post-Generation Steps</a></li>
@@ -56,7 +56,7 @@
       <li><a class="nav-link" href="./17-resources.html">Resources &amp; Downloads</a></li>
       <li><a class="nav-link" href="./tq-appendix-answer-key.html">T&amp;Q Answer Key</a></li>
       <li><a class="nav-link" href="./seg-appendix-answer-key.html">Segmentation Answer Key</a></li>
-      <li><a class="nav-link" href="./cap-appendix-answer-key.html">Capacity Answer Key</a></li>
+      <li><a class="nav-link active" href="./cap-appendix-answer-key.html">Capacity Answer Key</a></li>
       <li><a class="nav-link" href="./18-facilitator.html">Facilitator Guide</a></li>
     </ul>
     <div class="lang-switcher">
@@ -76,64 +76,34 @@
 
   <main class="main-content">
     <div class="content-header">
-      <h1>Capacity Planning Sample Data Structures</h1>
-      <p class="subtitle">Required data objects and role hierarchy setup</p>
+      <h1>Appendix: Capacity Configurator Answer Key</h1>
+      <p class="subtitle">Facilitator reference — review after the lab exercise, not before</p>
       <div class="badge-row">
-        <span class="content-badge">Capacity Module</span>
-        <span class="content-badge">Reference</span>
+        <span class="content-badge">Appendix</span>
+        <span class="content-badge">Facilitator Reference</span>
       </div>
     </div>
     <div class="content-body">
-      <p>Capacity shares most of its data objects with T&amp;Q and Segmentation. The key additions are <strong>role hierarchy data</strong> (Job Family, Job Family Group, Sales Role) and <strong>productivity / ramp profile inputs</strong>.</p>
 
-      <h2>Required Data Objects</h2>
-      <div class="table-wrap">
-        <table>
-          <thead><tr><th>Object</th><th>Purpose</th><th>Key Difference from T&amp;Q</th></tr></thead>
-          <tbody>
-            <tr><td><strong>Employee</strong></td><td>Headcount data including role hierarchy</td><td>Requires Job Family, Job Family Group, and Sales Role — must match the hierarchy configured in the Capacity configurator</td></tr>
-            <tr><td><strong>Account</strong></td><td>Account counts per segment per geo (from Segmentation output)</td><td>Segment attribute required — drives coverage ratio calculations</td></tr>
-            <tr><td><strong>Territory</strong></td><td>Geo hierarchy for tops-down and bottoms-up planning</td><td>Same structure as T&amp;Q</td></tr>
-            <tr><td><strong>Position</strong></td><td>Open headcount positions (optional)</td><td>New in Capacity — links to Anaplan Workforce Planning (OWP) if used</td></tr>
-            <tr><td><strong>Job Family</strong></td><td>Role grouping hierarchy</td><td>New in Capacity — defines the 2–3 level role hierarchy</td></tr>
-          </tbody>
-        </table>
-      </div>
-
-      <h2>Role Hierarchy Setup</h2>
-      <p>Capacity requires a structured role hierarchy. This is one of the most important data design decisions — get it wrong and you'll need to reconfigure:</p>
-      <div class="table-wrap">
-        <table>
-          <thead><tr><th>Level</th><th>Example Values</th><th>Notes</th></tr></thead>
-          <tbody>
-            <tr><td>Job Family Group (L1)</td><td>Core, Support</td><td>Highest level — typically separates revenue-generating from support roles</td></tr>
-            <tr><td>Job Family (L2)</td><td>AE, CS, Pre-Sales, Management</td><td>Groups related roles</td></tr>
-            <tr><td>Sales Role (L3)</td><td>Strategic AE, Commercial AE, SMB AE, CSM, PSE, Regional Manager</td><td>The level at which coverage ratios and ramp profiles are defined</td></tr>
-          </tbody>
-        </table>
+      <div class="callout-important">
+        <span class="callout-label">🚫 Participants: Do Not Read Until After the Lab</span>
+        <p>This answer key is intended for facilitator-led debrief after the lab exercise is complete. Review your own answers first, then compare with the key during the group debrief session.</p>
       </div>
 
       <div class="callout-warning">
-        <span class="callout-label">⚠ Do Not Enable Role Grade Unless Needed</span>
-        <p>Role grade (P1–P5 or similar) adds a 4th level to the hierarchy. Every grade multiplies the number of rows in every coverage, productivity, and hiring table. Challenge this requirement hard before enabling it.</p>
+        <span class="callout-label">⚠ <strong>[TO BE COMPLETED: Capacity Answer Key — Pending SME Review and Page Inventory]</strong></span>
+        <p>The Capacity configurator answer key content is pending finalization. Once the full 1.2.x page inventory is confirmed via SME review of the live configurator, and the CloudWorks case study handout is finalized, complete answers for each configurator page will be added here.</p>
+        <p>Structure to populate:</p>
+        <ul>
+          <li><strong>Page 1.2.1 (GTM Headcount Data):</strong> CloudWorks employee data mapping decisions and historical headcount data inputs</li>
+          <li><strong>Page 1.2.2 (GTM Top-Down HC Target Setting):</strong> Role Grade decision (and why), role hierarchy structure (Job Family Groups, Job Families, Sales Roles), tops-down planning level, scenario count</li>
+          <li><strong>Page 1.2.3 (GTM Coverage &amp; Workload):</strong> Geography level, coverage ratios per role per segment, derived role ratios</li>
+          <li><strong>Page 1.2.4 (GTM Bottom-Up Hiring Plan):</strong> Entry level, approval level, OWP connection setting</li>
+          <li><strong>Additional 1.2.x pages:</strong> To be added once page inventory is confirmed</li>
+          <li><strong>Debrief Q1–Q4:</strong> Model answers for each debrief question</li>
+        </ul>
       </div>
 
-      <h2>Ramp Profile Inputs</h2>
-      <p>Ramp profiles are the foundation of all productivity calculations. You need to agree on these with the customer before or during the configurator session:</p>
-      <div class="table-wrap">
-        <table>
-          <thead><tr><th>Sales Role</th><th>Month 1</th><th>Month 2</th><th>Month 3</th><th>Month 4</th><th>Month 5+</th></tr></thead>
-          <tbody>
-            <tr><td>Strategic AE (example)</td><td>0%</td><td>20%</td><td>50%</td><td>75%</td><td>100%</td></tr>
-            <tr><td>Commercial AE (example)</td><td>0%</td><td>30%</td><td>70%</td><td>100%</td><td>100%</td></tr>
-            <tr><td>SMB AE (example)</td><td>20%</td><td>60%</td><td>100%</td><td>100%</td><td>100%</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="callout-tip">
-        <span class="callout-label">💡 Hire Date Rule</span>
-        <p>Hired in the first half of the month → ramp starts that month. Hired in the second half → ramp starts next month. Make sure the customer understands this rule before they start entering hiring dates — it has material impact on projected revenue output.</p>
-      </div>
     </div>
   </main>
 

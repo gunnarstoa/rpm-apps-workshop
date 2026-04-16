@@ -55,6 +55,8 @@
       <li><a class="nav-link" href="./16-qanda.html">Q&amp;A from Sessions</a></li>
       <li><a class="nav-link" href="./17-resources.html">Resources &amp; Downloads</a></li>
       <li><a class="nav-link" href="./tq-appendix-answer-key.html">T&amp;Q Answer Key</a></li>
+      <li><a class="nav-link" href="./seg-appendix-answer-key.html">Segmentation Answer Key</a></li>
+      <li><a class="nav-link" href="./cap-appendix-answer-key.html">Capacity Answer Key</a></li>
       <li><a class="nav-link" href="./18-facilitator.html">Facilitator Guide</a></li>
     </ul>
     <div class="lang-switcher">
@@ -97,10 +99,33 @@
         </table>
       </div>
 
-      <h2>Critical: List-Formatted Attributes</h2>
+      <h2>Attribute Types: Qualitative vs. Quantitative</h2>
+      <p>When identifying segmentation attributes, it is essential to distinguish between <strong>qualitative</strong> and <strong>quantitative</strong> attributes. This distinction determines what admin management framework the configurator generates — and getting it wrong means the wrong tooling is built for the admin team to maintain.</p>
+      <div class="two-col">
+        <div class="card">
+          <h3>Qualitative Attributes</h3>
+          <p>Categorical/descriptive attributes with a defined list of values.</p>
+          <ul>
+            <li><strong>Format:</strong> List (text-based)</li>
+            <li><strong>Examples:</strong> Industry, Region, Customer Tier, Account Type</li>
+            <li><strong>Generated framework:</strong> Qualitative scoring lists — admins manage a list of values and assign scores to each (e.g., Healthcare = 8, Technology = 7, Retail = 4)</li>
+            <li><strong>Use in rules:</strong> Available directly as rule dimensions without transformation</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Quantitative Attributes</h3>
+          <p>Numeric attributes that require banding before use in rules or scoring.</p>
+          <ul>
+            <li><strong>Format:</strong> Number or Currency (raw); List (banded)</li>
+            <li><strong>Examples:</strong> Employee Count, Annual Revenue, ARR Spend</li>
+            <li><strong>Generated framework:</strong> Numeric band scoring tables — admins manage bands (e.g., 0–250 employees = Score 2, 250–1K = Score 5) and the system maps raw values to bands automatically</li>
+            <li><strong>Use in rules:</strong> Raw numbers cannot be used directly — a banded (list-formatted) version must be created and enabled</li>
+          </ul>
+        </div>
+      </div>
       <div class="callout-important">
         <span class="callout-label">🚫 Raw Numbers Don't Work as Rule Dimensions</span>
-        <p>The Segmentation rule engine only accepts <strong>list-formatted attributes</strong> as rule dimensions. Raw numeric fields (like Employee Count = 1,547) cannot be used directly. You must provide a <strong>banded version</strong> — a list attribute that maps the number to a band (e.g. Employee Band = "1,000–5,000"). Confirm this is in your account data before the configurator session.</p>
+        <p>The Segmentation rule engine only accepts <strong>list-formatted attributes</strong> as rule dimensions. For each numeric/quantitative field you want to use, you must create a corresponding <strong>banded attribute</strong> (e.g., "Employee Band: 0–250, 250–1K, 1K–5K") and enable it in the Data Hub Setup step. Enable the <strong>"Enable to Calculate"</strong> toggle on the banded attribute so the list is generated at application generation. Always Apply / Calculate after completing this step before moving on.</p>
       </div>
 
       <h2>Firmographic Fields for CloudWorks</h2>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>T&Q Sample Data Structures — RPM Apps Lab Guide</title>
+  <title>T&Q Sample Data Structures - RPM Apps Lab Guide</title>
   <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
@@ -55,6 +55,8 @@
       <li><a class="nav-link" href="./16-qanda.html">Q&amp;A from Sessions</a></li>
       <li><a class="nav-link" href="./17-resources.html">Resources &amp; Downloads</a></li>
       <li><a class="nav-link" href="./tq-appendix-answer-key.html">T&amp;Q Answer Key</a></li>
+      <li><a class="nav-link" href="./seg-appendix-answer-key.html">Segmentation Answer Key</a></li>
+      <li><a class="nav-link" href="./cap-appendix-answer-key.html">Capacity Answer Key</a></li>
       <li><a class="nav-link" href="./18-facilitator.html">Facilitator Guide</a></li>
     </ul>
     <div class="lang-switcher">
@@ -92,10 +94,10 @@
           <tbody>
             <tr><td><strong>Account</strong></td><td>The universe of accounts to be assigned to territories</td><td>CRM (Salesforce)</td><td>Account ID, Account Name, Account Parent, Territory, Segment, Industry, Employee Count, Lat/Long</td></tr>
             <tr><td><strong>Territory</strong></td><td>The hierarchy of territories (all tiers)</td><td>Manual / Sales Ops</td><td>Territory ID, Territory Name, Territory Parent, Tier level</td></tr>
-            <tr><td><strong>Employee</strong></td><td>Sales reps and managers with role and assignment data</td><td>HR / CRM</td><td>User ID, User Name, Sales Role, Job Family, Hire Date, Source Territory, Manager, Is Active?</td></tr>
+            <tr><td><strong>Employee</strong></td><td>Sales reps and managers with role and assignment data</td><td>HR / CRM</td><td>Employee ID, Employee Name, Sales Role, Job Family, Hire Date, Source Territory, Manager, Is Active?, Role Start Date, Role End Date, Employee E-mail</td></tr>
             <tr><td><strong>Opportunity / Order</strong></td><td>Historical actuals for allocation and reporting</td><td>CRM / ERP</td><td>Account ID, Amount, Planning Measure, Service Date, Territory</td></tr>
             <tr><td><strong>Finance Targets</strong></td><td>Top-down targets from Finance</td><td>Finance / FP&amp;A</td><td>Territory/Region, Planning Measure, Period, Amount</td></tr>
-            <tr><td><strong>Product</strong> <span style="background:#e8f4fd;color:#0066cc;font-size:11px;padding:2px 6px;border-radius:3px;margin-left:6px;">Almost Always Required</span></td><td>Product or SKU catalog — used as a planning dimension (e.g., product family, product line)</td><td>CRM / ERP / Product Master</td><td>Product ID, Product Name, Product Family, Product Line, Is Active</td></tr>
+            <tr><td><strong>Product</strong> <span style="background:#e8f4fd;color:#0066cc;font-size:11px;padding:2px 6px;border-radius:3px;margin-left:6px;">Almost Always Required</span></td><td>Product or SKU catalog - used as a planning dimension (e.g., product family, product line)</td><td>CRM / ERP / Product Master</td><td>Product ID, Product Name, Product Family, Product Line, Is Active</td></tr>
           </tbody>
         </table>
       </div>
@@ -106,7 +108,7 @@
         <table>
           <thead><tr><th>Field</th><th>Type</th><th>Required</th><th>Used For</th></tr></thead>
           <tbody>
-            <tr><td>Account ID</td><td>Text (unique)</td><td>✅ Required</td><td>Primary key — links accounts to actuals, assignments</td></tr>
+            <tr><td>Account ID</td><td>Text (unique)</td><td>✅ Required</td><td>Primary key - links accounts to actuals, assignments</td></tr>
             <tr><td>Account Name</td><td>Text</td><td>✅ Required</td><td>Display name throughout the app</td></tr>
             <tr><td>Account Parent</td><td>Text (Account ID)</td><td>Recommended</td><td>Global Ultimate Parent hierarchy for named accounts</td></tr>
             <tr><td>Territory</td><td>Text (Territory ID)</td><td>Recommended</td><td>Pre-existing assignment import</td></tr>
@@ -115,7 +117,7 @@
             <tr><td>Account Segment</td><td>List</td><td>If using Segmentation</td><td>Segment attribute from Segmentation app output</td></tr>
             <tr><td>Ship to Latitude</td><td>Decimal</td><td>If using Geo Mapping</td><td>Map card and lasso assignment</td></tr>
             <tr><td>Ship to Longitude</td><td>Decimal</td><td>If using Geo Mapping</td><td>Map card and lasso assignment</td></tr>
-            <tr><td>ARR Spend</td><td>Currency</td><td>Recommended</td><td>Potential Spend — primary allocation method</td></tr>
+            <tr><td>ARR Spend</td><td>Currency</td><td>Recommended</td><td>Potential Spend - primary allocation method</td></tr>
           </tbody>
         </table>
       </div>
@@ -127,14 +129,14 @@
           <tbody>
             <tr><td>Territory ID</td><td>Text (unique)</td><td>Primary key. Use a stable code (e.g. "S01") not a display name</td></tr>
             <tr><td>Territory Name</td><td>Text</td><td>Display name (e.g. "Northeast")</td></tr>
-            <tr><td>Territory Parent</td><td>Text (Territory ID)</td><td>ID of the parent territory — defines the hierarchy rollup</td></tr>
-            <tr><td>Territory Manager</td><td>Text (User ID)</td><td>Optional — the manager responsible for this territory</td></tr>
+            <tr><td>Territory Parent</td><td>Text (Territory ID)</td><td>ID of the parent territory - defines the hierarchy rollup</td></tr>
+            <tr><td>Territory Manager</td><td>Text (User ID)</td><td>Optional - the manager responsible for this territory</td></tr>
           </tbody>
         </table>
       </div>
       <div class="callout-warning">
         <span class="callout-label">⚠ V2 vs V3 Territory Format</span>
-        <p><strong>V2:</strong> One flat file with all tiers as columns. <strong>V3 (ADO):</strong> One separate source view per hierarchy tier. If you're configuring V3, you need a separate file per tier — not one combined flat file.</p>
+        <p><strong>V2:</strong> One flat file with all nodes appearing as rows, each row showing the node and its respective parent node. <strong>V3 (ADO):</strong> One separate source view per hierarchy tier. If you’re configuring V3, you need a separate file per tier — not one combined flat file.</p>
       </div>
 
       <h2>Employee File Schema</h2>
@@ -142,14 +144,17 @@
         <table>
           <thead><tr><th>Field</th><th>Type</th><th>Notes</th></tr></thead>
           <tbody>
-            <tr><td>User ID</td><td>Text (unique)</td><td>Primary key — must match the Anaplan user ID</td></tr>
-            <tr><td>User Name</td><td>Text</td><td>Display name</td></tr>
+            <tr><td>Employee ID</td><td>Text (unique)</td><td>Primary key</td></tr>
+            <tr><td>Employee Name</td><td>Text</td><td>Display name</td></tr>
             <tr><td>Sales Role</td><td>List</td><td>Must match the Sales Role list configured in the configurator</td></tr>
             <tr><td>Job Family</td><td>List</td><td>Role grouping for quota composition</td></tr>
             <tr><td>Source Territory</td><td>Text (Territory ID)</td><td>The territory this rep is assigned to at import time</td></tr>
-            <tr><td>Hire Date</td><td>Date</td><td>Used for ramp calculation — must be accurate</td></tr>
+            <tr><td>Hire Date</td><td>Date</td><td>Used for ramp calculation - must be accurate</td></tr>
             <tr><td>Is Active?</td><td>Boolean</td><td>Inactive reps are excluded from quota calculations</td></tr>
-            <tr><td>Manager</td><td>Text (User ID)</td><td>Manager's User ID — used for approval routing</td></tr>
+            <tr><td>Manager</td><td>Text (Employee ID)</td><td>Manager's Employee ID - used for approval routing</td></tr>
+            <tr><td>Role Start Date</td><td>Date</td><td>Start date for the employee's current role</td></tr>
+            <tr><td>Role End Date</td><td>Date</td><td>End date for the employee's current role (if applicable)</td></tr>
+            <tr><td>Employee E-mail</td><td>Text</td><td>Employee email address</td></tr>
           </tbody>
         </table>
       </div>
@@ -162,7 +167,7 @@
           <tbody>
             <tr><td><code>Configurator Exercise Account_Flat File.csv</code></td><td>~4,200</td><td>Account Name, Account ID, Industry, No. of Employees, Annual Revenue, Account Segment, Territory, Ship to Latitude/Longitude, ARR Spend</td></tr>
             <tr><td><code>Configurator Exercise Territory_Flat File.csv</code></td><td>~220</td><td>Territory Name, Territory ID, Territory Parent, Territory Manager</td></tr>
-            <tr><td><code>Configurator Exercise Employee File.xlsx</code></td><td>~205</td><td>User ID, User Name, User Title, Sales Role, Job Family, Hire Date, Source Territory, Manager, Is Active?</td></tr>
+            <tr><td><code>Configurator Exercise Employee File.xlsx</code></td><td>~205</td><td>Employee ID, Employee Name, User Title, Sales Role, Job Family, Hire Date, Source Territory, Manager, Is Active?, Role Start Date, Role End Date, Employee E-mail</td></tr>
             <tr><td><code>Configurator Exercise Opportunity File.xlsx</code></td><td>~8,400</td><td>Opportunity ID, Account, Stage, Forecast Category, Planning Measure, Estimated Close Date, Is Won?, Is Closed?</td></tr>
             <tr><td><code>Configurator Exercise Opportunity line File.csv</code></td><td>~18,000</td><td>Opportunity Line ID, Account, Amount, Planning Measure, Service Date</td></tr>
           </tbody>
@@ -171,7 +176,7 @@
 
       <div class="callout-tip">
         <span class="callout-label">💡 Session Zero Tip</span>
-        <p>Share the T&amp;Q Data Prep Workbook with the customer as early as possible — ideally before the SOW is signed. The workbook defines exactly what format each file needs to be in. Customers who complete it before kickoff move 2–3× faster through configuration sessions.</p>
+        <p>Share the T&amp;Q Data Prep Workbook with the customer as early as possible - ideally before the SOW is signed. The workbook defines exactly what format each file needs to be in. Customers who complete it before kickoff move 2-3× faster through configuration sessions.</p>
       </div>
     </div>
   </main>
