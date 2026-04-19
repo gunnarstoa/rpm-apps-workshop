@@ -51,12 +51,12 @@ Three official product team guides were reviewed for structure and technical acc
 
 ### `00-overview.html` — Workshop Overview / Getting Started
 
-| # | Change Type | What to Change | Source | Priority |
-|---|-------------|----------------|--------|----------|
-| O-1 | Delete | Remove sentence about "pay attention to the red tab decisions in configurator" — Gunnar confirmed this is unclear/inaccurate and should be taken out | Transcript + Notes | High |
-| O-2 | Rewrite | Change language around "Do capacity planning before you finalize the territory hierarchy" — reframe as a judgment call; both often happen in parallel; remove prescriptive ordering | Transcript + Notes | High |
-| O-3 | Add context | Add brief note that T&Q content reflects V2; V3 screens will differ and content will be updated in a future version | Transcript | Medium |
-| O-4 | Rewrite / Extend | Expand the **"About This Workshop"** section. Keep the existing two opening paragraphs; add three new subsections (`<h3>`): "What we assume you bring" (pre-built vs from-scratch mindset), "What we will actually do" (pre-project assets → real client data → T&Q first as the Application-Led Workshop app), and "When the base app isn't enough" (extension labs). Full revised text below. | Gunnar (2026-04-16) | High |
+| # | Status | Change Type | What to Change | Source | Priority |
+|---|--------|-------------|----------------|--------|----------|
+| O-1 | **Done** (verified 2026-04-19) | Delete | Remove sentence about "pay attention to the red tab decisions in configurator" — Gunnar confirmed this is unclear/inaccurate and should be taken out | Transcript + Notes | High |
+| O-2 | **Done** (verified 2026-04-19) | Rewrite | Change language around "Do capacity planning before you finalize the territory hierarchy" — reframe as a judgment call; both often happen in parallel; remove prescriptive ordering. Verified at lines 399, 409, 412. | Transcript + Notes | High |
+| O-3 | **Done** (applied 2026-04-19) | Add context | Add brief note that T&Q content reflects V2; V3 screens will differ and content will be updated in a future version. Implemented as `callout-note` "T&Q content reflects V2" at end of "About This Workshop" section. | Transcript | Medium |
+| O-4 | **Done** (applied 2026-04-19) | Rewrite / Extend | Expand the **"About This Workshop"** section. Keep the existing two opening paragraphs; add three new subsections (`<h3>`): "What we assume you bring" (pre-built vs from-scratch mindset), "What we will actually do" (pre-project assets → real client data → T&Q first as the Application-Led Workshop app), and "When the base app isn't enough" (extension labs). Full revised text below. | Gunnar (2026-04-16) | High |
 
 #### O-4 detail: revised "About This Workshop" section
 
